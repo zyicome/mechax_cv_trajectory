@@ -1,0 +1,107 @@
+[0.033s] Invoking command in '/home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory': AMENT_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory -DCMAKE_INSTALL_PREFIX=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory
+[0.077s] -- The C compiler identification is GNU 11.4.0
+[0.118s] -- The CXX compiler identification is GNU 11.4.0
+[0.124s] -- Detecting C compiler ABI info
+[0.171s] -- Detecting C compiler ABI info - done
+[0.175s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.175s] -- Detecting C compile features
+[0.175s] -- Detecting C compile features - done
+[0.177s] -- Detecting CXX compiler ABI info
+[0.226s] -- Detecting CXX compiler ABI info - done
+[0.233s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.234s] -- Detecting CXX compile features
+[0.234s] -- Detecting CXX compile features - done
+[0.236s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.343s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[0.403s] -- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+[0.429s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.433s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.438s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.446s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.460s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.501s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.503s] -- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.558s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.574s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.603s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.609s] -- Looking for pthread.h
+[0.652s] -- Looking for pthread.h - found
+[0.652s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.698s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.699s] -- Found Threads: TRUE  
+[0.799s] -- Found visualization_msgs: 4.2.3 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.958s] -- Found auto_aim_interfaces: 0.0.0 (/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/cmake)
+[0.996s] -- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.041s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.042s] -- Configured cppcheck include dirs: /home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/include
+[1.042s] -- Configured cppcheck exclude dirs and/or files: 
+[1.042s] -- Added test 'lint_cmake' to check CMake code style
+[1.042s] -- Added test 'uncrustify' to check C / C++ code style
+[1.042s] -- Configured uncrustify additional arguments: 
+[1.043s] -- Added test 'xmllint' to check XML markup files
+[1.043s] -- Configuring done
+[1.049s] -- Generating done
+[1.050s] -- Build files have been written to: /home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory
+[1.056s] Invoked command in '/home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory' returned '0': AMENT_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory -DCMAKE_INSTALL_PREFIX=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory
+[1.057s] Invoking command in '/home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory': AMENT_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory -- -j16 -l16
+[1.086s] [ 50%] [32mBuilding CXX object CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o[0m
+[4.505s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat ft0(float&, float&, float&, float&, float&)[m[K’:
+[4.505s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:3:73:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kv0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[4.505s]     3 | ne float ft0(float &t0, float &randa, float &tan, float &z0, [01;35m[Kfloat &v0[m[K)
+[4.505s]       |                                                              [01;35m[K~~~~~~~^~[m[K
+[4.505s] 
+[4.505s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat f_t0(float&, float&, float&, float&, float&)[m[K’:
+[4.505s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:8:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kz0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+[4.505s]     8 | line float f_t0(float &t0, float &randa, float &tan, [01;35m[Kfloat &z0[m[K, float &v0)
+[4.505s]       |                                                      [01;35m[K~~~~~~~^~[m[K
+[4.505s] 
+[4.536s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model()[m[K’:
+[4.536s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:105:56:[m[K [01;35m[Kwarning: [m[Kvalue computed is not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+[4.537s]   105 |             [01;35m[Kfabs(ft0(fly_t, randa, tan, object_z, v0)) > 0.01[m[K;
+[4.537s]       |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[4.538s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model_two()[m[K’:
+[4.538s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:141:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle_init[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[4.538s]   141 |     float [01;35m[Kangle_init[m[K = atan2(object_z, distance);       //rad弧度，补偿前的角度
+[4.538s]       |           [01;35m[K^~~~~~~~~~[m[K
+[4.539s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kvoid Trajectoryer::solve_trajectory()[m[K’:
+[4.539s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:199:41:[m[K [01;35m[Kwarning: [m[Ksuggest braces around empty body in an ‘[01m[Kif[m[K’ statement [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wempty-body-Wempty-body]8;;[m[K]
+[4.539s]   199 |         if(temp_yaw_diff < yaw_diff_min)[01;35m[K;[m[K
+[4.540s]       |                                         [01;35m[K^[m[K
+[4.540s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:199:9:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+[4.540s]   199 |         [01;35m[Kif[m[K(temp_yaw_diff < yaw_diff_min);
+[4.540s]       |         [01;35m[K^~[m[K
+[4.540s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:200:9:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+[4.540s]   200 |         [01;36m[K{[m[K
+[4.540s]       |         [01;36m[K^[m[K
+[4.540s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:250:45:[m[K [01;35m[Kwarning: [m[Ksuggest braces around empty body in an ‘[01m[Kif[m[K’ statement [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wempty-body-Wempty-body]8;;[m[K]
+[4.540s]   250 |             if(temp_yaw_diff > yaw_diff_min)[01;35m[K;[m[K
+[4.540s]       |                                             [01;35m[K^[m[K
+[4.540s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:250:13:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+[4.540s]   250 |             [01;35m[Kif[m[K(temp_yaw_diff > yaw_diff_min);
+[4.540s]       |             [01;35m[K^~[m[K
+[4.540s] [01m[K/home/mechax/zyb/test/2024mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:251:13:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+[4.540s]   251 |             [01;36m[K{[m[K
+[4.540s]       |             [01;36m[K^[m[K
+[12.186s] [100%] [32m[1mLinking CXX executable mechax_trajectory[0m
+[12.701s] [100%] Built target mechax_trajectory
+[12.714s] Invoked command in '/home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory' returned '0': AMENT_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory -- -j16 -l16
+[12.738s] Invoking command in '/home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory': AMENT_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory
+[12.743s] -- Install configuration: ""
+[12.743s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/lib/mechax_trajectory/mechax_trajectory
+[12.747s] -- Set runtime path of "/home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/lib/mechax_trajectory/mechax_trajectory" to ""
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/package_run_dependencies/mechax_trajectory
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/parent_prefix_path/mechax_trajectory
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/ament_prefix_path.sh
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/ament_prefix_path.dsv
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/path.sh
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/path.dsv
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.bash
+[12.747s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.sh
+[12.748s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.zsh
+[12.748s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.dsv
+[12.748s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.dsv
+[12.748s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/packages/mechax_trajectory
+[12.748s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/cmake/mechax_trajectoryConfig.cmake
+[12.748s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/cmake/mechax_trajectoryConfig-version.cmake
+[12.748s] -- Installing: /home/mechax/zyb/test/2024mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.xml
+[12.749s] Invoked command in '/home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory' returned '0': AMENT_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/test/2024mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/mechax/zyb/test/2024mechax_cv_trajectory/build/mechax_trajectory
