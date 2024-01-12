@@ -49,7 +49,7 @@ public:
 
     // parameters
     //------------------
-    float object_z; // m
+    float object_z; // m //
     float object_y; // m
     float object_x; // m
     float v0; // m/s
