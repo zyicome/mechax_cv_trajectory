@@ -1,0 +1,16 @@
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/lib/mechax_trajectory/mechax_trajectory
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/package_run_dependencies/mechax_trajectory
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/parent_prefix_path/mechax_trajectory
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/ament_prefix_path.sh
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/ament_prefix_path.dsv
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/path.sh
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/path.dsv
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.bash
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.sh
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.zsh
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.dsv
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.dsv
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/packages/mechax_trajectory
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/cmake/mechax_trajectoryConfig.cmake
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/cmake/mechax_trajectoryConfig-version.cmake
+/home/mechax/zyb/test/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.xml

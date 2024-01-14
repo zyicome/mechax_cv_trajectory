@@ -1,0 +1,9 @@
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/uninstall.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/rm_vision_bringup_uninstall.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/test.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/edit_cache.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/rebuild_cache.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/list_install_components.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/install.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/install/local.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles/install/strip.dir

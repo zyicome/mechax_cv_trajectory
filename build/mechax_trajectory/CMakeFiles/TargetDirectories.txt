@@ -1,0 +1,10 @@
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/uninstall.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/mechax_trajectory_uninstall.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/mechax_trajectory.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/test.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/edit_cache.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/rebuild_cache.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/list_install_components.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/install.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/install/local.dir
+/home/mechax/zyb/test/mechax_cv_trajectory/build/mechax_trajectory/CMakeFiles/install/strip.dir
