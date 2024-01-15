@@ -1,1 +1,1 @@
-prepend-non-duplicate;LD_LIBRARY_PATH;lib
+/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver/ament_cmake_environment_hooks/library_path.dsv

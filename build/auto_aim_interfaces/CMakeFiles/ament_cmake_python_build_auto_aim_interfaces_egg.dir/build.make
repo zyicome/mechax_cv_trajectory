@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
 
 # Utility rule file for ament_cmake_python_build_auto_aim_interfaces_egg.
 
@@ -67,7 +67,7 @@ include CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/compiler
 include CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/progress.make
 
 CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/ament_cmake_python/auto_aim_interfaces && /usr/bin/python3.10 setup.py egg_info
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/ament_cmake_python/auto_aim_interfaces && /usr/bin/python3.10 setup.py egg_info
 
 ament_cmake_python_build_auto_aim_interfaces_egg: CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg
 ament_cmake_python_build_auto_aim_interfaces_egg: CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/clean:
 .PHONY : CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/clean
 
 CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ament_cmake_python_build_auto_aim_interfaces_egg.dir/depend
 

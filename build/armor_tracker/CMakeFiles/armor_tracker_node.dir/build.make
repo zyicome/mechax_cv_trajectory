@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker
 
 # Include any dependencies generated for this target.
 include CMakeFiles/armor_tracker_node.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/armor_tracker_node.dir/flags.make
 CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o: CMakeFiles/armor_tracker_node.dir/flags.make
 CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o: rclcpp_components/node_main_armor_tracker_node.cpp
 CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o: CMakeFiles/armor_tracker_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o -MF CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o.d -o CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o -c /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o -MF CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o.d -o CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o -c /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp
 
 CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp > CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp > CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.i
 
 CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp -o CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp -o CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.s
 
 # Object files for target armor_tracker_node
 armor_tracker_node_OBJECTS = \
@@ -158,7 +158,7 @@ armor_tracker_node: /opt/ros/humble/lib/librosidl_runtime_c.so
 armor_tracker_node: /opt/ros/humble/lib/librcutils.so
 armor_tracker_node: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 armor_tracker_node: CMakeFiles/armor_tracker_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable armor_tracker_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable armor_tracker_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/armor_tracker_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/armor_tracker_node.dir/clean:
 .PHONY : CMakeFiles/armor_tracker_node.dir/clean
 
 CMakeFiles/armor_tracker_node.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/CMakeFiles/armor_tracker_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/CMakeFiles/armor_tracker_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/armor_tracker_node.dir/depend
 

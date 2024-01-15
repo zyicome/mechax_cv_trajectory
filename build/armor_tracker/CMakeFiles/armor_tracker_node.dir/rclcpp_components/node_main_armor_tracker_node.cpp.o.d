@@ -1,5 +1,5 @@
 CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o: \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp \
+ /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

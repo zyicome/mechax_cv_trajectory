@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
 
 # Utility rule file for auto_aim_interfaces__py.
 
@@ -172,8 +172,8 @@ rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesup
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/geometry_msgs/msg/Vector3Stamped.idl
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/geometry_msgs/msg/Wrench.idl
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/geometry_msgs/msg/WrenchStamped.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code for ROS interfaces"
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py && /usr/bin/python3 /opt/ros/humble/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py --generator-arguments-file /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py__arguments.json --typesupport-impls "rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c;rosidl_typesupport_c"
 
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_introspection_c.c: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_introspection_c.c
@@ -269,10 +269,10 @@ auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/build: auto_aim_i
 .PHONY : auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/build
 
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/clean:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/auto_aim_interfaces__py.dir/cmake_clean.cmake
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py && $(CMAKE_COMMAND) -P CMakeFiles/auto_aim_interfaces__py.dir/cmake_clean.cmake
 .PHONY : auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/clean
 
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py.dir/depend
 

@@ -1,3 +1,1 @@
-source;share/rm_serial_driver/environment/ament_prefix_path.sh
-source;share/rm_serial_driver/environment/library_path.sh
-source;share/rm_serial_driver/environment/path.sh
+/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver/ament_cmake_environment_hooks/local_setup.dsv

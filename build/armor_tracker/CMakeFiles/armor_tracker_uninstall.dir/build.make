@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker
 
 # Utility rule file for armor_tracker_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/armor_tracker_uninstall.dir/compiler_depend.make
 include CMakeFiles/armor_tracker_uninstall.dir/progress.make
 
 CMakeFiles/armor_tracker_uninstall:
-	/usr/bin/cmake -P /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 armor_tracker_uninstall: CMakeFiles/armor_tracker_uninstall
 armor_tracker_uninstall: CMakeFiles/armor_tracker_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/armor_tracker_uninstall.dir/clean:
 .PHONY : CMakeFiles/armor_tracker_uninstall.dir/clean
 
 CMakeFiles/armor_tracker_uninstall.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/CMakeFiles/armor_tracker_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/CMakeFiles/armor_tracker_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/armor_tracker_uninstall.dir/depend
 

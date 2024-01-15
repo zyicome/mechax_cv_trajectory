@@ -1,0 +1,7 @@
+[31mCMake Error at /opt/ros/humble/share/rclcpp_components/cmake/rclcpp_components_register_node.cmake:40 (message):
+  rclcpp_components_register_node macro requires a EXECUTABLE argument for
+  target mechax_trajectory
+Call Stack (most recent call first):
+  CMakeLists.txt:25 (rclcpp_components_register_node)
+
+[0m

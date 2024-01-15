@@ -1,3 +1,1 @@
-source;share/mindvision_camera/environment/ament_prefix_path.sh
-source;share/mindvision_camera/environment/library_path.sh
-source;share/mindvision_camera/environment/path.sh
+/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/ament_cmake_environment_hooks/local_setup.dsv

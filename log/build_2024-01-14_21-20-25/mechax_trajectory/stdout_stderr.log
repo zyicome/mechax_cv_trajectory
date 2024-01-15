@@ -1,0 +1,123 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+-- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found visualization_msgs: 4.2.3 (/opt/ros/humble/share/visualization_msgs/cmake)
+-- Found auto_aim_interfaces: 0.0.0 (/home/mechax/zyi/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/cmake)
+-- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mechax/zyi/mechax_cv_trajectory/build/mechax_trajectory
+[ 50%] [32mBuilding CXX object CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o[0m
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat ft0(float&, float&, float&, float&, float&)[m[K’:
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:3:73:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kv0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+    3 | ne float ft0(float &t0, float &randa, float &tan, float &z0, [01;35m[Kfloat &v0[m[K)
+      |                                                              [01;35m[K~~~~~~~^~[m[K
+
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat f_t0(float&, float&, float&, float&, float&)[m[K’:
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:8:63:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kz0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+    8 | line float f_t0(float &t0, float &randa, float &tan, [01;35m[Kfloat &z0[m[K, float &v0)
+      |                                                      [01;35m[K~~~~~~~^~[m[K
+
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model()[m[K’:
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:113:56:[m[K [01;35m[Kwarning: [m[Kvalue computed is not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  113 |             [01;35m[Kfabs(ft0(fly_t, randa, tan, object_z, v0)) > 0.01[m[K;
+      |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model_two()[m[K’:
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:149:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle_init[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  149 |     float [01;35m[Kangle_init[m[K = atan2(object_z, distance);       //rad弧度，补偿前的角度
+      |           [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kvoid Trajectoryer::solve_trajectory()[m[K’:
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:207:41:[m[K [01;35m[Kwarning: [m[Ksuggest braces around empty body in an ‘[01m[Kif[m[K’ statement [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wempty-body-Wempty-body]8;;[m[K]
+  207 |         if(temp_yaw_diff < yaw_diff_min)[01;35m[K;[m[K
+      |                                         [01;35m[K^[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:207:9:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+  207 |         [01;35m[Kif[m[K(temp_yaw_diff < yaw_diff_min);
+      |         [01;35m[K^~[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:208:9:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+  208 |         [01;36m[K{[m[K
+      |         [01;36m[K^[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:258:45:[m[K [01;35m[Kwarning: [m[Ksuggest braces around empty body in an ‘[01m[Kif[m[K’ statement [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wempty-body-Wempty-body]8;;[m[K]
+  258 |             if(temp_yaw_diff > yaw_diff_min)[01;35m[K;[m[K
+      |                                             [01;35m[K^[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:258:13:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmisleading-indentation-Wmisleading-indentation]8;;[m[K]
+  258 |             [01;35m[Kif[m[K(temp_yaw_diff > yaw_diff_min);
+      |             [01;35m[K^~[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:259:13:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+  259 |             [01;36m[K{[m[K
+      |             [01;36m[K^[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/include/trajectoryer.hpp:4[m[K,
+                 from [01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:1[m[K:
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kvoid Trajectoryer::target_callback(auto_aim_interfaces::msg::Target)[m[K’:
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:364:31:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 5 has type ‘[01m[Kstd::string[m[K’ {aka ‘[01m[Kstd::__cxx11::basic_string<char>[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+  364 |     RCLCPP_INFO(get_logger(), [01;35m[K"id: %d"[m[K, id);
+      |                               [01;35m[K^~~~~~~~[m[K
+[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:364:37:[m[K [01;36m[Knote: [m[Kformat string is defined here
+  364 |     RCLCPP_INFO(get_logger(), "id: [01;36m[K%d[m[K", id);
+      |                                    [01;36m[K~^[m[K
+      |                                     [01;36m[K|[m[K
+      |                                     [01;36m[Kint[m[K
+[100%] [32m[1mLinking CXX executable mechax_trajectory[0m
+[100%] Built target mechax_trajectory
+-- Install configuration: ""
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/lib/mechax_trajectory/mechax_trajectory
+-- Set runtime path of "/home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/lib/mechax_trajectory/mechax_trajectory" to ""
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/package_run_dependencies/mechax_trajectory
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/parent_prefix_path/mechax_trajectory
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/ament_prefix_path.sh
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/ament_prefix_path.dsv
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/path.sh
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/environment/path.dsv
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.bash
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.sh
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.zsh
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/local_setup.dsv
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.dsv
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/ament_index/resource_index/packages/mechax_trajectory
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/cmake/mechax_trajectoryConfig.cmake
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/cmake/mechax_trajectoryConfig-version.cmake
+-- Installing: /home/mechax/zyi/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.xml

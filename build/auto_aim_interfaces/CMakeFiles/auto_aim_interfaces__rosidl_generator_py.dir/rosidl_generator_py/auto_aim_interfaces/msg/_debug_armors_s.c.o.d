@@ -1,5 +1,5 @@
 CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_debug_armors_s.c.o: \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py/auto_aim_interfaces/msg/_debug_armors_s.c \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py/auto_aim_interfaces/msg/_debug_armors_s.c \
  /usr/include/stdc-predef.h /usr/include/python3.10/Python.h \
  /usr/include/python3.10/patchlevel.h /usr/include/python3.10/pyconfig.h \
  /usr/include/x86_64-linux-gnu/python3.10/pyconfig.h \
@@ -207,11 +207,11 @@ CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto
  /usr/include/python3.10/numpy/_neighborhood_iterator_imp.h \
  /usr/include/python3.10/numpy/__multiarray_api.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armors__struct.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armor__struct.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armors__struct.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armor__struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armors__functions.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/rosidl_generator_c__visibility_control.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armors__functions.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/rosidl_generator_c__visibility_control.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence_functions.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armor__functions.h
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armor__functions.h

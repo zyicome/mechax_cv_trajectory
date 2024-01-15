@@ -1,4 +1,1 @@
-std_msgs/Header header
-bool is_shoot
-float64 pitch
-float64 yaw
+/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Serial.msg

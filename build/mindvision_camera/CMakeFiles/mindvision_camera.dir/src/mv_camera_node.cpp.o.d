@@ -1,9 +1,9 @@
 CMakeFiles/mindvision_camera.dir/src/mv_camera_node.cpp.o: \
- /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera/src/mv_camera_node.cpp \
+ /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera/src/mv_camera_node.cpp \
  /usr/include/stdc-predef.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera/mvsdk/include/CameraApi.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera/mvsdk/include/CameraDefine.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera/mvsdk/include/CameraStatus.h \
+ /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera/mvsdk/include/CameraApi.h \
+ /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera/mvsdk/include/CameraDefine.h \
+ /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera/mvsdk/include/CameraStatus.h \
  /opt/ros/humble/include/camera_info_manager/camera_info_manager/camera_info_manager.hpp \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

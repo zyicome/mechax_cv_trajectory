@@ -1,4 +1,1 @@
-source;share/auto_aim_interfaces/environment/ament_prefix_path.sh
-source;share/auto_aim_interfaces/environment/library_path.sh
-source;share/auto_aim_interfaces/environment/path.sh
-source;share/auto_aim_interfaces/environment/pythonpath.sh
+/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/ament_cmake_environment_hooks/local_setup.dsv

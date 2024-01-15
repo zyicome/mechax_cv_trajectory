@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp" "CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o" "gcc" "CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o.d"
+  "/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker/rclcpp_components/node_main_armor_tracker_node.cpp" "CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o" "gcc" "CMakeFiles/armor_tracker_node.dir/rclcpp_components/node_main_armor_tracker_node.cpp.o.d"
   )
 
 # Targets to which this target links.

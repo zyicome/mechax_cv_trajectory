@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
 
 # Utility rule file for auto_aim_interfaces_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/auto_aim_interfaces_uninstall.dir/compiler_depend.make
 include CMakeFiles/auto_aim_interfaces_uninstall.dir/progress.make
 
 CMakeFiles/auto_aim_interfaces_uninstall:
-	/usr/bin/cmake -P /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 auto_aim_interfaces_uninstall: CMakeFiles/auto_aim_interfaces_uninstall
 auto_aim_interfaces_uninstall: CMakeFiles/auto_aim_interfaces_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/auto_aim_interfaces_uninstall.dir/clean:
 .PHONY : CMakeFiles/auto_aim_interfaces_uninstall.dir/clean
 
 CMakeFiles/auto_aim_interfaces_uninstall.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/auto_aim_interfaces_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/auto_aim_interfaces_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/auto_aim_interfaces_uninstall.dir/depend
 

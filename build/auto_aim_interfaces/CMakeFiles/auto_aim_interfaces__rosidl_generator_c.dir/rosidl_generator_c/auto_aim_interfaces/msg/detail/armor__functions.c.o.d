@@ -1,7 +1,7 @@
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c.o: \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c \
  /usr/include/stdc-predef.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -43,8 +43,8 @@ CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_a
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/rosidl_generator_c__visibility_control.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__struct.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/rosidl_generator_c__visibility_control.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__struct.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \

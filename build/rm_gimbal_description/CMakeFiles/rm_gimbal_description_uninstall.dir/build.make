@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_gimbal_description
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_gimbal_description
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_gimbal_description
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description
 
 # Utility rule file for rm_gimbal_description_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/rm_gimbal_description_uninstall.dir/compiler_depend.make
 include CMakeFiles/rm_gimbal_description_uninstall.dir/progress.make
 
 CMakeFiles/rm_gimbal_description_uninstall:
-	/usr/bin/cmake -P /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_gimbal_description/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 rm_gimbal_description_uninstall: CMakeFiles/rm_gimbal_description_uninstall
 rm_gimbal_description_uninstall: CMakeFiles/rm_gimbal_description_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/rm_gimbal_description_uninstall.dir/clean:
 .PHONY : CMakeFiles/rm_gimbal_description_uninstall.dir/clean
 
 CMakeFiles/rm_gimbal_description_uninstall.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_gimbal_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_gimbal_description /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_gimbal_description /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_gimbal_description /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_gimbal_description /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_gimbal_description/CMakeFiles/rm_gimbal_description_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_gimbal_description /home/mechax/zyb/mechax_cv_trajectory/src/rm_gimbal_description /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description/CMakeFiles/rm_gimbal_description_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rm_gimbal_description_uninstall.dir/depend
 

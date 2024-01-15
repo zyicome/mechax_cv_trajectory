@@ -1,9 +1,1 @@
-camera: mv
-
-odom2camera:
-  xyz: "\"0.00 0.0  0.042\""
-  rpy: "\"0.0  0.0  0.0\""
-
-detector_log_level: INFO
-tracker_log_level: INFO
-serial_log_level: INFO
+/home/mechax/zyb/mechax_cv_trajectory/src/rm_vision/rm_vision_bringup/config/launch_params.yaml

@@ -1,0 +1,4 @@
+Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description': /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description -- -j16 -l16
+Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description' returned '0': /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description -- -j16 -l16
+Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description': /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description
+Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description' returned '0': /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description

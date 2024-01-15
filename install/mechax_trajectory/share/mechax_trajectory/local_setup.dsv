@@ -1,2 +1,1 @@
-source;share/mechax_trajectory/environment/ament_prefix_path.sh
-source;share/mechax_trajectory/environment/path.sh
+/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory/ament_cmake_environment_hooks/local_setup.dsv

@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_vision/rm_vision_bringup
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_vision/rm_vision_bringup
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -82,14 +82,14 @@ clean: CMakeFiles/rm_vision_bringup_uninstall.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/rm_vision_bringup_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -108,14 +108,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/rm_vision_bringup_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rm_vision_bringup_uninstall.dir/build.make CMakeFiles/rm_vision_bringup_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rm_vision_bringup_uninstall.dir/build.make CMakeFiles/rm_vision_bringup_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles --progress-num= "Built target rm_vision_bringup_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles --progress-num= "Built target rm_vision_bringup_uninstall"
 .PHONY : CMakeFiles/rm_vision_bringup_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rm_vision_bringup_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rm_vision_bringup_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup/CMakeFiles 0
 .PHONY : CMakeFiles/rm_vision_bringup_uninstall.dir/rule
 
 # Convenience name for target.

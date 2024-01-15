@@ -95,15 +95,15 @@ def generate_launch_description():
         actions=[tracker_node],
     )
 
-    delay_trajectory_node = TimerAction(
-        period=2.5,
-        actions=[trajectory_node],
-    )
+    # delay_trajectory_node = TimerAction(
+    #     period=2.5,
+    #     actions=[trajectory_node],
+    # )
 
     return LaunchDescription([
         robot_state_publisher, # 可视化
         cam_detector,          # 相机+detector
         delay_serial_node,     # 串口通信
         delay_tracker_node,    # tracker
-        delay_trajectory_node, # 轨迹规划,弹道解算
+        trajectory_node, # 轨迹规划,弹道解算
     ])

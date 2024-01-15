@@ -1,0 +1,32 @@
+[0.460s] Invoking command in '/home/mechax/zyi/mechax_cv_trajectory/src/my_package': PYTHONPATH=/home/mechax/zyi/mechax_cv_trajectory/build/my_package/prefix_override:/home/mechax/zyi/mechax_cv_trajectory/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_package build --build-base /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build install --record /home/mechax/zyi/mechax_cv_trajectory/build/my_package/install.log --single-version-externally-managed
+[0.592s] running egg_info
+[0.592s] creating ../../build/my_package/my_package.egg-info
+[0.592s] writing ../../build/my_package/my_package.egg-info/PKG-INFO
+[0.593s] writing dependency_links to ../../build/my_package/my_package.egg-info/dependency_links.txt
+[0.593s] writing entry points to ../../build/my_package/my_package.egg-info/entry_points.txt
+[0.593s] writing requirements to ../../build/my_package/my_package.egg-info/requires.txt
+[0.593s] writing top-level names to ../../build/my_package/my_package.egg-info/top_level.txt
+[0.593s] writing manifest file '../../build/my_package/my_package.egg-info/SOURCES.txt'
+[0.594s] reading manifest file '../../build/my_package/my_package.egg-info/SOURCES.txt'
+[0.594s] adding license file 'LICENSE'
+[0.594s] writing manifest file '../../build/my_package/my_package.egg-info/SOURCES.txt'
+[0.594s] running build
+[0.594s] running build_py
+[0.594s] creating /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build
+[0.595s] creating /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build/lib
+[0.595s] creating /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build/lib/my_package
+[0.595s] copying my_package/__init__.py -> /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build/lib/my_package
+[0.595s] copying my_package/armor_robot_driver.py -> /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build/lib/my_package
+[0.595s] copying my_package/my_robot_driver.py -> /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build/lib/my_package
+[0.595s] running install
+[0.595s] running install_lib
+[0.595s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.595s]   warnings.warn(
+[0.596s] running install_data
+[0.596s] running install_egg_info
+[0.597s] removing '/home/mechax/zyi/mechax_cv_trajectory/install/my_package/lib/python3.10/site-packages/my_package-0.0.0-py3.10.egg-info' (and everything under it)
+[0.597s] Copying ../../build/my_package/my_package.egg-info to /home/mechax/zyi/mechax_cv_trajectory/install/my_package/lib/python3.10/site-packages/my_package-0.0.0-py3.10.egg-info
+[0.598s] running install_scripts
+[0.612s] Installing my_robot_driver script to /home/mechax/zyi/mechax_cv_trajectory/install/my_package/lib/my_package
+[0.612s] writing list of installed files to '/home/mechax/zyi/mechax_cv_trajectory/build/my_package/install.log'
+[0.632s] Invoked command in '/home/mechax/zyi/mechax_cv_trajectory/src/my_package' returned '0': PYTHONPATH=/home/mechax/zyi/mechax_cv_trajectory/build/my_package/prefix_override:/home/mechax/zyi/mechax_cv_trajectory/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_package build --build-base /home/mechax/zyi/mechax_cv_trajectory/build/my_package/build install --record /home/mechax/zyi/mechax_cv_trajectory/build/my_package/install.log --single-version-externally-managed

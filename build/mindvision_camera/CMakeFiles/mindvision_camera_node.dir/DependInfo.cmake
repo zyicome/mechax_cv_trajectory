@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/rclcpp_components/node_main_mindvision_camera_node.cpp" "CMakeFiles/mindvision_camera_node.dir/rclcpp_components/node_main_mindvision_camera_node.cpp.o" "gcc" "CMakeFiles/mindvision_camera_node.dir/rclcpp_components/node_main_mindvision_camera_node.cpp.o.d"
+  "/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/rclcpp_components/node_main_mindvision_camera_node.cpp" "CMakeFiles/mindvision_camera_node.dir/rclcpp_components/node_main_mindvision_camera_node.cpp.o" "gcc" "CMakeFiles/mindvision_camera_node.dir/rclcpp_components/node_main_mindvision_camera_node.cpp.o.d"
   )
 
 # Targets to which this target links.

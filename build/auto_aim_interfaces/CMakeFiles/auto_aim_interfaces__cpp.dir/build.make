@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
 
 # Utility rule file for auto_aim_interfaces__cpp.
 
@@ -188,8 +188,8 @@ rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/share/ge
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/share/geometry_msgs/msg/Vector3Stamped.idl
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/share/geometry_msgs/msg/Wrench.idl
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/share/geometry_msgs/msg/WrenchStamped.idl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
-	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_cpp__arguments.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
+	/usr/bin/python3.10 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_cpp__arguments.json
 
 rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armor__builder.hpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armor__builder.hpp
@@ -345,6 +345,6 @@ CMakeFiles/auto_aim_interfaces__cpp.dir/clean:
 .PHONY : CMakeFiles/auto_aim_interfaces__cpp.dir/clean
 
 CMakeFiles/auto_aim_interfaces__cpp.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/auto_aim_interfaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/auto_aim_interfaces__cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/auto_aim_interfaces__cpp.dir/depend
 

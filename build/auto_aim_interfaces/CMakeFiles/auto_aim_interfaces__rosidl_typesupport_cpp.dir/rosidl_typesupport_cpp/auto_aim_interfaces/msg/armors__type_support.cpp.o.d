@@ -1,5 +1,5 @@
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/auto_aim_interfaces/msg/armors__type_support.cpp.o: \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_typesupport_cpp/auto_aim_interfaces/msg/armors__type_support.cpp \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_typesupport_cpp/auto_aim_interfaces/msg/armors__type_support.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/cstddef \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -15,7 +15,7 @@ CMakeFiles/auto_aim_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cp
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h \
  /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armors__struct.hpp \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armors__struct.hpp \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/stl_pair.h /usr/include/c++/11/bits/move.h \
@@ -162,7 +162,7 @@ CMakeFiles/auto_aim_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cp
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
  /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armor__struct.hpp \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armor__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \

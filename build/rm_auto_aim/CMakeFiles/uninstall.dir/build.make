@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/rm_auto_aim
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/rm_auto_aim
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_auto_aim
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/rm_auto_aim
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_auto_aim && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/rm_auto_aim /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/rm_auto_aim /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_auto_aim /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_auto_aim /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_auto_aim/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/rm_auto_aim && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/rm_auto_aim /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/rm_auto_aim /home/mechax/zyb/mechax_cv_trajectory/build/rm_auto_aim /home/mechax/zyb/mechax_cv_trajectory/build/rm_auto_aim /home/mechax/zyb/mechax_cv_trajectory/build/rm_auto_aim/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rm_serial_driver.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/rm_serial_driver.dir/progress.make
 include CMakeFiles/rm_serial_driver.dir/flags.make
 
 CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o: CMakeFiles/rm_serial_driver.dir/flags.make
-CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp
+CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o: /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp
 CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o: CMakeFiles/rm_serial_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o -MF CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o.d -o CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o -c /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o -MF CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o.d -o CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o -c /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp
 
 CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp > CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp > CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.i
 
 CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp -o CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp -o CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.s
 
 CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o: CMakeFiles/rm_serial_driver.dir/flags.make
-CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp
+CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o: /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp
 CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o: CMakeFiles/rm_serial_driver.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o -MF CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o.d -o CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o -c /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o -MF CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o.d -o CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o -c /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp
 
 CMakeFiles/rm_serial_driver.dir/src/crc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rm_serial_driver.dir/src/crc.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp > CMakeFiles/rm_serial_driver.dir/src/crc.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp > CMakeFiles/rm_serial_driver.dir/src/crc.cpp.i
 
 CMakeFiles/rm_serial_driver.dir/src/crc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rm_serial_driver.dir/src/crc.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp -o CMakeFiles/rm_serial_driver.dir/src/crc.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp -o CMakeFiles/rm_serial_driver.dir/src/crc.cpp.s
 
 # Object files for target rm_serial_driver
 rm_serial_driver_OBJECTS = \
@@ -116,12 +116,12 @@ librm_serial_driver.so: /opt/ros/humble/lib/libvisualization_msgs__rosidl_typesu
 librm_serial_driver.so: /opt/ros/humble/lib/libvisualization_msgs__rosidl_typesupport_introspection_cpp.so
 librm_serial_driver.so: /opt/ros/humble/lib/libvisualization_msgs__rosidl_typesupport_cpp.so
 librm_serial_driver.so: /opt/ros/humble/lib/libvisualization_msgs__rosidl_generator_py.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_fastrtps_c.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_introspection_c.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_fastrtps_cpp.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_introspection_cpp.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_cpp.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_generator_py.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_fastrtps_c.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_introspection_c.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_fastrtps_cpp.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_introspection_cpp.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_cpp.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_generator_py.so
 librm_serial_driver.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_fastrtps_c.so
 librm_serial_driver.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_introspection_c.so
 librm_serial_driver.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_fastrtps_cpp.so
@@ -259,9 +259,9 @@ librm_serial_driver.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_intr
 librm_serial_driver.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 librm_serial_driver.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
 librm_serial_driver.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_py.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_c.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_typesupport_c.so
 librm_serial_driver.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_c.so
-librm_serial_driver.so: /home/mechax/zyb/test/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_generator_c.so
+librm_serial_driver.so: /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/libauto_aim_interfaces__rosidl_generator_c.so
 librm_serial_driver.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so
 librm_serial_driver.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so
 librm_serial_driver.so: /opt/ros/humble/lib/libstd_srvs__rosidl_typesupport_c.so
@@ -308,7 +308,7 @@ librm_serial_driver.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 librm_serial_driver.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 librm_serial_driver.so: /opt/ros/humble/lib/librcutils.so
 librm_serial_driver.so: CMakeFiles/rm_serial_driver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library librm_serial_driver.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library librm_serial_driver.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rm_serial_driver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -320,6 +320,6 @@ CMakeFiles/rm_serial_driver.dir/clean:
 .PHONY : CMakeFiles/rm_serial_driver.dir/clean
 
 CMakeFiles/rm_serial_driver.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver /home/mechax/zyb/test/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles/rm_serial_driver.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver/CMakeFiles/rm_serial_driver.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rm_serial_driver.dir/depend
 

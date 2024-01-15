@@ -1,4 +1,1 @@
-string number
-string type
-float32 distance_to_image_center
-geometry_msgs/Pose pose
+/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Armor.msg

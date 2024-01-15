@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

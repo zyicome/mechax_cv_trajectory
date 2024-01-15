@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -85,14 +85,14 @@ clean: CMakeFiles/mindvision_camera_node.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/mindvision_camera_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -111,14 +111,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/mindvision_camera_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindvision_camera_uninstall.dir/build.make CMakeFiles/mindvision_camera_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindvision_camera_uninstall.dir/build.make CMakeFiles/mindvision_camera_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num= "Built target mindvision_camera_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num= "Built target mindvision_camera_uninstall"
 .PHONY : CMakeFiles/mindvision_camera_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mindvision_camera_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mindvision_camera_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
 .PHONY : CMakeFiles/mindvision_camera_uninstall.dir/rule
 
 # Convenience name for target.
@@ -137,14 +137,14 @@ CMakeFiles/mindvision_camera_uninstall.dir/clean:
 CMakeFiles/mindvision_camera.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindvision_camera.dir/build.make CMakeFiles/mindvision_camera.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindvision_camera.dir/build.make CMakeFiles/mindvision_camera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num=1,2 "Built target mindvision_camera"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num=1,2 "Built target mindvision_camera"
 .PHONY : CMakeFiles/mindvision_camera.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mindvision_camera.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mindvision_camera.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
 .PHONY : CMakeFiles/mindvision_camera.dir/rule
 
 # Convenience name for target.
@@ -163,14 +163,14 @@ CMakeFiles/mindvision_camera.dir/clean:
 CMakeFiles/mindvision_camera_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindvision_camera_node.dir/build.make CMakeFiles/mindvision_camera_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mindvision_camera_node.dir/build.make CMakeFiles/mindvision_camera_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num=3,4 "Built target mindvision_camera_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles --progress-num=3,4 "Built target mindvision_camera_node"
 .PHONY : CMakeFiles/mindvision_camera_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mindvision_camera_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mindvision_camera_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles 0
 .PHONY : CMakeFiles/mindvision_camera_node.dir/rule
 
 # Convenience name for target.

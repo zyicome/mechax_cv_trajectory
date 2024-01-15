@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mechax/zyb/test/mechax_cv_trajectory/install/armor_detector")
+  set(CMAKE_INSTALL_PREFIX "/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

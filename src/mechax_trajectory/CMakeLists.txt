@@ -8,18 +8,28 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_components REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(auto_aim_interfaces REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 include_directories(${CMAKE_SOURCE_DIR}/include)
+# rclcpp_components_register_node(${PROJECT_NAME}
+#   PLUGIN Trajectoryer
+#   EXECUTABLE mechax_trajectory
+# )
 add_executable(mechax_trajectory src/trajectoryer.cpp)
-ament_target_dependencies(mechax_trajectory rclcpp visualization_msgs auto_aim_interfaces)
+ament_target_dependencies(mechax_trajectory rclcpp rclcpp_components visualization_msgs auto_aim_interfaces)
 target_link_directories(mechax_trajectory PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
       $<INSTALL_INTERFACE:include>)
 target_link_libraries(mechax_trajectory ${OpenCV_LIBS})
+
+# rclcpp_components_register_node(${PROJECT_NAME}
+#   PLUGIN Trajectoryer
+#   EXECUTABLE mechax_trajectory
+# )
 
 install(TARGETS
   mechax_trajectory

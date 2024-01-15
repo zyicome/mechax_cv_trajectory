@@ -1,4 +1,1 @@
-int32 center_x
-bool is_light
-float32 ratio
-float32 angle
+/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugLight.msg

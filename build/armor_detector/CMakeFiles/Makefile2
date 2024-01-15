@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/armor_detector
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -107,14 +107,14 @@ gtest/clean: gtest/CMakeFiles/gtest_main.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/armor_detector_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -133,14 +133,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/armor_detector_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/armor_detector_uninstall.dir/build.make CMakeFiles/armor_detector_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/armor_detector_uninstall.dir/build.make CMakeFiles/armor_detector_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num= "Built target armor_detector_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num= "Built target armor_detector_uninstall"
 .PHONY : CMakeFiles/armor_detector_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/armor_detector_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/armor_detector_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : CMakeFiles/armor_detector_uninstall.dir/rule
 
 # Convenience name for target.
@@ -159,14 +159,14 @@ CMakeFiles/armor_detector_uninstall.dir/clean:
 CMakeFiles/armor_detector.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/armor_detector.dir/build.make CMakeFiles/armor_detector.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/armor_detector.dir/build.make CMakeFiles/armor_detector.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=1,2,3,4,5 "Built target armor_detector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=1,2,3,4,5 "Built target armor_detector"
 .PHONY : CMakeFiles/armor_detector.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/armor_detector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/armor_detector.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : CMakeFiles/armor_detector.dir/rule
 
 # Convenience name for target.
@@ -185,14 +185,14 @@ CMakeFiles/armor_detector.dir/clean:
 CMakeFiles/armor_detector_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/armor_detector_node.dir/build.make CMakeFiles/armor_detector_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/armor_detector_node.dir/build.make CMakeFiles/armor_detector_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=6,7 "Built target armor_detector_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=6,7 "Built target armor_detector_node"
 .PHONY : CMakeFiles/armor_detector_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/armor_detector_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/armor_detector_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : CMakeFiles/armor_detector_node.dir/rule
 
 # Convenience name for target.
@@ -213,14 +213,14 @@ CMakeFiles/test_node_startup.dir/all: gtest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_node_startup.dir/all: gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_node_startup.dir/build.make CMakeFiles/test_node_startup.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_node_startup.dir/build.make CMakeFiles/test_node_startup.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=12,13 "Built target test_node_startup"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=12,13 "Built target test_node_startup"
 .PHONY : CMakeFiles/test_node_startup.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_node_startup.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_node_startup.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : CMakeFiles/test_node_startup.dir/rule
 
 # Convenience name for target.
@@ -241,14 +241,14 @@ CMakeFiles/test_number_cls.dir/all: gtest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_number_cls.dir/all: gtest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_number_cls.dir/build.make CMakeFiles/test_number_cls.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_number_cls.dir/build.make CMakeFiles/test_number_cls.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=14,15 "Built target test_number_cls"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=14,15 "Built target test_number_cls"
 .PHONY : CMakeFiles/test_number_cls.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_number_cls.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_number_cls.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : CMakeFiles/test_number_cls.dir/rule
 
 # Convenience name for target.
@@ -267,14 +267,14 @@ CMakeFiles/test_number_cls.dir/clean:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=8,9 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=8,9 "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : gtest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -293,14 +293,14 @@ gtest/CMakeFiles/gtest.dir/clean:
 gtest/CMakeFiles/gtest_main.dir/all:
 	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=10,11 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles --progress-num=10,11 "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/test/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/CMakeFiles 0
 .PHONY : gtest/CMakeFiles/gtest_main.dir/rule
 
 # Convenience name for target.

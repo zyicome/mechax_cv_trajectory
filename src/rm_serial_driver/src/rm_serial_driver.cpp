@@ -174,14 +174,15 @@ void RMSerialDriver::receiveData()
                       // std::cout << "sizeof(ReceivePacket):" << sizeof(packet) << std::endl;
                       // std::cout << "packet.detect_color" << packet.detect_color << std::endl;
                       // 执行您的操作，例如设置参数、发布消息等
+                      packet.detect_color = 1;
                       if (!initial_set_param_ || packet.detect_color != previous_receive_color_) {
                           setParam(rclcpp::Parameter("detect_color", packet.detect_color));
                           previous_receive_color_ = packet.detect_color;
                       }
 
-                      if (packet.reset_tracker) {
-                          resetTracker();
-                      }
+                      // if (packet.reset_tracker) {
+                      //     resetTracker();
+                      // }
 
                       // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t;

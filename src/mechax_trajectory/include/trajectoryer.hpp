@@ -39,7 +39,7 @@ public:
 
     bool is_solvable();
 
-    void solve_trajectory();
+    int solve_trajectory();
 
     void test();
 
@@ -85,7 +85,6 @@ public:
     string id;
     //------------------
     //------------------
-    result position_result;
     vector<result> results;
     //------------------
     //------------------
@@ -94,6 +93,7 @@ public:
     float randa;
     bool is_hero;
     float z_bias;
+    float y_bias;
     //------------------
     //------------------
     // Subsciption

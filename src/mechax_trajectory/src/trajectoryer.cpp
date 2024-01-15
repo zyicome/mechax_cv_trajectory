@@ -10,7 +10,8 @@ inline float f_t0(float &t0, float &randa, float &tan, float &z0, float &v0)
     return (g / randa) * (-randa / randa / (1 - randa * t0) + 1) + (v0 * v0 * t0 / tan);
 }
 
-Trajectoryer::Trajectoryer() : Node("trajectory")
+Trajectoryer::Trajectoryer() : 
+    Node("trajectory")
 {
     parameters_init();
 
@@ -40,8 +41,9 @@ void  Trajectoryer::get_all_parameter()
         v0 = 28;
     }
     bias_t = 0.1;
-    z_bias = -0.08;
-    fly_t = 0.8;
+    z_bias = -0.042;
+    y_bias = -0.060;
+    fly_t = 0.5;
 }
 
 void  Trajectoryer::parameters_init()
@@ -127,19 +129,27 @@ int Trajectoryer::single_resistance_model()
 int Trajectoryer::single_resistance_model_two()
 {
     distance = sqrtf(pow(object_x, 2) + pow(object_z, 2));
-    if(!no_resistance_model())
+    // if(!no_resistance_model())
+    // {
+    //     return 0;
+    // }
+    float k1 = 0.019;//小弹丸的空气阻力系数
+    // if(is_hero)
+    // {
+    //     k1 = randa * 44.5 / 1000;
+    // }
+    // else
+    // {
+    //     k1 = randa * 3.2 / 1000;
+    // }
+    float a_now_pitch = 0.0;
+    if(now_pitch * 57.3f > 180)
     {
-        return 0;
-    }
-    float k1 = 0.0;
-    // float k1 = 0.019;//小弹丸的空气阻力系数
-    if(is_hero)
-    {
-        k1 = randa * 44.5 / 1000;
+        a_now_pitch = (now_pitch * 57.3f - 360) / 57.3f;
     }
     else
     {
-        k1 = randa * 3.2 / 1000;
+        a_now_pitch = now_pitch;
     }
     float a = (exp(k1*distance) - 1) / k1;
     float b = (g * pow(exp(k1*distance)-1,2)) / (2*pow(k1,2)*pow(v0,2));
@@ -149,7 +159,8 @@ int Trajectoryer::single_resistance_model_two()
     float angle_init = atan2(object_z, distance);	//rad弧度，补偿前的角度
     float angle_actual_1 = atan(tan_angle_1);
     float angle_actual_2 = atan(tan_angle_2);//rad
-    angle_pitch = (fabs(angle_actual_1 - now_pitch) > fabs(angle_actual_2 - now_pitch)) ? angle_actual_2 : angle_actual_1;//取绝对值小的那个 
+    // angle_pitch = (fabs(angle_actual_1 - a_now_pitch) > fabs(angle_actual_2 - a_now_pitch)) ? angle_actual_2 : angle_actual_1;//取绝对值小的那个 
+    angle_pitch = angle_actual_2;
     fly_t = (float)((exp(k1 * distance) - 1) / (k1 * v0 * cos(angle_pitch)));//更新飞行时间
     return 1;
 }
@@ -163,6 +174,9 @@ bool Trajectoryer::is_solvable()
         return true;
     }
     RCLCPP_INFO(get_logger(), "Can not solve!");
+    angle_yaw = now_yaw;
+    angle_pitch = now_pitch;
+    is_shoot = false;
     return false;
 }
 
@@ -170,7 +184,7 @@ bool Trajectoryer::is_solvable()
 //            ros_x ros_y ros_z vx vy vz v_yaw
 
 
-void Trajectoryer::solve_trajectory()
+int Trajectoryer::solve_trajectory()
 {
     float need_t = fly_t + bias_t;
     float yaw_delay = need_t * v_yaw;
@@ -193,6 +207,7 @@ void Trajectoryer::solve_trajectory()
     if(armor_num == 2)
     {
         for (i = 0; i<2; i++) {
+        result position_result;
         float tmp_yaw = tar_yaw + i * M_PI;
         float r = r_1;
         position_result.x = ros_x - r*cos(tmp_yaw); 
@@ -212,7 +227,9 @@ void Trajectoryer::solve_trajectory()
     }
     else if(armor_num == 3)
     {
-        for (i = 0; i<3; i++) {
+        for (i = 0; i<3; i++) 
+        {
+        result position_result;
         float tmp_yaw = tar_yaw + i * 2.0 * M_PI/3.0;  // 2/3PI
         float r =  (r_1 + r_2)/2;   //理论上r1=r2 这里取个平均值                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
         position_result.x = ros_x - r*cos(tmp_yaw);
@@ -241,6 +258,7 @@ void Trajectoryer::solve_trajectory()
     else
     {
         for (i = 0; i<4; i++) {
+        result position_result;
         float tmp_yaw = tar_yaw + i * M_PI/2.0;
         float r = use_1 ? r_1 : r_2;
         position_result.x = ros_x - r*cos(tmp_yaw);
@@ -262,19 +280,36 @@ void Trajectoryer::solve_trajectory()
             }
         }
     }
-    object_x = results.at(idx).x;
-    object_y = results.at(idx).y;
-    object_z = results.at(idx).z;
+    // object_x = results.at(idx).x + vx * need_t;
+    // object_y = results.at(idx).y + vy * need_t;
+    // object_z = results.at(idx).z + vz * need_t;
+    object_x = ros_x + vx * need_t ;
+    object_y = ros_y + vy * need_t;
+    object_z = ros_z + vz * need_t;
+    // if(single_resistance_model() == 0)
+    // {
+    //     return 0;
+    // }
     single_resistance_model_two();
-
     if(ros_y < 0)
     {
-        angle_yaw = atan2(object_y, object_x) + M_PI;
+        angle_yaw = atan2(object_y, object_x);
     }
     else
     {
         angle_yaw = atan2(object_y, object_x);
     }
+    RCLCPP_INFO(get_logger(), "ros_x: %f", ros_x);
+    RCLCPP_INFO(get_logger(), "ros_y: %f", ros_y);
+    RCLCPP_INFO(get_logger(), "ros_z: %f", ros_z);
+    RCLCPP_INFO(get_logger(), "idx: %f", idx);
+    RCLCPP_INFO(get_logger(), "object_x: %f", object_x);
+    RCLCPP_INFO(get_logger(), "object_y: %f", object_y);
+    RCLCPP_INFO(get_logger(), "object_z: %f", object_z);
+    RCLCPP_INFO(get_logger(), "angle_pitch: %f", angle_pitch);
+    RCLCPP_INFO(get_logger(), "angle_yaw: %f", angle_yaw);
+    RCLCPP_INFO(get_logger(), "fly_t: %f", fly_t);
+    return 1;
 }
 
 void Trajectoryer::test()
@@ -342,7 +377,7 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
     vx = msg.velocity.x;
     ros_x = msg.position.x;
     vy = msg.velocity.y;
-    ros_y = msg.position.y;
+    ros_y = msg.position.y + y_bias;
     vz = msg.velocity.z;
     ros_z = msg.position.z + z_bias;
     r_1 = msg.radius_1;
@@ -362,34 +397,32 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
     RCLCPP_INFO(get_logger(), "armor_num: %d", armor_num);
     RCLCPP_INFO(get_logger(), "is_tracking: %d", is_tracking);
     RCLCPP_INFO(get_logger(), "id: %d", id);
-    //if(is_tracking)
-    //{
-        solve_trajectory();
+    if(is_tracking)
+    {
+        auto_aim_interfaces::msg::Serial result;
+        if(solve_trajectory() == 1)
+        {
+            result.is_shoot = true;
+        }
         RCLCPP_INFO(get_logger(), "need_pitch: %f", angle_pitch);
         RCLCPP_INFO(get_logger(), "need_yaw: %f", angle_yaw);
-        //if(is_shoot)
-        //{
+        // if(is_shoot)
+        // {
             float xianzhi_pitch = 0.0;
-            if(angle_pitch < 0)
-            {
-                xianzhi_pitch = -180 - angle_pitch * 57.3f;
-            }
-            else
-            {
-                xianzhi_pitch = 180 - angle_pitch * 57.3f;
-            }
-            if(xianzhi_pitch < 160 || xianzhi_pitch > -160)
-            {
-                xianzhi_pitch = -170;
-            }
-            auto_aim_interfaces::msg::Serial result;
+            float xianzhi_yaw = 0.0;
+            xianzhi_pitch = 180 - angle_pitch * 57.3f;
+            // if(xianzhi_pitch < 160 || xianzhi_pitch > 190)
+            // {
+            //     xianzhi_pitch = 170;
+            // }
+            xianzhi_yaw = angle_yaw * 57.3f;
             result.pitch = xianzhi_pitch;
-            result.yaw = angle_yaw;
+            result.yaw = xianzhi_yaw;
             result_pub_->publish(result);
             RCLCPP_INFO(get_logger(), "send need angle!");
             is_shoot = false;
         //}
-    //}
+    }
 }
 
 void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::Serial msg)
@@ -417,3 +450,11 @@ int main(int argc, char *argv[])
     rclcpp::shutdown();
     return 0;
 }
+
+
+// #include "rclcpp_components/register_node_macro.hpp"
+
+// // Register the component with class_loader.
+// // This acts as a sort of entry point, allowing the component to be discoverable when its library
+// // is being loaded into a running process.
+// RCLCPP_COMPONENTS_REGISTER_NODE(Trajectoryer)

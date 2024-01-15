@@ -1,6 +1,1 @@
-/mv_camera:
-  ros__parameters:
-    camera_name: mv_camera
-
-    exposure_time: 6000
-    analog_gain: 100
+/home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera/config/camera_params.yaml

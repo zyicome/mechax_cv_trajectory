@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory/mechax_trajectory" "TARGETS" "mechax_trajectory" "DESTINATION" "lib/mechax_trajectory")

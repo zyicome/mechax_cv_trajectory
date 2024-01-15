@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
 
 # Utility rule file for auto_aim_interfaces.
 
@@ -66,15 +66,15 @@ include CMakeFiles/auto_aim_interfaces.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/auto_aim_interfaces.dir/progress.make
 
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Armor.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Armors.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Target.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugLight.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugLights.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugArmor.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugArmors.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/TrackerInfo.msg
-CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Serial.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Armor.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Armors.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Target.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugLight.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugLights.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugArmor.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/DebugArmors.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/TrackerInfo.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Serial.msg
 CMakeFiles/auto_aim_interfaces: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 CMakeFiles/auto_aim_interfaces: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 CMakeFiles/auto_aim_interfaces: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -148,6 +148,6 @@ CMakeFiles/auto_aim_interfaces.dir/clean:
 .PHONY : CMakeFiles/auto_aim_interfaces.dir/clean
 
 CMakeFiles/auto_aim_interfaces.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/test/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/auto_aim_interfaces.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles/auto_aim_interfaces.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/auto_aim_interfaces.dir/depend
 

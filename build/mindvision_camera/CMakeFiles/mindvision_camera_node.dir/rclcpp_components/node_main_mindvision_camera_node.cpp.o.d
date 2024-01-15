@@ -1,5 +1,5 @@
 CMakeFiles/mindvision_camera_node.dir/rclcpp_components/node_main_mindvision_camera_node.cpp.o: \
- /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/rclcpp_components/node_main_mindvision_camera_node.cpp \
+ /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/rclcpp_components/node_main_mindvision_camera_node.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

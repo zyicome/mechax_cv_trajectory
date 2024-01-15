@@ -1,7 +1,7 @@
 CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o: \
- /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp \
+ /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/crc.cpp \
  /usr/include/stdc-predef.h \
- /home/mechax/zyb/test/mechax_cv_trajectory/src/rm_serial_driver/include/rm_serial_driver/crc.hpp \
+ /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/include/rm_serial_driver/crc.hpp \
  /usr/include/c++/11/cstdint \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

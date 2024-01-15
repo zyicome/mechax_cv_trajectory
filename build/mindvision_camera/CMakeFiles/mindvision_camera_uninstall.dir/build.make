@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera
+CMAKE_SOURCE_DIR = /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera
+CMAKE_BINARY_DIR = /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera
 
 # Utility rule file for mindvision_camera_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/mindvision_camera_uninstall.dir/compiler_depend.make
 include CMakeFiles/mindvision_camera_uninstall.dir/progress.make
 
 CMakeFiles/mindvision_camera_uninstall:
-	/usr/bin/cmake -P /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 mindvision_camera_uninstall: CMakeFiles/mindvision_camera_uninstall
 mindvision_camera_uninstall: CMakeFiles/mindvision_camera_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/mindvision_camera_uninstall.dir/clean:
 .PHONY : CMakeFiles/mindvision_camera_uninstall.dir/clean
 
 CMakeFiles/mindvision_camera_uninstall.dir/depend:
-	cd /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera /home/mechax/zyb/test/mechax_cv_trajectory/src/ros2-mindvision-camera /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera /home/mechax/zyb/test/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles/mindvision_camera_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera /home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/CMakeFiles/mindvision_camera_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mindvision_camera_uninstall.dir/depend
 
