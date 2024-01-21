@@ -1,7 +1,0 @@
-[01m[K/home/mechax/zyi/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:425:10:[m[K [01;31m[Kfatal error: [m[Krclcpp_components/register_node_macro.hpp: No such file or directory
-  425 | #include [01;31m[K"rclcpp_components/register_node_macro.hpp"[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/mechax_trajectory.dir/build.make:76: CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mechax_trajectory.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2
