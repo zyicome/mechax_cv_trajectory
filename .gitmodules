@@ -1,0 +1,3 @@
+[submodule "src/power_rune"]
+	path = src/power_rune
+	url = https://github.com/WolfGenerals/Algorithm-24-PowerRune
