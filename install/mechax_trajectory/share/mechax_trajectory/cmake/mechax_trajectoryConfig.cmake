@@ -1,1 +1,0 @@
-/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory/ament_cmake_core/mechax_trajectoryConfig.cmake

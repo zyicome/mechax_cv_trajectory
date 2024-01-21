@@ -1,1 +1,0 @@
-/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/TrackerInfo.msg

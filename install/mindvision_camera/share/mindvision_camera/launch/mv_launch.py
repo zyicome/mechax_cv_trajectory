@@ -1,1 +1,0 @@
-/home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera/launch/mv_launch.py

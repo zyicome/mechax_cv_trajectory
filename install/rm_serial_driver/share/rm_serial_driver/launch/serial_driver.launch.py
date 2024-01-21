@@ -1,1 +1,0 @@
-/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/launch/serial_driver.launch.py

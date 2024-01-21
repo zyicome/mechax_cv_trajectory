@@ -1,1 +1,0 @@
-/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera/ament_cmake_environment_hooks/local_setup.bash

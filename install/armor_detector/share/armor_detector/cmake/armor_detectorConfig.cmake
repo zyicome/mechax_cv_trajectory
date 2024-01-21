@@ -1,1 +1,0 @@
-/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector/ament_cmake_core/armor_detectorConfig.cmake

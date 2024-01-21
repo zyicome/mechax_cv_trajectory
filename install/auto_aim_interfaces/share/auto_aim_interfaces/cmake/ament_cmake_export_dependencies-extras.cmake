@@ -1,1 +1,0 @@
-/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake
