@@ -365,7 +365,7 @@ void Trajectoryer::test()
 //得到通过追踪到的装甲板相对于云台的信息
 //如果追踪到目标并且开启了自瞄模式，则解算弹道，得到需要的pitch和yaw角度
 //通过SendSerial信息类型的result发布给serial_driver
-void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target &msg)
+void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
 {
     is_tracking = msg.tracking;
     id = msg.id;
@@ -424,7 +424,7 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target &msg)
 
 
 //接受串口发来的信息，得到当前云台的pitch和yaw角度,以及是否开启自瞄模式
-void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial &msg)
+void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg)
 {
     now_pitch = msg.pitch / 57.3f;
     now_yaw = msg.yaw / 57.3f;
