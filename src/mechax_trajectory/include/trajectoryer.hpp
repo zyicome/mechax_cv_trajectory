@@ -42,9 +42,9 @@ public:
 
     void test();
 
-    void target_callback(const auto_aim_interfaces::msg::Target &msg);
+    void target_callback(const auto_aim_interfaces::msg::Target msg);
 
-    void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial &msg);
+    void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg);
 
     // parameters
     //------------------
