@@ -51,7 +51,6 @@ public:
     float v0; // m/s
     float angle_pitch;
     float angle_yaw;
-    float alpha;
     float fly_t; // m
     float bias_t;
     float y_bias;

@@ -16,6 +16,43 @@ inline float f_t0(float t0,float randa,float tan,float z0,float v0)
     return (g / randa) * (-randa / randa / (1 - randa * t0) + 1) + (v0 * v0 * t0 / tan);
 }
 
+//两个内联函数，用于二次空气阻力模型的牛顿迭代法，第一个为z(x),第二个为z'(x)
+inline float z0(float vz0, float z0, float randa, float alpha, float beta)
+{
+    float z = 0.0;
+    if(vz0 <= 0)
+    {
+        z = -z0 - log(coshf(alpha) - tan(beta) * sinhf(alpha)) / randa;
+    }
+    else if(vz0 > 0 && alpha <= beta)
+    {
+        z = -z0 + (1 / randa) * log(cos(beta - alpha) / cos(beta));
+    }
+    else if(vz0 > 0 && alpha > beta)
+    {
+        z = -z0 - log(cos(beta) * coshf(alpha - beta)) / randa;
+    }
+    return z;
+}
+
+inline float z_0(float vz0, float z0, float randa,float alpha,float beta, float alpha_angle, float beta_angle)
+{
+    float z = 0.0;
+    if(vz0 <= 0)
+    {
+        z = -(sinhf(alpha) * alpha_angle - (sec(beta) - sec(beta) * beta_angle * sinhf(alpha) + tan(beta) * coshf(alpha) * alpha_angle)) / (randa * (coshf(alpha) - tan(beta) * sinhf(alpha)));
+    }
+    else if(vz0 > 0 && alpha <= beta)
+    {
+        z = (1 / randa) * (-tan(beta - alpha) * (beta_angle - alpha_angle) + tan(beta) * beta_angle);
+    }
+    else if(vz0 > 0 && alpha > beta)
+    {
+        z = (1 / randa) * (tan(beta) * beta_angle - tanhf(alpha - beta) * (alpha_angle - beta_angle));
+    }
+}
+
+
 Trajectoryer::Trajectoryer() : Node("trajectory")
 {
     parameters_init();
@@ -87,7 +124,8 @@ void  Trajectoryer::parameters_init()
 int Trajectoryer::no_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0)
 {
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
-    if(!is_solvable(object_x, object_y, object_z, v0))
+    float alpha = 0.0;
+    if(!is_solvable(object_x, object_y, object_z, v0, alpha))
     {
         return 0;
     }
@@ -174,11 +212,75 @@ int Trajectoryer::single_resistance_model_two(const float &object_x,const float 
     return 1;
 }
 
+//@param: object_x, object_y, object_z, v0, randa
+//根据传入的相对于枪管坐标系下敌方的坐标xyz，在结合子弹速度和空气阻力系数，计算出需要的pitch角度和飞行时间
+//双空气阻力模型
+//@result: angle_pitch, fly_t  (成员变量，刷新得到)
+//@return: 1:计算成功 0:计算失败
+int Trajectoryer::two_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
+{
+    float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
+    if(!no_resistance_model(object_x, object_y, object_z, v0))
+    {
+        return 0;
+    }
+    float diedai_angle = 0.0;
+    float vx0 = 0.0;
+    float vz0 = 0.0;
+    float alpha = 0.0;
+    float beta = 0.0;
+    float alpha_angle = 0.0;
+    float beta_angle = 0.0;
+    float t = 0.0;
+    float z1;
+    float z2;
+    float vt = sqrt(g / randa)
+    for(int i =0 ; i< 10;i++)
+    {
+        vx0 = v0 * cos(angle_pitch);
+        vz0 = v0 * sin(angle_pitch);
+        t = (exp(randa * distance) - 1) / (randa * vx0);
+        alpha = sqrt(g * randa) * t;
+        beta = atan(vz0 * sqrt(randa / g));
+        alpha_angle = alpha * tan(angle_pitch);
+        beta_angle = (v0 * cos(angle_pitch) * cos(beta) * cos(beta)) / vt;
+        z1 = z0(vz0, object_z, randa, alpha, beta);
+        if(fabs(z1) < 0.001)
+        {
+            break;
+        }
+        z2 = z_0(vz0, object_z, randa, alpha, beta, alpha_angle, beta_angle);
+        diedai_angle = angle_pitch - z1 / z2;
+        angle_pitch = diedai_angle;
+        if(i == 9)
+        {
+            vx0 = v0 * cos(angle_pitch);
+            vz0 = v0 * sin(angle_pitch);
+            t = (exp(randa * distance) - 1) / (randa * vx0);
+            alpha = sqrt(g * randa) * t;
+            beta = atan(vz0 * sqrt(randa / g));
+            alpha_angle = alpha * tan(angle_pitch);
+            beta_angle = (v0 * cos(angle_pitch) * cos(beta) * cos(beta)) / vt;
+            z1 = z0(vz0, object_z, randa, alpha, beta);
+            if(fabs(z1) < 0.001)
+            {
+                break;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
+    fly_t = (exp(randa * distance) - 1) / (randa * v0 * cos(angle_pitch));
+    return 1;
+}
+
 
 //@param: object_x, object_y, object_z, v0
 // 运用简单的无空气阻力模型判断是否能够击打到目标
 //@return: 1:可以击打 0:无法击打到目标
-bool Trajectoryer::is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0)
+bool Trajectoryer::is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0, const float &alpha)
 {
     float l = sqrtf(pow(object_x, 2) + pow(object_y, 2) + pow(object_z, 2));
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
@@ -323,7 +425,11 @@ int Trajectoryer::solve_trajectory()
     {
         return 0;
     }*/
-    if(single_resistance_model_two(object_x, object_y, object_z, v0, randa) == 0)
+    /*if(single_resistance_model_two(object_x, object_y, object_z, v0, randa) == 0)
+    {
+        return 0;
+    }*/
+    if(two_resistance_model(object_x, object_y, object_z, v0, randa) == 0)
     {
         return 0;
     }
