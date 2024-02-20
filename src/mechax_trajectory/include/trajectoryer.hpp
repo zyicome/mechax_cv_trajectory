@@ -36,7 +36,9 @@ public:
 
     int single_resistance_model_two(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
 
-    bool is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0);
+    int two_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
+
+    bool is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0,float &alpha);
 
     int solve_trajectory();
 

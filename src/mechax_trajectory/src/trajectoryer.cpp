@@ -40,7 +40,7 @@ inline float z_0(float vz0, float z0, float randa,float alpha,float beta, float 
     float z = 0.0;
     if(vz0 <= 0)
     {
-        z = -(sinhf(alpha) * alpha_angle - (sec(beta) - sec(beta) * beta_angle * sinhf(alpha) + tan(beta) * coshf(alpha) * alpha_angle)) / (randa * (coshf(alpha) - tan(beta) * sinhf(alpha)));
+        z = -(sinhf(alpha) * alpha_angle - (acos(beta) - acos(beta) * beta_angle * sinhf(alpha) + tan(beta) * coshf(alpha) * alpha_angle)) / (randa * (coshf(alpha) - tan(beta) * sinhf(alpha)));
     }
     else if(vz0 > 0 && alpha <= beta)
     {
@@ -234,8 +234,8 @@ int Trajectoryer::two_resistance_model(const float &object_x,const float &object
     float t = 0.0;
     float z1;
     float z2;
-    float vt = sqrt(g / randa)
-    for(int i =0 ; i< 10;i++)
+    float vt = sqrt(g / randa);
+    for(int i = 0; i < 10; i++)
     {
         vx0 = v0 * cos(angle_pitch);
         vz0 = v0 * sin(angle_pitch);
@@ -277,10 +277,10 @@ int Trajectoryer::two_resistance_model(const float &object_x,const float &object
 }
 
 
-//@param: object_x, object_y, object_z, v0
+//@param: object_x, object_y, object_z, v0, alpha(需更改，所以不能使用const)
 // 运用简单的无空气阻力模型判断是否能够击打到目标
 //@return: 1:可以击打 0:无法击打到目标
-bool Trajectoryer::is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0, const float &alpha)
+bool Trajectoryer::is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0, float &alpha)
 {
     float l = sqrtf(pow(object_x, 2) + pow(object_y, 2) + pow(object_z, 2));
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
