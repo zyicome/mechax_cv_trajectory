@@ -68,7 +68,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     result_pub_ = this->create_publisher<auto_aim_interfaces::msg::SendSerial>(
         "/trajectory/result", 10);
-  
+    
+    needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
+        "/trajectory/needpose", rclcpp::SensorDataQoS());
    //timer_ = this->create_wall_timer(5s, std::bind(&Trajectoryer::test,this));
 }
 
@@ -537,6 +539,19 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
     is_shoot = msg.is_shoot;
     // RCLCPP_INFO(get_logger(), "now_pitch: %f", now_pitch);
     // RCLCPP_INFO(get_logger(), "now_yaw: %f", now_yaw);
+}
+
+void Trajectoryer::get_need_pose(const float &object_x,const float &object_y,const float &object_z)
+{
+    float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
+    float need_z = tan(angle_pitch) * distance;
+    geometry_msgs::msg::PointStamped pose;
+    pose.header.stamp = this->now();
+    pose.header.frame_id = "odom";
+    pose.point.x = distance;
+    pose.point.y = 0.0;
+    pose.point.z = need_z;
+    needpose_pub_->publish(pose);
 }
 
 int main(int argc, char *argv[])

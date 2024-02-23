@@ -1,0 +1,159 @@
+[0.107s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker -- -j16 -l16
+[0.137s] [35m[1mConsolidate compiler generated dependencies of target armor_tracker[0m
+[0.148s] [ 33%] Built target armor_tracker_node
+[0.156s] [ 50%] [32mBuilding CXX object CMakeFiles/armor_tracker.dir/src/tracker_node.cpp.o[0m
+[2.218s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:[m[K In constructor ‘[01m[Krm_auto_aim::ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions&)[m[K’:
+[2.218s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:147:97:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kstd::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >[m[K’ and ‘[01m[Kstd::shared_ptr<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >[m[K’)
+[2.218s]   147 | ub_, *tf2_buffer_, needpose_target_frame_, 10, this, std::chrono::duration<int>(1)[01;31m[K)[m[K;
+[2.218s]       |                                                                                   [01;31m[K^[m[K
+[2.218s] 
+[2.218s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[2.218s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+[2.218s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:40[m[K,
+[2.218s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[2.218s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<const std::shared_ptr<_Yp>&> std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Yp>&) [with _Yp = _Yp; _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’
+[2.219s]   363 |         [01;36m[Koperator[m[K=(const shared_ptr<_Yp>& __r) noexcept
+[2.219s]       |         [01;36m[K^~~~~~~~[m[K
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.219s] /usr/include/c++/11/bits/shared_ptr.h: In substitution of ‘[01m[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = const std::shared_ptr<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >&; _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’:
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:363:2:[m[K   required by substitution of ‘[01m[Ktemplate<class _Yp> std::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >::_Assignable<const std::shared_ptr<_Tp>&> std::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >::operator=<_Yp>(const std::shared_ptr<_Tp>&) [with _Yp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >][m[K’
+[2.219s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:147:97:[m[K   required from here
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:130:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, std::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >&>[m[K’
+[2.219s]   130 |         using [01;31m[K_Assignable[m[K = typename enable_if<
+[2.219s]       |               [01;31m[K^~~~~~~~~~~[m[K
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:374:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::auto_ptr<_Up> > std::shared_ptr<_Tp>::operator=(std::auto_ptr<_Up>&&) [with _Yp = _Yp; _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’
+[2.219s]   374 |         [01;36m[Koperator[m[K=(auto_ptr<_Yp>&& __r)
+[2.219s]       |         [01;36m[K^~~~~~~~[m[K
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:374:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.219s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:147:97:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::shared_ptr<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >[m[K’ is not derived from ‘[01m[Kstd::auto_ptr<_Up>[m[K’
+[2.219s]   147 | ub_, *tf2_buffer_, needpose_target_frame_, 10, this, std::chrono::duration<int>(1)[01;36m[K)[m[K;
+[2.219s]       |                                                                                   [01;36m[K^[m[K
+[2.219s] 
+[2.219s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[2.219s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+[2.219s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:40[m[K,
+[2.219s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[2.219s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp> std::shared_ptr<_Tp>::_Assignable<std::shared_ptr<_Yp> > std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Yp>&&) [with _Yp = _Yp; _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’
+[2.219s]   391 |         [01;36m[Koperator[m[K=(shared_ptr<_Yp>&& __r) noexcept
+[2.219s]       |         [01;36m[K^~~~~~~~[m[K
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.219s] /usr/include/c++/11/bits/shared_ptr.h: In substitution of ‘[01m[Ktemplate<class _Tp> template<class _Arg> using _Assignable = typename std::enable_if<std::is_assignable<std::__shared_ptr<_Tp>&, _Arg>::value, std::shared_ptr<_Tp>&>::type [with _Arg = std::shared_ptr<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >; _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’:
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:391:2:[m[K   required by substitution of ‘[01m[Ktemplate<class _Yp> std::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >::_Assignable<std::shared_ptr<_Tp> > std::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >::operator=<_Yp>(std::shared_ptr<_Tp>&&) [with _Yp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >][m[K’
+[2.219s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:147:97:[m[K   required from here
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:130:15:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, std::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >&>[m[K’
+[2.219s]   130 |         using [01;31m[K_Assignable[m[K = typename enable_if<
+[2.219s]       |               [01;31m[K^~~~~~~~~~~[m[K
+[2.219s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:399:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Yp, class _Del> std::shared_ptr<_Tp>::_Assignable<std::unique_ptr<_Up, _Ep> > std::shared_ptr<_Tp>::operator=(std::unique_ptr<_Up, _Ep>&&) [with _Yp = _Yp; _Del = _Del; _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’
+[2.220s]   399 |         [01;36m[Koperator[m[K=(unique_ptr<_Yp, _Del>&& __r)
+[2.220s]       |         [01;36m[K^~~~~~~~[m[K
+[2.220s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:399:9:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.220s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:147:97:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd::shared_ptr<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >[m[K’ is not derived from ‘[01m[Kstd::unique_ptr<_Tp, _Dp>[m[K’
+[2.220s]   147 | ub_, *tf2_buffer_, needpose_target_frame_, 10, this, std::chrono::duration<int>(1)[01;36m[K)[m[K;
+[2.220s]       |                                                                                   [01;36m[K^[m[K
+[2.220s] 
+[2.220s] In file included from [01m[K/usr/include/c++/11/memory:77[m[K,
+[2.220s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+[2.220s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:40[m[K,
+[2.220s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[2.220s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[2.220s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:359:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(const std::shared_ptr<_Tp>&) [with _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’
+[2.220s]   359 |       shared_ptr& [01;36m[Koperator[m[K=(const shared_ptr&) noexcept = default;
+[2.220s]       |                   [01;36m[K^~~~~~~~[m[K
+[2.220s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:359:29:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >[m[K’ to ‘[01m[Kconst std::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >&[m[K’
+[2.220s]   359 |       shared_ptr& operator=([01;36m[Kconst shared_ptr&[m[K) noexcept = default;
+[2.220s]       |                             [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[2.220s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:383:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::shared_ptr<_Tp>& std::shared_ptr<_Tp>::operator=(std::shared_ptr<_Tp>&&) [with _Tp = tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > >][m[K’
+[2.220s]   383 |       [01;36m[Koperator[m[K=(shared_ptr&& __r) noexcept
+[2.220s]       |       [01;36m[K^~~~~~~~[m[K
+[2.220s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:383:30:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kstd::shared_ptr<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >[m[K’ to ‘[01m[Kstd::shared_ptr<tf2_ros::MessageFilter<auto_aim_interfaces::msg::Armors_<std::allocator<void> > > >&&[m[K’
+[2.220s]   383 |       operator=([01;36m[Kshared_ptr&& __r[m[K) noexcept
+[2.220s]       |                 [01;36m[K~~~~~~~~~~~~~^~~[m[K
+[3.324s] In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+[3.324s]                  from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+[3.324s]                  from [01m[K/usr/include/c++/11/string:41[m[K,
+[3.324s]                  from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+[3.324s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:38[m[K,
+[3.324s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[3.324s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.324s] /usr/include/c++/11/ext/new_allocator.h: In instantiation of ‘[01m[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}; _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >][m[K’:
+[3.324s] [01m[K/usr/include/c++/11/bits/alloc_traits.h:516:17:[m[K   required from ‘[01m[Kstatic void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}; _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >][m[K’
+[3.324s] [01m[K/usr/include/c++/11/bits/shared_ptr_base.h:519:39:[m[K   required from ‘[01m[Kstd::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}; _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; _Alloc = std::allocator<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[3.324s] [01m[K/usr/include/c++/11/bits/shared_ptr_base.h:650:16:[m[K   required from ‘[01m[Kstd::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; _Alloc = std::allocator<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >; _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[3.324s] [01m[K/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:[m[K   required from ‘[01m[Kstd::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >; _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}; _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic][m[K’
+[3.325s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:409:59:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >; _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}; _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >][m[K’
+[3.325s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:862:14:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; _Alloc = std::allocator<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > > >; _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}][m[K’
+[3.325s] [01m[K/usr/include/c++/11/bits/shared_ptr.h:878:39:[m[K   required from ‘[01m[Kstd::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >; _Args = {message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> >, rclcpp::Node>&, tf2_ros::Buffer&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int, std::ratio<1, 1> >}][m[K’
+[3.325s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:146:100:[m[K   required from here
+[3.325s] [01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ktf2_ros::MessageFilter<geometry_msgs::msg::PointStamped_<std::allocator<void> > >::MessageFilter(message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> > >&, tf2_ros::Buffer&, std::__cxx11::basic_string<char>&, int, rm_auto_aim::ArmorTrackerNode*, std::chrono::duration<int>)[m[K’
+[3.325s]   162 |         { [01;31m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[3.325s]       |           [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.325s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:10[m[K,
+[3.325s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.325s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:241:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class F, class TimeRepT, class TimeT> tf2_ros::MessageFilter<M, BufferT>::MessageFilter(F&, BufferT&, const string&, uint32_t, const SharedPtr&, const SharedPtr&, std::chrono::duration<TimeRepT, TimeT>) [with F = F; TimeRepT = TimeRepT; TimeT = TimeT; M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; BufferT = tf2_ros::Buffer][m[K’
+[3.325s]   241 |   [01;36m[KMessageFilter[m[K(
+[3.325s]       |   [01;36m[K^~~~~~~~~~~~~[m[K
+[3.325s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:241:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.325s] In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+[3.325s]                  from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+[3.325s]                  from [01m[K/usr/include/c++/11/string:41[m[K,
+[3.325s]                  from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+[3.325s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:38[m[K,
+[3.325s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[3.325s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.325s] [01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[Kstd::forward<rm_auto_aim::ArmorTrackerNode*>((* & __args#4))[m[K’ (type ‘[01m[Krm_auto_aim::ArmorTrackerNode*[m[K’) to type ‘[01m[Kconst SharedPtr&[m[K’ {aka ‘[01m[Kconst std::shared_ptr<rclcpp::node_interfaces::NodeLoggingInterface>&[m[K’}
+[3.325s]   162 |         { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[3.325s]       |           [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.325s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:10[m[K,
+[3.325s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.325s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:219:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class F, class TimeRepT, class TimeT> tf2_ros::MessageFilter<M, BufferT>::MessageFilter(F&, BufferT&, const string&, uint32_t, const SharedPtr&, std::chrono::duration<TimeRepT, TimeT>) [with F = F; TimeRepT = TimeRepT; TimeT = TimeT; M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; BufferT = tf2_ros::Buffer][m[K’
+[3.325s]   219 |   [01;36m[KMessageFilter[m[K(
+[3.325s]       |   [01;36m[K^~~~~~~~~~~~~[m[K
+[3.325s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:219:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.325s] In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+[3.325s]                  from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+[3.325s]                  from [01m[K/usr/include/c++/11/string:41[m[K,
+[3.325s]                  from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+[3.325s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:38[m[K,
+[3.325s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[3.325s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.325s] [01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[Kstd::forward<rm_auto_aim::ArmorTrackerNode*>((* & __args#4))[m[K’ (type ‘[01m[Krm_auto_aim::ArmorTrackerNode*[m[K’) to type ‘[01m[Kconst SharedPtr&[m[K’ {aka ‘[01m[Kconst std::shared_ptr<rclcpp::Node>&[m[K’}
+[3.325s]   162 |         { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[3.325s]       |           [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.325s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:10[m[K,
+[3.325s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.326s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:192:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class TimeRepT, class TimeT> tf2_ros::MessageFilter<M, BufferT>::MessageFilter(BufferT&, const string&, uint32_t, const SharedPtr&, const SharedPtr&, std::chrono::duration<_Rep, _Period>) [with TimeRepT = TimeRepT; TimeT = TimeT; M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; BufferT = tf2_ros::Buffer][m[K’
+[3.326s]   192 |   [01;36m[KMessageFilter[m[K(
+[3.326s]       |   [01;36m[K^~~~~~~~~~~~~[m[K
+[3.326s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:192:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.326s] In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+[3.326s]                  from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+[3.326s]                  from [01m[K/usr/include/c++/11/string:41[m[K,
+[3.326s]                  from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+[3.326s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:38[m[K,
+[3.326s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[3.326s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.326s] [01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;36m[Knote: [m[K  cannot convert ‘[01m[Kstd::forward<message_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> > >&>((* & __args#0))[m[K’ (type ‘[01m[Kmessage_filters::Subscriber<geometry_msgs::msg::PoseStamped_<std::allocator<void> > >[m[K’) to type ‘[01m[Ktf2_ros::Buffer&[m[K’
+[3.326s]   162 |         { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[3.326s]       |           [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.326s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:10[m[K,
+[3.326s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.326s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:165:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class TimeRepT, class TimeT> tf2_ros::MessageFilter<M, BufferT>::MessageFilter(BufferT&, const string&, uint32_t, const SharedPtr&, std::chrono::duration<_Rep, _Period>) [with TimeRepT = TimeRepT; TimeT = TimeT; M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; BufferT = tf2_ros::Buffer][m[K’
+[3.326s]   165 |   [01;36m[KMessageFilter[m[K(
+[3.326s]       |   [01;36m[K^~~~~~~~~~~~~[m[K
+[3.326s] [01m[K/opt/ros/humble/include/tf2_ros/tf2_ros/message_filter.h:165:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.326s] In file included from [01m[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33[m[K,
+[3.326s]                  from [01m[K/usr/include/c++/11/bits/allocator.h:46[m[K,
+[3.326s]                  from [01m[K/usr/include/c++/11/string:41[m[K,
+[3.326s]                  from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+[3.326s]                  from [01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:38[m[K,
+[3.326s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+[3.326s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[3.326s] [01m[K/usr/include/c++/11/ext/new_allocator.h:162:11:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Krm_auto_aim::ArmorTrackerNode*[m[K’
+[3.326s]   162 |         { [01;36m[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)[m[K; }
+[3.326s]       |           [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.409s] gmake[2]: *** [CMakeFiles/armor_tracker.dir/build.make:104: CMakeFiles/armor_tracker.dir/src/tracker_node.cpp.o] Error 1
+[5.409s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/armor_tracker.dir/all] Error 2
+[5.410s] gmake: *** [Makefile:146: all] Error 2
+[5.412s] Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker' returned '2': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker -- -j16 -l16

@@ -7,6 +7,8 @@
 #include "auto_aim_interfaces/msg/send_serial.hpp"
 #include "auto_aim_interfaces/msg/target.hpp"
 
+#include <geometry_msgs/msg/point_stamped.hpp>
+
 using namespace std;
 
 #define g 9.8
@@ -47,6 +49,8 @@ public:
     void target_callback(const auto_aim_interfaces::msg::Target msg);
 
     void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg);
+
+    void get_need_pose(const float &object_x,const float &object_y,const float &object_z);
 
     // parameters
     //------------------
@@ -93,6 +97,7 @@ public:
     //------------------
     rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr maker_pub_;
     rclcpp::Publisher<auto_aim_interfaces::msg::SendSerial>::SharedPtr result_pub_;
+    rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr needpose_pub_;
     //------------------
     //timer
     //------------------

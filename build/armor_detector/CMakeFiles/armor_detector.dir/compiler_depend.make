@@ -788,18 +788,36 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /usr/local/include/opencv4/opencv2/core/core_c.h \
   /usr/local/include/opencv4/opencv2/core/types_c.h \
   /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge_export.h \
-  /opt/ros/humble/include/rmw/rmw/qos_profiles.h \
-  /opt/ros/humble/include/rmw/rmw/types.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
-  /opt/ros/humble/include/rcutils/rcutils/logging.h \
-  /opt/ros/humble/include/rcutils/rcutils/allocator.h \
+  /opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp \
+  /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp \
+  /opt/ros/humble/include/rclcpp/rclcpp/node.hpp \
+  /usr/include/c++/11/atomic \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/list \
+  /usr/include/c++/11/bits/stl_list.h \
+  /usr/include/c++/11/bits/list.tcc \
+  /usr/include/c++/11/map \
+  /usr/include/c++/11/bits/stl_tree.h \
+  /usr/include/c++/11/bits/stl_map.h \
+  /usr/include/c++/11/bits/stl_multimap.h \
   /opt/ros/humble/include/rcutils/rcutils/macros.h \
   /opt/ros/humble/include/rcutils/rcutils/testing/fault_injection.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
   /opt/ros/humble/include/rcutils/rcutils/visibility_control.h \
   /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h \
-  /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
+  /opt/ros/humble/include/rcl/rcl/error_handling.h \
   /opt/ros/humble/include/rcutils/rcutils/error_handling.h \
+  /opt/ros/humble/include/rcutils/rcutils/allocator.h \
+  /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
   /opt/ros/humble/include/rcutils/rcutils/snprintf.h \
+  /opt/ros/humble/include/rcl/rcl/node.h \
+  /opt/ros/humble/include/rcl/rcl/allocator.h \
+  /opt/ros/humble/include/rcl/rcl/arguments.h \
+  /opt/ros/humble/include/rcl/rcl/log_level.h \
+  /opt/ros/humble/include/rcl/rcl/macros.h \
+  /opt/ros/humble/include/rcl/rcl/types.h \
+  /opt/ros/humble/include/rmw/rmw/types.h \
+  /opt/ros/humble/include/rcutils/rcutils/logging.h \
   /opt/ros/humble/include/rcutils/rcutils/time.h \
   /opt/ros/humble/include/rcutils/rcutils/types.h \
   /opt/ros/humble/include/rcutils/rcutils/types/array_list.h \
@@ -828,49 +846,6 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /opt/ros/humble/include/rmw/rmw/serialized_message.h \
   /opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h \
   /opt/ros/humble/include/rmw/rmw/time.h \
-  /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.h \
-  /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h \
-  /opt/ros/humble/include/tf2/tf2/LinearMath/Scalar.h \
-  /usr/include/c++/11/math.h \
-  /opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h \
-  /opt/ros/humble/include/tf2/tf2/visibility_control.h \
-  /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h \
-  /opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h \
-  /opt/ros/humble/include/tf2/tf2/convert.h \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
-  /opt/ros/humble/include/tf2/tf2/exceptions.h \
-  /opt/ros/humble/include/tf2/tf2/impl/convert.h \
-  /opt/ros/humble/include/tf2/tf2/transform_datatypes.h \
-  /opt/ros/humble/include/tf2/tf2/time.h \
-  /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/get_package_share_directory.hpp \
-  /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/visibility_control.h \
-  /opt/ros/humble/include/image_transport/image_transport/image_transport.hpp \
-  /opt/ros/humble/include/rclcpp/rclcpp/node.hpp \
-  /usr/include/c++/11/atomic \
-  /usr/include/c++/11/condition_variable \
-  /usr/include/c++/11/list \
-  /usr/include/c++/11/bits/stl_list.h \
-  /usr/include/c++/11/bits/list.tcc \
-  /usr/include/c++/11/map \
-  /usr/include/c++/11/bits/stl_tree.h \
-  /usr/include/c++/11/bits/stl_map.h \
-  /usr/include/c++/11/bits/stl_multimap.h \
-  /opt/ros/humble/include/rcl/rcl/error_handling.h \
-  /opt/ros/humble/include/rcl/rcl/node.h \
-  /opt/ros/humble/include/rcl/rcl/allocator.h \
-  /opt/ros/humble/include/rcl/rcl/arguments.h \
-  /opt/ros/humble/include/rcl/rcl/log_level.h \
-  /opt/ros/humble/include/rcl/rcl/macros.h \
-  /opt/ros/humble/include/rcl/rcl/types.h \
   /opt/ros/humble/include/rcl/rcl/visibility_control.h \
   /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h \
   /opt/ros/humble/include/rcl/rcl/context.h \
@@ -927,6 +902,7 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h \
   /opt/ros/humble/include/rmw/rmw/event.h \
   /opt/ros/humble/include/rmw/rmw/publisher_options.h \
+  /opt/ros/humble/include/rmw/rmw/qos_profiles.h \
   /opt/ros/humble/include/rmw/rmw/subscription_options.h \
   /opt/ros/humble/include/rcl/rcl/event.h \
   /opt/ros/humble/include/rcl/rcl/publisher.h \
@@ -950,7 +926,6 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /usr/include/c++/11/unordered_set \
   /usr/include/c++/11/bits/unordered_set.h \
   /opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp \
-  /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp \
   /opt/ros/humble/include/rcl/rcl/graph.h \
   /opt/ros/humble/include/rmw/rmw/names_and_types.h \
@@ -1108,7 +1083,6 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /opt/ros/humble/include/rclcpp/rclcpp/create_timer.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_base_interface.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp \
-  /opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/camera_info.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/camera_info__struct.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/region_of_interest__struct.hpp \
@@ -1117,6 +1091,32 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/region_of_interest__traits.hpp \
   /opt/ros/humble/include/image_transport/image_transport/single_subscriber_publisher.hpp \
   /opt/ros/humble/include/image_transport/image_transport/visibility_control.hpp \
+  /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.h \
+  /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h \
+  /opt/ros/humble/include/tf2/tf2/LinearMath/Scalar.h \
+  /usr/include/c++/11/math.h \
+  /opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h \
+  /opt/ros/humble/include/tf2/tf2/visibility_control.h \
+  /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h \
+  /opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h \
+  /opt/ros/humble/include/tf2/tf2/convert.h \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
+  /opt/ros/humble/include/tf2/tf2/exceptions.h \
+  /opt/ros/humble/include/tf2/tf2/impl/convert.h \
+  /opt/ros/humble/include/tf2/tf2/transform_datatypes.h \
+  /opt/ros/humble/include/tf2/tf2/time.h \
+  /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/get_package_share_directory.hpp \
+  /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/visibility_control.h \
+  /opt/ros/humble/include/image_transport/image_transport/image_transport.hpp \
   /opt/ros/humble/include/image_transport/image_transport/camera_subscriber.hpp \
   /opt/ros/humble/include/image_transport/image_transport/publisher.hpp \
   /opt/ros/humble/include/image_transport/image_transport/exception.hpp \
@@ -2375,13 +2375,49 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/image_transport/image_transport/loader_fwds.hpp:
 
+/opt/ros/humble/include/image_transport/image_transport/image_transport.hpp:
+
+/opt/ros/humble/include/ament_index_cpp/ament_index_cpp/visibility_control.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:
+
+/opt/ros/humble/include/tf2/tf2/time.h:
+
+/opt/ros/humble/include/tf2/tf2/transform_datatypes.h:
+
+/opt/ros/humble/include/tf2/tf2/impl/convert.h:
+
+/opt/ros/humble/include/tf2/tf2/exceptions.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp:
+
+/opt/ros/humble/include/message_filters/message_filters/visibility_control.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:
+
+/opt/ros/humble/include/tf2/tf2/convert.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp:
+
+/opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h:
+
+/opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h:
+
+/opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h:
+
 /opt/ros/humble/include/image_transport/image_transport/visibility_control.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/camera_info__builder.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/camera_info.hpp:
-
-/opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp:
 
@@ -2532,6 +2568,10 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/c++/11/thread:
 
 /opt/ros/humble/include/rclcpp/rclcpp/timer.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/intra_process_buffer_type.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp:
 
@@ -2709,40 +2749,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rclcpp/rclcpp/client.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp:
-
-/usr/include/unistd.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:
-
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/11/queue:
@@ -2785,8 +2791,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
-/opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h:
-
 /usr/include/c++/11/tr1/gamma.tcc:
 
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker__traits.hpp:
@@ -2809,10 +2813,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
-/opt/ros/humble/include/message_filters/message_filters/visibility_control.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp:
@@ -2823,19 +2823,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/11/bits/atomic_futex.h:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp:
-
-/usr/include/c++/11/cstring:
-
 /usr/include/c++/11/bits/basic_string.tcc:
 
 /usr/local/include/opencv4/opencv2/objdetect.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/intra_process_buffer_type.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
@@ -2858,8 +2848,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/color_rgba__struct.hpp:
 
 /usr/include/c++/11/cerrno:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/wrench_stamped.hpp:
 
@@ -2911,11 +2899,23 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/iosfwd:
 
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp:
+
+/usr/include/c++/11/initializer_list:
+
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__struct.hpp:
 
 /opt/ros/humble/include/rcl/rcl/event.h:
 
 /usr/include/c++/11/clocale:
+
+/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/mesh_file__struct.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__builder.hpp:
+
+/opt/ros/humble/include/tf2/tf2/LinearMath/Scalar.h:
+
+/usr/include/c++/11/tr1/hypergeometric.tcc:
 
 /usr/local/include/opencv4/opencv2/core/persistence.hpp:
 
@@ -2935,11 +2935,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/opt/ros/humble/include/tf2/tf2/convert.h:
-
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
-
-/opt/ros/humble/include/tf2/tf2/impl/convert.h:
 
 /usr/include/ctype.h:
 
@@ -2948,6 +2944,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/string.h:
 
 /usr/include/c++/11/bits/vector.tcc:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp:
 
 /usr/include/c++/11/bits/unordered_set.h:
 
@@ -2983,6 +2981,12 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/local/include/opencv4/opencv2/stitching/warpers.hpp:
 
+/usr/include/unistd.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp:
+
 /usr/include/c++/11/bits/unordered_map.h:
 
 /usr/include/c++/11/typeinfo:
@@ -2990,6 +2994,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/c++/11/bits/enable_special_members.h:
 
 /usr/include/c++/11/bits/basic_ios.tcc:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp:
 
 /usr/local/include/opencv4/opencv2/core/cvstd.hpp:
 
@@ -3000,6 +3006,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/stdc-predef.h:
 
 /usr/include/c++/11/bits/memoryfwd.h:
+
+/opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/detail/qos_parameters.hpp:
 
@@ -3019,6 +3027,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/locale.h:
 
+/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/signal.h:
@@ -3037,13 +3047,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
+/opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.h:
+
+/usr/include/c++/11/bits/shared_ptr_base.h:
+
 /usr/include/linux/limits.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
-
-/usr/include/sched.h:
 
 /opt/ros/humble/include/rmw/rmw/topic_endpoint_info.h:
 
@@ -3151,19 +3161,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/atomic_base.h:
 
-/usr/include/x86_64-linux-gnu/bits/sigstack.h:
+/opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp:
-
-/usr/include/c++/11/ext/numeric_traits.h:
-
-/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_period.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
-
-/usr/include/c++/11/bits/stl_construct.h:
+/usr/include/c++/11/bits/shared_ptr.h:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__traits.hpp:
 
@@ -3184,10 +3184,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/endian.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:
-
-/opt/ros/humble/include/tf2/tf2/time.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
@@ -3273,6 +3269,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcl/rcl/allocator.h:
 
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
@@ -3305,10 +3303,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
-/usr/include/c++/11/bits/shared_ptr.h:
-
-/opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h:
-
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__traits.hpp:
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
@@ -3325,11 +3319,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/stl_algo.h:
 
-/opt/ros/humble/include/rcpputils/rcpputils/pointer_traits.hpp:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp:
-
-/usr/include/c++/11/bits/std_abs.h:
+/usr/include/c++/11/bits/stl_heap.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_parameters_interface.hpp:
 
@@ -3423,8 +3415,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/ext/type_traits.h:
 
-/opt/ros/humble/include/image_transport/image_transport/image_transport.hpp:
-
 /usr/include/c++/11/new:
 
 /usr/include/c++/11/climits:
@@ -3444,6 +3434,12 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/linux/errno.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp:
+
+/usr/local/include/opencv4/opencv2/core/matx.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:
 
@@ -3472,10 +3468,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp:
 
 /usr/include/c++/11/algorithm:
-
-/usr/include/c++/11/bits/shared_ptr_base.h:
-
-/opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.h:
 
 /usr/include/c++/11/backward/binders.h:
 
@@ -3509,14 +3501,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/local/include/opencv4/opencv2/core/types.hpp:
 
-/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/mesh_file__struct.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__builder.hpp:
-
-/usr/include/c++/11/tr1/hypergeometric.tcc:
-
-/opt/ros/humble/include/tf2/tf2/LinearMath/Scalar.h:
-
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
 /usr/local/include/opencv4/opencv2/core/mat.hpp:
@@ -3532,6 +3516,12 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/c++/11/bits/locale_classes.h:
 
 /usr/local/include/opencv4/opencv2/features2d.hpp:
+
+/opt/ros/humble/include/rcpputils/rcpputils/pointer_traits.hpp:
+
+/usr/include/c++/11/bits/std_abs.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp:
 
 /usr/include/c++/11/ext/aligned_buffer.h:
 
@@ -3553,8 +3543,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
 /usr/include/c++/11/ostream:
@@ -3573,10 +3561,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/ratio:
 
-/opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp:
-
-/opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h:
-
 /usr/include/x86_64-linux-gnu/bits/sigstksz.h:
 
 /usr/include/c++/11/optional:
@@ -3593,9 +3577,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__traits.hpp:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp:
-
 /usr/local/include/opencv4/opencv2/core/ovx.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp:
 
 /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp:
 
@@ -3633,12 +3617,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/local/include/opencv4/opencv2/dnn/dnn.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:
-
-/usr/local/include/opencv4/opencv2/core/matx.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp:
-
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker_array__struct.hpp:
 
 /usr/local/include/opencv4/opencv2/core/async.hpp:
@@ -3656,12 +3634,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/rcutils/rcutils/visibility_control.h:
 
 /usr/include/c++/11/bits/stl_multimap.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/macros.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
-
-/usr/local/include/opencv4/opencv2/video.hpp:
 
 /usr/local/include/opencv4/opencv2/dnn/layer.hpp:
 
@@ -3723,6 +3695,10 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/stl_multiset.h:
 
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
 
 /opt/ros/humble/include/image_transport/image_transport/single_subscriber_publisher.hpp:
@@ -3759,10 +3735,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/local/include/opencv4/opencv2/flann/linear_index.h:
 
-/usr/include/c++/11/bits/stl_heap.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:
-
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__builder.hpp:
 
 /opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
@@ -3783,8 +3755,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcutils/rcutils/types/string_array.h:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp:
-
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__traits.hpp:
 
 /usr/local/include/opencv4/opencv2/flann/lsh_index.h:
@@ -3799,6 +3769,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
 
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 /usr/include/c++/11/bits/char_traits.h:
@@ -3806,6 +3778,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/libintl.h:
 
 /usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp:
 
 /usr/include/c++/11/bits/locale_facets_nonio.tcc:
 
@@ -3965,14 +3939,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/image_encodings.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp:
-
-/usr/local/include/opencv4/opencv2/core/traits.hpp:
-
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__struct.hpp:
-
-/usr/local/include/opencv4/opencv2/core/core.hpp:
-
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp:
 
 /usr/include/c++/11/string:
@@ -3991,13 +3957,17 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge_export.h:
 
-/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp:
+/usr/local/include/opencv4/opencv2/video.hpp:
 
-/opt/ros/humble/include/rmw/rmw/qos_profiles.h:
+/opt/ros/humble/include/rclcpp/rclcpp/macros.hpp:
 
-/opt/ros/humble/include/rmw/rmw/types.h:
+/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:
+
+/opt/ros/humble/include/rcl/rcl/init_options.h:
+
+/usr/include/c++/11/atomic:
 
 /opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:
 
@@ -4011,6 +3981,12 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h:
 
+/usr/include/c++/11/tr1/exp_integral.tcc:
+
+/opt/ros/humble/include/rcl/rcl/error_handling.h:
+
+/opt/ros/humble/include/rcutils/rcutils/types/hash_map.h:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp:
 
 /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h:
@@ -4019,17 +3995,27 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcutils/rcutils/snprintf.h:
 
+/opt/ros/humble/include/rcl/rcl/node.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/type_support_decl.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/logger.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__traits.hpp:
+
+/opt/ros/humble/include/rcl/rcl/arguments.h:
+
+/opt/ros/humble/include/rcl/rcl/log_level.h:
+
+/opt/ros/humble/include/rcl/rcl/macros.h:
+
+/opt/ros/humble/include/rmw/rmw/types.h:
+
 /opt/ros/humble/include/rcutils/rcutils/time.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_enable_topic_statistics.hpp:
 
 /opt/ros/humble/include/rcutils/rcutils/types/char_array.h:
-
-/opt/ros/humble/include/rcutils/rcutils/types/hash_map.h:
-
-/usr/include/c++/11/tr1/exp_integral.tcc:
-
-/opt/ros/humble/include/rcl/rcl/error_handling.h:
 
 /opt/ros/humble/include/rcutils/rcutils/qsort.h:
 
@@ -4069,40 +4055,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rmw/rmw/localhost.h:
 
-/opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:
-
-/usr/include/c++/11/initializer_list:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp:
-
-/opt/ros/humble/include/tf2/tf2/exceptions.h:
-
-/opt/ros/humble/include/tf2/tf2/transform_datatypes.h:
-
-/opt/ros/humble/include/ament_index_cpp/ament_index_cpp/visibility_control.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:
-
-/opt/ros/humble/include/rcl/rcl/init_options.h:
-
-/usr/include/c++/11/atomic:
-
-/opt/ros/humble/include/rcl/rcl/node.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/type_support_decl.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/logger.hpp:
-
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__traits.hpp:
-
-/opt/ros/humble/include/rcl/rcl/arguments.h:
-
-/opt/ros/humble/include/rcl/rcl/log_level.h:
-
-/opt/ros/humble/include/rcl/rcl/macros.h:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp:
 
 /opt/ros/humble/include/rcl/rcl/visibility_control.h:
@@ -4134,3 +4086,51 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_light__traits.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/list_parameters_result.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:
+
+/usr/include/c++/11/bits/atomic_futex.h:
+
+/usr/include/c++/11/cstring:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp:
+
+/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/topic_statistics_collector/received_message_period.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+
+/usr/include/c++/11/bits/stl_construct.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp:
+
+/usr/local/include/opencv4/opencv2/core/traits.hpp:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__struct.hpp:
+
+/usr/local/include/opencv4/opencv2/core/core.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigstack.h:
+
+/usr/include/c++/11/ext/numeric_traits.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp:
+
+/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:
+
+/opt/ros/humble/include/rmw/rmw/qos_profiles.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__builder.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp:
+
+/usr/include/sched.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp:

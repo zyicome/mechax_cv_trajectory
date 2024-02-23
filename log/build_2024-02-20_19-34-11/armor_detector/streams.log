@@ -1,0 +1,50 @@
+[0.142s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16
+[0.173s] [35m[1mConsolidate compiler generated dependencies of target armor_detector[0m
+[0.182s] [ 13%] Built target gtest_main
+[0.186s] [ 26%] Built target gtest
+[0.189s] [ 40%] Built target armor_detector_node
+[0.195s] [ 46%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o[0m
+[12.185s] [ 53%] [32m[1mLinking CXX shared library libarmor_detector.so[0m
+[13.125s] [ 73%] Built target armor_detector
+[13.141s] [ 80%] [32m[1mLinking CXX executable test_number_cls[0m
+[13.143s] [ 86%] [32mBuilding CXX object CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o[0m
+[13.487s] /usr/bin/ld: warning: libopencv_core.so.4.5d, needed by /opt/ros/humble/lib/libcv_bridge.so, may conflict with libopencv_core.so.408
+[13.704s] [ 93%] Built target test_number_cls
+[15.526s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/test/test_node_startup.cpp:12[m[K:
+[15.526s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:37:51:[m[K [01;31m[Kerror: [m[K‘[01m[KPoseStamped[m[K’ in namespace ‘[01m[Kgeometry_msgs::msg[m[K’ does not name a type
+[15.526s]    37 |   void needposeCallback(const geometry_msgs::msg::[01;31m[KPoseStamped[m[K::SharedPtr needpose_ptr);
+[15.526s]       |                                                   [01;31m[K^~~~~~~~~~~[m[K
+[15.526s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:37:74:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kneedpose_ptr[m[K’
+[15.526s]    37 |   void needposeCallback(const geometry_msgs::msg::PoseStamped::SharedPtr [01;31m[Kneedpose_ptr[m[K);
+[15.526s]       |                                                                          [01;31m[K^~~~~~~~~~~~[m[K
+[15.526s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:37:73:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Kneedpose_ptr[m[K’
+[15.526s]    37 |   void needposeCallback[34m[K([m[Kconst geometry_msgs::msg::PoseStamped::SharedPtr[01;31m[K [m[K[32m[Kneedpose_ptr[m[K);
+[15.526s]       |                        [34m[K~[m[K                                                [01;31m[K^[m[K[32m[K~~~~~~~~~~~~[m[K
+[15.526s]       |                                                                         [32m[K)[m[K
+[15.528s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:37:64:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[15.528s]    37 |   void needposeCallback(const geometry_msgs::msg::PoseStamped::[01;31m[KSharedPtr[m[K needpose_ptr);
+[15.528s]       |                                                                [01;31m[K^~~~~~~~~[m[K
+[15.528s]       |                                                                         [32m[K;[m[K
+[15.530s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:37:74:[m[K [01;31m[Kerror: [m[K‘[01m[Kneedpose_ptr[m[K’ does not name a type
+[15.530s]    37 |   void needposeCallback(const geometry_msgs::msg::PoseStamped::SharedPtr [01;31m[Kneedpose_ptr[m[K);
+[15.530s]       |                                                                          [01;31m[K^~~~~~~~~~~~[m[K
+[15.611s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:70:44:[m[K [01;31m[Kerror: [m[K‘[01m[KPoseStamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs::msg[m[K’
+[15.611s]    70 |   rclcpp::Subscription<geometry_msgs::msg::[01;31m[KPoseStamped[m[K>::SharedPtr needpose_sub_;
+[15.611s]       |                                            [01;31m[K^~~~~~~~~~~[m[K
+[15.611s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:70:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[15.611s]    70 |   rclcpp::Subscription<geometry_msgs::msg::PoseStamped[01;31m[K>[m[K::SharedPtr needpose_sub_;
+[15.611s]       |                                                       [01;31m[K^[m[K
+[15.611s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:70:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[15.611s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:70:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 4 is invalid
+[15.611s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:70:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 5 is invalid
+[15.611s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:70:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[15.611s]    70 |   rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::[01;31m[KSharedPtr[m[K needpose_sub_;
+[15.611s]       |                                                          [01;31m[K^~~~~~~~~[m[K
+[15.611s]       |                                                                   [32m[K;[m[K
+[15.613s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:70:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kneedpose_sub_[m[K’ does not name a type
+[15.613s]    70 |   rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr [01;31m[Kneedpose_sub_[m[K;
+[15.613s]       |                                                                    [01;31m[K^~~~~~~~~~~~~[m[K
+[16.204s] gmake[2]: *** [CMakeFiles/test_node_startup.dir/build.make:76: CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o] Error 1
+[16.204s] gmake[1]: *** [CMakeFiles/Makefile2:215: CMakeFiles/test_node_startup.dir/all] Error 2
+[16.204s] gmake: *** [Makefile:146: all] Error 2
+[16.206s] Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector' returned '2': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16

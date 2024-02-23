@@ -137,12 +137,18 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   tf2_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf2_buffer_);
   // subscriber and filter
   armors_sub_.subscribe(this, "/detector/armors", rmw_qos_profile_sensor_data);
+  needpose_sub_.subscribe(this, "/trajectory/needpose");
   target_frame_ = this->declare_parameter("target_frame", "odom");
+  needpose_target_frame_ = "camera_link";
   tf2_filter_ = std::make_shared<tf2_filter>(
     armors_sub_, *tf2_buffer_, target_frame_, 10, this->get_node_logging_interface(),
     this->get_node_clock_interface(), std::chrono::duration<int>(1));
+  needpose_tf2_filter_ = std::make_shared<tf2_ros::MessageFilter<geometry_msgs::msg::PoseStamped>>(
+    needpose_sub_, *tf2_buffer_, needpose_target_frame_, 10,this->get_node_logging_interface(),
+    this->get_node_clock_interface(), std::chrono::duration<int>(1));
   // Register a callback with tf2_ros::MessageFilter to be called when transforms are available
   tf2_filter_->registerCallback(&ArmorTrackerNode::armorsCallback, this);
+  //needpose_tf2_filter_->registerCallback(&ArmorTrackerNode::needposeCallback, this);
 
   // Measurement publisher (for debug usage)
   info_pub_ = this->create_publisher<auto_aim_interfaces::msg::TrackerInfo>("/tracker/info", 10);
@@ -179,6 +185,7 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   armor_marker_.color.a = 1.0;
   armor_marker_.color.r = 1.0;
   marker_pub_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("/tracker/marker", 10);
+  needpose_pub_ = this->create_publisher<geometry_msgs::msg::PoseStamped>("/tracker/needpose", 10);
 }
 
 void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::SharedPtr armors_msg)
@@ -275,6 +282,20 @@ void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::Sh
   target_pub_->publish(target_msg);
 
   publishMarkers(target_msg);
+}
+
+void ArmorTrackerNode::needposeCallback(const geometry_msgs::msg::PoseStamped::SharedPtr needpose_ptr)
+{
+  geometry_msgs::msg::PoseStamped ps;
+  ps.header = needpose_ptr->header;
+  ps.pose = needpose_ptr->pose;
+  try {
+    ps.pose = tf2_buffer_->transform(ps, needpose_target_frame_).pose;
+  } catch (const tf2::ExtrapolationException & ex) {
+    RCLCPP_ERROR(get_logger(), "Error while transforming %s", ex.what());
+    return;
+  }
+  needpose_pub_->publish(ps);
 }
 
 void ArmorTrackerNode::publishMarkers(const auto_aim_interfaces::msg::Target & target_msg)

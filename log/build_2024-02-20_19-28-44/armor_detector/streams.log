@@ -1,0 +1,303 @@
+[0.171s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16
+[0.202s] [35m[1mConsolidate compiler generated dependencies of target armor_detector[0m
+[0.213s] [ 13%] Built target gtest_main
+[0.218s] [ 26%] Built target gtest
+[0.218s] [ 40%] Built target armor_detector_node
+[0.221s] [ 46%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o[0m
+[2.524s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In constructor ‘[01m[Krm_auto_aim::ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions&)[m[K’:
+[2.524s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:65:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kcamera_info[m[K’ was not declared in this scope; did you mean ‘[01m[Kcam_info_[m[K’?
+[2.524s]    65 |   std::array<double, 9> camera_matrix = [01;31m[Kcamera_info[m[K->k;
+[2.524s]       |                                         [01;31m[K^~~~~~~~~~~[m[K
+[2.524s]       |                                         [32m[Kcam_info_[m[K
+[2.564s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K At global scope:
+[2.564s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:187:17:[m[K [01;31m[Kerror: [m[K‘[01m[KDetector[m[K’ was not declared in this scope; did you mean ‘[01m[Krm_auto_aim::Detector[m[K’?
+[2.564s]   187 | std::unique_ptr<[01;31m[KDetector[m[K> ArmorDetectorNode::initDetector()
+[2.564s]       |                 [01;31m[K^~~~~~~~[m[K
+[2.564s]       |                 [32m[Krm_auto_aim::Detector[m[K
+[2.564s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:22[m[K,
+[2.564s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:27[m[K:
+[2.564s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp:23:7:[m[K [01;36m[Knote: [m[K‘[01m[Krm_auto_aim::Detector[m[K’ declared here
+[2.564s]    23 | class [01;36m[KDetector[m[K
+[2.564s]       |       [01;36m[K^~~~~~~~[m[K
+[2.564s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:187:25:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.565s]   187 | std::unique_ptr<Detector[01;31m[K>[m[K ArmorDetectorNode::initDetector()
+[2.565s]       |                         [01;31m[K^[m[K
+[2.565s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:187:25:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[2.565s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:187:27:[m[K [01;31m[Kerror: [m[K‘[01m[KArmorDetectorNode[m[K’ has not been declared
+[2.565s]   187 | std::unique_ptr<Detector> [01;31m[KArmorDetectorNode[m[K::initDetector()
+[2.565s]       |                           [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.571s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In function ‘[01m[Kint initDetector()[m[K’:
+[2.571s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:194:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kdeclare_parameter[m[K’ was not declared in this scope
+[2.571s]   194 |   int binary_thres = [01;31m[Kdeclare_parameter[m[K("binary_thres", 160, param_desc);
+[2.571s]       |                      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.572s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:199:57:[m[K [01;31m[Kerror: [m[K‘[01m[KRED[m[K’ was not declared in this scope; did you mean ‘[01m[Krm_auto_aim::RED[m[K’?
+[2.572s]   199 |   auto detect_color = declare_parameter("detect_color", [01;31m[KRED[m[K, param_desc);
+[2.572s]       |                                                         [01;31m[K^~~[m[K
+[2.572s]       |                                                         [32m[Krm_auto_aim::RED[m[K
+[2.572s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:26[m[K:
+[2.572s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/armor.hpp:15:11:[m[K [01;36m[Knote: [m[K‘[01m[Krm_auto_aim::RED[m[K’ declared here
+[2.572s]    15 | const int [01;36m[KRED[m[K = 0;
+[2.572s]       |           [01;36m[K^~~[m[K
+[2.572s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:201:3:[m[K [01;31m[Kerror: [m[K‘[01m[KDetector[m[K’ has not been declared
+[2.572s]   201 |   [01;31m[KDetector[m[K::LightParams l_params = {
+[2.572s]       |   [01;31m[K^~~~~~~~[m[K
+[2.573s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:206:3:[m[K [01;31m[Kerror: [m[K‘[01m[KDetector[m[K’ has not been declared
+[2.573s]   206 |   [01;31m[KDetector[m[K::ArmorParams a_params = {
+[2.573s]       |   [01;31m[K^~~~~~~~[m[K
+[2.573s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:214:36:[m[K [01;31m[Kerror: [m[K‘[01m[KDetector[m[K’ was not declared in this scope; did you mean ‘[01m[Krm_auto_aim::Detector[m[K’?
+[2.573s]   214 |   auto detector = std::make_unique<[01;31m[KDetector[m[K>(binary_thres, detect_color, l_params, a_params);
+[2.573s]       |                                    [01;31m[K^~~~~~~~[m[K
+[2.573s]       |                                    [32m[Krm_auto_aim::Detector[m[K
+[2.573s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:22[m[K,
+[2.573s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:27[m[K:
+[2.573s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp:23:7:[m[K [01;36m[Knote: [m[K‘[01m[Krm_auto_aim::Detector[m[K’ declared here
+[2.573s]    23 | class [01;36m[KDetector[m[K
+[2.573s]       |       [01;36m[K^~~~~~~~[m[K
+[2.577s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:214:74:[m[K [01;31m[Kerror: [m[K‘[01m[Kl_params[m[K’ was not declared in this scope; did you mean ‘[01m[Krcl_params_t[m[K’?
+[2.577s]   214 |   auto detector = std::make_unique<Detector>(binary_thres, detect_color, [01;31m[Kl_params[m[K, a_params);
+[2.577s]       |                                                                          [01;31m[K^~~~~~~~[m[K
+[2.577s]       |                                                                          [32m[Krcl_params_t[m[K
+[2.581s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:214:84:[m[K [01;31m[Kerror: [m[K‘[01m[Ka_params[m[K’ was not declared in this scope
+[2.581s]   214 |   auto detector = std::make_unique<Detector>(binary_thres, detect_color, l_params, [01;31m[Ka_params[m[K);
+[2.581s]       |                                                                                    [01;31m[K^~~~~~~~[m[K
+[2.581s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:220:22:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.581s]   220 |   double threshold = [01;31m[Kthis[m[K->declare_parameter("classifier_threshold", 0.7);
+[2.581s]       |                      [01;31m[K^~~~[m[K
+[2.581s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:222:5:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.581s]   222 |     [01;31m[Kthis[m[K->declare_parameter("ignore_classes", std::vector<std::string>{"negative"});
+[2.581s]       |     [01;31m[K^~~~[m[K
+[2.583s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:224:22:[m[K [01;31m[Kerror: [m[K‘[01m[KNumberClassifier[m[K’ was not declared in this scope; did you mean ‘[01m[Krm_auto_aim::NumberClassifier[m[K’?
+[2.583s]   224 |     std::make_unique<[01;31m[KNumberClassifier[m[K>(model_path, label_path, threshold, ignore_classes);
+[2.583s]       |                      [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.583s]       |                      [32m[Krm_auto_aim::NumberClassifier[m[K
+[2.583s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp:17[m[K,
+[2.583s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:22[m[K,
+[2.583s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:27[m[K:
+[2.584s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/number_classifier.hpp:20:7:[m[K [01;36m[Knote: [m[K‘[01m[Krm_auto_aim::NumberClassifier[m[K’ declared here
+[2.584s]    20 | class [01;36m[KNumberClassifier[m[K
+[2.584s]       |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[2.584s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:224:39:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmake_unique<<expression error> >(std::__cxx11::basic_string<char>&, std::__cxx11::basic_string<char>&, double&, std::vector<std::__cxx11::basic_string<char> >&)[m[K’
+[2.584s]   224 |     [01;31m[Kstd::make_unique<NumberClassifier>(model_path, label_path, threshold, ignore_classes)[m[K;
+[2.584s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.584s] In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+[2.584s]                  from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:10[m[K,
+[2.584s]                  from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7[m[K,
+[2.584s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40[m[K,
+[2.584s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:4[m[K:
+[2.584s] [01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...)[m[K’
+[2.585s]   961 |     [01;36m[Kmake_unique[m[K(_Args&&... __args)
+[2.585s]       |     [01;36m[K^~~~~~~~~~~[m[K
+[2.585s] [01m[K/usr/include/c++/11/bits/unique_ptr.h:961:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.585s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:224:39:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.585s]   224 |     [01;31m[Kstd::make_unique<NumberClassifier>(model_path, label_path, threshold, ignore_classes)[m[K;
+[2.585s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.585s] In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+[2.585s]                  from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:10[m[K,
+[2.585s]                  from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7[m[K,
+[2.585s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40[m[K,
+[2.585s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:4[m[K:
+[2.585s] [01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> typename std::_MakeUniq<_Tp>::__array std::make_unique(std::size_t)[m[K’
+[2.585s]   967 |     [01;36m[Kmake_unique[m[K(size_t __num)
+[2.585s]       |     [01;36m[K^~~~~~~~~~~[m[K
+[2.586s] [01m[K/usr/include/c++/11/bits/unique_ptr.h:967:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.586s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:224:39:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.586s]   224 |     [01;31m[Kstd::make_unique<NumberClassifier>(model_path, label_path, threshold, ignore_classes)[m[K;
+[2.586s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.586s] In file included from [01m[K/usr/include/c++/11/memory:76[m[K,
+[2.586s]                  from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:10[m[K,
+[2.586s]                  from [01m[K/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/image.hpp:7[m[K,
+[2.586s]                  from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:40[m[K,
+[2.586s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:4[m[K:
+[2.586s] [01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp, class ... _Args> typename std::_MakeUniq<_Tp>::__invalid_type std::make_unique(_Args&& ...)[m[K’ (deleted)
+[2.586s]   973 |     [01;36m[Kmake_unique[m[K(_Args&&...) = delete;
+[2.586s]       |     [01;36m[K^~~~~~~~~~~[m[K
+[2.586s] [01m[K/usr/include/c++/11/bits/unique_ptr.h:973:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.586s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:224:39:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.586s]   224 |     [01;31m[Kstd::make_unique<NumberClassifier>(model_path, label_path, threshold, ignore_classes)[m[K;
+[2.587s]       |     [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.587s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K At global scope:
+[2.587s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:229:13:[m[K [01;31m[Kerror: [m[K‘[01m[KArmor[m[K’ was not declared in this scope
+[2.587s]   229 | std::vector<[01;31m[KArmor[m[K> ArmorDetectorNode::detectArmors(
+[2.587s]       |             [01;31m[K^~~~~[m[K
+[2.587s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:229:13:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[2.587s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:26[m[K:
+[2.587s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/armor.hpp:46:8:[m[K [01;36m[Knote: [m[K  ‘[01m[Krm_auto_aim::Armor[m[K’
+[2.587s]    46 | struct [01;36m[KArmor[m[K
+[2.587s]       |        [01;36m[K^~~~~[m[K
+[2.587s] In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__struct.hpp:22[m[K,
+[2.587s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/armors.hpp:7[m[K,
+[2.587s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:25[m[K,
+[2.587s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:27[m[K:
+[2.588s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__struct.hpp:169:7:[m[K [01;36m[Knote: [m[K  ‘[01m[Kauto_aim_interfaces::msg::Armor[m[K’
+[2.588s]   169 | using [01;36m[KArmor[m[K =
+[2.588s]       |       [01;36m[K^~~~~[m[K
+[2.588s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:229:18:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.588s]   229 | std::vector<Armor[01;31m[K>[m[K ArmorDetectorNode::detectArmors(
+[2.588s]       |                  [01;31m[K^[m[K
+[2.588s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:229:18:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[2.588s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:229:20:[m[K [01;31m[Kerror: [m[K‘[01m[KArmorDetectorNode[m[K’ has not been declared
+[2.588s]   229 | std::vector<Armor> [01;31m[KArmorDetectorNode[m[K::detectArmors(
+[2.588s]       |                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.593s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In function ‘[01m[Kint detectArmors(const ConstSharedPtr&)[m[K’:
+[2.593s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:236:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kdetector_[m[K’ was not declared in this scope; did you mean ‘[01m[KdetectArmors[m[K’?
+[2.593s]   236 |   [01;31m[Kdetector_[m[K->binary_thres = get_parameter("binary_thres").as_int();
+[2.593s]       |   [01;31m[K^~~~~~~~~[m[K
+[2.593s]       |   [32m[KdetectArmors[m[K
+[2.597s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:236:29:[m[K [01;31m[Kerror: [m[K‘[01m[Kget_parameter[m[K’ was not declared in this scope
+[2.598s]   236 |   detector_->binary_thres = [01;31m[Kget_parameter[m[K("binary_thres").as_int();
+[2.598s]       |                             [01;31m[K^~~~~~~~~~~~~[m[K
+[2.598s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:242:21:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.598s]   242 |   auto final_time = [01;31m[Kthis[m[K->now();
+[2.598s]       |                     [01;31m[K^~~~[m[K
+[2.598s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.598s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:40[m[K,
+[2.598s]                  from [01m[K/opt/ros/humble/include/image_transport/image_transport/image_transport.hpp:37[m[K,
+[2.598s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:11[m[K:
+[2.598s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:23:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.598s]   244 |   RCLCPP_DEBUG_STREAM([01;31m[Kthis[m[K->get_logger(), "Latency: " << latency << "ms");
+[2.598s]       |                       [01;31m[K^~~~[m[K
+[2.599s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:23:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.599s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.599s]   244 |   [01;31m[KRCLCPP_DEBUG_STREAM[m[K(this->get_logger(), "Latency: " << latency << "ms");
+[2.599s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.599s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:3:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[2.599s]   244 |   [01;31m[KRCLCPP_DEBUG_STREAM[m[K(this->get_logger(), "Latency: " << latency << "ms");
+[2.599s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.599s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.599s]   244 |   [01;31m[KRCLCPP_DEBUG_STREAM[m[K(this->get_logger(), "Latency: " << latency << "ms");
+[2.599s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.599s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:3:[m[K [01;31m[Kerror: [m[K‘[01m[K<declaration error>[m[K’ is not a template [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+[2.599s]   244 |   [01;31m[KRCLCPP_DEBUG_STREAM[m[K(this->get_logger(), "Latency: " << latency << "ms");
+[2.599s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.599s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:3:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[2.599s]   244 |   [01;31m[KRCLCPP_DEBUG_STREAM[m[K(this->get_logger(), "Latency: " << latency << "ms");
+[2.599s]       |   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[2.600s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.600s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.600s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.600s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:40[m[K,
+[2.600s]                  from [01m[K/opt/ros/humble/include/image_transport/image_transport/image_transport.hpp:37[m[K,
+[2.600s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:11[m[K:
+[2.600s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:23:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.600s]   244 |   RCLCPP_DEBUG_STREAM([01;31m[Kthis[m[K->get_logger(), "Latency: " << latency << "ms");
+[2.600s]       |                       [01;31m[K^~~~[m[K
+[2.600s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:244:23:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.600s]   244 |   RCLCPP_DEBUG_STREAM([01;31m[Kthis[m[K->get_logger(), "Latency: " << latency << "ms");
+[2.600s]       |                       [01;31m[K^~~~[m[K
+[2.603s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:247:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kdebug_[m[K’ was not declared in this scope
+[2.603s]   247 |   if ([01;31m[Kdebug_[m[K) {
+[2.603s]       |       [01;31m[K^~~~~~[m[K
+[2.609s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:248:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kbinary_img_pub_[m[K’ was not declared in this scope
+[2.609s]   248 |     [01;31m[Kbinary_img_pub_[m[K.publish(
+[2.609s]       |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.616s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:259:5:[m[K [01;31m[Kerror: [m[K‘[01m[Klights_data_pub_[m[K’ was not declared in this scope
+[2.617s]   259 |     [01;31m[Klights_data_pub_[m[K->publish(detector_->debug_lights);
+[2.617s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.623s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:260:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karmors_data_pub_[m[K’ was not declared in this scope
+[2.623s]   260 |     [01;31m[Karmors_data_pub_[m[K->publish(detector_->debug_armors);
+[2.623s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.629s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:264:7:[m[K [01;31m[Kerror: [m[K‘[01m[Knumber_img_pub_[m[K’ was not declared in this scope
+[2.629s]   264 |       [01;31m[Knumber_img_pub_[m[K.publish(
+[2.629s]       |       [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.634s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:270:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kcam_center_[m[K’ was not declared in this scope
+[2.634s]   270 |     cv::circle(img, [01;31m[Kcam_center_[m[K, 5, cv::Scalar(255, 0, 0), 2);
+[2.635s]       |                     [01;31m[K^~~~~~~~~~~[m[K
+[2.640s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:272:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kneedpose_img[m[K’ was not declared in this scope
+[2.640s]   272 |     cv::circle(img, [01;31m[Kneedpose_img[m[K, 5, cv::Scalar(0, 0, 255), 2);
+[2.641s]       |                     [01;31m[K^~~~~~~~~~~~[m[K
+[2.646s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:279:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult_img_pub_[m[K’ was not declared in this scope
+[2.646s]   279 |     [01;31m[Kresult_img_pub_[m[K.publish(cv_bridge::CvImage(img_msg->header, "rgb8", img).toImageMsg());
+[2.646s]       |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.647s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K At global scope:
+[2.647s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:285:6:[m[K [01;31m[Kerror: [m[K‘[01m[KArmorDetectorNode[m[K’ has not been declared
+[2.647s]   285 | void [01;31m[KArmorDetectorNode[m[K::createDebugPublishers()
+[2.647s]       |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.652s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In function ‘[01m[Kvoid createDebugPublishers()[m[K’:
+[2.652s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:287:3:[m[K [01;31m[Kerror: [m[K‘[01m[Klights_data_pub_[m[K’ was not declared in this scope
+[2.652s]   287 |   [01;31m[Klights_data_pub_[m[K =
+[2.652s]       |   [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.653s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:288:5:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.653s]   288 |     [01;31m[Kthis[m[K->create_publisher<auto_aim_interfaces::msg::DebugLights>("/detector/debug_lights", 10);
+[2.653s]       |     [01;31m[K^~~~[m[K
+[2.653s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:288:65:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[2.653s]   288 |     this->create_publisher<auto_aim_interfaces::msg::DebugLights[01;31m[K>[m[K("/detector/debug_lights", 10);
+[2.653s]       |                                                                 [01;31m[K^[m[K
+[2.653s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:288:67:[m[K [01;31m[Kerror: [m[Kleft operand of comma operator has no effect [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+[2.653s]   288 |     this->create_publisher<auto_aim_interfaces::msg::DebugLights>([01;31m[K"/detector/debug_lights"[m[K, 10);
+[2.653s]       |                                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.659s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:289:3:[m[K [01;31m[Kerror: [m[K‘[01m[Karmors_data_pub_[m[K’ was not declared in this scope
+[2.659s]   289 |   [01;31m[Karmors_data_pub_[m[K =
+[2.659s]       |   [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.659s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:290:5:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.659s]   290 |     [01;31m[Kthis[m[K->create_publisher<auto_aim_interfaces::msg::DebugArmors>("/detector/debug_armors", 10);
+[2.659s]       |     [01;31m[K^~~~[m[K
+[2.659s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:290:65:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[2.659s]   290 |     this->create_publisher<auto_aim_interfaces::msg::DebugArmors[01;31m[K>[m[K("/detector/debug_armors", 10);
+[2.659s]       |                                                                 [01;31m[K^[m[K
+[2.659s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:290:67:[m[K [01;31m[Kerror: [m[Kleft operand of comma operator has no effect [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+[2.659s]   290 |     this->create_publisher<auto_aim_interfaces::msg::DebugArmors>([01;31m[K"/detector/debug_armors"[m[K, 10);
+[2.659s]       |                                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.664s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:292:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kbinary_img_pub_[m[K’ was not declared in this scope
+[2.664s]   292 |   [01;31m[Kbinary_img_pub_[m[K = image_transport::create_publisher(this, "/detector/binary_img");
+[2.664s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.664s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:292:55:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.664s]   292 |   binary_img_pub_ = image_transport::create_publisher([01;31m[Kthis[m[K, "/detector/binary_img");
+[2.664s]       |                                                       [01;31m[K^~~~[m[K
+[2.669s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:293:3:[m[K [01;31m[Kerror: [m[K‘[01m[Knumber_img_pub_[m[K’ was not declared in this scope
+[2.669s]   293 |   [01;31m[Knumber_img_pub_[m[K = image_transport::create_publisher(this, "/detector/number_img");
+[2.669s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.669s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:293:55:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.669s]   293 |   number_img_pub_ = image_transport::create_publisher([01;31m[Kthis[m[K, "/detector/number_img");
+[2.669s]       |                                                       [01;31m[K^~~~[m[K
+[2.675s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:294:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult_img_pub_[m[K’ was not declared in this scope
+[2.675s]   294 |   [01;31m[Kresult_img_pub_[m[K = image_transport::create_publisher(this, "/detector/result_img");
+[2.675s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.675s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:294:55:[m[K [01;31m[Kerror: [m[Kinvalid use of ‘[01m[Kthis[m[K’ in non-member function
+[2.675s]   294 |   result_img_pub_ = image_transport::create_publisher([01;31m[Kthis[m[K, "/detector/result_img");
+[2.675s]       |                                                       [01;31m[K^~~~[m[K
+[2.675s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K At global scope:
+[2.675s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:297:6:[m[K [01;31m[Kerror: [m[K‘[01m[KArmorDetectorNode[m[K’ has not been declared
+[2.675s]   297 | void [01;31m[KArmorDetectorNode[m[K::destroyDebugPublishers()
+[2.676s]       |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.680s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In function ‘[01m[Kvoid destroyDebugPublishers()[m[K’:
+[2.680s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:299:3:[m[K [01;31m[Kerror: [m[K‘[01m[Klights_data_pub_[m[K’ was not declared in this scope
+[2.680s]   299 |   [01;31m[Klights_data_pub_[m[K.reset();
+[2.680s]       |   [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.685s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:300:3:[m[K [01;31m[Kerror: [m[K‘[01m[Karmors_data_pub_[m[K’ was not declared in this scope
+[2.685s]   300 |   [01;31m[Karmors_data_pub_[m[K.reset();
+[2.686s]       |   [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[2.692s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:302:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kbinary_img_pub_[m[K’ was not declared in this scope
+[2.692s]   302 |   [01;31m[Kbinary_img_pub_[m[K.shutdown();
+[2.692s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.697s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:303:3:[m[K [01;31m[Kerror: [m[K‘[01m[Knumber_img_pub_[m[K’ was not declared in this scope
+[2.697s]   303 |   [01;31m[Knumber_img_pub_[m[K.shutdown();
+[2.697s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.702s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:304:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kresult_img_pub_[m[K’ was not declared in this scope
+[2.702s]   304 |   [01;31m[Kresult_img_pub_[m[K.shutdown();
+[2.702s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.702s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K At global scope:
+[2.702s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:307:6:[m[K [01;31m[Kerror: [m[K‘[01m[KArmorDetectorNode[m[K’ has not been declared
+[2.702s]   307 | void [01;31m[KArmorDetectorNode[m[K::publishMarkers()
+[2.702s]       |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[2.707s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In function ‘[01m[Kvoid publishMarkers()[m[K’:
+[2.707s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:310:3:[m[K [01;31m[Kerror: [m[K‘[01m[Karmor_marker_[m[K’ was not declared in this scope
+[2.708s]   310 |   [01;31m[Karmor_marker_[m[K.action = armors_msg_.armors.empty() ? Marker::DELETE : Marker::ADD;
+[2.708s]       |   [01;31m[K^~~~~~~~~~~~~[m[K
+[2.711s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:310:26:[m[K [01;31m[Kerror: [m[K‘[01m[Karmors_msg_[m[K’ was not declared in this scope
+[2.711s]   310 |   armor_marker_.action = [01;31m[Karmors_msg_[m[K.armors.empty() ? Marker::DELETE : Marker::ADD;
+[2.712s]       |                          [01;31m[K^~~~~~~~~~~[m[K
+[2.717s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:311:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_array_[m[K’ was not declared in this scope
+[2.717s]   311 |   [01;31m[Kmarker_array_[m[K.markers.emplace_back(armor_marker_);
+[2.717s]       |   [01;31m[K^~~~~~~~~~~~~[m[K
+[2.722s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:312:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_pub_[m[K’ was not declared in this scope
+[2.722s]   312 |   [01;31m[Kmarker_pub_[m[K->publish(marker_array_);
+[2.722s]       |   [01;31m[K^~~~~~~~~~~[m[K
+[2.722s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K At global scope:
+[2.722s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:315:1:[m[K [01;31m[Kerror: [m[Kexpected declaration before ‘[01m[K}[m[K’ token
+[2.722s]   315 | [01;31m[K}[m[K  // namespace rm_auto_aim
+[2.722s]       | [01;31m[K^[m[K
+[6.488s] cc1plus: all warnings being treated as errors
+[6.514s] gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+[6.514s] gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+[6.514s] gmake: *** [Makefile:146: all] Error 2

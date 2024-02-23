@@ -1,0 +1,5 @@
+[35m[1mConsolidate compiler generated dependencies of target armor_detector[0m
+[ 13%] Built target gtest_main
+[ 40%] Built target armor_detector_node
+[ 40%] Built target gtest
+[ 46%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o[0m

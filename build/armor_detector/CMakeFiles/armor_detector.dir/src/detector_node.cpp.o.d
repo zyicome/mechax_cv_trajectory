@@ -289,18 +289,32 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: \
  /usr/local/include/opencv4/opencv2/core/core_c.h \
  /usr/local/include/opencv4/opencv2/core/types_c.h \
  /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge_export.h \
- /opt/ros/humble/include/rmw/rmw/qos_profiles.h \
- /opt/ros/humble/include/rmw/rmw/types.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
- /opt/ros/humble/include/rcutils/rcutils/logging.h \
- /opt/ros/humble/include/rcutils/rcutils/allocator.h \
+ /opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp \
+ /opt/ros/humble/include/rclcpp/rclcpp/node.hpp \
+ /usr/include/c++/11/atomic /usr/include/c++/11/condition_variable \
+ /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
+ /usr/include/c++/11/bits/list.tcc /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
  /opt/ros/humble/include/rcutils/rcutils/macros.h \
  /opt/ros/humble/include/rcutils/rcutils/testing/fault_injection.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h \
  /opt/ros/humble/include/rcutils/rcutils/visibility_control.h \
  /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h \
- /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
+ /opt/ros/humble/include/rcl/rcl/error_handling.h \
  /opt/ros/humble/include/rcutils/rcutils/error_handling.h \
+ /opt/ros/humble/include/rcutils/rcutils/allocator.h \
+ /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
  /opt/ros/humble/include/rcutils/rcutils/snprintf.h \
+ /opt/ros/humble/include/rcl/rcl/node.h \
+ /opt/ros/humble/include/rcl/rcl/allocator.h \
+ /opt/ros/humble/include/rcl/rcl/arguments.h \
+ /opt/ros/humble/include/rcl/rcl/log_level.h \
+ /opt/ros/humble/include/rcl/rcl/macros.h \
+ /opt/ros/humble/include/rcl/rcl/types.h \
+ /opt/ros/humble/include/rmw/rmw/types.h \
+ /opt/ros/humble/include/rcutils/rcutils/logging.h \
  /opt/ros/humble/include/rcutils/rcutils/time.h \
  /opt/ros/humble/include/rcutils/rcutils/types.h \
  /opt/ros/humble/include/rcutils/rcutils/types/array_list.h \
@@ -329,45 +343,6 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: \
  /opt/ros/humble/include/rmw/rmw/serialized_message.h \
  /opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h \
  /opt/ros/humble/include/rmw/rmw/time.h \
- /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.h \
- /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h \
- /opt/ros/humble/include/tf2/tf2/LinearMath/Scalar.h \
- /usr/include/c++/11/math.h \
- /opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h \
- /opt/ros/humble/include/tf2/tf2/visibility_control.h \
- /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h \
- /opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h \
- /opt/ros/humble/include/tf2/tf2/convert.h \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
- /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
- /opt/ros/humble/include/tf2/tf2/exceptions.h \
- /opt/ros/humble/include/tf2/tf2/impl/convert.h \
- /opt/ros/humble/include/tf2/tf2/transform_datatypes.h \
- /opt/ros/humble/include/tf2/tf2/time.h \
- /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/get_package_share_directory.hpp \
- /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/visibility_control.h \
- /opt/ros/humble/include/image_transport/image_transport/image_transport.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/node.hpp \
- /usr/include/c++/11/atomic /usr/include/c++/11/condition_variable \
- /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
- /usr/include/c++/11/bits/list.tcc /usr/include/c++/11/map \
- /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h \
- /opt/ros/humble/include/rcl/rcl/error_handling.h \
- /opt/ros/humble/include/rcl/rcl/node.h \
- /opt/ros/humble/include/rcl/rcl/allocator.h \
- /opt/ros/humble/include/rcl/rcl/arguments.h \
- /opt/ros/humble/include/rcl/rcl/log_level.h \
- /opt/ros/humble/include/rcl/rcl/macros.h \
- /opt/ros/humble/include/rcl/rcl/types.h \
  /opt/ros/humble/include/rcl/rcl/visibility_control.h \
  /opt/ros/humble/include/rcl_yaml_param_parser/rcl_yaml_param_parser/types.h \
  /opt/ros/humble/include/rcl/rcl/context.h \
@@ -421,6 +396,7 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/sequence_bound.h \
  /opt/ros/humble/include/rmw/rmw/event.h \
  /opt/ros/humble/include/rmw/rmw/publisher_options.h \
+ /opt/ros/humble/include/rmw/rmw/qos_profiles.h \
  /opt/ros/humble/include/rmw/rmw/subscription_options.h \
  /opt/ros/humble/include/rcl/rcl/event.h \
  /opt/ros/humble/include/rcl/rcl/publisher.h \
@@ -442,7 +418,6 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: \
  /usr/include/c++/11/typeindex /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
  /opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp \
- /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp \
  /opt/ros/humble/include/rcl/rcl/graph.h \
  /opt/ros/humble/include/rmw/rmw/names_and_types.h \
@@ -598,7 +573,6 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: \
  /opt/ros/humble/include/rclcpp/rclcpp/create_timer.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_base_interface.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_base_interface_traits.hpp \
- /opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/camera_info.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/camera_info__struct.hpp \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/region_of_interest__struct.hpp \
@@ -607,6 +581,32 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: \
  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/region_of_interest__traits.hpp \
  /opt/ros/humble/include/image_transport/image_transport/single_subscriber_publisher.hpp \
  /opt/ros/humble/include/image_transport/image_transport/visibility_control.hpp \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/Matrix3x3.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/Scalar.h \
+ /usr/include/c++/11/math.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h \
+ /opt/ros/humble/include/tf2/tf2/visibility_control.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h \
+ /opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h \
+ /opt/ros/humble/include/tf2/tf2/convert.h \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__struct.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
+ /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp \
+ /opt/ros/humble/include/tf2/tf2/exceptions.h \
+ /opt/ros/humble/include/tf2/tf2/impl/convert.h \
+ /opt/ros/humble/include/tf2/tf2/transform_datatypes.h \
+ /opt/ros/humble/include/tf2/tf2/time.h \
+ /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/get_package_share_directory.hpp \
+ /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/visibility_control.h \
+ /opt/ros/humble/include/image_transport/image_transport/image_transport.hpp \
  /opt/ros/humble/include/image_transport/image_transport/camera_subscriber.hpp \
  /opt/ros/humble/include/image_transport/image_transport/publisher.hpp \
  /opt/ros/humble/include/image_transport/image_transport/exception.hpp \
