@@ -1,0 +1,714 @@
+[0.421s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.421s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7faef8766d70>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7faef8bc79a0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7faef8bc79a0>>)
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.442s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.442s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mechax/zyb/mechax_cv_trajectory'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.442s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.443s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.448s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['ignore', 'ignore_ament_install']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'ignore'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'ignore_ament_install'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['colcon_pkg']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'colcon_pkg'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['colcon_meta']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'colcon_meta'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['ros']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'ros'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['cmake', 'python']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'cmake'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'python'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extensions ['python_setup_py']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera) by extension 'python_setup_py'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['ignore', 'ignore_ament_install']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'ignore'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'ignore_ament_install'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['colcon_pkg']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'colcon_pkg'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['colcon_meta']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'colcon_meta'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['ros']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'ros'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['cmake', 'python']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'cmake'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'python'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extensions ['python_setup_py']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(Camera/log) by extension 'python_setup_py'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.449s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extensions ['ignore', 'ignore_ament_install']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extension 'ignore'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extension 'ignore_ament_install'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extensions ['colcon_pkg']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extension 'colcon_pkg'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extensions ['colcon_meta']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extension 'colcon_meta'
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extensions ['ros']
+[0.450s] Level 1:colcon.colcon_core.package_identification:_identify(src/mechax_trajectory) by extension 'ros'
+[0.451s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mechax_trajectory' with type 'ros.ament_cmake' and name 'mechax_trajectory'
+[0.451s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extensions ['ignore', 'ignore_ament_install']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extension 'ignore'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extension 'ignore_ament_install'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extensions ['colcon_pkg']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extension 'colcon_pkg'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extensions ['colcon_meta']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extension 'colcon_meta'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extensions ['ros']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_package) by extension 'ros'
+[0.452s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_package' with type 'ros.ament_python' and name 'my_package'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extensions ['ignore', 'ignore_ament_install']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'ignore'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'ignore_ament_install'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extensions ['colcon_pkg']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'colcon_pkg'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extensions ['colcon_meta']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'colcon_meta'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extensions ['ros']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'ros'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extensions ['cmake', 'python']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'cmake'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'python'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extensions ['python_setup_py']
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim) by extension 'python_setup_py'
+[0.452s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extensions ['ignore', 'ignore_ament_install']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extension 'ignore'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extension 'ignore_ament_install'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extensions ['colcon_pkg']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extension 'colcon_pkg'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extensions ['colcon_meta']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extension 'colcon_meta'
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extensions ['ros']
+[0.453s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_detector) by extension 'ros'
+[0.454s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_auto_aim/armor_detector' with type 'ros.ament_cmake' and name 'armor_detector'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extensions ['ignore', 'ignore_ament_install']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extension 'ignore'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extension 'ignore_ament_install'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extensions ['colcon_pkg']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extension 'colcon_pkg'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extensions ['colcon_meta']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extension 'colcon_meta'
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extensions ['ros']
+[0.454s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/armor_tracker) by extension 'ros'
+[0.455s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_auto_aim/armor_tracker' with type 'ros.ament_cmake' and name 'armor_tracker'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extension 'ignore'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extension 'ignore_ament_install'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extensions ['colcon_pkg']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extension 'colcon_pkg'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extensions ['colcon_meta']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extension 'colcon_meta'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extensions ['ros']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/auto_aim_interfaces) by extension 'ros'
+[0.455s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_auto_aim/auto_aim_interfaces' with type 'ros.ament_cmake' and name 'auto_aim_interfaces'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extensions ['ignore', 'ignore_ament_install']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'ignore'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'ignore_ament_install'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extensions ['colcon_pkg']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'colcon_pkg'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extensions ['colcon_meta']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'colcon_meta'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extensions ['ros']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'ros'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extensions ['cmake', 'python']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'cmake'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'python'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extensions ['python_setup_py']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/docs) by extension 'python_setup_py'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extensions ['ignore', 'ignore_ament_install']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extension 'ignore'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extension 'ignore_ament_install'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extensions ['colcon_pkg']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extension 'colcon_pkg'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extensions ['colcon_meta']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extension 'colcon_meta'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extensions ['ros']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_auto_aim/rm_auto_aim) by extension 'ros'
+[0.456s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_auto_aim/rm_auto_aim' with type 'ros.ament_cmake' and name 'rm_auto_aim'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extensions ['ignore', 'ignore_ament_install']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extension 'ignore'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extension 'ignore_ament_install'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extensions ['colcon_pkg']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extension 'colcon_pkg'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extensions ['colcon_meta']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extension 'colcon_meta'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extensions ['ros']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_gimbal_description) by extension 'ros'
+[0.457s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_gimbal_description' with type 'ros.ament_cmake' and name 'rm_gimbal_description'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extension 'ignore'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extension 'ignore_ament_install'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extensions ['colcon_pkg']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extension 'colcon_pkg'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extensions ['colcon_meta']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extension 'colcon_meta'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extensions ['ros']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_serial_driver) by extension 'ros'
+[0.457s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_serial_driver' with type 'ros.ament_cmake' and name 'rm_serial_driver'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extensions ['ignore', 'ignore_ament_install']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'ignore'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'ignore_ament_install'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extensions ['colcon_pkg']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'colcon_pkg'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extensions ['colcon_meta']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'colcon_meta'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extensions ['ros']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'ros'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extensions ['cmake', 'python']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'cmake'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'python'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extensions ['python_setup_py']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision) by extension 'python_setup_py'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extensions ['ignore', 'ignore_ament_install']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'ignore'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'ignore_ament_install'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extensions ['colcon_pkg']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'colcon_pkg'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extensions ['colcon_meta']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'colcon_meta'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extensions ['ros']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'ros'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extensions ['cmake', 'python']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'cmake'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'python'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extensions ['python_setup_py']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/docs) by extension 'python_setup_py'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extension 'ignore'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extension 'ignore_ament_install'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extensions ['colcon_pkg']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extension 'colcon_pkg'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extensions ['colcon_meta']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extension 'colcon_meta'
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extensions ['ros']
+[0.458s] Level 1:colcon.colcon_core.package_identification:_identify(src/rm_vision/rm_vision_bringup) by extension 'ros'
+[0.459s] DEBUG:colcon.colcon_core.package_identification:Package 'src/rm_vision/rm_vision_bringup' with type 'ros.ament_cmake' and name 'rm_vision_bringup'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extensions ['ignore', 'ignore_ament_install']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extension 'ignore'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extension 'ignore_ament_install'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extensions ['colcon_pkg']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extension 'colcon_pkg'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extensions ['colcon_meta']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extension 'colcon_meta'
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extensions ['ros']
+[0.459s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2-mindvision-camera) by extension 'ros'
+[0.459s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2-mindvision-camera' with type 'ros.ament_cmake' and name 'mindvision_camera'
+[0.459s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.459s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.459s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.459s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.459s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.500s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.500s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.513s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 10 installed packages in /home/mechax/zyb/mechax_cv_trajectory/install
+[0.518s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/mechax/ws_livox/install
+[0.525s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 345 installed packages in /opt/ros/humble
+[0.525s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.572s] Level 5:colcon.colcon_core.verb:set package 'auto_aim_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.572s] DEBUG:colcon.colcon_core.verb:Building package 'auto_aim_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_args' from command line to 'None'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_target' from command line to 'None'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_clean_cache' from command line to 'False'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_clean_first' from command line to 'False'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'cmake_force_configure' from command line to 'False'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'ament_cmake_args' from command line to 'None'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'catkin_cmake_args' from command line to 'None'
+[0.578s] Level 5:colcon.colcon_core.verb:set package 'mindvision_camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.578s] DEBUG:colcon.colcon_core.verb:Building package 'mindvision_camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera', 'symlink_install': False, 'test_result_base': None}
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'cmake_args' from command line to 'None'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'cmake_target' from command line to 'None'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'cmake_clean_cache' from command line to 'False'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'cmake_clean_first' from command line to 'False'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'cmake_force_configure' from command line to 'False'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'ament_cmake_args' from command line to 'None'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'catkin_cmake_args' from command line to 'None'
+[0.584s] Level 5:colcon.colcon_core.verb:set package 'my_package' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.584s] DEBUG:colcon.colcon_core.verb:Building package 'my_package' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/my_package', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/my_package', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/my_package', 'symlink_install': False, 'test_result_base': None}
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'cmake_args' from command line to 'None'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'cmake_target' from command line to 'None'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.589s] Level 5:colcon.colcon_core.verb:set package 'rm_gimbal_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.589s] DEBUG:colcon.colcon_core.verb:Building package 'rm_gimbal_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/rm_gimbal_description', 'symlink_install': False, 'test_result_base': None}
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'cmake_args' from command line to 'None'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'cmake_target' from command line to 'None'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'cmake_clean_cache' from command line to 'False'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'cmake_clean_first' from command line to 'False'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'cmake_force_configure' from command line to 'False'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'ament_cmake_args' from command line to 'None'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'catkin_cmake_args' from command line to 'None'
+[0.595s] Level 5:colcon.colcon_core.verb:set package 'armor_detector' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.595s] DEBUG:colcon.colcon_core.verb:Building package 'armor_detector' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector', 'symlink_install': False, 'test_result_base': None}
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'cmake_args' from command line to 'None'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'cmake_target' from command line to 'None'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'cmake_clean_cache' from command line to 'False'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'cmake_clean_first' from command line to 'False'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'cmake_force_configure' from command line to 'False'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'ament_cmake_args' from command line to 'None'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'catkin_cmake_args' from command line to 'None'
+[0.601s] Level 5:colcon.colcon_core.verb:set package 'armor_tracker' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.601s] DEBUG:colcon.colcon_core.verb:Building package 'armor_tracker' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker', 'symlink_install': False, 'test_result_base': None}
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'cmake_args' from command line to 'None'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'cmake_target' from command line to 'None'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'cmake_clean_cache' from command line to 'False'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'cmake_clean_first' from command line to 'False'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'cmake_force_configure' from command line to 'False'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'ament_cmake_args' from command line to 'None'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'catkin_cmake_args' from command line to 'None'
+[0.607s] Level 5:colcon.colcon_core.verb:set package 'mechax_trajectory' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.607s] DEBUG:colcon.colcon_core.verb:Building package 'mechax_trajectory' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory', 'symlink_install': False, 'test_result_base': None}
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'cmake_args' from command line to 'None'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'cmake_target' from command line to 'None'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.613s] Level 5:colcon.colcon_core.verb:set package 'rm_serial_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.613s] DEBUG:colcon.colcon_core.verb:Building package 'rm_serial_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver', 'symlink_install': False, 'test_result_base': None}
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'cmake_args' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'cmake_target' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'cmake_clean_cache' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'cmake_clean_first' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'cmake_force_configure' from command line to 'False'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'ament_cmake_args' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'catkin_cmake_args' from command line to 'None'
+[0.619s] Level 5:colcon.colcon_core.verb:set package 'rm_auto_aim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.619s] DEBUG:colcon.colcon_core.verb:Building package 'rm_auto_aim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/rm_auto_aim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/rm_auto_aim', 'symlink_install': False, 'test_result_base': None}
+[0.624s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'cmake_args' from command line to 'None'
+[0.624s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'cmake_target' from command line to 'None'
+[0.625s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.625s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.625s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.625s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.625s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.625s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.625s] Level 5:colcon.colcon_core.verb:set package 'rm_vision_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.625s] DEBUG:colcon.colcon_core.verb:Building package 'rm_vision_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mechax/zyb/mechax_cv_trajectory/build/rm_vision_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup', 'merge_install': False, 'path': '/home/mechax/zyb/mechax_cv_trajectory/src/rm_vision/rm_vision_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.630s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.636s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.637s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces' with build type 'ament_cmake'
+[0.637s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces'
+[0.644s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.644s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.644s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.679s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera' with build type 'ament_cmake'
+[0.679s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mechax/zyb/mechax_cv_trajectory/src/ros2-mindvision-camera'
+[0.686s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.686s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.713s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/my_package' with build type 'ament_python'
+[0.713s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_package', 'ament_prefix_path')
+[0.720s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/hook/ament_prefix_path.ps1'
+[0.721s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/hook/ament_prefix_path.dsv'
+[0.721s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/hook/ament_prefix_path.sh'
+[0.728s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.728s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.757s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_gimbal_description' with build type 'ament_cmake'
+[0.757s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_gimbal_description'
+[0.764s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.764s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.796s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces -- -j16 -l16
+[0.798s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera -- -j16 -l16
+[0.939s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mechax/zyb/mechax_cv_trajectory/src/my_package'
+[0.945s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.945s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.980s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera -- -j16 -l16
+[0.983s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description -- -j16 -l16
+[1.012s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera
+[1.014s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description -- -j16 -l16
+[1.015s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces -- -j16 -l16
+[1.020s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mindvision_camera)
+[1.022s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/mindvision_camera
+[1.035s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera' for CMake module files
+[1.036s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera' for CMake config files
+[1.036s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'cmake_prefix_path')
+[1.046s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.ps1'
+[1.046s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.dsv'
+[1.046s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.sh'
+[1.047s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib'
+[1.047s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'ld_library_path_lib')
+[1.053s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.ps1'
+[1.053s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.dsv'
+[1.054s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.sh'
+[1.054s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/bin'
+[1.054s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib/pkgconfig/mindvision_camera.pc'
+[1.054s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib/python3.10/site-packages'
+[1.054s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/bin'
+[1.064s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.ps1'
+[1.065s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.dsv'
+[1.065s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.sh'
+[1.065s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.bash'
+[1.066s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.zsh'
+[1.066s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/colcon-core/packages/mindvision_camera)
+[1.068s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description
+[1.075s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rm_gimbal_description)
+[1.076s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description
+[1.085s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description' for CMake module files
+[1.085s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description' for CMake config files
+[1.085s] Level 1:colcon.colcon_core.shell:create_environment_hook('rm_gimbal_description', 'cmake_prefix_path')
+[1.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/hook/cmake_prefix_path.ps1'
+[1.093s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/hook/cmake_prefix_path.dsv'
+[1.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/hook/cmake_prefix_path.sh'
+[1.094s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/bin'
+[1.094s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/lib/pkgconfig/rm_gimbal_description.pc'
+[1.094s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/lib/python3.10/site-packages'
+[1.094s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/bin'
+[1.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.ps1'
+[1.101s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.dsv'
+[1.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.sh'
+[1.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.bash'
+[1.102s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.zsh'
+[1.102s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/colcon-core/packages/rm_gimbal_description)
+[1.111s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mindvision_camera)
+[1.118s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera' for CMake module files
+[1.118s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera' for CMake config files
+[1.118s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'cmake_prefix_path')
+[1.125s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.ps1'
+[1.126s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.dsv'
+[1.126s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/cmake_prefix_path.sh'
+[1.126s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib'
+[1.126s] Level 1:colcon.colcon_core.shell:create_environment_hook('mindvision_camera', 'ld_library_path_lib')
+[1.134s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.ps1'
+[1.134s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.dsv'
+[1.134s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/hook/ld_library_path_lib.sh'
+[1.134s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/bin'
+[1.134s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib/pkgconfig/mindvision_camera.pc'
+[1.135s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib/python3.10/site-packages'
+[1.135s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/bin'
+[1.144s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.ps1'
+[1.144s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.dsv'
+[1.145s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.sh'
+[1.145s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.bash'
+[1.145s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/mindvision_camera/package.zsh'
+[1.146s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/share/colcon-core/packages/mindvision_camera)
+[1.154s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rm_gimbal_description)
+[1.161s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description' for CMake module files
+[1.162s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description' for CMake config files
+[1.162s] Level 1:colcon.colcon_core.shell:create_environment_hook('rm_gimbal_description', 'cmake_prefix_path')
+[1.168s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/hook/cmake_prefix_path.ps1'
+[1.168s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/hook/cmake_prefix_path.dsv'
+[1.168s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/hook/cmake_prefix_path.sh'
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/bin'
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/lib/pkgconfig/rm_gimbal_description.pc'
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/lib/python3.10/site-packages'
+[1.169s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/bin'
+[1.176s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.ps1'
+[1.177s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.dsv'
+[1.177s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.sh'
+[1.177s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.bash'
+[1.177s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.zsh'
+[1.178s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/colcon-core/packages/rm_gimbal_description)
+[1.180s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
+[1.202s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/src/my_package': PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/build/my_package/prefix_override:/home/mechax/zyb/mechax_cv_trajectory/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_package build --build-base /home/mechax/zyb/mechax_cv_trajectory/build/my_package/build install --record /home/mechax/zyb/mechax_cv_trajectory/build/my_package/install.log --single-version-externally-managed
+[1.216s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(auto_aim_interfaces)
+[1.216s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
+[1.225s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces' for CMake module files
+[1.225s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces' for CMake config files
+[1.225s] Level 1:colcon.colcon_core.shell:create_environment_hook('auto_aim_interfaces', 'cmake_prefix_path')
+[1.232s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/cmake_prefix_path.ps1'
+[1.232s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/cmake_prefix_path.dsv'
+[1.232s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/cmake_prefix_path.sh'
+[1.232s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib'
+[1.232s] Level 1:colcon.colcon_core.shell:create_environment_hook('auto_aim_interfaces', 'ld_library_path_lib')
+[1.239s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/ld_library_path_lib.ps1'
+[1.239s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/ld_library_path_lib.dsv'
+[1.239s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/ld_library_path_lib.sh'
+[1.239s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/bin'
+[1.239s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/pkgconfig/auto_aim_interfaces.pc'
+[1.239s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/python3.10/site-packages'
+[1.240s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/bin'
+[1.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.ps1'
+[1.246s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.dsv'
+[1.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.sh'
+[1.247s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.bash'
+[1.247s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.zsh'
+[1.247s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/colcon-core/packages/auto_aim_interfaces)
+[1.356s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/src/my_package' returned '0': PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/build/my_package/prefix_override:/home/mechax/zyb/mechax_cv_trajectory/install/my_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_package build --build-base /home/mechax/zyb/mechax_cv_trajectory/build/my_package/build install --record /home/mechax/zyb/mechax_cv_trajectory/build/my_package/install.log --single-version-externally-managed
+[1.365s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/my_package' for CMake module files
+[1.366s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/my_package' for CMake config files
+[1.366s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/lib'
+[1.366s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/bin'
+[1.366s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/lib/pkgconfig/my_package.pc'
+[1.366s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/lib/python3.10/site-packages'
+[1.366s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_package', 'pythonpath')
+[1.373s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/hook/pythonpath.ps1'
+[1.373s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/hook/pythonpath.dsv'
+[1.373s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/hook/pythonpath.sh'
+[1.374s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/bin'
+[1.374s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_package)
+[1.381s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/package.ps1'
+[1.381s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/package.dsv'
+[1.381s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/package.sh'
+[1.382s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/package.bash'
+[1.382s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/my_package/package.zsh'
+[1.382s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/my_package/share/colcon-core/packages/my_package)
+[1.389s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(auto_aim_interfaces)
+[1.395s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces' for CMake module files
+[1.395s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces' for CMake config files
+[1.395s] Level 1:colcon.colcon_core.shell:create_environment_hook('auto_aim_interfaces', 'cmake_prefix_path')
+[1.401s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/cmake_prefix_path.ps1'
+[1.402s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/cmake_prefix_path.dsv'
+[1.402s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/cmake_prefix_path.sh'
+[1.402s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib'
+[1.402s] Level 1:colcon.colcon_core.shell:create_environment_hook('auto_aim_interfaces', 'ld_library_path_lib')
+[1.409s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/ld_library_path_lib.ps1'
+[1.409s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/ld_library_path_lib.dsv'
+[1.410s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/hook/ld_library_path_lib.sh'
+[1.410s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/bin'
+[1.410s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/pkgconfig/auto_aim_interfaces.pc'
+[1.410s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib/python3.10/site-packages'
+[1.410s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/bin'
+[1.416s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.ps1'
+[1.417s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.dsv'
+[1.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.sh'
+[1.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.bash'
+[1.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/auto_aim_interfaces/package.zsh'
+[1.417s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/share/colcon-core/packages/auto_aim_interfaces)
+[1.418s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector' with build type 'ament_cmake'
+[1.418s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector'
+[1.425s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.425s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.452s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker' with build type 'ament_cmake'
+[1.452s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker'
+[1.460s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.460s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.487s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver' with build type 'ament_cmake'
+[1.487s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver'
+[1.494s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.494s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.521s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory' with build type 'ament_cmake'
+[1.521s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory'
+[1.528s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.529s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.560s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16
+[1.562s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker -- -j16 -l16
+[1.565s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver -- -j16 -l16
+[1.567s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory -- -j16 -l16
+[1.610s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory' returned '0': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory -- -j16 -l16
+[1.618s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker' returned '0': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker -- -j16 -l16
+[1.621s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver' returned '0': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver -- -j16 -l16
+[1.627s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory
+[1.633s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mechax_trajectory)
+[1.634s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory' returned '0': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/mechax_trajectory
+[1.644s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory' for CMake module files
+[1.644s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory' for CMake config files
+[1.645s] Level 1:colcon.colcon_core.shell:create_environment_hook('mechax_trajectory', 'cmake_prefix_path')
+[1.651s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/hook/cmake_prefix_path.ps1'
+[1.652s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/hook/cmake_prefix_path.dsv'
+[1.652s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/hook/cmake_prefix_path.sh'
+[1.652s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/lib'
+[1.652s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/bin'
+[1.652s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/lib/pkgconfig/mechax_trajectory.pc'
+[1.653s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/lib/python3.10/site-packages'
+[1.653s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/bin'
+[1.660s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.ps1'
+[1.660s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.dsv'
+[1.660s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.sh'
+[1.661s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.bash'
+[1.661s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.zsh'
+[1.661s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/colcon-core/packages/mechax_trajectory)
+[1.663s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver
+[1.664s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker
+[1.671s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(armor_tracker)
+[1.672s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker' returned '0': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker
+[1.679s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker' for CMake module files
+[1.679s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker' for CMake config files
+[1.679s] Level 1:colcon.colcon_core.shell:create_environment_hook('armor_tracker', 'cmake_prefix_path')
+[1.685s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/cmake_prefix_path.ps1'
+[1.686s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/cmake_prefix_path.dsv'
+[1.686s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/cmake_prefix_path.sh'
+[1.686s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib'
+[1.686s] Level 1:colcon.colcon_core.shell:create_environment_hook('armor_tracker', 'ld_library_path_lib')
+[1.692s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/ld_library_path_lib.ps1'
+[1.692s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/ld_library_path_lib.dsv'
+[1.692s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/ld_library_path_lib.sh'
+[1.693s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/bin'
+[1.693s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib/pkgconfig/armor_tracker.pc'
+[1.693s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib/python3.10/site-packages'
+[1.693s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/bin'
+[1.699s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.ps1'
+[1.699s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.dsv'
+[1.699s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.sh'
+[1.699s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.bash'
+[1.700s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.zsh'
+[1.700s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/colcon-core/packages/armor_tracker)
+[1.700s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rm_serial_driver)
+[1.701s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver' returned '0': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver
+[1.707s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver' for CMake module files
+[1.707s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver' for CMake config files
+[1.708s] Level 1:colcon.colcon_core.shell:create_environment_hook('rm_serial_driver', 'cmake_prefix_path')
+[1.714s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/cmake_prefix_path.ps1'
+[1.714s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/cmake_prefix_path.dsv'
+[1.714s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/cmake_prefix_path.sh'
+[1.715s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib'
+[1.715s] Level 1:colcon.colcon_core.shell:create_environment_hook('rm_serial_driver', 'ld_library_path_lib')
+[1.721s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/ld_library_path_lib.ps1'
+[1.721s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/ld_library_path_lib.dsv'
+[1.721s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/ld_library_path_lib.sh'
+[1.721s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/bin'
+[1.721s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/pkgconfig/rm_serial_driver.pc'
+[1.722s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/python3.10/site-packages'
+[1.722s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/bin'
+[1.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.ps1'
+[1.728s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.dsv'
+[1.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.sh'
+[1.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.bash'
+[1.728s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.zsh'
+[1.729s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/colcon-core/packages/rm_serial_driver)
+[1.736s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mechax_trajectory)
+[1.744s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory' for CMake module files
+[1.744s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory' for CMake config files
+[1.745s] Level 1:colcon.colcon_core.shell:create_environment_hook('mechax_trajectory', 'cmake_prefix_path')
+[1.752s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/hook/cmake_prefix_path.ps1'
+[1.752s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/hook/cmake_prefix_path.dsv'
+[1.752s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/hook/cmake_prefix_path.sh'
+[1.753s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/lib'
+[1.753s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/bin'
+[1.753s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/lib/pkgconfig/mechax_trajectory.pc'
+[1.753s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/lib/python3.10/site-packages'
+[1.753s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/bin'
+[1.760s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.ps1'
+[1.760s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.dsv'
+[1.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.sh'
+[1.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.bash'
+[1.761s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/mechax_trajectory/package.zsh'
+[1.761s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory/share/colcon-core/packages/mechax_trajectory)
+[1.768s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(armor_tracker)
+[1.775s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker' for CMake module files
+[1.776s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker' for CMake config files
+[1.776s] Level 1:colcon.colcon_core.shell:create_environment_hook('armor_tracker', 'cmake_prefix_path')
+[1.782s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/cmake_prefix_path.ps1'
+[1.783s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/cmake_prefix_path.dsv'
+[1.783s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/cmake_prefix_path.sh'
+[1.783s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib'
+[1.783s] Level 1:colcon.colcon_core.shell:create_environment_hook('armor_tracker', 'ld_library_path_lib')
+[1.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/ld_library_path_lib.ps1'
+[1.791s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/ld_library_path_lib.dsv'
+[1.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/hook/ld_library_path_lib.sh'
+[1.791s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/bin'
+[1.791s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib/pkgconfig/armor_tracker.pc'
+[1.791s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib/python3.10/site-packages'
+[1.791s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/bin'
+[1.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.ps1'
+[1.798s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.dsv'
+[1.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.sh'
+[1.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.bash'
+[1.798s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/package.zsh'
+[1.799s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/colcon-core/packages/armor_tracker)
+[1.806s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rm_serial_driver)
+[1.813s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver' for CMake module files
+[1.813s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver' for CMake config files
+[1.814s] Level 1:colcon.colcon_core.shell:create_environment_hook('rm_serial_driver', 'cmake_prefix_path')
+[1.820s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/cmake_prefix_path.ps1'
+[1.820s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/cmake_prefix_path.dsv'
+[1.821s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/cmake_prefix_path.sh'
+[1.821s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib'
+[1.821s] Level 1:colcon.colcon_core.shell:create_environment_hook('rm_serial_driver', 'ld_library_path_lib')
+[1.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/ld_library_path_lib.ps1'
+[1.828s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/ld_library_path_lib.dsv'
+[1.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/hook/ld_library_path_lib.sh'
+[1.828s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/bin'
+[1.828s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/pkgconfig/rm_serial_driver.pc'
+[1.829s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/python3.10/site-packages'
+[1.829s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/bin'
+[1.835s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.ps1'
+[1.835s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.dsv'
+[1.835s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.sh'
+[1.835s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.bash'
+[1.836s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.zsh'
+[1.836s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/colcon-core/packages/rm_serial_driver)
+[7.377s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector' returned '2': CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/rm_vision_bringup:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver:/home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description:/home/mechax/zyb/mechax_cv_trajectory/install/rm_auto_aim:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera:/home/mechax/zyb/mechax_cv_trajectory/install/mechax_trajectory:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/home/mechax/zyb/mechax_cv_trajectory/install/my_package:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib:/home/mechax/zyb/mechax_cv_trajectory/install/mindvision_camera/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib:/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib:/home/mechax/ws_livox/install/livox_ros2_driver/lib:/home/mechax/ws_livox/install/livox_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16
+[7.409s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(armor_detector)
+[7.415s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector' for CMake module files
+[7.416s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector' for CMake config files
+[7.416s] Level 1:colcon.colcon_core.shell:create_environment_hook('armor_detector', 'cmake_prefix_path')
+[7.422s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/hook/cmake_prefix_path.ps1'
+[7.422s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/hook/cmake_prefix_path.dsv'
+[7.422s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/hook/cmake_prefix_path.sh'
+[7.423s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib'
+[7.423s] Level 1:colcon.colcon_core.shell:create_environment_hook('armor_detector', 'ld_library_path_lib')
+[7.429s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/hook/ld_library_path_lib.ps1'
+[7.429s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/hook/ld_library_path_lib.dsv'
+[7.429s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/hook/ld_library_path_lib.sh'
+[7.429s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/bin'
+[7.429s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib/pkgconfig/armor_detector.pc'
+[7.429s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib/python3.10/site-packages'
+[7.429s] Level 1:colcon.colcon_core.environment:checking '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/bin'
+[7.435s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/package.ps1'
+[7.435s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/package.dsv'
+[7.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/package.sh'
+[7.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/package.bash'
+[7.436s] INFO:colcon.colcon_core.shell:Creating package script '/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/package.zsh'
+[7.436s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/colcon-core/packages/armor_detector)
+[7.447s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.447s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.447s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '2'
+[7.447s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.457s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.457s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.457s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.467s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.474s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mechax/zyb/mechax_cv_trajectory/install/local_setup.ps1'
+[7.474s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mechax/zyb/mechax_cv_trajectory/install/_local_setup_util_ps1.py'
+[7.475s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mechax/zyb/mechax_cv_trajectory/install/setup.ps1'
+[7.482s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mechax/zyb/mechax_cv_trajectory/install/local_setup.sh'
+[7.482s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mechax/zyb/mechax_cv_trajectory/install/_local_setup_util_sh.py'
+[7.482s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mechax/zyb/mechax_cv_trajectory/install/setup.sh'
+[7.489s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mechax/zyb/mechax_cv_trajectory/install/local_setup.bash'
+[7.489s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mechax/zyb/mechax_cv_trajectory/install/setup.bash'
+[7.497s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mechax/zyb/mechax_cv_trajectory/install/local_setup.zsh'
+[7.497s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mechax/zyb/mechax_cv_trajectory/install/setup.zsh'

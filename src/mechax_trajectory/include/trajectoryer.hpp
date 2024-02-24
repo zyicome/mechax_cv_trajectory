@@ -7,6 +7,8 @@
 #include "auto_aim_interfaces/msg/send_serial.hpp"
 #include "auto_aim_interfaces/msg/target.hpp"
 
+#include <geometry_msgs/msg/point_stamped.hpp>
+
 using namespace std;
 
 #define g 9.8
@@ -30,13 +32,15 @@ public:
 
     void parameters_init();
 
-    int no_resistance_model(float &object_x, float &object_y, float &object_z, float &v0);
+    int no_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0);
 
-    int single_resistance_model(float &object_x, float &object_y, float &object_z, float &v0, float &randa);
+    int single_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
 
-    int single_resistance_model_two(float &object_x, float &object_y, float &object_z, float &v0, float &randa);
+    int single_resistance_model_two(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
 
-    bool is_solvable(float &object_x, float &object_y, float &object_z, float &v0);
+    int two_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
+
+    bool is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0,float &alpha);
 
     int solve_trajectory();
 
@@ -46,12 +50,13 @@ public:
 
     void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg);
 
+    void get_need_pose(const float &object_x,const float &object_y,const float &object_z);
+
     // parameters
     //------------------
     float v0; // m/s
     float angle_pitch;
     float angle_yaw;
-    float alpha;
     float fly_t; // m
     float bias_t;
     float y_bias;
@@ -92,6 +97,7 @@ public:
     //------------------
     rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr maker_pub_;
     rclcpp::Publisher<auto_aim_interfaces::msg::SendSerial>::SharedPtr result_pub_;
+    rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr needpose_pub_;
     //------------------
     //timer
     //------------------

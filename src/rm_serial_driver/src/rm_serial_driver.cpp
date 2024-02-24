@@ -71,7 +71,7 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
 
   // Create Subscription
   result_sub_ = this->create_subscription<auto_aim_interfaces::msg::SendSerial>(
-    "/trajectory/result", rclcpp::SensorDataQoS(),
+    "/trajectory/result", 10,
     std::bind(&RMSerialDriver::sendData, this, std::placeholders::_1));
 }
 
@@ -190,7 +190,7 @@ void RMSerialDriver::receiveData()
                       t.header.frame_id = "odom";
                       t.child_frame_id = "gimbal_link";
                       tf2::Quaternion q;
-                      q.setRPY(packet.roll, packet.pitch, packet.yaw);
+                      q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
                       t.transform.rotation = tf2::toMsg(q);
                       tf_broadcaster_->sendTransform(t);
 

@@ -2,6 +2,8 @@
 // Licensed under the MIT License.
 
 #include <cv_bridge/cv_bridge.h>
+#include <image_transport/camera_publisher.hpp>
+#include <opencv2/core/hal/interface.h>
 #include <rmw/qos_profiles.h>
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <tf2/convert.h>
@@ -81,9 +83,16 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     // "/camera/camera_info", rclcpp::SensorDataQoS(),
     "/camera_info", rclcpp::SensorDataQoS(),
     [this](sensor_msgs::msg::CameraInfo::ConstSharedPtr camera_info) {
-      cam_center_ = cv::Point2f(camera_info->k[2], camera_info->k[5]);
+      //cam_center_ = cv::Point2f(camera_info->k[2], camera_info->k[5]);
+      //cam_center_ = cv::Point2f(320, 240);
+      cam_center_ = cv::Point2f(camera_info->width / 2, camera_info->height / 2);
       cam_info_ = std::make_shared<sensor_msgs::msg::CameraInfo>(*camera_info);
       pnp_solver_ = std::make_unique<PnPSolver>(camera_info->k, camera_info->d);
+      camera_matrix_.at<double>(0,0) = camera_info->k[0];
+    camera_matrix_.at<double>(0,2) = camera_info->k[2];
+    camera_matrix_.at<double>(1,1) = camera_info->k[4];
+    camera_matrix_.at<double>(1,2) = camera_info->k[5];
+    camera_matrix_.at<double>(2,2) = 1.0;
       cam_info_sub_.reset();
     });
 
@@ -91,6 +100,9 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     // "/camera/image_color", rclcpp::SensorDataQoS(),
     "/image_raw", rclcpp::SensorDataQoS(),
     std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
+
+  needpose_sub_ = this->create_subscription<geometry_msgs::msg::PoseStamped>("/tracker/needpose", 10,
+    std::bind(&ArmorDetectorNode::needposeCallback, this, std::placeholders::_1));
 }
 
 void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg)
@@ -157,6 +169,22 @@ void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstShared
     publishMarkers();
   }
 }
+
+void ArmorDetectorNode::needposeCallback(const geometry_msgs::msg::PoseStamped::SharedPtr needpose_ptr)
+{
+  cv::Mat needpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
+  needpose_mat.at<double>(0,0) = needpose_ptr->pose.position.x;
+  needpose_mat.at<double>(1,0) = needpose_ptr->pose.position.y;
+  needpose_mat.at<double>(2,0) = needpose_ptr->pose.position.z;
+  cv::Mat pose_mat = cv::Mat::zeros(3,1,CV_64FC1);
+  //pose_mat = camera_matrix_ * needpose_mat;
+  pose_mat.at<double>(0,0) = pose_mat.at<double>(0,0) / pose_mat.at<double>(2,0);
+  pose_mat.at<double>(1,0) = pose_mat.at<double>(1,0) / pose_mat.at<double>(2,0);
+  pose_mat.at<double>(1,0) = 1.0;
+  needpose_img = cv::Point2f(pose_mat.at<double>(0,0), pose_mat.at<double>(1,0));
+}
+
+//}  // namespace rm_auto_aim
 
 std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
 {
@@ -242,6 +270,11 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
     detector_->drawResults(img);
     // Draw camera center
     cv::circle(img, cam_center_, 5, cv::Scalar(255, 0, 0), 2);
+    // Draw need armor center
+    if(needpose_img.x != 0 && needpose_img.y != 0)
+    {
+      cv::circle(img, needpose_img, 5, cv::Scalar(0, 0, 255), 2);
+    }
     // Draw latency
     std::stringstream latency_ss;
     latency_ss << "Latency: " << std::fixed << std::setprecision(2) << latency << "ms";
