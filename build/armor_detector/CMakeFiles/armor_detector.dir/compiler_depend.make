@@ -1397,6 +1397,10 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__builder.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__traits.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp \
   /opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp \
   /opt/ros/humble/include/class_loader/class_loader/class_loader.hpp \
   /usr/include/console_bridge/console.h \
@@ -2169,8 +2173,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
-/usr/include/c++/11/fstream:
-
 /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/number_classifier.cpp:
 
 /opt/ros/humble/include/rclcpp_components/rclcpp_components/node_instance_wrapper.hpp:
@@ -2180,6 +2182,10 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/class_loader/class_loader/exceptions.hpp:
 
 /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp:
+
+/usr/include/c++/11/fstream:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__traits.hpp:
 
@@ -2212,6 +2218,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_wait_set_mask.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_service.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_event_handler.hpp:
 
@@ -2380,6 +2388,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp:
 
 /opt/ros/humble/include/message_filters/message_filters/visibility_control.h:
 
@@ -2832,6 +2842,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__builder.hpp:
 
 /opt/ros/humble/include/rmw/rmw/security_options.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/color_rgba__struct.hpp:
 

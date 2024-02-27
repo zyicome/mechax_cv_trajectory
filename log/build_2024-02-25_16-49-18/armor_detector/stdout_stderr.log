@@ -1,0 +1,15 @@
+[  6%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o[0m
+[ 20%] Built target gtest
+[ 33%] Built target gtest_main
+[ 46%] Built target armor_detector_node
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:193:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::needpose(auto_aim_interfaces::msg::Armors)[m[K’
+  193 | void [01;31m[KArmorDetectorNode[m[K::needpose(const auto_aim_interfaces::msg::Armors armors_msg_)
+      |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:193:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::needpose(auto_aim_interfaces::msg::Armors)[m[K’
+In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:27[m[K:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:33:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass rm_auto_aim::ArmorDetectorNode[m[K’ defined here
+   33 | class [01;36m[KArmorDetectorNode[m[K : public rclcpp::Node
+      |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

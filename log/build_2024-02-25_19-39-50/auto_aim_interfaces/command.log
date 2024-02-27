@@ -1,0 +1,4 @@
+Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces': /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces -- -j16 -l16
+Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces' returned '0': /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces -- -j16 -l16
+Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces': /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces
+Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces' returned '0': /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces

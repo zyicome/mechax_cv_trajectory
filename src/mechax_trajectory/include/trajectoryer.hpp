@@ -6,8 +6,19 @@
 #include "auto_aim_interfaces/msg/receive_serial.hpp"
 #include "auto_aim_interfaces/msg/send_serial.hpp"
 #include "auto_aim_interfaces/msg/target.hpp"
+#include <tf2_ros/transform_broadcaster.h>
+
+#include <geometry_msgs/msg/transform_stamped.hpp>
 
 #include <geometry_msgs/msg/point_stamped.hpp>
+
+#include <tf2_ros/buffer.h>
+#include <tf2_ros/create_timer_ros.h>
+#include <tf2_ros/message_filter.h>
+#include <tf2_ros/transform_listener.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+
+#include <std_msgs/msg/float64.hpp>
 
 using namespace std;
 
@@ -50,6 +61,8 @@ public:
 
     void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg);
 
+    void changeyaw_callback(const std_msgs::msg::Float64 msg);
+
     void get_need_pose(const float &object_x,const float &object_y,const float &object_z);
 
     // parameters
@@ -87,11 +100,13 @@ public:
     float randa;
     bool is_hero;
     //------------------
+    float needchangeyaw;
     //------------------
     // Subsciption
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr target_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr angle_sub_;
+    rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr changeyaw_sub_;
     //------------------
     // Publisher
     //------------------
@@ -103,4 +118,7 @@ public:
     //------------------
     rclcpp::TimerBase::SharedPtr timer_;
     //------------------
+    // Broadcast tf from odom to gimbal_link
+    double timestamp_offset_ = 0;
+    std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
 };

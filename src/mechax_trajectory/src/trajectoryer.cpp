@@ -63,6 +63,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     angle_sub_ = this->create_subscription<auto_aim_interfaces::msg::ReceiveSerial>(
         "/angle/init", 10, std::bind(&Trajectoryer::angle_callback, this, std::placeholders::_1));
+
+    changeyaw_sub_ = this->create_subscription<std_msgs::msg::Float64>(
+        "/trajectory/changeyaw", 10, std::bind(&Trajectoryer::changeyaw_callback, this, std::placeholders::_1));
     
     maker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>(
         "/aiming_point", 10);
@@ -71,7 +74,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
         "/trajectory/result", 10);
     
     needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-        "/trajectory/needpose", rclcpp::SensorDataQoS());
+        "/trajectory/needpose", 10);
+
+    tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
    //timer_ = this->create_wall_timer(5s, std::bind(&Trajectoryer::test,this));
 }
 
@@ -88,7 +93,7 @@ void  Trajectoryer::parameters_init()
     }
     else
     {
-        v0 = 25; // m/s
+        v0 = 23; // m/s
     }
     //****************************************************
     // 用来计算空气阻力系数
@@ -118,6 +123,7 @@ void  Trajectoryer::parameters_init()
     y_bias = 0.0; // m
     z_bias = 0.0; // m
     //****************************************************
+    needchangeyaw = 0.0;
 }
 
 //@param: object_x, object_y, object_z, v0
@@ -361,7 +367,10 @@ int Trajectoryer::solve_trajectory()
         if(temp_yaw_diff < yaw_diff_min)
         {
             yaw_diff_min = temp_yaw_diff;
-            idx = i;
+            idx = 1;
+        }
+        else{
+            idx = 0;
         }
     }
     else if(armor_num == 3)
@@ -455,6 +464,7 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     angle_yaw = atan2(object_y, object_x);
+    get_need_pose(object_x,object_y,object_z);
     return 1;
 }
 
@@ -528,7 +538,15 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             //--------------------------------------------
             //弧度制转角度制
             float send_pitch = angle_pitch * 57.3f;
-            float send_yaw = angle_yaw * 57.3f;
+            float send_yaw = 0.0;
+            if((needchangeyaw * 57.3f) < 20 && (needchangeyaw * 57.3f) > -20)
+            {
+                send_yaw = (angle_yaw + needchangeyaw) * 57.3f;
+            }
+            else{
+                send_yaw = (angle_yaw) * 57.3f;
+            }
+            //float send_yaw = (angle_yaw) * 57.3f;
             //--------------------------------------------
             result.is_tracking = is_tracking;
             result.pitch = send_pitch;
@@ -561,17 +579,35 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
     // RCLCPP_INFO(get_logger(), "now_yaw: %f", now_yaw);
 }
 
+void Trajectoryer::changeyaw_callback(const std_msgs::msg::Float64 msg)
+{
+    needchangeyaw = msg.data;
+}
+
 void Trajectoryer::get_need_pose(const float &object_x,const float &object_y,const float &object_z)
 {
+    // 创建坐标变换消息和发布
+    geometry_msgs::msg::TransformStamped t;
+    t.header.stamp = this->now();
+    t.header.frame_id = "gimbal_link";
+    t.child_frame_id = "horizom_gimbal_link";
+    tf2::Quaternion q;
+    q.setRPY(0, now_pitch, 0);
+    t.transform.rotation = tf2::toMsg(q);
+    tf_broadcaster_->sendTransform(t);
+
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
-    float need_z = tan(angle_pitch) * distance;
+    float need_z = object_z;
     geometry_msgs::msg::PointStamped pose;
     pose.header.stamp = this->now();
-    pose.header.frame_id = "odom";
+    pose.header.frame_id = "horizom_gimbal_link";
     pose.point.x = distance;
     pose.point.y = 0.0;
     pose.point.z = need_z;
     needpose_pub_->publish(pose);
+    /*std::cout << "pose.x : " << pose.point.x << std::endl;
+  std::cout << "pose.y : " << pose.point.y << std::endl;
+  std::cout << "pose.z : " << pose.point.z << std::endl;*/
 }
 
 int main(int argc, char *argv[])

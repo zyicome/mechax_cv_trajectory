@@ -1,0 +1,34 @@
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:[m[K In constructor ‘[01m[Krm_auto_aim::ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:140:26:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kmessage_filters::Subscriber<geometry_msgs::msg::PointStamped_<std::allocator<void> > >::subscribe(rm_auto_aim::ArmorTrackerNode*, const char [21], rclcpp::SensorDataQoS)[m[K’
+  140 |   [01;31m[Kneedpose_sub_.subscribe(this, "/trajectory/needpose",rclcpp::SensorDataQoS())[m[K;
+      |   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/include/armor_tracker/tracker_node.hpp:7[m[K,
+                 from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:2[m[K:
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:219:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid message_filters::Subscriber<M, NodeType>::subscribe(message_filters::Subscriber<M, NodeType>::NodePtr, const string&, rmw_qos_profile_t) [with M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; NodeType = rclcpp::Node; message_filters::Subscriber<M, NodeType>::NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K’
+  219 |   void [01;36m[Ksubscribe[m[K(NodePtr node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default) override
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:219:26:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Krm_auto_aim::ArmorTrackerNode*[m[K’ to ‘[01m[Kmessage_filters::Subscriber<geometry_msgs::msg::PointStamped_<std::allocator<void> > >::NodePtr[m[K’ {aka ‘[01m[Kstd::shared_ptr<rclcpp::Node>[m[K’}
+  219 |   void subscribe([01;36m[KNodePtr node[m[K, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default) override
+      |                  [01;36m[K~~~~~~~~^~~~[m[K
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:234:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid message_filters::Subscriber<M, NodeType>::subscribe(NodeType*, const string&, rmw_qos_profile_t) [with M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s][m[K’
+  234 |   void [01;36m[Ksubscribe[m[K(NodeType * node, const std::string& topic, const rmw_qos_profile_t qos = rmw_qos_profile_default) override
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:234:85:[m[K [01;36m[Knote: [m[K  no known conversion for argument 3 from ‘[01m[Krclcpp::SensorDataQoS[m[K’ to ‘[01m[Krmw_qos_profile_t[m[K’ {aka ‘[01m[Krmw_qos_profile_s[m[K’}
+  234 | e * node, const std::string& topic, [01;36m[Kconst rmw_qos_profile_t qos = rmw_qos_profile_default[m[K) override
+      |                                     [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:249:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid message_filters::Subscriber<M, NodeType>::subscribe(message_filters::Subscriber<M, NodeType>::NodePtr, const string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; NodeType = rclcpp::Node; message_filters::Subscriber<M, NodeType>::NodePtr = std::shared_ptr<rclcpp::Node>; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K’
+  249 |   void [01;36m[Ksubscribe[m[K(
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:249:8:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:271:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid message_filters::Subscriber<M, NodeType>::subscribe(NodeType*, const string&, rmw_qos_profile_t, rclcpp::SubscriptionOptions) [with M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; NodeType = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::SubscriptionOptions = rclcpp::SubscriptionOptionsWithAllocator<std::allocator<void> >][m[K’
+  271 |   void [01;36m[Ksubscribe[m[K(
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:271:8:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 3 provided
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:298:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid message_filters::Subscriber<M, NodeType>::subscribe() [with M = geometry_msgs::msg::PointStamped_<std::allocator<void> >; NodeType = rclcpp::Node][m[K’
+  298 |   void [01;36m[Ksubscribe[m[K() override
+      |        [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/humble/include/message_filters/message_filters/subscriber.h:298:8:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 3 provided
+gmake[2]: *** [CMakeFiles/armor_tracker.dir/build.make:104: CMakeFiles/armor_tracker.dir/src/tracker_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/armor_tracker.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1399,6 +1399,10 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o
  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__builder.hpp
  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__traits.hpp
  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__traits.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp
  /opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp
  /opt/ros/humble/include/class_loader/class_loader/class_loader.hpp
  /usr/include/console_bridge/console.h

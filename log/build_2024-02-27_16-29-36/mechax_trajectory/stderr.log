@@ -1,0 +1,3 @@
+gmake[2]: *** [CMakeFiles/mechax_trajectory.dir/build.make:76: CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mechax_trajectory.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

@@ -1,0 +1,9 @@
+[ 33%] Built target armor_tracker_node
+[ 50%] [32mBuilding CXX object CMakeFiles/armor_tracker.dir/src/tracker_node.cpp.o[0m
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorTrackerNode::needposeCallback(geometry_msgs::msg::PointStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:289:18:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<tf2_ros::Buffer>[m[K’ has no member named ‘[01m[KcanTransform[m[K’
+  289 |   if(tf2_buffer_.[01;31m[KcanTransform[m[K("horizom_gimbal_link", "camera_optical_frame", tf2::TimePointZero)){
+      |                  [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/armor_tracker.dir/build.make:104: CMakeFiles/armor_tracker.dir/src/tracker_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/armor_tracker.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -81,6 +81,8 @@ private:
   rclcpp::Publisher<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr serial_pub_;
 
   std::thread receive_thread_;
+
+  int closecount=0;
 };
 }  // namespace rm_serial_driver
 

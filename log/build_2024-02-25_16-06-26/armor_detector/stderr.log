@@ -1,0 +1,7 @@
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::needposeCallback(geometry_msgs::msg::PointStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:178:48:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct geometry_msgs::msg::PointStamped_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct geometry_msgs::msg::PointStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kposition[m[K’
+  178 |   needpose_mat.at<double>(2,0) = needpose_ptr->[01;31m[Kposition[m[K.z;
+      |                                                [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

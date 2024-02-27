@@ -65,6 +65,8 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
   marker_pub_ =
     this->create_publisher<visualization_msgs::msg::MarkerArray>("/detector/marker", 10);
 
+  changeyaw_pub = this->create_publisher<std_msgs::msg::Float64>("/trajectory/changeyaw", 10);
+
   // Debug Publishers
   debug_ = this->declare_parameter("debug", false);
   if (debug_) {
@@ -101,7 +103,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     "/image_raw", rclcpp::SensorDataQoS(),
     std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
 
-  needpose_sub_ = this->create_subscription<geometry_msgs::msg::PoseStamped>("/tracker/needpose", 10,
+  needpose_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>("/tracker/needpose", 10,
     std::bind(&ArmorDetectorNode::needposeCallback, this, std::placeholders::_1));
 }
 
@@ -129,6 +131,14 @@ void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstShared
         armor_msg.pose.position.x = tvec.at<double>(0);
         armor_msg.pose.position.y = tvec.at<double>(1);
         armor_msg.pose.position.z = tvec.at<double>(2);
+        
+        //
+        armorpose_mat.at<double>(0,0) = armor_msg.pose.position.x;
+      armorpose_mat.at<double>(1,0) = armor_msg.pose.position.y;
+      armorpose_mat.at<double>(2,0) = armor_msg.pose.position.z;
+
+      armorpose = cv::Point3f(armor_msg.pose.position.x,armor_msg.pose.position.y,armor_msg.pose.position.z);
+
         // rvec to 3x3 rotation matrix
         cv::Mat rotation_matrix;
         cv::Rodrigues(rvec, rotation_matrix);
@@ -170,18 +180,70 @@ void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstShared
   }
 }
 
-void ArmorDetectorNode::needposeCallback(const geometry_msgs::msg::PoseStamped::SharedPtr needpose_ptr)
+void ArmorDetectorNode::needposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose_ptr)
 {
+  needpose = cv::Point3f(needpose_ptr->point.x,needpose_ptr->point.y,needpose_ptr->point.z);
   cv::Mat needpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  needpose_mat.at<double>(0,0) = needpose_ptr->pose.position.x;
-  needpose_mat.at<double>(1,0) = needpose_ptr->pose.position.y;
-  needpose_mat.at<double>(2,0) = needpose_ptr->pose.position.z;
+  needpose_mat.at<double>(0,0) = needpose_ptr->point.x;
+  needpose_mat.at<double>(1,0) = needpose_ptr->point.y;
+  needpose_mat.at<double>(2,0) = needpose_ptr->point.z;
   cv::Mat pose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  //pose_mat = camera_matrix_ * needpose_mat;
-  pose_mat.at<double>(0,0) = pose_mat.at<double>(0,0) / pose_mat.at<double>(2,0);
-  pose_mat.at<double>(1,0) = pose_mat.at<double>(1,0) / pose_mat.at<double>(2,0);
-  pose_mat.at<double>(1,0) = 1.0;
+  pose_mat = camera_matrix_ * needpose_mat;
+  //std::cout << "camera_matrix: " << camera_matrix_<<std::endl;
+  pose_mat.at<double>(0,0) = pose_mat.at<double>(0,0) / fabs(pose_mat.at<double>(2,0));
+  pose_mat.at<double>(1,0) = pose_mat.at<double>(1,0) / fabs(pose_mat.at<double>(2,0));
+  pose_mat.at<double>(2,0) = 1.0;
   needpose_img = cv::Point2f(pose_mat.at<double>(0,0), pose_mat.at<double>(1,0));
+  /*std::cout << "needpose_ptr->pose.position.x : " << needpose_ptr->point.x << std::endl;
+  std::cout << "needpose_ptr->pose.position.y : " << needpose_ptr->point.y << std::endl;
+  std::cout << "needpose_ptr->pose.position.z : " << needpose_ptr->point.z << std::endl;
+  std::cout << "needpose_img.x : " << needpose_img.x << std::endl;
+  std::cout << "needpose_img.y : " << needpose_img.y << std::endl;*/
+}
+
+void ArmorDetectorNode::needarmorpose()
+{
+  /*cv::Mat needpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
+  needpose_mat.at<double>(0,0) = armors_msg_.pose.position.x;
+  needpose_mat.at<double>(1,0) = armors_msg_.pose.position.y;
+  needpose_mat.at<double>(2,0) = armors_msg_.pose.position.z;*/
+  if(armorpose_mat.at<double>(0,0)==0 && armorpose_mat.at<double>(1,0)==0 && armorpose_mat.at<double>(2,0)==0)
+  {
+    return;
+  }
+  cv::Mat pose_mat = cv::Mat::zeros(3,1,CV_64FC1);
+  pose_mat = camera_matrix_ * armorpose_mat;
+  //std::cout << "camera_matrix: " << camera_matrix_<<std::endl;
+  pose_mat.at<double>(0,0) = pose_mat.at<double>(0,0) / fabs(pose_mat.at<double>(2,0));
+  pose_mat.at<double>(1,0) = pose_mat.at<double>(1,0) / fabs(pose_mat.at<double>(2,0));
+  pose_mat.at<double>(2,0) = 1.0;
+  armorpose_img = cv::Point2f(pose_mat.at<double>(0,0), pose_mat.at<double>(1,0));
+  /*std::cout << "armor_msg_->pose.position.x : " << armorpose_mat.at<double>(0,0) << std::endl;
+  std::cout << "armor_msg_->pose.position.y : " << armorpose_mat.at<double>(1,0) << std::endl;
+  std::cout << "armor_msg_->pose.position.z : " << armorpose_mat.at<double>(2,0) << std::endl;
+  std::cout << "needpose_img.x : " << needpose_img.x << std::endl;
+  std::cout << "needpose_img.y : " << needpose_img.y << std::endl;*/
+}
+
+void ArmorDetectorNode::is_need_change()
+{
+  if(armorpose_img.x !=0 && needpose_img.x !=0)
+  {
+    if(fabs(armorpose_img.x - needpose_img.x) > 0.001 && fabs(armorpose_img.x - needpose_img.x) < 20)
+    {
+        float needchangeyaw = acos(fabs(needpose.x* armorpose.x + armorpose.z * needpose.z) / (sqrtf(pow(needpose.x,2) + pow(needpose.z,2)) * sqrtf(pow(armorpose.x,2) + pow(armorpose.z,2))));
+        //std::cout << "needchangeyaw: " << needchangeyaw << std::endl;
+        std_msgs::msg::Float64 msg;
+        if(armorpose_img.x > needpose_img.x)
+        {
+          msg.data = -needchangeyaw;
+        }
+        else{
+          msg.data = needchangeyaw;
+        }
+        changeyaw_pub->publish(msg);
+    }
+  }
 }
 
 //}  // namespace rm_auto_aim
@@ -271,11 +333,15 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
     // Draw camera center
     cv::circle(img, cam_center_, 5, cv::Scalar(255, 0, 0), 2);
     // Draw need armor center
+    needarmorpose();
+    if(armorpose_img.x != 0 && armorpose_img.y != 0)
+    {
+      cv::circle(img, armorpose_img, 5, cv::Scalar(0, 0, 255), 2);
+    }
     if(needpose_img.x != 0 && needpose_img.y != 0)
     {
-      cv::circle(img, needpose_img, 5, cv::Scalar(0, 0, 255), 2);
-      std::cout << "needpose_img_x: " << needpose_img.x << std::endl;
-      std::cout << "needpose_img_y: " << needpose_img.y << std::endl;
+      is_need_change();
+      cv::circle(img, needpose_img, 5, cv::Scalar(0, 255, 0), 2);
     }
     // Draw latency
     std::stringstream latency_ss;

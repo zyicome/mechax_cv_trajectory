@@ -1,0 +1,16 @@
+[35m[1mConsolidate compiler generated dependencies of target armor_detector[0m
+[ 26%] Built target gtest_main
+[ 26%] Built target armor_detector_node
+[ 40%] Built target gtest
+[ 46%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o[0m
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::is_need_change()[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:234:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kfloat64[m[K’ was not declared in this scope; did you mean ‘[01m[Kfloat_t[m[K’?
+  234 |         [01;31m[Kfloat64[m[K needchangeyaw = acos(fabs(needpose.x* armorpose.x + armorpose.z * needpose.z) / (sqrtf(pow(needpose.x,2) + pow(needpose.z,2)) * sqrtf(pow(armorpose.x,2) + pow(armorpose.z,2))));
+      |         [01;31m[K^~~~~~~[m[K
+      |         [32m[Kfloat_t[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:235:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kneedchangeyaw[m[K’ was not declared in this scope
+  235 |         std::cout << "needchangeyaw: " << [01;31m[Kneedchangeyaw[m[K << std::endl;
+      |                                           [01;31m[K^~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

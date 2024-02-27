@@ -1,0 +1,5 @@
+[0.073s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ros2_ws/install/astra_camera:/home/mechax/ros2_ws/install/astra_camera_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver -- -j16 -l16
+[0.127s] [ 40%] Built target rm_serial_driver_node
+[0.138s] [ 60%] [32mBuilding CXX object CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o[0m
+[8.939s] [ 80%] [32m[1mLinking CXX shared library librm_serial_driver.so[0m
+[9.465s] [100%] Built target rm_serial_driver

@@ -1,0 +1,21 @@
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::imageCallback(sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:134:40:[m[K [01;31m[Kerror: [m[K‘[01m[Karmor_msg_[m[K’ was not declared in this scope; did you mean ‘[01m[Karmors_msg_[m[K’?
+  134 |         needpose_mat.at<double>(0,0) = [01;31m[Karmor_msg_[m[K.pose.position.x;
+      |                                        [01;31m[K^~~~~~~~~~[m[K
+      |                                        [32m[Karmors_msg_[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::needpose()[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:212:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing Armors = struct auto_aim_interfaces::msg::Armors_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct auto_aim_interfaces::msg::Armors_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kpose[m[K’
+  212 | td::cout << "armor_msg_->pose.position.x : " << armors_msg_.[01;31m[Kpose[m[K.position.x << std::endl;
+      |                                                             [01;31m[K^~~~[m[K
+
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:213:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing Armors = struct auto_aim_interfaces::msg::Armors_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct auto_aim_interfaces::msg::Armors_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kpose[m[K’
+  213 | td::cout << "armor_msg_->pose.position.y : " << armors_msg_.[01;31m[Kpose[m[K.position.y << std::endl;
+      |                                                             [01;31m[K^~~~[m[K
+
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:214:64:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing Armors = struct auto_aim_interfaces::msg::Armors_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct auto_aim_interfaces::msg::Armors_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kpose[m[K’
+  214 | td::cout << "armor_msg_->pose.position.z : " << armors_msg_.[01;31m[Kpose[m[K.position.z << std::endl;
+      |                                                             [01;31m[K^~~~[m[K
+
+gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

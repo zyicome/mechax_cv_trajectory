@@ -1,0 +1,36 @@
+[ 20%] [32mBuilding CXX object CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o[0m
+[ 60%] Built target rm_serial_driver_node
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:[m[K In constructor ‘[01m[Krm_serial_driver::RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:58:15:[m[K [01;31m[Kerror: [m[Kpointer to a function used in arithmetic [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpointer-arith-Werror=pointer-arith]8;;[m[K]
+   58 |         exit[0[01;31m[K][m[K;
+      |               [01;31m[K^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:58:15:[m[K [01;31m[Kerror: [m[Kvalue computed is not used [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+   58 |         [01;31m[Kexit[0][m[K;
+      |         [01;31m[K~~~~~~^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:58:15:[m[K [01;31m[Kerror: [m[Kstatement has no effect [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:65:11:[m[K [01;31m[Kerror: [m[Kpointer to a function used in arithmetic [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpointer-arith-Werror=pointer-arith]8;;[m[K]
+   65 |     exit[0[01;31m[K][m[K;
+      |           [01;31m[K^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:65:11:[m[K [01;31m[Kerror: [m[Kvalue computed is not used [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+   65 |     [01;31m[Kexit[0][m[K;
+      |     [01;31m[K~~~~~~^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:65:11:[m[K [01;31m[Kerror: [m[Kstatement has no effect [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:[m[K In member function ‘[01m[Kvoid rm_serial_driver::RMSerialDriver::reopenPort()[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:349:15:[m[K [01;31m[Kerror: [m[Kpointer to a function used in arithmetic [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpointer-arith-Werror=pointer-arith]8;;[m[K]
+  349 |         exit[0[01;31m[K][m[K;
+      |               [01;31m[K^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:349:15:[m[K [01;31m[Kerror: [m[Kvalue computed is not used [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+  349 |         [01;31m[Kexit[0][m[K;
+      |         [01;31m[K~~~~~~^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:349:15:[m[K [01;31m[Kerror: [m[Kstatement has no effect [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:361:13:[m[K [01;31m[Kerror: [m[Kpointer to a function used in arithmetic [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpointer-arith-Werror=pointer-arith]8;;[m[K]
+  361 |       exit[0[01;31m[K][m[K;
+      |             [01;31m[K^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:361:13:[m[K [01;31m[Kerror: [m[Kvalue computed is not used [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+  361 |       [01;31m[Kexit[0][m[K;
+      |       [01;31m[K~~~~~~^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/src/rm_serial_driver.cpp:361:13:[m[K [01;31m[Kerror: [m[Kstatement has no effect [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Werror=unused-value]8;;[m[K]
+cc1plus: all warnings being treated as errors
+gmake[2]: *** [CMakeFiles/rm_serial_driver.dir/build.make:76: CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/rm_serial_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

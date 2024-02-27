@@ -1,0 +1,65 @@
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::imageCallback(sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:138:109:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kcv[m[K’
+  138 |       armorpose = cv::Point3f(armor_msg.pose.position.x,armor_msg.pose.position.y,armor_msg.pose.position.z)
+      |                                                                                                             [01;31m[K^[m[K
+      |                                                                                                             [32m[K;[m[K
+......
+  141 |         [32m[Kcv[m[K::Mat rotation_matrix;
+      |         [32m[K~~[m[K                                                                                                   
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:142:29:[m[K [01;31m[Kerror: [m[K‘[01m[Krotation_matrix[m[K’ was not declared in this scope
+  142 |         cv::Rodrigues(rvec, [01;31m[Krotation_matrix[m[K);
+      |                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:145:30:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  145 |           rotation_matrix.at<[01;31m[Kdouble[m[K>(0, 0), rotation_matrix.at<double>(0, 1),
+      |                              [01;31m[K^~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:145:64:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  145 |        rotation_matrix.at<double>(0, 0), rotation_matrix.at<[01;31m[Kdouble[m[K>(0, 1),
+      |                                                             [01;31m[K^~~~~~[m[K
+
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:146:30:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  146 |           rotation_matrix.at<[01;31m[Kdouble[m[K>(0, 2), rotation_matrix.at<double>(1, 0),
+      |                              [01;31m[K^~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:146:64:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  146 |        rotation_matrix.at<double>(0, 2), rotation_matrix.at<[01;31m[Kdouble[m[K>(1, 0),
+      |                                                             [01;31m[K^~~~~~[m[K
+
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:147:30:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  147 |           rotation_matrix.at<[01;31m[Kdouble[m[K>(1, 1), rotation_matrix.at<double>(1, 2),
+      |                              [01;31m[K^~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:147:64:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  147 |        rotation_matrix.at<double>(1, 1), rotation_matrix.at<[01;31m[Kdouble[m[K>(1, 2),
+      |                                                             [01;31m[K^~~~~~[m[K
+
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:148:30:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  148 |           rotation_matrix.at<[01;31m[Kdouble[m[K>(2, 0), rotation_matrix.at<double>(2, 1),
+      |                              [01;31m[K^~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:148:64:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  148 |        rotation_matrix.at<double>(2, 0), rotation_matrix.at<[01;31m[Kdouble[m[K>(2, 1),
+      |                                                             [01;31m[K^~~~~~[m[K
+
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:149:30:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Kdouble[m[K’
+  149 |           rotation_matrix.at<[01;31m[Kdouble[m[K>(2, 2));
+      |                              [01;31m[K^~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::needposeCallback(geometry_msgs::msg::PointStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:183:28:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator=[m[K’ (operand types are ‘[01m[Kcv::Point3f[m[K’ {aka ‘[01m[Kcv::Point3_<float>[m[K’} and ‘[01m[Kgeometry_msgs::msg::PointStamped_<std::allocator<void> >::_point_type[m[K’ {aka ‘[01m[Kgeometry_msgs::msg::Point_<std::allocator<void> >[m[K’})
+  183 |   needpose = needpose_ptr->[01;31m[Kpoint[m[K;
+      |                            [01;31m[K^~~~~[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:57[m[K,
+                 from [01m[K/usr/include/opencv4/opencv2/core/core.hpp:48[m[K,
+                 from [01m[K/opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge.h:43[m[K,
+                 from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:4[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1479:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Point3_<_Tp>& cv::Point3_<_Tp>::operator=(const cv::Point3_<_Tp>&) [with _Tp = float][m[K’
+ 1479 | Point3_<_Tp>& [01;36m[KPoint3_<_Tp>[m[K::operator = (const Point3_& pt)
+      |               [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1479:56:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kgeometry_msgs::msg::PointStamped_<std::allocator<void> >::_point_type[m[K’ {aka ‘[01m[Kgeometry_msgs::msg::Point_<std::allocator<void> >[m[K’} to ‘[01m[Kconst cv::Point3_<float>&[m[K’
+ 1479 | Point3_<_Tp>& Point3_<_Tp>::operator = ([01;36m[Kconst Point3_& pt[m[K)
+      |                                         [01;36m[K~~~~~~~~~~~~~~~^~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1486:15:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kcv::Point3_<_Tp>& cv::Point3_<_Tp>::operator=(cv::Point3_<_Tp>&&) [with _Tp = float][m[K’
+ 1486 | Point3_<_Tp>& [01;36m[KPoint3_<_Tp>[m[K::operator = (Point3_&& pt) CV_NOEXCEPT
+      |               [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:1486:51:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kgeometry_msgs::msg::PointStamped_<std::allocator<void> >::_point_type[m[K’ {aka ‘[01m[Kgeometry_msgs::msg::Point_<std::allocator<void> >[m[K’} to ‘[01m[Kcv::Point3_<float>&&[m[K’
+ 1486 | Point3_<_Tp>& Point3_<_Tp>::operator = ([01;36m[KPoint3_&& pt[m[K) CV_NOEXCEPT
+      |                                         [01;36m[K~~~~~~~~~~^~[m[K
+gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

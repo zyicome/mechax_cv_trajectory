@@ -911,15 +911,19 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__builder.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__traits.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__traits.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp \
-  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__struct.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__builder.hpp \
+  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp
 
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__builder.hpp:
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__traits.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__traits.hpp:
 
@@ -1099,6 +1103,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/message_filters/message_filters/signal1.h:
 
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp:
+
 /opt/ros/humble/include/message_filters/message_filters/visibility_control.h:
 
 /usr/include/opencv4/opencv2/core.hpp:
@@ -1116,6 +1122,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/dynamic_storage.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_service.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_event_handler.hpp:
 
@@ -1156,8 +1164,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/c++/11/csignal:
 
 /opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_stamped.hpp:
 
 /opt/ros/humble/include/image_transport/image_transport/transport_hints.hpp:
 
@@ -1293,6 +1299,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/future_return_code.hpp:
 
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__struct.hpp:
+
 /opt/ros/humble/include/rclcpp/rclcpp/publisher_options.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/loaned_message.hpp:
@@ -1306,6 +1314,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
 
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__builder.hpp:
 
 /opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
 
@@ -1447,6 +1457,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/bits/statx.h:
 
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp:
 
 /usr/include/unistd.h:
@@ -1513,8 +1525,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rcutils/rcutils/logging_macros.h:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
@@ -1532,6 +1542,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/x86_64-linux-gnu/bits/signum-arch.h:
 
 /opt/ros/humble/include/rmw/rmw/security_options.h:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/color_rgba__struct.hpp:
 

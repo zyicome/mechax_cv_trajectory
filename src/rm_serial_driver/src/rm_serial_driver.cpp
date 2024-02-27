@@ -51,11 +51,25 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
     if (!serial_driver_->port()->is_open()) {
       serial_driver_->port()->open();
       receive_thread_ = std::thread(&RMSerialDriver::receiveData, this);
+      closecount++;
+      //std::cout << "count : " << closecount << std::endl; 
+      if(closecount == 10)
+      {
+        closecount=0;
+        exit(0);
+      }
     }
   } catch (const std::exception & ex) {
     RCLCPP_ERROR(
       get_logger(), "Error creating serial port: %s - %s", device_name_.c_str(), ex.what());
     throw ex;
+    closecount++;
+    if(closecount == 10)
+      {
+        //std::cout << "count : " << closecount << std::endl; 
+        closecount=0;
+        exit(0);
+      }
   }
 
   aiming_point_.header.frame_id = "odom";
@@ -191,7 +205,7 @@ void RMSerialDriver::receiveData()
                       t.header.frame_id = "odom";
                       t.child_frame_id = "gimbal_link";
                       tf2::Quaternion q;
-                      q.setRPY(packet.roll / 57.3f, -packet.pitch / 57.3f, packet.yaw / 57.3f);
+                      q.setRPY(0.0, -packet.pitch / 57.3f, packet.yaw / 57.3f);
                       t.transform.rotation = tf2::toMsg(q);
                       tf_broadcaster_->sendTransform(t);
 
@@ -335,11 +349,35 @@ void RMSerialDriver::reopenPort()
   try {
     if (serial_driver_->port()->is_open()) {
       serial_driver_->port()->close();
+      closecount++;
+      //std::cout << "count : " << closecount << std::endl; 
+      if(closecount == 10)
+      {
+        //std::cout << "count : " << closecount << std::endl; 
+        closecount=0;
+        exit(0);
+      }
     }
     serial_driver_->port()->open();
+      closecount++;
+      //std::cout << "count : " << closecount << std::endl; 
+      if(closecount == 10)
+      {
+        //std::cout << "count : " << closecount << std::endl; 
+        closecount=0;
+        exit(0);
+      }
     RCLCPP_INFO(get_logger(), "Successfully reopened port");
   } catch (const std::exception & ex) {
     RCLCPP_ERROR(get_logger(), "Error while reopening port: %s", ex.what());
+    closecount++;
+    std::cout << "count : " << closecount << std::endl; 
+    if(closecount == 10)
+    {
+      std::cout << "count : " << closecount << std::endl; 
+      closecount=0;
+      exit(0);
+    }
     if (rclcpp::ok()) {
       rclcpp::sleep_for(std::chrono::seconds(1));
       reopenPort();

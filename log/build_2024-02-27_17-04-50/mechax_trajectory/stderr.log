@@ -1,0 +1,37 @@
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat ft0(float, float, float, float, float)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:9:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kv0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+    9 | inline float ft0(float t0,float randa,float tan,float z0,[01;35m[Kfloat v0[m[K)
+      |                                                          [01;35m[K~~~~~~^~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat f_t0(float, float, float, float, float)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:14:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kz0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   14 | inline float f_t0(float t0,float randa,float tan,[01;35m[Kfloat z0[m[K,float v0)
+      |                                                  [01;35m[K~~~~~~^~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat z_0(float, float, float, float, float, float, float)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:38:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kz0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   38 | inline float z_0(float vz0, [01;35m[Kfloat z0[m[K, float randa,float alpha,float beta, float alpha_angle, float beta_angle)
+      |                             [01;35m[K~~~~~~^~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model(const float&, const float&, const float&, const float&, const float&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:181:56:[m[K [01;35m[Kwarning: [m[Kvalue computed is not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  181 |             [01;35m[Kfabs(ft0(fly_t, randa, tan, object_z, v0)) > 0.01[m[K;
+      |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model_two(const float&, const float&, const float&, const float&, const float&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:223:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle_init[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  223 |     float [01;35m[Kangle_init[m[K = atan2(object_z, distance);       //rad弧度，补偿前的角度
+      |           [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kbool Trajectoryer::is_solvable(const float&, const float&, const float&, const float&, float&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:312:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kl[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  312 |     float [01;35m[Kl[m[K = sqrtf(pow(object_x, 2) + pow(object_y, 2) + pow(object_z, 2));
+      |           [01;35m[K^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kvoid Trajectoryer::target_callback(auto_aim_interfaces::msg::Target)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:543:23:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksend_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  543 |                 float [01;35m[Ksend_yaw[m[K = (angle_yaw + needchangeyaw) * 57.3f;
+      |                       [01;35m[K^~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:546:23:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ksend_yaw[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  546 |                 float [01;35m[Ksend_yaw[m[K = (angle_yaw) * 57.3f;
+      |                       [01;35m[K^~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:552:26:[m[K [01;31m[Kerror: [m[K‘[01m[Ksend_yaw[m[K’ was not declared in this scope
+  552 |             result.yaw = [01;31m[Ksend_yaw[m[K;
+      |                          [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/mechax_trajectory.dir/build.make:76: CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mechax_trajectory.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

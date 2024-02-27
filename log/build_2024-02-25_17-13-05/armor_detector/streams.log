@@ -1,0 +1,36 @@
+[0.054s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16
+[0.099s] [ 13%] Built target gtest_main
+[0.099s] [ 26%] Built target armor_detector_node
+[0.101s] Consolidate compiler generated dependencies of target armor_detector
+[0.102s] [ 40%] Built target gtest
+[0.115s] [ 46%] Building CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o
+[2.910s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp: In member function ‘void rm_auto_aim::ArmorDetectorNode::imageCallback(sensor_msgs::msg::Image_<std::allocator<void> >::ConstSharedPtr)’:
+[2.910s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:134:9: error: ‘needpose_mat’ was not declared in this scope; did you mean ‘needpose_img’?
+[2.910s]   134 |         needpose_mat.at<double>(0,0) = armor_msg.pose.position.x;
+[2.910s]       |         ^~~~~~~~~~~~
+[2.910s]       |         needpose_img
+[2.910s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:134:25: error: expected primary-expression before ‘double’
+[2.910s]   134 |         needpose_mat.at<double>(0,0) = armor_msg.pose.position.x;
+[2.910s]       |                         ^~~~~~
+[2.910s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:135:23: error: expected primary-expression before ‘double’
+[2.910s]   135 |       needpose_mat.at<double>(1,0) = armor_msg.pose.position.y;
+[2.910s]       |                       ^~~~~~
+[2.910s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:136:23: error: expected primary-expression before ‘double’
+[2.910s]   136 |       needpose_mat.at<double>(2,0) = armor_msg.pose.position.z;
+[2.910s]       |                       ^~~~~~
+[2.923s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp: In member function ‘void rm_auto_aim::ArmorDetectorNode::needpose()’:
+[2.923s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:205:6: error: ‘needpose_mat’ was not declared in this scope; did you mean ‘needpose_img’?
+[2.923s]   205 |   if(needpose_mat.at<double>(0,0)==0 && needpose_mat.at<double>(1,0)==0 && needpose_mat.at<double>(2,0)==0)
+[2.923s]       |      ^~~~~~~~~~~~
+[2.923s]       |      needpose_img
+[2.923s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:205:22: error: expected primary-expression before ‘double’
+[2.923s]   205 |   if(needpose_mat.at<double>(0,0)==0 && needpose_mat.at<double>(1,0)==0 && needpose_mat.at<double>(2,0)==0)
+[2.923s]       |                      ^~~~~~
+[2.923s] /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:205:22: error: expected ‘)’ before ‘double’
+[2.923s]   205 |   if(needpose_mat.at<double>(0,0)==0 && needpose_mat.at<double>(1,0)==0 && needpose_mat.at<double>(2,0)==0)
+[2.923s]       |     ~                ^~~~~~
+[2.923s]       |                      )
+[7.088s] gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+[7.088s] gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+[7.088s] gmake: *** [Makefile:146: all] Error 2
+[7.091s] Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector' returned '2': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16

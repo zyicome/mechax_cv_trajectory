@@ -1,0 +1,51 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o[0m
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat ft0(float, float, float, float, float)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:9:64:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kv0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+    9 | inline float ft0(float t0,float randa,float tan,float z0,[01;35m[Kfloat v0[m[K)
+      |                                                          [01;35m[K~~~~~~^~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat f_t0(float, float, float, float, float)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:14:56:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kz0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   14 | inline float f_t0(float t0,float randa,float tan,[01;35m[Kfloat z0[m[K,float v0)
+      |                                                  [01;35m[K~~~~~~^~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In function ‘[01m[Kfloat z_0(float, float, float, float, float, float, float)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:38:35:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kz0[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   38 | inline float z_0(float vz0, [01;35m[Kfloat z0[m[K, float randa,float alpha,float beta, float alpha_angle, float beta_angle)
+      |                             [01;35m[K~~~~~~^~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model(const float&, const float&, const float&, const float&, const float&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:175:56:[m[K [01;35m[Kwarning: [m[Kvalue computed is not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-value-Wunused-value]8;;[m[K]
+  175 |             [01;35m[Kfabs(ft0(fly_t, randa, tan, object_z, v0)) > 0.01[m[K;
+      |             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kint Trajectoryer::single_resistance_model_two(const float&, const float&, const float&, const float&, const float&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:217:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kangle_init[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  217 |     float [01;35m[Kangle_init[m[K = atan2(object_z, distance);       //rad弧度，补偿前的角度
+      |           [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kbool Trajectoryer::is_solvable(const float&, const float&, const float&, const float&, float&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:306:11:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kl[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  306 |     float [01;35m[Kl[m[K = sqrtf(pow(object_x, 2) + pow(object_y, 2) + pow(object_z, 2));
+      |           [01;35m[K^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:[m[K In member function ‘[01m[Kvoid Trajectoryer::get_need_pose(const float&, const float&, const float&)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:568:25:[m[K [01;31m[Kerror: [m[K‘[01m[KTransformStamped[m[K’ is not a member of ‘[01m[Kgeometry_msgs::msg[m[K’
+  568 |     geometry_msgs::msg::[01;31m[KTransformStamped[m[K t;
+      |                         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:569:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimestamp_offset_[m[K’ was not declared in this scope
+  569 |     [01;31m[Ktimestamp_offset_[m[K = this->get_parameter("timestamp_offset").as_double();
+      |     [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:570:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kt[m[K’ was not declared in this scope; did you mean ‘[01m[Ktm[m[K’?
+  570 |     [01;31m[Kt[m[K.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+      |     [01;31m[K^[m[K
+      |     [32m[Ktm[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:573:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2[m[K’ has not been declared
+  573 |     [01;31m[Ktf2[m[K::Quaternion q;
+      |     [01;31m[K^~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:574:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kq[m[K’ was not declared in this scope
+  574 |     [01;31m[Kq[m[K.setRPY(0, angle_pitch, 0);
+      |     [01;31m[K^[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:575:28:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2[m[K’ has not been declared
+  575 |     t.transform.rotation = [01;31m[Ktf2[m[K::toMsg(q);
+      |                            [01;31m[K^~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/mechax_trajectory/src/trajectoryer.cpp:576:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf_broadcaster_[m[K’ was not declared in this scope
+  576 |     [01;31m[Ktf_broadcaster_[m[K->sendTransform(t);
+      |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/mechax_trajectory.dir/build.make:76: CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/mechax_trajectory.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

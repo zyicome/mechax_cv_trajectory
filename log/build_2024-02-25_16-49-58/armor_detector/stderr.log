@@ -1,0 +1,16 @@
+In file included from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:27[m[K:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:42:8:[m[K [01;31m[Kerror: [m[Kextra qualification ‘[01m[Krm_auto_aim::ArmorDetectorNode::[m[K’ on member ‘[01m[Kneedpose[m[K’ [[01;31m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive-fpermissive]8;;[m[K]
+   42 |   void [01;31m[KArmorDetectorNode[m[K::needpose(const auto_aim_interfaces::msg::Armors armors_msg_);
+      |        [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::needpose(auto_aim_interfaces::msg::Armors)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:196:34:[m[K [01;31m[Kerror: [m[K‘[01m[Karmor_msg_[m[K’ was not declared in this scope; did you mean ‘[01m[Karmors_msg_[m[K’?
+  196 |   needpose_mat.at<double>(0,0) = [01;31m[Karmor_msg_[m[K->pose.position.x;
+      |                                  [01;31m[K^~~~~~~~~~[m[K
+      |                                  [32m[Karmors_msg_[m[K
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:206:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kneedpose_ptr[m[K’ was not declared in this scope; did you mean ‘[01m[Kneedpose_img[m[K’?
+  206 |   std::cout << "needpose_ptr->pose.position.x : " << [01;31m[Kneedpose_ptr[m[K->point.x << std::endl;
+      |                                                      [01;31m[K^~~~~~~~~~~~[m[K
+      |                                                      [32m[Kneedpose_img[m[K
+gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
