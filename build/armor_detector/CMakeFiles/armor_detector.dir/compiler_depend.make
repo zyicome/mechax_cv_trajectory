@@ -3,9 +3,9 @@
 
 CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector.cpp \
   /usr/include/stdc-predef.h \
-  /usr/local/include/opencv4/opencv2/core.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/core/version.hpp \
+  /usr/include/opencv4/opencv2/core.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/core/version.hpp \
   /usr/include/c++/11/limits \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -19,7 +19,7 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
-  /usr/local/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/include/opencv4/opencv2/core/hal/interface.h \
   /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /usr/include/c++/11/cstdint \
@@ -32,7 +32,7 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
@@ -93,8 +93,8 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/c++/11/debug/debug.h \
   /usr/include/c++/11/bits/predefined_ops.h \
   /usr/include/c++/11/bits/range_access.h \
-  /usr/local/include/opencv4/opencv2/core/base.hpp \
-  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/include/opencv4/opencv2/core/base.hpp \
+  /usr/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -147,7 +147,7 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/pstl/execution_defs.h \
-  /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.hpp \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
@@ -235,7 +235,7 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/align.h \
@@ -254,23 +254,23 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
-  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
   /usr/include/assert.h \
-  /usr/local/include/opencv4/opencv2/core/check.hpp \
-  /usr/local/include/opencv4/opencv2/core/traits.hpp \
-  /usr/local/include/opencv4/opencv2/core/matx.hpp \
-  /usr/local/include/opencv4/opencv2/core/saturate.hpp \
-  /usr/local/include/opencv4/opencv2/core/fast_math.hpp \
-  /usr/local/include/opencv4/opencv2/core/types.hpp \
+  /usr/include/opencv4/opencv2/core/check.hpp \
+  /usr/include/opencv4/opencv2/core/traits.hpp \
+  /usr/include/opencv4/opencv2/core/matx.hpp \
+  /usr/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/include/opencv4/opencv2/core/types.hpp \
   /usr/include/c++/11/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
-  /usr/local/include/opencv4/opencv2/core/mat.hpp \
-  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp \
-  /usr/local/include/opencv4/opencv2/core/mat.inl.hpp \
-  /usr/local/include/opencv4/opencv2/core/persistence.hpp \
-  /usr/local/include/opencv4/opencv2/core/operations.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/include/opencv4/opencv2/core/mat.hpp \
+  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/include/opencv4/opencv2/core/operations.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
   /usr/include/c++/11/complex \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/istream \
@@ -297,7 +297,7 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
-  /usr/local/include/opencv4/opencv2/core/utility.hpp \
+  /usr/include/opencv4/opencv2/core/utility.hpp \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
@@ -305,63 +305,63 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
-  /usr/local/include/opencv4/opencv2/core/optim.hpp \
-  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/imgproc.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
+  /usr/include/opencv4/opencv2/core/optim.hpp \
+  /usr/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/imgproc.hpp \
+  /usr/include/opencv4/opencv2/imgproc/segmentation.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/armor.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/number_classifier.hpp \
-  /usr/local/include/opencv4/opencv2/opencv.hpp \
-  /usr/local/include/opencv4/opencv2/calib3d.hpp \
-  /usr/local/include/opencv4/opencv2/features2d.hpp \
-  /usr/local/include/opencv4/opencv2/flann/miniflann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
-  /usr/local/include/opencv4/opencv2/flann/config.h \
-  /usr/local/include/opencv4/opencv2/core/affine.hpp \
-  /usr/local/include/opencv4/opencv2/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/core/async.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/version.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dict.hpp \
+  /usr/include/opencv4/opencv2/opencv.hpp \
+  /usr/include/opencv4/opencv2/calib3d.hpp \
+  /usr/include/opencv4/opencv2/features2d.hpp \
+  /usr/include/opencv4/opencv2/flann/miniflann.hpp \
+  /usr/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/flann/config.h \
+  /usr/include/opencv4/opencv2/core/affine.hpp \
+  /usr/include/opencv4/opencv2/dnn.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/core/async.hpp \
+  /usr/include/opencv4/opencv2/dnn/version.hpp \
+  /usr/include/opencv4/opencv2/dnn/dict.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/local/include/opencv4/opencv2/dnn/layer.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/flann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/flann_base.hpp \
-  /usr/local/include/opencv4/opencv2/flann/general.h \
-  /usr/local/include/opencv4/opencv2/flann/matrix.h \
-  /usr/local/include/opencv4/opencv2/flann/params.h \
-  /usr/local/include/opencv4/opencv2/flann/any.h \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/dnn/layer.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp \
+  /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/flann.hpp \
+  /usr/include/opencv4/opencv2/flann/flann_base.hpp \
+  /usr/include/opencv4/opencv2/flann/general.h \
+  /usr/include/opencv4/opencv2/flann/matrix.h \
+  /usr/include/opencv4/opencv2/flann/params.h \
+  /usr/include/opencv4/opencv2/flann/any.h \
+  /usr/include/opencv4/opencv2/flann/defines.h \
   /usr/include/c++/11/iostream \
-  /usr/local/include/opencv4/opencv2/flann/saving.h \
-  /usr/local/include/opencv4/opencv2/flann/nn_index.h \
-  /usr/local/include/opencv4/opencv2/flann/result_set.h \
+  /usr/include/opencv4/opencv2/flann/saving.h \
+  /usr/include/opencv4/opencv2/flann/nn_index.h \
+  /usr/include/opencv4/opencv2/flann/result_set.h \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/local/include/opencv4/opencv2/flann/all_indices.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_index.h \
-  /usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h \
-  /usr/local/include/opencv4/opencv2/flann/dist.h \
-  /usr/local/include/opencv4/opencv2/flann/heap.h \
-  /usr/local/include/opencv4/opencv2/flann/allocator.h \
-  /usr/local/include/opencv4/opencv2/flann/random.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h \
-  /usr/local/include/opencv4/opencv2/flann/kmeans_index.h \
-  /usr/local/include/opencv4/opencv2/flann/logger.h \
-  /usr/local/include/opencv4/opencv2/flann/composite_index.h \
-  /usr/local/include/opencv4/opencv2/flann/linear_index.h \
-  /usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_table.h \
+  /usr/include/opencv4/opencv2/flann/all_indices.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_index.h \
+  /usr/include/opencv4/opencv2/flann/dynamic_bitset.h \
+  /usr/include/opencv4/opencv2/flann/dist.h \
+  /usr/include/opencv4/opencv2/flann/heap.h \
+  /usr/include/opencv4/opencv2/flann/allocator.h \
+  /usr/include/opencv4/opencv2/flann/random.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_single_index.h \
+  /usr/include/opencv4/opencv2/flann/kmeans_index.h \
+  /usr/include/opencv4/opencv2/flann/logger.h \
+  /usr/include/opencv4/opencv2/flann/composite_index.h \
+  /usr/include/opencv4/opencv2/flann/linear_index.h \
+  /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_table.h \
   /usr/include/c++/11/iomanip \
   /usr/include/c++/11/locale \
   /usr/include/c++/11/bits/locale_facets_nonio.h \
@@ -373,55 +373,49 @@ CMakeFiles/armor_detector.dir/src/detector.cpp.o: /home/mechax/zyb/mechax_cv_tra
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/quoted_string.h \
   /usr/include/c++/11/math.h \
-  /usr/local/include/opencv4/opencv2/flann/autotuned_index.h \
-  /usr/local/include/opencv4/opencv2/flann/ground_truth.h \
-  /usr/local/include/opencv4/opencv2/flann/index_testing.h \
-  /usr/local/include/opencv4/opencv2/flann/timer.h \
-  /usr/local/include/opencv4/opencv2/flann/sampling.h \
-  /usr/local/include/opencv4/opencv2/highgui.hpp \
-  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
-  /usr/local/include/opencv4/opencv2/videoio.hpp \
-  /usr/local/include/opencv4/opencv2/ml.hpp \
-  /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_board.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/graphical_code_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/face.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/barcode.hpp \
-  /usr/local/include/opencv4/opencv2/photo.hpp \
-  /usr/local/include/opencv4/opencv2/stitching.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda_types.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util.hpp \
+  /usr/include/opencv4/opencv2/flann/autotuned_index.h \
+  /usr/include/opencv4/opencv2/flann/ground_truth.h \
+  /usr/include/opencv4/opencv2/flann/index_testing.h \
+  /usr/include/opencv4/opencv2/flann/timer.h \
+  /usr/include/opencv4/opencv2/flann/sampling.h \
+  /usr/include/opencv4/opencv2/highgui.hpp \
+  /usr/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/include/opencv4/opencv2/videoio.hpp \
+  /usr/include/opencv4/opencv2/ml.hpp \
+  /usr/include/opencv4/opencv2/ml/ml.inl.hpp \
+  /usr/include/opencv4/opencv2/objdetect.hpp \
+  /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  /usr/include/opencv4/opencv2/objdetect/face.hpp \
+  /usr/include/opencv4/opencv2/photo.hpp \
+  /usr/include/opencv4/opencv2/stitching.hpp \
+  /usr/include/opencv4/opencv2/stitching/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.hpp \
+  /usr/include/opencv4/opencv2/core/cuda_types.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util.hpp \
   /usr/include/c++/11/list \
   /usr/include/c++/11/bits/stl_list.h \
   /usr/include/c++/11/bits/list.tcc \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/video.hpp \
-  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/video.hpp \
+  /usr/include/opencv4/opencv2/video/tracking.hpp \
+  /usr/include/opencv4/opencv2/video/background_segm.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/debug_armors.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__struct.hpp \
   /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp \
@@ -699,21 +693,21 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__builder.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__traits.hpp \
   /opt/ros/humble/include/sensor_msgs/sensor_msgs/image_encodings.hpp \
-  /usr/local/include/opencv4/opencv2/core/core.hpp \
-  /usr/local/include/opencv4/opencv2/core.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/core/version.hpp \
+  /usr/include/opencv4/opencv2/core/core.hpp \
+  /usr/include/opencv4/opencv2/core.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/core/version.hpp \
   /usr/include/c++/11/limits \
-  /usr/local/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/include/opencv4/opencv2/core/hal/interface.h \
   /usr/include/c++/11/cstddef \
-  /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
   /usr/include/c++/11/stdlib.h \
-  /usr/local/include/opencv4/opencv2/core/base.hpp \
-  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/include/opencv4/opencv2/core/base.hpp \
+  /usr/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -724,7 +718,7 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
-  /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.hpp \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
@@ -752,41 +746,41 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
-  /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
-  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
   /usr/include/assert.h \
-  /usr/local/include/opencv4/opencv2/core/check.hpp \
-  /usr/local/include/opencv4/opencv2/core/traits.hpp \
-  /usr/local/include/opencv4/opencv2/core/matx.hpp \
-  /usr/local/include/opencv4/opencv2/core/saturate.hpp \
-  /usr/local/include/opencv4/opencv2/core/fast_math.hpp \
-  /usr/local/include/opencv4/opencv2/core/types.hpp \
+  /usr/include/opencv4/opencv2/core/check.hpp \
+  /usr/include/opencv4/opencv2/core/traits.hpp \
+  /usr/include/opencv4/opencv2/core/matx.hpp \
+  /usr/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/include/opencv4/opencv2/core/types.hpp \
   /usr/include/c++/11/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
-  /usr/local/include/opencv4/opencv2/core/mat.hpp \
-  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp \
-  /usr/local/include/opencv4/opencv2/core/mat.inl.hpp \
-  /usr/local/include/opencv4/opencv2/core/persistence.hpp \
-  /usr/local/include/opencv4/opencv2/core/operations.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/include/opencv4/opencv2/core/mat.hpp \
+  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/include/opencv4/opencv2/core/operations.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
   /usr/include/c++/11/complex \
-  /usr/local/include/opencv4/opencv2/core/utility.hpp \
+  /usr/include/opencv4/opencv2/core/utility.hpp \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
-  /usr/local/include/opencv4/opencv2/core/optim.hpp \
-  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc/types_c.h \
-  /usr/local/include/opencv4/opencv2/core/core_c.h \
-  /usr/local/include/opencv4/opencv2/core/types_c.h \
+  /usr/include/opencv4/opencv2/core/optim.hpp \
+  /usr/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/imgproc/imgproc.hpp \
+  /usr/include/opencv4/opencv2/imgproc.hpp \
+  /usr/include/opencv4/opencv2/imgproc/segmentation.hpp \
+  /usr/include/opencv4/opencv2/imgproc/types_c.h \
+  /usr/include/opencv4/opencv2/core/core_c.h \
+  /usr/include/opencv4/opencv2/core/types_c.h \
   /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge_export.h \
   /opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp \
   /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp \
@@ -1303,93 +1297,87 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/mesh_file__traits.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/number_classifier.hpp \
-  /usr/local/include/opencv4/opencv2/opencv.hpp \
-  /usr/local/include/opencv4/opencv2/calib3d.hpp \
-  /usr/local/include/opencv4/opencv2/features2d.hpp \
-  /usr/local/include/opencv4/opencv2/flann/miniflann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
-  /usr/local/include/opencv4/opencv2/flann/config.h \
-  /usr/local/include/opencv4/opencv2/core/affine.hpp \
-  /usr/local/include/opencv4/opencv2/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/core/async.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/version.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dict.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/layer.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/flann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/flann_base.hpp \
-  /usr/local/include/opencv4/opencv2/flann/general.h \
-  /usr/local/include/opencv4/opencv2/flann/matrix.h \
-  /usr/local/include/opencv4/opencv2/flann/params.h \
-  /usr/local/include/opencv4/opencv2/flann/any.h \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
-  /usr/local/include/opencv4/opencv2/flann/saving.h \
-  /usr/local/include/opencv4/opencv2/flann/nn_index.h \
-  /usr/local/include/opencv4/opencv2/flann/result_set.h \
-  /usr/local/include/opencv4/opencv2/flann/all_indices.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_index.h \
-  /usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h \
-  /usr/local/include/opencv4/opencv2/flann/dist.h \
-  /usr/local/include/opencv4/opencv2/flann/heap.h \
-  /usr/local/include/opencv4/opencv2/flann/allocator.h \
-  /usr/local/include/opencv4/opencv2/flann/random.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h \
-  /usr/local/include/opencv4/opencv2/flann/kmeans_index.h \
-  /usr/local/include/opencv4/opencv2/flann/logger.h \
-  /usr/local/include/opencv4/opencv2/flann/composite_index.h \
-  /usr/local/include/opencv4/opencv2/flann/linear_index.h \
-  /usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_table.h \
-  /usr/local/include/opencv4/opencv2/flann/autotuned_index.h \
-  /usr/local/include/opencv4/opencv2/flann/ground_truth.h \
-  /usr/local/include/opencv4/opencv2/flann/index_testing.h \
-  /usr/local/include/opencv4/opencv2/flann/timer.h \
-  /usr/local/include/opencv4/opencv2/flann/sampling.h \
-  /usr/local/include/opencv4/opencv2/highgui.hpp \
-  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
-  /usr/local/include/opencv4/opencv2/videoio.hpp \
-  /usr/local/include/opencv4/opencv2/ml.hpp \
-  /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_board.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/graphical_code_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/face.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/barcode.hpp \
-  /usr/local/include/opencv4/opencv2/photo.hpp \
-  /usr/local/include/opencv4/opencv2/stitching.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda_types.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
+  /usr/include/opencv4/opencv2/opencv.hpp \
+  /usr/include/opencv4/opencv2/calib3d.hpp \
+  /usr/include/opencv4/opencv2/features2d.hpp \
+  /usr/include/opencv4/opencv2/flann/miniflann.hpp \
+  /usr/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/flann/config.h \
+  /usr/include/opencv4/opencv2/core/affine.hpp \
+  /usr/include/opencv4/opencv2/dnn.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/core/async.hpp \
+  /usr/include/opencv4/opencv2/dnn/version.hpp \
+  /usr/include/opencv4/opencv2/dnn/dict.hpp \
+  /usr/include/opencv4/opencv2/dnn/layer.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp \
+  /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/flann.hpp \
+  /usr/include/opencv4/opencv2/flann/flann_base.hpp \
+  /usr/include/opencv4/opencv2/flann/general.h \
+  /usr/include/opencv4/opencv2/flann/matrix.h \
+  /usr/include/opencv4/opencv2/flann/params.h \
+  /usr/include/opencv4/opencv2/flann/any.h \
+  /usr/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/flann/saving.h \
+  /usr/include/opencv4/opencv2/flann/nn_index.h \
+  /usr/include/opencv4/opencv2/flann/result_set.h \
+  /usr/include/opencv4/opencv2/flann/all_indices.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_index.h \
+  /usr/include/opencv4/opencv2/flann/dynamic_bitset.h \
+  /usr/include/opencv4/opencv2/flann/dist.h \
+  /usr/include/opencv4/opencv2/flann/heap.h \
+  /usr/include/opencv4/opencv2/flann/allocator.h \
+  /usr/include/opencv4/opencv2/flann/random.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_single_index.h \
+  /usr/include/opencv4/opencv2/flann/kmeans_index.h \
+  /usr/include/opencv4/opencv2/flann/logger.h \
+  /usr/include/opencv4/opencv2/flann/composite_index.h \
+  /usr/include/opencv4/opencv2/flann/linear_index.h \
+  /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_table.h \
+  /usr/include/opencv4/opencv2/flann/autotuned_index.h \
+  /usr/include/opencv4/opencv2/flann/ground_truth.h \
+  /usr/include/opencv4/opencv2/flann/index_testing.h \
+  /usr/include/opencv4/opencv2/flann/timer.h \
+  /usr/include/opencv4/opencv2/flann/sampling.h \
+  /usr/include/opencv4/opencv2/highgui.hpp \
+  /usr/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/include/opencv4/opencv2/videoio.hpp \
+  /usr/include/opencv4/opencv2/ml.hpp \
+  /usr/include/opencv4/opencv2/ml/ml.inl.hpp \
+  /usr/include/opencv4/opencv2/objdetect.hpp \
+  /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  /usr/include/opencv4/opencv2/objdetect/face.hpp \
+  /usr/include/opencv4/opencv2/photo.hpp \
+  /usr/include/opencv4/opencv2/stitching.hpp \
+  /usr/include/opencv4/opencv2/stitching/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.hpp \
+  /usr/include/opencv4/opencv2/core/cuda_types.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/video.hpp \
-  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/video.hpp \
+  /usr/include/opencv4/opencv2/video/tracking.hpp \
+  /usr/include/opencv4/opencv2/video/background_segm.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/debug_armors.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__struct.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__struct.hpp \
@@ -1424,9 +1412,9 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
 
 CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/number_classifier.cpp \
   /usr/include/stdc-predef.h \
-  /usr/local/include/opencv4/opencv2/core.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/core/version.hpp \
+  /usr/include/opencv4/opencv2/core.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/core/version.hpp \
   /usr/include/c++/11/limits \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -1440,7 +1428,7 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
-  /usr/local/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/include/opencv4/opencv2/core/hal/interface.h \
   /usr/include/c++/11/cstddef \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /usr/include/c++/11/cstdint \
@@ -1453,7 +1441,7 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
@@ -1514,8 +1502,8 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/c++/11/debug/debug.h \
   /usr/include/c++/11/bits/predefined_ops.h \
   /usr/include/c++/11/bits/range_access.h \
-  /usr/local/include/opencv4/opencv2/core/base.hpp \
-  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/include/opencv4/opencv2/core/base.hpp \
+  /usr/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -1568,7 +1556,7 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/pstl/execution_defs.h \
-  /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.hpp \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
@@ -1656,7 +1644,7 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/align.h \
@@ -1675,23 +1663,23 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/c++/11/bits/atomic_lockfree_defines.h \
   /usr/include/c++/11/backward/auto_ptr.h \
   /usr/include/c++/11/pstl/glue_memory_defs.h \
-  /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
-  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
   /usr/include/assert.h \
-  /usr/local/include/opencv4/opencv2/core/check.hpp \
-  /usr/local/include/opencv4/opencv2/core/traits.hpp \
-  /usr/local/include/opencv4/opencv2/core/matx.hpp \
-  /usr/local/include/opencv4/opencv2/core/saturate.hpp \
-  /usr/local/include/opencv4/opencv2/core/fast_math.hpp \
-  /usr/local/include/opencv4/opencv2/core/types.hpp \
+  /usr/include/opencv4/opencv2/core/check.hpp \
+  /usr/include/opencv4/opencv2/core/traits.hpp \
+  /usr/include/opencv4/opencv2/core/matx.hpp \
+  /usr/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/include/opencv4/opencv2/core/types.hpp \
   /usr/include/c++/11/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
-  /usr/local/include/opencv4/opencv2/core/mat.hpp \
-  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp \
-  /usr/local/include/opencv4/opencv2/core/mat.inl.hpp \
-  /usr/local/include/opencv4/opencv2/core/persistence.hpp \
-  /usr/local/include/opencv4/opencv2/core/operations.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/include/opencv4/opencv2/core/mat.hpp \
+  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/include/opencv4/opencv2/core/operations.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
   /usr/include/c++/11/complex \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/istream \
@@ -1718,7 +1706,7 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
-  /usr/local/include/opencv4/opencv2/core/utility.hpp \
+  /usr/include/opencv4/opencv2/core/utility.hpp \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
@@ -1726,63 +1714,63 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
-  /usr/local/include/opencv4/opencv2/core/optim.hpp \
-  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/core/async.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/version.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dict.hpp \
+  /usr/include/opencv4/opencv2/core/optim.hpp \
+  /usr/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/dnn.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/core/async.hpp \
+  /usr/include/opencv4/opencv2/dnn/version.hpp \
+  /usr/include/opencv4/opencv2/dnn/dict.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/local/include/opencv4/opencv2/dnn/layer.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/highgui.hpp \
-  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
-  /usr/local/include/opencv4/opencv2/videoio.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
-  /usr/local/include/opencv4/opencv2/opencv.hpp \
-  /usr/local/include/opencv4/opencv2/calib3d.hpp \
-  /usr/local/include/opencv4/opencv2/features2d.hpp \
-  /usr/local/include/opencv4/opencv2/flann/miniflann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
-  /usr/local/include/opencv4/opencv2/flann/config.h \
-  /usr/local/include/opencv4/opencv2/core/affine.hpp \
-  /usr/local/include/opencv4/opencv2/flann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/flann_base.hpp \
-  /usr/local/include/opencv4/opencv2/flann/general.h \
-  /usr/local/include/opencv4/opencv2/flann/matrix.h \
-  /usr/local/include/opencv4/opencv2/flann/params.h \
-  /usr/local/include/opencv4/opencv2/flann/any.h \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/dnn/layer.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp \
+  /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/highgui.hpp \
+  /usr/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/include/opencv4/opencv2/videoio.hpp \
+  /usr/include/opencv4/opencv2/imgproc.hpp \
+  /usr/include/opencv4/opencv2/imgproc/segmentation.hpp \
+  /usr/include/opencv4/opencv2/opencv.hpp \
+  /usr/include/opencv4/opencv2/calib3d.hpp \
+  /usr/include/opencv4/opencv2/features2d.hpp \
+  /usr/include/opencv4/opencv2/flann/miniflann.hpp \
+  /usr/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/flann/config.h \
+  /usr/include/opencv4/opencv2/core/affine.hpp \
+  /usr/include/opencv4/opencv2/flann.hpp \
+  /usr/include/opencv4/opencv2/flann/flann_base.hpp \
+  /usr/include/opencv4/opencv2/flann/general.h \
+  /usr/include/opencv4/opencv2/flann/matrix.h \
+  /usr/include/opencv4/opencv2/flann/params.h \
+  /usr/include/opencv4/opencv2/flann/any.h \
+  /usr/include/opencv4/opencv2/flann/defines.h \
   /usr/include/c++/11/iostream \
-  /usr/local/include/opencv4/opencv2/flann/saving.h \
-  /usr/local/include/opencv4/opencv2/flann/nn_index.h \
-  /usr/local/include/opencv4/opencv2/flann/result_set.h \
+  /usr/include/opencv4/opencv2/flann/saving.h \
+  /usr/include/opencv4/opencv2/flann/nn_index.h \
+  /usr/include/opencv4/opencv2/flann/result_set.h \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/local/include/opencv4/opencv2/flann/all_indices.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_index.h \
-  /usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h \
-  /usr/local/include/opencv4/opencv2/flann/dist.h \
-  /usr/local/include/opencv4/opencv2/flann/heap.h \
-  /usr/local/include/opencv4/opencv2/flann/allocator.h \
-  /usr/local/include/opencv4/opencv2/flann/random.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h \
-  /usr/local/include/opencv4/opencv2/flann/kmeans_index.h \
-  /usr/local/include/opencv4/opencv2/flann/logger.h \
-  /usr/local/include/opencv4/opencv2/flann/composite_index.h \
-  /usr/local/include/opencv4/opencv2/flann/linear_index.h \
-  /usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_table.h \
+  /usr/include/opencv4/opencv2/flann/all_indices.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_index.h \
+  /usr/include/opencv4/opencv2/flann/dynamic_bitset.h \
+  /usr/include/opencv4/opencv2/flann/dist.h \
+  /usr/include/opencv4/opencv2/flann/heap.h \
+  /usr/include/opencv4/opencv2/flann/allocator.h \
+  /usr/include/opencv4/opencv2/flann/random.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_single_index.h \
+  /usr/include/opencv4/opencv2/flann/kmeans_index.h \
+  /usr/include/opencv4/opencv2/flann/logger.h \
+  /usr/include/opencv4/opencv2/flann/composite_index.h \
+  /usr/include/opencv4/opencv2/flann/linear_index.h \
+  /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_table.h \
   /usr/include/c++/11/iomanip \
   /usr/include/c++/11/locale \
   /usr/include/c++/11/bits/locale_facets_nonio.h \
@@ -1794,52 +1782,46 @@ CMakeFiles/armor_detector.dir/src/number_classifier.cpp.o: /home/mechax/zyb/mech
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/quoted_string.h \
   /usr/include/c++/11/math.h \
-  /usr/local/include/opencv4/opencv2/flann/autotuned_index.h \
-  /usr/local/include/opencv4/opencv2/flann/ground_truth.h \
-  /usr/local/include/opencv4/opencv2/flann/index_testing.h \
-  /usr/local/include/opencv4/opencv2/flann/timer.h \
-  /usr/local/include/opencv4/opencv2/flann/sampling.h \
-  /usr/local/include/opencv4/opencv2/ml.hpp \
-  /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_board.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/graphical_code_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/face.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/barcode.hpp \
-  /usr/local/include/opencv4/opencv2/photo.hpp \
-  /usr/local/include/opencv4/opencv2/stitching.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda_types.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util.hpp \
+  /usr/include/opencv4/opencv2/flann/autotuned_index.h \
+  /usr/include/opencv4/opencv2/flann/ground_truth.h \
+  /usr/include/opencv4/opencv2/flann/index_testing.h \
+  /usr/include/opencv4/opencv2/flann/timer.h \
+  /usr/include/opencv4/opencv2/flann/sampling.h \
+  /usr/include/opencv4/opencv2/ml.hpp \
+  /usr/include/opencv4/opencv2/ml/ml.inl.hpp \
+  /usr/include/opencv4/opencv2/objdetect.hpp \
+  /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  /usr/include/opencv4/opencv2/objdetect/face.hpp \
+  /usr/include/opencv4/opencv2/photo.hpp \
+  /usr/include/opencv4/opencv2/stitching.hpp \
+  /usr/include/opencv4/opencv2/stitching/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.hpp \
+  /usr/include/opencv4/opencv2/core/cuda_types.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util.hpp \
   /usr/include/c++/11/list \
   /usr/include/c++/11/bits/stl_list.h \
   /usr/include/c++/11/bits/list.tcc \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/video.hpp \
-  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/video.hpp \
+  /usr/include/opencv4/opencv2/video/tracking.hpp \
+  /usr/include/opencv4/opencv2/video/background_segm.hpp \
   /usr/include/c++/11/fstream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
@@ -2093,20 +2075,20 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/quoted_string.h \
-  /usr/local/include/opencv4/opencv2/core.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/core/version.hpp \
+  /usr/include/opencv4/opencv2/core.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/core/version.hpp \
   /usr/include/c++/11/limits \
-  /usr/local/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/include/opencv4/opencv2/core/hal/interface.h \
   /usr/include/c++/11/cstddef \
-  /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
   /usr/include/c++/11/stdlib.h \
-  /usr/local/include/opencv4/opencv2/core/base.hpp \
-  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/include/opencv4/opencv2/core/base.hpp \
+  /usr/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -2117,7 +2099,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
-  /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.hpp \
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
@@ -2145,47 +2127,45 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
   /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
-  /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
-  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
   /usr/include/assert.h \
-  /usr/local/include/opencv4/opencv2/core/check.hpp \
-  /usr/local/include/opencv4/opencv2/core/traits.hpp \
-  /usr/local/include/opencv4/opencv2/core/matx.hpp \
-  /usr/local/include/opencv4/opencv2/core/saturate.hpp \
-  /usr/local/include/opencv4/opencv2/core/fast_math.hpp \
-  /usr/local/include/opencv4/opencv2/core/types.hpp \
+  /usr/include/opencv4/opencv2/core/check.hpp \
+  /usr/include/opencv4/opencv2/core/traits.hpp \
+  /usr/include/opencv4/opencv2/core/matx.hpp \
+  /usr/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/include/opencv4/opencv2/core/types.hpp \
   /usr/include/c++/11/cfloat \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
-  /usr/local/include/opencv4/opencv2/core/mat.hpp \
-  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp \
-  /usr/local/include/opencv4/opencv2/core/mat.inl.hpp \
-  /usr/local/include/opencv4/opencv2/core/persistence.hpp \
-  /usr/local/include/opencv4/opencv2/core/operations.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/include/opencv4/opencv2/core/mat.hpp \
+  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/include/opencv4/opencv2/core/operations.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
   /usr/include/c++/11/complex \
-  /usr/local/include/opencv4/opencv2/core/utility.hpp \
+  /usr/include/opencv4/opencv2/core/utility.hpp \
   /usr/include/c++/11/mutex \
   /usr/include/c++/11/chrono \
   /usr/include/c++/11/ratio \
   /usr/include/c++/11/bits/parse_numbers.h \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
-  /usr/local/include/opencv4/opencv2/core/optim.hpp \
-  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/core/optim.hpp \
+  /usr/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/armor.hpp \
-  /usr/local/include/opencv4/opencv2/calib3d.hpp \
-  /usr/local/include/opencv4/opencv2/features2d.hpp \
-  /usr/local/include/opencv4/opencv2/flann/miniflann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
-  /usr/local/include/opencv4/opencv2/flann/config.h \
-  /usr/local/include/opencv4/opencv2/core/affine.hpp
+  /usr/include/opencv4/opencv2/calib3d.hpp \
+  /usr/include/opencv4/opencv2/features2d.hpp \
+  /usr/include/opencv4/opencv2/flann/miniflann.hpp \
+  /usr/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/flann/config.h \
+  /usr/include/opencv4/opencv2/core/affine.hpp
 
 
 /usr/include/c++/11/bits/fstream.tcc:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
@@ -2217,13 +2197,11 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker_array__builder.hpp:
 
+/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker_array__struct.hpp:
+
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker_array.hpp:
 
 /opt/ros/humble/include/message_filters/message_filters/parameter_adapter.h:
-
-/opt/ros/humble/include/message_filters/message_filters/signal1.h:
-
-/opt/ros/humble/include/message_filters/message_filters/simple_filter.h:
 
 /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector_node.hpp:
 
@@ -2241,21 +2219,25 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__struct.hpp:
 
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp:
 
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameter_types.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__builder.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_client.hpp:
 
@@ -2272,8 +2254,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:
 
 /opt/ros/humble/include/rcpputils/rcpputils/scope_exit.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
@@ -2293,6 +2273,12 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/sys/ucontext.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
+
+/opt/ros/humble/include/image_transport/image_transport/subscriber_filter.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__builder.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
@@ -2301,13 +2287,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
-
 /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/signum-arch.h:
 
@@ -2321,7 +2303,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/tf2_ros/tf2_ros/buffer_interface.h:
 
-/opt/ros/humble/include/tf2/tf2/LinearMath/Transform.h:
+/usr/include/kdl/frames.inl:
 
 /usr/include/c++/11/cassert:
 
@@ -2375,15 +2357,19 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/image_transport/image_transport/loader_fwds.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
+
+/opt/ros/humble/include/image_transport/image_transport/exception.hpp:
+
 /opt/ros/humble/include/image_transport/image_transport/image_transport.hpp:
 
 /opt/ros/humble/include/ament_index_cpp/ament_index_cpp/visibility_control.h:
 
+/opt/ros/humble/include/ament_index_cpp/ament_index_cpp/get_package_share_directory.hpp:
+
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__struct.hpp:
 
 /opt/ros/humble/include/tf2/tf2/time.h:
-
-/opt/ros/humble/include/tf2/tf2/transform_datatypes.h:
 
 /opt/ros/humble/include/tf2/tf2/impl/convert.h:
 
@@ -2391,7 +2377,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion__traits.hpp:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp:
+/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp:
 
 /opt/ros/humble/include/message_filters/message_filters/visibility_control.h:
 
@@ -2410,8 +2398,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/tf2/tf2/LinearMath/QuadWord.h:
 
 /opt/ros/humble/include/tf2/tf2/LinearMath/Quaternion.h:
-
-/opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h:
 
 /opt/ros/humble/include/image_transport/image_transport/visibility_control.hpp:
 
@@ -2447,8 +2433,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_time_source_interface.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp:
@@ -2469,9 +2453,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_factory.hpp:
 
-/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__builder.hpp:
 
-/usr/include/c++/11/pstl/glue_numeric_defs.h:
+/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
 
 /usr/include/linux/close_range.h:
 
@@ -2545,7 +2529,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface.hpp:
 
-/opt/ros/humble/include/rcutils/rcutils/shared_library.h:
+/opt/ros/humble/include/rcpputils/rcpputils/shared_library.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/rate.hpp:
 
@@ -2569,13 +2553,19 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rclcpp/rclcpp/timer.hpp:
 
+/opt/ros/humble/include/rclcpp/rclcpp/subscription_content_filter_options.hpp:
+
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/intra_process_buffer_type.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp:
+/opt/ros/humble/include/rclcpp/rclcpp/clock.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_base.hpp:
 
@@ -2621,6 +2611,12 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rmw/rmw/impl/config.h:
 
+/usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__builder.hpp:
+
+/usr/include/c++/11/cxxabi.h:
+
 /opt/ros/humble/include/rmw/rmw/impl/cpp/demangle.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/service_type_support.hpp:
@@ -2629,7 +2625,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/service_type_support_decl.hpp:
 
-/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp:
+/opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h:
 
 /opt/ros/humble/include/rcl/rcl/logging_rosout.h:
 
@@ -2653,9 +2649,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rmw/rmw/get_topic_names_and_types.h:
 
-/opt/ros/humble/include/rmw/rmw/names_and_types.h:
-
 /opt/ros/humble/include/rcl/rcl/graph.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp:
 
 /usr/include/c++/11/unordered_set:
 
@@ -2687,8 +2683,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rclcpp/rclcpp/expand_topic_or_service_name.hpp:
 
-/usr/include/c++/11/bits/stream_iterator.h:
-
 /usr/include/c++/11/iterator:
 
 /opt/ros/humble/include/rcpputils/rcpputils/join.hpp:
@@ -2704,12 +2698,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/rclcpp/rclcpp/detail/cpp_callback_trampoline.hpp:
 
 /opt/ros/humble/include/rcl/rcl/publisher.h:
-
-/opt/ros/humble/include/rmw/rmw/subscription_options.h:
-
-/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/pnp_solver.cpp:
-
-/opt/ros/humble/include/rmw/rmw/publisher_options.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp:
 
@@ -2741,13 +2729,11 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcl/rcl/client.h:
 
-/usr/include/c++/11/variant:
+/usr/include/opencv4/opencv2/core/vsx_utils.hpp:
 
-/usr/include/c++/11/bits/std_thread.h:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp:
 
-/usr/include/c++/11/future:
-
-/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:
+/opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h:
 
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
 
@@ -2771,7 +2757,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rmw/rmw/serialized_message.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
+/usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/time.hpp:
 
@@ -2781,11 +2767,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/tr1/poly_hermite.tcc:
 
+/usr/include/c++/11/tr1/legendre_function.tcc:
+
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
 
-/usr/include/c++/11/array:
+/usr/include/c++/11/tr1/beta_function.tcc:
 
 /usr/include/c++/11/bits/atomic_lockfree_defines.h:
 
@@ -2797,17 +2785,19 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/local/include/opencv4/opencv2/core/fast_math.hpp:
-
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/region_of_interest__traits.hpp:
 
 /usr/include/c++/11/bits/specfun.h:
 
+/usr/include/opencv4/opencv2/flann/saving.h:
+
 /usr/include/c++/11/bits/stl_list.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__traits.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/opencv4/opencv2/objdetect.hpp:
 
 /usr/include/c++/11/bits/node_handle.h:
 
@@ -2815,19 +2805,17 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
-/usr/local/include/opencv4/opencv2/core/vsx_utils.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/11/string_view:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/c++/11/bits/basic_string.tcc:
-
-/usr/local/include/opencv4/opencv2/objdetect.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/wait_result_kind.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/camera_info__traits.hpp:
+
+/usr/include/opencv4/opencv2/core/utility.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_stamped__traits.hpp:
 
@@ -2849,39 +2837,31 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/cerrno:
 
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__struct.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/wrench_stamped.hpp:
 
 /usr/include/stdio.h:
 
-/usr/include/c++/11/cstdio:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__traits.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/usr/include/c++/11/ext/string_conversions.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/time.h:
 
+/usr/include/opencv4/opencv2/core/cuda.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp:
-
-/usr/local/include/opencv4/opencv2/flann/ground_truth.h:
-
 /usr/include/x86_64-linux-gnu/bits/sched.h:
-
-/usr/include/c++/11/ext/alloc_traits.h:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__builder.hpp:
-
-/usr/local/include/opencv4/opencv2/core/neon_utils.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
@@ -2893,15 +2873,11 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/polygon__struct.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance.hpp:
-
-/usr/include/c++/11/iosfwd:
-
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp:
 
 /usr/include/c++/11/initializer_list:
+
+/usr/include/opencv4/opencv2/stitching/detail/matchers.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__struct.hpp:
 
@@ -2917,8 +2893,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
-/usr/local/include/opencv4/opencv2/core/persistence.hpp:
-
 /usr/include/console_bridge/console.h:
 
 /usr/include/c++/11/bits/localefwd.h:
@@ -2929,11 +2903,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/local/include/opencv4/opencv2/dnn/version.hpp:
-
 /opt/ros/humble/include/rclcpp/rclcpp/any_service_callback.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp:
+
+/usr/include/c++/11/string:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
@@ -2943,9 +2919,17 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/string.h:
 
-/usr/include/c++/11/bits/vector.tcc:
+/opt/ros/humble/include/tf2/tf2/LinearMath/MinMax.h:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp:
+/usr/include/opencv4/opencv2/dnn/dict.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+/opt/ros/humble/include/message_filters/message_filters/connection.h:
+
+/usr/include/c++/11/bits/postypes.h:
+
+/usr/include/c++/11/bits/vector.tcc:
 
 /usr/include/c++/11/bits/unordered_set.h:
 
@@ -2961,13 +2945,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
+/usr/include/opencv4/opencv2/dnn/layer.hpp:
+
 /opt/ros/humble/include/rclcpp/rclcpp/parameter_value.hpp:
 
 /usr/include/c++/11/bits/align.h:
 
 /usr/include/c++/11/vector:
-
-/usr/local/include/opencv4/opencv2/flann/all_indices.h:
 
 /usr/include/c++/11/bits/erase_if.h:
 
@@ -2975,19 +2959,11 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/ptr_traits.h:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__builder.hpp:
-
-/usr/include/c++/11/cxxabi.h:
-
-/usr/local/include/opencv4/opencv2/stitching/warpers.hpp:
-
 /usr/include/unistd.h:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/point_stamped.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__struct.hpp:
-
-/usr/include/c++/11/bits/unordered_map.h:
 
 /usr/include/c++/11/typeinfo:
 
@@ -2995,9 +2971,15 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/basic_ios.tcc:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp:
 
-/usr/local/include/opencv4/opencv2/core/cvstd.hpp:
+/usr/include/opencv4/opencv2/flann/kmeans_index.h:
+
+/opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_lost.h:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__struct.hpp:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
 
@@ -3005,29 +2987,25 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/stdc-predef.h:
 
+/usr/include/opencv4/opencv2/imgproc/imgproc.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
 /usr/include/c++/11/bits/memoryfwd.h:
 
-/opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp:
+/usr/include/c++/11/bits/stl_function.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/detail/qos_parameters.hpp:
 
 /usr/include/c++/11/cmath:
 
-/usr/include/math.h:
-
-/usr/include/c++/11/bits/charconv.h:
-
-/usr/include/c++/11/bits/exception_ptr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
-
-/usr/include/locale.h:
+/usr/include/c++/11/bits/allocator.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/c++/11/future:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
@@ -3037,7 +3015,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/opencv4/opencv2/flann/logger.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
@@ -3055,49 +3033,21 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
+/usr/include/c++/11/cstdio:
+
+/usr/include/opencv4/opencv2/stitching/detail/warpers.hpp:
+
 /opt/ros/humble/include/rmw/rmw/topic_endpoint_info.h:
 
 /usr/include/wctype.h:
 
 /opt/ros/humble/include/rcutils/rcutils/types/array_list.h:
 
-/usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
+/usr/include/opencv4/opencv2/stitching.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters_atomically__traits.hpp:
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__builder.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/c++/11/bits/cxxabi_init_exception.h:
-
-/usr/include/c++/11/bits/uniform_int_dist.h:
-
-/usr/include/c++/11/bits/allocator.h:
-
-/usr/local/include/opencv4/opencv2/flann/logger.h:
-
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp:
-
-/usr/local/include/opencv4/opencv2/core/check.hpp:
-
-/usr/include/c++/11/pstl/execution_defs.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__traits.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/x86_64-linux-gnu/bits/sigthread.h:
-
-/usr/include/c++/11/chrono:
+/usr/include/opencv4/opencv2/stitching/warpers.hpp:
 
 /usr/include/c++/11/tr1/special_function_util.h:
 
@@ -3107,15 +3057,31 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/cstdint:
 
+/usr/include/opencv4/opencv2/core/mat.hpp:
+
 /usr/include/c++/11/ext/concurrence.h:
 
 /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/number_classifier.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__builder.hpp:
 
-/usr/include/c++/11/bits/concept_check.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
+
+/opt/ros/humble/include/rclcpp/rclcpp/qos_event.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
@@ -3123,9 +3089,33 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/functexcept.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
-/usr/local/include/opencv4/opencv2/photo.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/c++/11/bits/concept_check.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/c++/11/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/11/bits/uniform_int_dist.h:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp:
+
+/usr/include/c++/11/pstl/execution_defs.h:
+
+/usr/include/c++/11/bits/cxxabi_forced.h:
+
+/usr/include/c++/11/bits/algorithmfwd.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/quaternion_stamped__traits.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/c++/11/chrono:
 
 /usr/include/c++/11/system_error:
 
@@ -3145,13 +3135,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/features.h:
 
-/usr/local/include/opencv4/opencv2/flann/kmeans_index.h:
-
 /usr/include/c++/11/utility:
-
-/opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp:
-
-/usr/local/include/opencv4/opencv2/core/mat.inl.hpp:
 
 /usr/include/c++/11/ios:
 
@@ -3159,19 +3143,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
-/usr/include/c++/11/bits/atomic_base.h:
+/usr/include/opencv4/opencv2/videoio.hpp:
 
-/opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp:
 
-/usr/include/c++/11/bits/shared_ptr.h:
-
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__traits.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+/usr/include/opencv4/opencv2/ml.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
 
@@ -3185,13 +3163,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/c++/11/bits/stl_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/c++/11/bits/std_thread.h:
 
 /usr/include/c++/11/bits/exception.h:
 
@@ -3207,21 +3179,17 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
-/usr/include/c++/11/tr1/beta_function.tcc:
+/usr/include/opencv4/opencv2/core/base.hpp:
 
-/usr/local/include/opencv4/opencv2/core/version.hpp:
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
-/opt/ros/humble/include/rclcpp/rclcpp/qos_event.hpp:
+/usr/include/c++/11/bits/stl_tempbuf.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+/usr/include/c++/11/pstl/pstl_config.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
+/opt/ros/humble/include/message_filters/message_filters/simple_filter.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/c++/11/tr1/legendre_function.tcc:
-
-/usr/local/include/opencv4/opencv2/core/cvdef.h:
+/usr/include/opencv4/opencv2/core.hpp:
 
 /usr/include/c++/11/iostream:
 
@@ -3231,21 +3199,65 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/c++/11/stdlib.h:
+/usr/include/opencv4/opencv2/flann/sampling.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__traits.hpp:
+
+/usr/include/pthread.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
+
+/usr/include/opencv4/opencv2/opencv_modules.hpp:
 
 /usr/include/c++/11/bits/stringfwd.h:
 
 /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector.cpp:
 
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
+/usr/include/opencv4/opencv2/dnn/version.hpp:
+
 /opt/ros/humble/include/rclcpp/rclcpp/publisher_base.hpp:
 
 /usr/include/alloca.h:
 
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+/opt/ros/humble/include/tf2/tf2/LinearMath/Vector3.h:
 
-/usr/local/include/opencv4/opencv2/core.hpp:
+/usr/include/c++/11/bits/shared_ptr.h:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__traits.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
+/usr/include/c++/11/bits/unique_lock.h:
+
+/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.hpp:
+
+/usr/include/opencv4/opencv2/core/version.hpp:
+
+/usr/include/c++/11/cstdlib:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/opencv4/opencv2/core/ovx.hpp:
+
+/usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp:
+
+/opt/ros/humble/include/rcutils/rcutils/logging.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__builder.hpp:
+
+/usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/c++/11/bits/range_access.h:
 
@@ -3260,8 +3272,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/util.hpp:
 
 /usr/include/c++/11/bits/alloc_traits.h:
 
@@ -3279,33 +3289,43 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/stdexcept:
 
-/usr/local/include/opencv4/opencv2/flann/lsh_table.h:
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+/usr/include/c++/11/bits/stl_iterator.h:
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__builder.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/c++/11/bits/stl_deque.h:
+/usr/include/c++/11/bits/stl_queue.h:
 
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+/opt/ros/humble/include/rcutils/rcutils/shared_library.h:
 
-/usr/include/c++/11/bits/stl_tempbuf.h:
+/usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
 
-/usr/include/c++/11/pstl/pstl_config.h:
+/usr/include/c++/11/ext/new_allocator.h:
+
+/opt/ros/humble/include/tf2/tf2/LinearMath/Transform.h:
+
+/usr/include/opencv4/opencv2/core/affine.hpp:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance__struct.hpp:
-
-/usr/local/include/opencv4/opencv2/core/affine.hpp:
 
 /usr/include/c++/11/bits/std_function.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
+/usr/include/opencv4/opencv2/core/neon_utils.hpp:
+
+/usr/include/c++/11/stdlib.h:
+
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__traits.hpp:
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
+
+/usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/c++/11/bits/predefined_ops.h:
 
@@ -3319,9 +3339,17 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/stl_algo.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+
+/usr/include/c++/11/tuple:
+
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp:
 
 /usr/include/c++/11/bits/stl_heap.h:
+
+/usr/include/c++/11/ext/alloc_traits.h:
+
+/usr/include/opencv4/opencv2/flann/miniflann.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/get_node_parameters_interface.hpp:
 
@@ -3332,6 +3360,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/rcl/rcl/time.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
+
+/usr/include/opencv4/opencv2/core/cvstd.inl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
@@ -3349,9 +3379,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/invoke.h:
 
-/usr/include/c++/11/ext/new_allocator.h:
+/usr/include/opencv4/opencv2/stitching/detail/util.hpp:
 
 /usr/include/strings.h:
+
+/usr/include/c++/11/bits/atomic_base.h:
+
+/usr/include/opencv4/opencv2/core/cuda.inl.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
@@ -3361,9 +3395,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/local/include/opencv4/opencv2/core/bufferpool.hpp:
-
 /usr/include/c++/11/bits/move.h:
+
+/usr/include/opencv4/opencv2/core/core.hpp:
 
 /usr/include/c++/11/bits/hash_bytes.h:
 
@@ -3373,12 +3407,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_lights__struct.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
-/usr/local/include/opencv4/opencv2/core/saturate.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose_with_covariance_stamped__traits.hpp:
@@ -3387,19 +3415,21 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/ext/atomicity.h:
 
+/usr/include/c++/11/pstl/glue_numeric_defs.h:
+
+/usr/include/opencv4/opencv2/stitching/detail/blenders.hpp:
+
 /opt/ros/humble/include/rcl/rcl/types.h:
 
 /usr/include/c++/11/bits/stl_pair.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/c++/11/tuple:
+/usr/include/opencv4/opencv2/core/check.hpp:
 
 /usr/include/c++/11/cwchar:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
-
-/usr/local/include/opencv4/opencv2/flann/saving.h:
 
 /usr/include/c++/11/bits/stl_algobase.h:
 
@@ -3411,7 +3441,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/pstl/glue_memory_defs.h:
 
-/usr/local/include/opencv4/opencv2/core/cuda.inl.hpp:
+/usr/include/opencv4/opencv2/flann/all_indices.h:
 
 /usr/include/c++/11/ext/type_traits.h:
 
@@ -3419,37 +3449,31 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/climits:
 
+/usr/include/opencv4/opencv2/core/cvdef.h:
+
 /usr/include/c++/11/bits/sstream.tcc:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__traits.hpp:
-
-/usr/include/pthread.h:
-
-/usr/local/include/opencv4/opencv2/opencv_modules.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_lights__builder.hpp:
 
+/opt/ros/humble/include/rmw/rmw/names_and_types.h:
+
+/usr/include/opencv4/opencv2/core/core_c.h:
+
 /usr/include/linux/errno.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp:
-
-/usr/local/include/opencv4/opencv2/core/matx.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_graph_interface.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/usr/local/include/opencv4/opencv2/flann/timer.h:
-
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/wrench__builder.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/opencv4/opencv2/flann/lsh_index.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
@@ -3457,35 +3481,31 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/polygon__struct.hpp:
+
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose_with_covariance.hpp:
+
+/usr/include/c++/11/iosfwd:
+
+/usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
-
-/opt/ros/humble/include/rcpputils/rcpputils/shared_library.hpp:
-
-/usr/local/include/opencv4/opencv2/ml/ml.inl.hpp:
 
 /usr/include/c++/11/algorithm:
 
 /usr/include/c++/11/backward/binders.h:
 
-/usr/include/c++/11/bits/uses_allocator.h:
-
-/usr/include/c++/11/bits/unique_lock.h:
+/usr/include/opencv4/opencv2/dnn/dnn.inl.hpp:
 
 /usr/include/c++/11/bits/functional_hash.h:
 
-/usr/local/include/opencv4/opencv2/imgproc.hpp:
-
 /usr/include/c++/11/bits/string_view.tcc:
 
-/usr/include/c++/11/bits/stl_queue.h:
-
-/usr/local/include/opencv4/opencv2/video/background_segm.hpp:
-
 /usr/include/c++/11/cctype:
+
+/usr/include/opencv4/opencv2/flann/linear_index.h:
 
 /usr/include/c++/11/iomanip:
 
@@ -3497,25 +3517,49 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/unordered_map:
 
-/usr/local/include/opencv4/opencv2/dnn.hpp:
+/usr/include/opencv4/opencv2/core/traits.hpp:
 
-/usr/local/include/opencv4/opencv2/core/types.hpp:
+/usr/include/opencv4/opencv2/core/matx.hpp:
 
-/usr/include/x86_64-linux-gnu/sys/types.h:
+/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:
 
-/usr/local/include/opencv4/opencv2/core/mat.hpp:
+/usr/include/opencv4/opencv2/core/saturate.hpp:
 
-/usr/include/c++/11/bits/stl_function.h:
+/usr/include/locale.h:
 
-/usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp:
+/usr/include/opencv4/opencv2/core/fast_math.hpp:
+
+/opt/ros/humble/include/rcutils/rcutils/snprintf.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp:
+
+/opt/ros/humble/include/rcl/rcl/visibility_control.h:
+
+/usr/include/opencv4/opencv2/core/mat.inl.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/opencv4/opencv2/core/operations.hpp:
+
+/opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp:
+
+/usr/include/opencv4/opencv2/video/tracking.hpp:
 
 /usr/include/c++/11/sstream:
 
 /usr/include/c++/11/istream:
 
-/usr/include/c++/11/bits/locale_classes.h:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
 
-/usr/local/include/opencv4/opencv2/features2d.hpp:
+/opt/ros/humble/include/image_transport/image_transport/single_subscriber_publisher.hpp:
+
+/usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/opencv4/opencv2/stitching/detail/camera.hpp:
+
+/usr/include/c++/11/bits/locale_classes.h:
 
 /opt/ros/humble/include/rcpputils/rcpputils/pointer_traits.hpp:
 
@@ -3537,9 +3581,11 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/opt/ros/humble/include/rcutils/rcutils/types/string_map.h:
+/opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
+/usr/include/opencv4/opencv2/photo.hpp:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
@@ -3551,43 +3597,27 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/ostream.tcc:
 
-/opt/ros/humble/include/rclcpp/rclcpp/clock.hpp:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp:
-
-/usr/local/include/opencv4/opencv2/core/utility.hpp:
+/usr/include/c++/11/bits/istream.tcc:
 
 /usr/include/c++/11/mutex:
 
 /usr/include/c++/11/ratio:
 
-/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
-
-/usr/include/c++/11/optional:
-
-/usr/include/c++/11/condition_variable:
-
 /usr/include/c++/11/ctime:
 
-/usr/local/include/opencv4/opencv2/core/optim.hpp:
+/usr/include/opencv4/opencv2/core/optim.hpp:
 
-/usr/include/c++/11/numeric:
+/usr/include/c++/11/bits/unordered_map.h:
 
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp:
+/usr/include/opencv4/opencv2/imgproc.hpp:
 
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__traits.hpp:
+/usr/include/opencv4/opencv2/flann/config.h:
 
-/usr/local/include/opencv4/opencv2/core/ovx.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp:
-
-/usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp:
+/usr/include/opencv4/opencv2/imgproc/segmentation.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp:
-
-/usr/local/include/opencv4/opencv2/core/operations.hpp:
-
-/usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
 
 /usr/include/c++/11/exception:
 
@@ -3597,37 +3627,33 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcutils/rcutils/error_handling.h:
 
-/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
+/usr/include/opencv4/opencv2/opencv.hpp:
 
-/opt/ros/humble/include/image_transport/image_transport/exception.hpp:
+/opt/ros/humble/include/rcutils/rcutils/qsort.h:
 
-/usr/local/include/opencv4/opencv2/opencv.hpp:
+/usr/include/c++/11/bits/parse_numbers.h:
 
-/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.hpp:
+/usr/include/opencv4/opencv2/calib3d.hpp:
 
-/usr/local/include/opencv4/opencv2/core/cuda.hpp:
+/usr/include/opencv4/opencv2/features2d.hpp:
 
-/usr/include/c++/11/bits/cxxabi_forced.h:
+/usr/include/opencv4/opencv2/flann/defines.h:
 
-/usr/include/c++/11/bits/algorithmfwd.h:
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_light__builder.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/miniflann.hpp:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/local/include/opencv4/opencv2/flann/config.h:
+/usr/include/opencv4/opencv2/core/hal/interface.h:
 
-/usr/local/include/opencv4/opencv2/dnn/dnn.hpp:
+/usr/include/opencv4/opencv2/dnn.hpp:
 
-/opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker_array__struct.hpp:
+/usr/include/opencv4/opencv2/dnn/dnn.hpp:
 
-/usr/local/include/opencv4/opencv2/core/async.hpp:
-
-/usr/local/include/opencv4/opencv2/dnn/dict.hpp:
+/usr/include/opencv4/opencv2/core/async.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/camera_info__struct.hpp:
 
 /usr/include/c++/11/map:
-
-/usr/local/include/opencv4/opencv2/imgcodecs.hpp:
 
 /usr/include/c++/11/bits/stl_tree.h:
 
@@ -3635,43 +3661,47 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/stl_multimap.h:
 
-/usr/local/include/opencv4/opencv2/dnn/layer.hpp:
+/usr/include/opencv4/opencv2/flann.hpp:
 
-/usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp:
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/subscription_content_filter_options.hpp:
+/usr/include/math.h:
 
-/usr/local/include/opencv4/opencv2/flann/result_set.h:
+/usr/include/c++/11/bits/charconv.h:
 
-/opt/ros/humble/include/rmw/rmw/network_flow_endpoint_array.h:
+/usr/include/c++/11/bits/exception_ptr.h:
 
-/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_lights__traits.hpp:
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
 
-/usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp:
+/usr/include/opencv4/opencv2/flann/flann_base.hpp:
 
-/usr/include/kdl/frames.inl:
+/opt/ros/humble/include/rmw/rmw/subscription_options.h:
 
-/usr/local/include/opencv4/opencv2/flann/random.h:
+/usr/include/opencv4/opencv2/flann/general.h:
 
-/usr/local/include/opencv4/opencv2/flann.hpp:
+/usr/include/opencv4/opencv2/flann/matrix.h:
 
-/opt/ros/humble/include/ament_index_cpp/ament_index_cpp/get_package_share_directory.hpp:
+/usr/include/opencv4/opencv2/flann/index_testing.h:
 
-/usr/local/include/opencv4/opencv2/flann/flann_base.hpp:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/local/include/opencv4/opencv2/calib3d.hpp:
+/usr/include/opencv4/opencv2/flann/params.h:
 
-/usr/local/include/opencv4/opencv2/flann/general.h:
+/usr/include/opencv4/opencv2/flann/any.h:
 
-/usr/local/include/opencv4/opencv2/flann/matrix.h:
+/usr/include/c++/11/bits/basic_string.tcc:
 
-/usr/local/include/opencv4/opencv2/flann/params.h:
+/usr/include/opencv4/opencv2/flann/nn_index.h:
 
-/usr/local/include/opencv4/opencv2/flann/nn_index.h:
+/opt/ros/humble/include/rcutils/rcutils/types/string_map.h:
 
-/opt/ros/humble/include/rcutils/rcutils/types.h:
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
+
+/usr/include/opencv4/opencv2/flann/result_set.h:
+
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__builder.hpp:
 
@@ -3683,83 +3713,57 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/stl_set.h:
 
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
-/usr/local/include/opencv4/opencv2/highgui.hpp:
-
-/usr/include/c++/11/bits/parse_numbers.h:
-
-/usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp:
-
-/usr/local/include/opencv4/opencv2/core/hal/interface.h:
-
 /usr/include/c++/11/bits/stl_multiset.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__struct.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
-/opt/ros/humble/include/image_transport/image_transport/single_subscriber_publisher.hpp:
+/usr/include/c++/11/ext/string_conversions.h:
 
-/usr/include/c++/11/bits/ios_base.h:
+/usr/include/opencv4/opencv2/flann/kdtree_index.h:
 
-/usr/local/include/opencv4/opencv2/flann/kdtree_index.h:
+/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/pnp_solver.cpp:
 
-/usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h:
+/opt/ros/humble/include/rmw/rmw/publisher_options.h:
 
-/opt/ros/humble/include/message_filters/message_filters/connection.h:
-
-/usr/include/c++/11/bits/postypes.h:
-
-/usr/local/include/opencv4/opencv2/flann/dist.h:
-
-/opt/ros/humble/include/rmw/rmw/macros.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point32__struct.hpp:
-
-/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:
-
-/opt/ros/humble/include/rmw/rmw/ret_types.h:
-
-/usr/local/include/opencv4/opencv2/flann/heap.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/local/include/opencv4/opencv2/flann/allocator.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/local/include/opencv4/opencv2/flann/composite_index.h:
-
-/usr/local/include/opencv4/opencv2/flann/linear_index.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point_stamped__builder.hpp:
-
-/opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
-
-/usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
-
-/opt/ros/humble/include/rclcpp/rclcpp/wait_result_kind.hpp:
-
-/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/camera_info__traits.hpp:
-
-/usr/local/include/opencv4/opencv2/objdetect/graphical_code_detector.hpp:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp:
-
-/usr/include/c++/11/bits/istream.tcc:
-
-/usr/local/include/opencv4/opencv2/core/cuda_types.hpp:
+/usr/include/opencv4/opencv2/flann/dynamic_bitset.h:
 
 /opt/ros/humble/include/rcutils/rcutils/types/string_array.h:
 
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__traits.hpp:
+/usr/include/opencv4/opencv2/core/types_c.h:
 
-/usr/local/include/opencv4/opencv2/flann/lsh_index.h:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp:
 
-/opt/ros/humble/include/rmw/rmw/qos_policy_kind.h:
+/usr/include/opencv4/opencv2/core/persistence.hpp:
+
+/usr/include/opencv4/opencv2/flann/dist.h:
+
+/usr/include/opencv4/opencv2/flann/heap.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
+
+/usr/include/opencv4/opencv2/flann/allocator.h:
+
+/usr/include/c++/11/array:
+
+/usr/include/opencv4/opencv2/flann/autotuned_index.h:
+
+/usr/include/opencv4/opencv2/flann/random.h:
+
+/usr/include/opencv4/opencv2/flann/kdtree_single_index.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
+/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
+
+/usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
+
+/usr/include/opencv4/opencv2/flann/lsh_table.h:
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
@@ -3767,7 +3771,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/basic_ios.h:
 
+/usr/include/opencv4/opencv2/flann/composite_index.h:
+
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
+
+/opt/ros/humble/include/rcl/rcl/log_level.h:
+
+/usr/include/opencv4/opencv2/flann/timer.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp:
 
@@ -3777,11 +3787,13 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/libintl.h:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
+/opt/ros/humble/include/message_filters/message_filters/signal1.h:
+
+/usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
+
+/usr/include/opencv4/opencv2/core/types.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp:
-
-/usr/include/c++/11/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/11/bits/locale_conv.h:
 
@@ -3801,67 +3813,27 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdalign.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
+/usr/include/c++/11/bits/stream_iterator.h:
 
-/usr/local/include/opencv4/opencv2/flann/autotuned_index.h:
+/usr/include/opencv4/opencv2/flann/ground_truth.h:
 
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp:
+/usr/include/opencv4/opencv2/highgui.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/index_testing.h:
+/usr/include/opencv4/opencv2/imgcodecs.hpp:
 
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/polygon_stamped__struct.hpp:
+/usr/include/opencv4/opencv2/ml/ml.inl.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+/opt/ros/humble/include/tf2/tf2/transform_datatypes.h:
 
-/usr/local/include/opencv4/opencv2/flann/sampling.h:
+/usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
+/usr/include/opencv4/opencv2/objdetect/face.hpp:
 
-/usr/local/include/opencv4/opencv2/videoio.hpp:
+/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp:
 
-/opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h:
+/usr/include/opencv4/opencv2/core/cuda_types.hpp:
 
-/usr/local/include/opencv4/opencv2/ml.hpp:
-
-/usr/local/include/opencv4/opencv2/objdetect/aruco_detector.hpp:
-
-/usr/local/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp:
-
-/opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_lost.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/local/include/opencv4/opencv2/objdetect/aruco_board.hpp:
-
-/opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h:
-
-/usr/local/include/opencv4/opencv2/objdetect/face.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp:
-
-/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp:
-
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/ros_message_intra_process_buffer.hpp:
-
-/opt/ros/humble/include/rcutils/rcutils/logging.h:
-
-/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
-
-/usr/local/include/opencv4/opencv2/stitching.hpp:
-
-/usr/include/c++/11/cstdlib:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp:
-
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp:
-
-/opt/ros/humble/include/rmw/rmw/events_statuses/incompatible_qos.h:
+/usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
 
@@ -3879,15 +3851,25 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /usr/include/c++/11/bits/deque.tcc:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__struct.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp:
+/opt/ros/humble/include/rcl/rcl/node_options.h:
 
-/usr/local/include/opencv4/opencv2/video/tracking.hpp:
+/usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp:
+
+/usr/include/opencv4/opencv2/video.hpp:
+
+/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:
+
+/usr/include/opencv4/opencv2/video/background_segm.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:
-
-/usr/local/include/opencv4/opencv2/objdetect/barcode.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__struct.hpp:
 
@@ -3901,15 +3883,17 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcutils/rcutils/testing/fault_injection.h:
 
+/opt/ros/humble/include/rmw/rmw/network_flow_endpoint_array.h:
+
+/opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_lights__traits.hpp:
+
 /opt/ros/humble/include/tracetools/tracetools/config.h:
 
 /usr/include/c++/11/debug/assertions.h:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__builder.hpp:
-
-/usr/local/include/opencv4/opencv2/flann/defines.h:
-
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_light__builder.hpp:
 
 /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:
 
@@ -3927,39 +3911,29 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:
 
-/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp:
-
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__builder.hpp:
+
+/usr/include/opencv4/opencv2/core/cvstd.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/compressed_image.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__builder.hpp:
 
+/usr/include/c++/11/numeric:
+
+/opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__traits.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/compressed_image__traits.hpp:
+
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/image_encodings.hpp:
 
-/opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/intra_process_buffer.hpp:
+/usr/include/c++/11/string_view:
 
-/usr/include/c++/11/string:
-
-/usr/local/include/opencv4/opencv2/imgproc/types_c.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h:
-
-/usr/local/include/opencv4/opencv2/core/core_c.h:
-
-/opt/ros/humble/include/image_transport/image_transport/subscriber_filter.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/sigaction.h:
-
-/usr/local/include/opencv4/opencv2/core/types_c.h:
+/usr/include/opencv4/opencv2/imgproc/types_c.h:
 
 /opt/ros/humble/include/cv_bridge/cv_bridge/cv_bridge_export.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
-
-/usr/local/include/opencv4/opencv2/video.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/macros.hpp:
 
@@ -3987,14 +3961,6 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcutils/rcutils/types/hash_map.h:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__traits.hpp:
-
-/opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h:
-
-/usr/local/include/opencv4/opencv2/core/base.hpp:
-
-/opt/ros/humble/include/rcutils/rcutils/snprintf.h:
-
 /opt/ros/humble/include/rcl/rcl/node.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/type_support_decl.hpp:
@@ -4005,19 +3971,19 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcl/rcl/arguments.h:
 
-/opt/ros/humble/include/rcl/rcl/log_level.h:
-
 /opt/ros/humble/include/rcl/rcl/macros.h:
 
 /opt/ros/humble/include/rmw/rmw/types.h:
 
 /opt/ros/humble/include/rcutils/rcutils/time.h:
 
+/opt/ros/humble/include/rcutils/rcutils/types.h:
+
 /opt/ros/humble/include/rclcpp/rclcpp/detail/resolve_enable_topic_statistics.hpp:
 
 /opt/ros/humble/include/rcutils/rcutils/types/char_array.h:
 
-/opt/ros/humble/include/rcutils/rcutils/qsort.h:
+/usr/include/c++/11/variant:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__traits.hpp:
 
@@ -4026,6 +3992,10 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/c++/11/bits/list.tcc:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/events_statuses.h:
+
+/opt/ros/humble/include/rmw/rmw/events_statuses/incompatible_qos.h:
+
+/opt/ros/humble/include/rmw/rmw/qos_policy_kind.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/create_generic_publisher.hpp:
 
@@ -4051,13 +4021,15 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rmw/rmw/domain_id.h:
 
-/usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp:
-
 /opt/ros/humble/include/rmw/rmw/localhost.h:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/set_parameters.hpp:
+/opt/ros/humble/include/rmw/rmw/macros.h:
 
-/opt/ros/humble/include/rcl/rcl/visibility_control.h:
+/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point32__struct.hpp:
+
+/opt/ros/humble/include/libstatistics_collector/libstatistics_collector/moving_average_statistics/moving_average.hpp:
+
+/opt/ros/humble/include/rmw/rmw/ret_types.h:
 
 /usr/include/c++/11/codecvt:
 
@@ -4069,17 +4041,11 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rmw/rmw/event_callback_type.h:
 
-/usr/local/include/opencv4/opencv2/flann/any.h:
-
 /opt/ros/humble/include/rcl/rcl/context.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp:
 
 /opt/ros/humble/include/rcl/rcl/guard_condition.h:
-
-/opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3_stamped__struct.hpp:
-
-/opt/ros/humble/include/rcl/rcl/node_options.h:
 
 /opt/ros/humble/include/rcl/rcl/domain_id.h:
 
@@ -4089,9 +4055,9 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:
 
-/usr/include/c++/11/bits/atomic_futex.h:
-
 /usr/include/c++/11/cstring:
+
+/usr/include/c++/11/bits/atomic_futex.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__struct.hpp:
 
@@ -4103,11 +4069,7 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/floating_point_range__traits.hpp:
 
-/usr/local/include/opencv4/opencv2/core/traits.hpp:
-
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__struct.hpp:
-
-/usr/local/include/opencv4/opencv2/core/core.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp:
 
@@ -4121,6 +4083,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rmw/rmw/qos_profiles.h:
 
+/usr/include/opencv4/opencv2/core/bufferpool.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__traits.hpp:
@@ -4133,4 +4097,10 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/set_parameters_result.hpp:
 
-/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp:
+/opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
+
+/usr/include/c++/11/condition_variable:
+
+/usr/include/c++/11/optional:

@@ -172,7 +172,8 @@ void RMSerialDriver::receiveData()
                   // 处理接收到的数据
                   //if (data_buffer.size() == sizeof(ReceivePacket) - 1) {
                       ReceivePacket packet = fromVector(data_buffer);
-
+ 
+                      packet.detect_color = 1;
                       // 执行您的操作，例如设置参数、发布消息等
                       if (!initial_set_param_ || packet.detect_color != previous_receive_color_) {
                           setParam(rclcpp::Parameter("detect_color", packet.detect_color));
@@ -190,7 +191,7 @@ void RMSerialDriver::receiveData()
                       t.header.frame_id = "odom";
                       t.child_frame_id = "gimbal_link";
                       tf2::Quaternion q;
-                      q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
+                      q.setRPY(packet.roll / 57.3f, -packet.pitch / 57.3f, packet.yaw / 57.3f);
                       t.transform.rotation = tf2::toMsg(q);
                       tf_broadcaster_->sendTransform(t);
 

@@ -1,7 +1,7 @@
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib/armor_tracker/armor_tracker_node
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/include/armor_tracker/tracker.hpp
-/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/include/armor_tracker/tracker_node.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/include/armor_tracker/extended_kalman_filter.hpp
+/home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/include/armor_tracker/tracker_node.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/environment/library_path.sh
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/share/armor_tracker/environment/library_path.dsv
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_tracker/lib/libarmor_tracker.so

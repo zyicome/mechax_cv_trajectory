@@ -738,18 +738,18 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
   /opt/ros/humble/include/message_filters/message_filters/signal1.h \
   /opt/ros/humble/include/message_filters/message_filters/message_event.h \
   /opt/ros/humble/include/message_filters/message_filters/parameter_adapter.h \
-  /usr/local/include/opencv4/opencv2/core/mat.hpp \
-  /usr/local/include/opencv4/opencv2/core/matx.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/include/opencv4/opencv2/core/version.hpp \
-  /usr/local/include/opencv4/opencv2/core/hal/interface.h \
-  /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/include/opencv4/opencv2/core/mat.hpp \
+  /usr/include/opencv4/opencv2/core/matx.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/core/version.hpp \
+  /usr/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
-  /usr/local/include/opencv4/opencv2/core/base.hpp \
-  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/include/opencv4/opencv2/core/base.hpp \
+  /usr/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/c++/11/climits \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -760,18 +760,18 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
-  /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
-  /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
-  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
-  /usr/local/include/opencv4/opencv2/core/check.hpp \
-  /usr/local/include/opencv4/opencv2/core/traits.hpp \
-  /usr/local/include/opencv4/opencv2/core/saturate.hpp \
-  /usr/local/include/opencv4/opencv2/core/fast_math.hpp \
-  /usr/local/include/opencv4/opencv2/core/types.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/include/opencv4/opencv2/core/check.hpp \
+  /usr/include/opencv4/opencv2/core/traits.hpp \
+  /usr/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/include/opencv4/opencv2/core/types.hpp \
   /usr/include/c++/11/cfloat \
-  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp \
-  /usr/local/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/include/opencv4/opencv2/core/mat.inl.hpp \
   /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker_array.hpp \
   /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker_array__struct.hpp \
   /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker__struct.hpp \
@@ -795,107 +795,101 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
   /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/uv_coordinate__traits.hpp \
   /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/mesh_file__traits.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp \
-  /usr/local/include/opencv4/opencv2/core.hpp \
-  /usr/local/include/opencv4/opencv2/core/persistence.hpp \
-  /usr/local/include/opencv4/opencv2/core/operations.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/include/opencv4/opencv2/core.hpp \
+  /usr/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/include/opencv4/opencv2/core/operations.hpp \
+  /usr/include/opencv4/opencv2/core/cvstd.inl.hpp \
   /usr/include/c++/11/complex \
-  /usr/local/include/opencv4/opencv2/core/utility.hpp \
-  /usr/local/include/opencv4/opencv2/core/optim.hpp \
-  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
-  /usr/local/include/opencv4/opencv2/core/cvdef.h \
+  /usr/include/opencv4/opencv2/core/utility.hpp \
+  /usr/include/opencv4/opencv2/core/optim.hpp \
+  /usr/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/include/opencv4/opencv2/core/cvdef.h \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/armor.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/number_classifier.hpp \
-  /usr/local/include/opencv4/opencv2/opencv.hpp \
-  /usr/local/include/opencv4/opencv2/calib3d.hpp \
-  /usr/local/include/opencv4/opencv2/features2d.hpp \
-  /usr/local/include/opencv4/opencv2/flann/miniflann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
-  /usr/local/include/opencv4/opencv2/flann/config.h \
-  /usr/local/include/opencv4/opencv2/core/affine.hpp \
-  /usr/local/include/opencv4/opencv2/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/core/async.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/version.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dict.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/layer.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
-  /usr/local/include/opencv4/opencv2/dnn/dnn.hpp \
-  /usr/local/include/opencv4/opencv2/flann.hpp \
-  /usr/local/include/opencv4/opencv2/flann/flann_base.hpp \
-  /usr/local/include/opencv4/opencv2/flann/general.h \
-  /usr/local/include/opencv4/opencv2/flann/matrix.h \
-  /usr/local/include/opencv4/opencv2/flann/params.h \
-  /usr/local/include/opencv4/opencv2/flann/any.h \
-  /usr/local/include/opencv4/opencv2/flann/defines.h \
-  /usr/local/include/opencv4/opencv2/flann/saving.h \
-  /usr/local/include/opencv4/opencv2/flann/nn_index.h \
-  /usr/local/include/opencv4/opencv2/flann/result_set.h \
-  /usr/local/include/opencv4/opencv2/flann/all_indices.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_index.h \
-  /usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h \
-  /usr/local/include/opencv4/opencv2/flann/dist.h \
-  /usr/local/include/opencv4/opencv2/flann/heap.h \
-  /usr/local/include/opencv4/opencv2/flann/allocator.h \
-  /usr/local/include/opencv4/opencv2/flann/random.h \
-  /usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h \
-  /usr/local/include/opencv4/opencv2/flann/kmeans_index.h \
-  /usr/local/include/opencv4/opencv2/flann/logger.h \
-  /usr/local/include/opencv4/opencv2/flann/composite_index.h \
-  /usr/local/include/opencv4/opencv2/flann/linear_index.h \
-  /usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_index.h \
-  /usr/local/include/opencv4/opencv2/flann/lsh_table.h \
+  /usr/include/opencv4/opencv2/opencv.hpp \
+  /usr/include/opencv4/opencv2/calib3d.hpp \
+  /usr/include/opencv4/opencv2/features2d.hpp \
+  /usr/include/opencv4/opencv2/flann/miniflann.hpp \
+  /usr/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/flann/config.h \
+  /usr/include/opencv4/opencv2/core/affine.hpp \
+  /usr/include/opencv4/opencv2/dnn.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/core/async.hpp \
+  /usr/include/opencv4/opencv2/dnn/version.hpp \
+  /usr/include/opencv4/opencv2/dnn/dict.hpp \
+  /usr/include/opencv4/opencv2/dnn/layer.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.inl.hpp \
+  /usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
+  /usr/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/include/opencv4/opencv2/flann.hpp \
+  /usr/include/opencv4/opencv2/flann/flann_base.hpp \
+  /usr/include/opencv4/opencv2/flann/general.h \
+  /usr/include/opencv4/opencv2/flann/matrix.h \
+  /usr/include/opencv4/opencv2/flann/params.h \
+  /usr/include/opencv4/opencv2/flann/any.h \
+  /usr/include/opencv4/opencv2/flann/defines.h \
+  /usr/include/opencv4/opencv2/flann/saving.h \
+  /usr/include/opencv4/opencv2/flann/nn_index.h \
+  /usr/include/opencv4/opencv2/flann/result_set.h \
+  /usr/include/opencv4/opencv2/flann/all_indices.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_index.h \
+  /usr/include/opencv4/opencv2/flann/dynamic_bitset.h \
+  /usr/include/opencv4/opencv2/flann/dist.h \
+  /usr/include/opencv4/opencv2/flann/heap.h \
+  /usr/include/opencv4/opencv2/flann/allocator.h \
+  /usr/include/opencv4/opencv2/flann/random.h \
+  /usr/include/opencv4/opencv2/flann/kdtree_single_index.h \
+  /usr/include/opencv4/opencv2/flann/kmeans_index.h \
+  /usr/include/opencv4/opencv2/flann/logger.h \
+  /usr/include/opencv4/opencv2/flann/composite_index.h \
+  /usr/include/opencv4/opencv2/flann/linear_index.h \
+  /usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_index.h \
+  /usr/include/opencv4/opencv2/flann/lsh_table.h \
   /usr/include/c++/11/math.h \
-  /usr/local/include/opencv4/opencv2/flann/autotuned_index.h \
-  /usr/local/include/opencv4/opencv2/flann/ground_truth.h \
-  /usr/local/include/opencv4/opencv2/flann/index_testing.h \
-  /usr/local/include/opencv4/opencv2/flann/timer.h \
-  /usr/local/include/opencv4/opencv2/flann/sampling.h \
-  /usr/local/include/opencv4/opencv2/highgui.hpp \
-  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
-  /usr/local/include/opencv4/opencv2/videoio.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc.hpp \
-  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
-  /usr/local/include/opencv4/opencv2/ml.hpp \
-  /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/aruco_board.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/graphical_code_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/face.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp \
-  /usr/local/include/opencv4/opencv2/objdetect/barcode.hpp \
-  /usr/local/include/opencv4/opencv2/photo.hpp \
-  /usr/local/include/opencv4/opencv2/stitching.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda_types.hpp \
-  /usr/local/include/opencv4/opencv2/core/cuda.inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
+  /usr/include/opencv4/opencv2/flann/autotuned_index.h \
+  /usr/include/opencv4/opencv2/flann/ground_truth.h \
+  /usr/include/opencv4/opencv2/flann/index_testing.h \
+  /usr/include/opencv4/opencv2/flann/timer.h \
+  /usr/include/opencv4/opencv2/flann/sampling.h \
+  /usr/include/opencv4/opencv2/highgui.hpp \
+  /usr/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/include/opencv4/opencv2/videoio.hpp \
+  /usr/include/opencv4/opencv2/imgproc.hpp \
+  /usr/include/opencv4/opencv2/imgproc/segmentation.hpp \
+  /usr/include/opencv4/opencv2/ml.hpp \
+  /usr/include/opencv4/opencv2/ml/ml.inl.hpp \
+  /usr/include/opencv4/opencv2/objdetect.hpp \
+  /usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  /usr/include/opencv4/opencv2/objdetect/face.hpp \
+  /usr/include/opencv4/opencv2/photo.hpp \
+  /usr/include/opencv4/opencv2/stitching.hpp \
+  /usr/include/opencv4/opencv2/stitching/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.hpp \
+  /usr/include/opencv4/opencv2/core/cuda_types.hpp \
+  /usr/include/opencv4/opencv2/core/cuda.inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
   /usr/include/c++/11/queue \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/bits/stl_deque.h \
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp \
-  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /usr/local/include/opencv4/opencv2/video.hpp \
-  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp \
+  /usr/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/include/opencv4/opencv2/video.hpp \
+  /usr/include/opencv4/opencv2/video/tracking.hpp \
+  /usr/include/opencv4/opencv2/video/background_segm.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/debug_armors.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__struct.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__struct.hpp \
@@ -947,15 +941,13 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_lights__struct.hpp:
 
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__traits.hpp:
+
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__builder.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/blenders.hpp:
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__struct.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
-
-/usr/local/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
-
-/usr/local/include/opencv4/opencv2/video/background_segm.hpp:
+/usr/include/opencv4/opencv2/video/background_segm.hpp:
 
 /usr/include/c++/11/bits/stl_queue.h:
 
@@ -969,95 +961,79 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/queue:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
+/usr/include/opencv4/opencv2/stitching/detail/util.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/util.hpp:
+/usr/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp:
+/usr/include/opencv4/opencv2/stitching/detail/matchers.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/matchers.hpp:
+/usr/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp:
 
-/usr/local/include/opencv4/opencv2/core/cuda.inl.hpp:
+/usr/include/opencv4/opencv2/core/cuda.hpp:
 
-/usr/local/include/opencv4/opencv2/core/cuda.hpp:
+/usr/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
 
-/usr/local/include/opencv4/opencv2/photo.hpp:
+/usr/include/opencv4/opencv2/ml/ml.inl.hpp:
 
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__struct.hpp:
+/usr/include/opencv4/opencv2/imgproc/segmentation.hpp:
 
-/usr/local/include/opencv4/opencv2/objdetect/barcode.hpp:
+/usr/include/opencv4/opencv2/videoio.hpp:
 
-/usr/local/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp:
+/usr/include/opencv4/opencv2/imgcodecs.hpp:
 
-/usr/local/include/opencv4/opencv2/objdetect/aruco_detector.hpp:
+/usr/include/opencv4/opencv2/highgui.hpp:
 
-/usr/local/include/opencv4/opencv2/objdetect.hpp:
+/usr/include/opencv4/opencv2/flann/sampling.h:
 
-/usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp:
+/usr/include/opencv4/opencv2/flann/index_testing.h:
 
-/usr/local/include/opencv4/opencv2/imgcodecs.hpp:
+/usr/include/opencv4/opencv2/flann/linear_index.h:
 
-/usr/local/include/opencv4/opencv2/flann/timer.h:
+/usr/include/opencv4/opencv2/flann/logger.h:
 
-/usr/local/include/opencv4/opencv2/flann/lsh_table.h:
+/usr/include/opencv4/opencv2/flann/kdtree_single_index.h:
 
-/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armor__traits.hpp:
+/usr/include/opencv4/opencv2/flann/heap.h:
 
-/usr/local/include/opencv4/opencv2/flann/lsh_index.h:
+/usr/include/opencv4/opencv2/flann/all_indices.h:
 
-/usr/local/include/opencv4/opencv2/flann/linear_index.h:
+/usr/include/opencv4/opencv2/flann/saving.h:
 
-/usr/local/include/opencv4/opencv2/flann/kmeans_index.h:
+/usr/include/opencv4/opencv2/flann/any.h:
 
-/usr/local/include/opencv4/opencv2/flann/kdtree_single_index.h:
+/usr/include/opencv4/opencv2/flann/matrix.h:
 
-/usr/local/include/opencv4/opencv2/flann/random.h:
+/usr/include/opencv4/opencv2/flann.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/heap.h:
+/usr/include/opencv4/opencv2/dnn/utils/inference_engine.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/dynamic_bitset.h:
+/usr/include/opencv4/opencv2/dnn/dnn.inl.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/all_indices.h:
+/usr/include/opencv4/opencv2/dnn/dict.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/nn_index.h:
+/usr/include/opencv4/opencv2/dnn/version.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/saving.h:
+/usr/include/opencv4/opencv2/core/async.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/matrix.h:
+/usr/include/opencv4/opencv2/dnn/dnn.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/flann_base.hpp:
+/usr/include/opencv4/opencv2/core/affine.hpp:
 
-/usr/local/include/opencv4/opencv2/flann.hpp:
+/usr/include/opencv4/opencv2/flann/config.h:
 
-/usr/local/include/opencv4/opencv2/dnn/dnn.inl.hpp:
+/usr/include/opencv4/opencv2/flann/defines.h:
 
-/usr/local/include/opencv4/opencv2/dnn/layer.hpp:
+/usr/include/opencv4/opencv2/features2d.hpp:
 
-/usr/local/include/opencv4/opencv2/dnn/dict.hpp:
+/usr/include/opencv4/opencv2/opencv.hpp:
 
-/usr/local/include/opencv4/opencv2/dnn/version.hpp:
+/usr/include/opencv4/opencv2/core/optim.hpp:
 
-/usr/local/include/opencv4/opencv2/dnn/dnn.hpp:
+/usr/include/opencv4/opencv2/core/cvstd.inl.hpp:
 
-/usr/local/include/opencv4/opencv2/dnn.hpp:
+/usr/include/opencv4/opencv2/flann/dist.h:
 
-/usr/local/include/opencv4/opencv2/flann/defines.h:
-
-/usr/local/include/opencv4/opencv2/flann/general.h:
-
-/usr/local/include/opencv4/opencv2/calib3d.hpp:
-
-/usr/local/include/opencv4/opencv2/core/ovx.hpp:
-
-/usr/local/include/opencv4/opencv2/core/optim.hpp:
-
-/usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
-
-/usr/local/include/opencv4/opencv2/core/operations.hpp:
-
-/usr/local/include/opencv4/opencv2/core/persistence.hpp:
-
-/usr/local/include/opencv4/opencv2/core.hpp:
+/usr/include/opencv4/opencv2/core/persistence.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/detector.hpp:
 
@@ -1075,23 +1051,21 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp:
 
-/usr/local/include/opencv4/opencv2/core/async.hpp:
-
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker_array__struct.hpp:
 
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker_array.hpp:
 
-/usr/local/include/opencv4/opencv2/core/bufferpool.hpp:
+/usr/include/opencv4/opencv2/core/mat.inl.hpp:
 
 /usr/include/c++/11/cfloat:
 
-/usr/local/include/opencv4/opencv2/core/types.hpp:
+/usr/include/opencv4/opencv2/core/traits.hpp:
 
-/usr/local/include/opencv4/opencv2/core/fast_math.hpp:
+/usr/include/opencv4/opencv2/core/vsx_utils.hpp:
 
-/usr/local/include/opencv4/opencv2/core/vsx_utils.hpp:
+/usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp:
 
-/usr/local/include/opencv4/opencv2/core/cvstd.hpp:
+/usr/include/opencv4/opencv2/core/cvstd.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
@@ -1107,19 +1081,27 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/climits:
 
-/usr/local/include/opencv4/opencv2/opencv_modules.hpp:
+/usr/include/opencv4/opencv2/core/base.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
 
-/usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
+/usr/include/opencv4/opencv2/core/version.hpp:
+
+/usr/include/opencv4/opencv2/core/matx.hpp:
+
+/usr/include/opencv4/opencv2/core/mat.hpp:
 
 /opt/ros/humble/include/message_filters/message_filters/parameter_adapter.h:
+
+/usr/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
 
 /opt/ros/humble/include/message_filters/message_filters/signal1.h:
 
 /opt/ros/humble/include/message_filters/message_filters/visibility_control.h:
+
+/usr/include/opencv4/opencv2/core.hpp:
 
 /opt/ros/humble/include/message_filters/message_filters/simple_filter.h:
 
@@ -1145,15 +1127,11 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__struct.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/ground_truth.h:
-
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__traits.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__traits.hpp:
-
-/usr/local/include/opencv4/opencv2/videoio.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameters__builder.hpp:
 
@@ -1161,13 +1139,13 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__traits.hpp:
 
+/usr/include/opencv4/opencv2/opencv_modules.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/get_parameter_types__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/get_parameter_types.hpp:
-
-/usr/local/include/opencv4/opencv2/core/neon_utils.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__builder.hpp:
 
@@ -1187,7 +1165,7 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/image_transport/image_transport/visibility_control.hpp:
 
-/usr/local/include/opencv4/opencv2/objdetect/graphical_code_detector.hpp:
+/usr/include/opencv4/opencv2/core/utility.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/wait_result_kind.hpp:
 
@@ -1197,13 +1175,13 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/camera_info.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp:
-
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__builder.hpp:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:
 
 /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/image__struct.hpp:
+
+/usr/include/opencv4/opencv2/video/tracking.hpp:
 
 /opt/ros/humble/include/image_transport/image_transport/camera_publisher.hpp:
 
@@ -1245,6 +1223,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_time_source_interface.hpp:
 
+/usr/include/opencv4/opencv2/ml.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__builder.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__builder.hpp:
@@ -1269,23 +1249,25 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface.hpp:
 
-/opt/ros/humble/include/rcutils/rcutils/shared_library.h:
+/usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
 
-/usr/local/include/opencv4/opencv2/ml/ml.inl.hpp:
+/opt/ros/humble/include/rcutils/rcutils/shared_library.h:
 
 /opt/ros/humble/include/rcpputils/rcpputils/shared_library.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__traits.hpp:
 
+/usr/include/opencv4/opencv2/core/types.hpp:
+
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__traits.hpp:
+
+/usr/include/opencv4/opencv2/flann/kmeans_index.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter__struct.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_event.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_armors__struct.hpp:
-
-/usr/local/include/opencv4/opencv2/core/traits.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/integer_range__traits.hpp:
 
@@ -1297,7 +1279,7 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/parameter_descriptor.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp:
+/usr/include/opencv4/opencv2/photo.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__builder.hpp:
 
@@ -1321,11 +1303,13 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/publisher.hpp:
 
+/usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
+
 /opt/ros/humble/include/libstatistics_collector/libstatistics_collector/collector/metric_details_interface.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
-
 /opt/ros/humble/include/rcpputils/rcpputils/thread_safety_annotations.hpp:
+
+/usr/include/opencv4/opencv2/stitching/detail/blenders.hpp:
 
 /usr/include/c++/11/pstl/glue_numeric_defs.h:
 
@@ -1347,15 +1331,11 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
-/usr/local/include/opencv4/opencv2/core/cvdef.h:
-
 /usr/include/c++/11/tr1/legendre_function.tcc:
 
 /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/mesh_file__struct.hpp:
 
 /usr/include/c++/11/tr1/hypergeometric.tcc:
-
-/usr/local/include/opencv4/opencv2/core/version.hpp:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
 
@@ -1409,8 +1389,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/sstream:
 
-/usr/local/include/opencv4/opencv2/core/cuda_types.hpp:
-
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp:
 
 /usr/include/c++/11/bits/istream.tcc:
@@ -1440,8 +1418,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__traits.hpp:
 
 /usr/include/c++/11/bits/std_abs.h:
-
-/usr/local/include/opencv4/opencv2/core/check.hpp:
 
 /usr/include/c++/11/pstl/execution_defs.h:
 
@@ -1487,19 +1463,17 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/bits/stl_bvector.h:
 
+/usr/include/opencv4/opencv2/flann/params.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/local/include/opencv4/opencv2/flann/allocator.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/c++/11/bits/this_thread_sleep.h:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
-
-/usr/local/include/opencv4/opencv2/flann/config.h:
 
 /usr/include/x86_64-linux-gnu/asm/types.h:
 
@@ -1525,8 +1499,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/ios:
 
-/usr/local/include/opencv4/opencv2/video/tracking.hpp:
-
 /opt/ros/humble/src/gtest_vendor/include/gtest/internal/custom/gtest-printers.h:
 
 /usr/include/c++/11/cstddef:
@@ -1534,6 +1506,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rcutils/rcutils/types/array_list.h:
 
 /opt/ros/humble/include/rcpputils/rcpputils/filesystem_helper.hpp:
+
+/usr/include/opencv4/opencv2/flann/nn_index.h:
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
@@ -1563,17 +1537,15 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/cerrno:
 
-/usr/local/include/opencv4/opencv2/flann/sampling.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
 /usr/include/stdio.h:
 
+/usr/include/opencv4/opencv2/stitching/detail/warpers.hpp:
+
 /usr/include/c++/11/cstdio:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/visibility_control.h:
-
-/usr/local/include/opencv4/opencv2/core/mat.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
@@ -1605,15 +1577,17 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/usr/include/c++/11/bits/locale_classes.h:
+/usr/include/opencv4/opencv2/stitching/detail/camera.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/kdtree_index.h:
+/usr/include/c++/11/bits/locale_classes.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/srv/detail/set_parameters__builder.hpp:
 
 /opt/ros/humble/include/image_transport/image_transport/single_subscriber_publisher.hpp:
 
 /usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/opencv4/opencv2/flann/lsh_table.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
 
@@ -1634,6 +1608,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/c++/11/cctype:
 
 /usr/include/c++/11/iomanip:
+
+/usr/include/opencv4/opencv2/flann/lsh_index.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
@@ -1659,8 +1635,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/linux/errno.h:
 
-/usr/local/include/opencv4/opencv2/features2d.hpp:
-
 /usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
@@ -1670,6 +1644,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/x86_64-linux-gnu/sys/wait.h:
+
+/usr/include/opencv4/opencv2/flann/general.h:
 
 /opt/ros/humble/include/rmw/rmw/subscription_options.h:
 
@@ -1681,11 +1657,15 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/bits/nested_exception.h:
 
+/usr/include/opencv4/opencv2/flann/dynamic_bitset.h:
+
 /opt/ros/humble/include/rmw/rmw/publisher_options.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/storage_policy_common.hpp:
 
 /opt/ros/humble/include/rmw/rmw/topic_endpoint_info_array.h:
+
+/usr/include/opencv4/opencv2/flann/kdtree_index.h:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
@@ -1696,8 +1676,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/include/armor_detector/armor.hpp:
 
 /usr/include/c++/11/exception:
-
-/usr/local/include/opencv4/opencv2/core/mat.inl.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/init_options.hpp:
 
@@ -1717,15 +1695,17 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/bits/std_thread.h:
 
-/usr/local/include/opencv4/opencv2/flann/miniflann.hpp:
-
 /usr/include/c++/11/bits/algorithmfwd.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
+/usr/include/opencv4/opencv2/flann/miniflann.hpp:
+
 /usr/include/c++/11/ext/alloc_traits.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/opencv4/opencv2/flann/flann_base.hpp:
 
 /usr/include/math.h:
 
@@ -1755,11 +1735,15 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
+/usr/include/opencv4/opencv2/core/check.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/intra_process_buffer_type.hpp:
+
+/usr/include/opencv4/opencv2/core/neon_utils.hpp:
 
 /opt/ros/humble/src/gtest_vendor/include/gtest/internal/gtest-port.h:
 
@@ -1770,8 +1754,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rmw/rmw/time.h:
 
 /usr/include/stdc-predef.h:
-
-/usr/local/include/opencv4/opencv2/flann/params.h:
 
 /opt/ros/humble/src/gtest_vendor/include/gtest/gtest-test-part.h:
 
@@ -1794,6 +1776,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/synchronization_policy_common.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_options.hpp:
+
+/usr/include/opencv4/opencv2/core/cuda_types.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_type_support_decl.hpp:
 
@@ -1833,6 +1817,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
+/usr/include/opencv4/opencv2/core/cuda.inl.hpp:
+
 /usr/include/c++/11/bits/atomic_base.h:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_event__struct.hpp:
@@ -1847,11 +1833,11 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/errno.h:
 
-/usr/local/include/opencv4/opencv2/stitching/detail/warpers.hpp:
-
 /usr/include/c++/11/cstdlib:
 
 /opt/ros/humble/src/gtest_vendor/include/gtest/internal/gtest-string.h:
+
+/usr/include/opencv4/opencv2/flann/result_set.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
@@ -1917,6 +1903,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h:
 
+/usr/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
+
 /usr/include/c++/11/iosfwd:
 
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp:
@@ -1928,6 +1916,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rclcpp/rclcpp/serialized_message.hpp:
 
 /usr/include/c++/11/cwchar:
+
+/usr/include/opencv4/opencv2/objdetect/face.hpp:
 
 /opt/ros/humble/src/gtest_vendor/include/gtest/gtest-message.h:
 
@@ -1941,7 +1931,13 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/new:
 
+/usr/include/opencv4/opencv2/core/cvdef.h:
+
 /usr/include/c++/11/bits/sstream.tcc:
+
+/usr/include/opencv4/opencv2/flann/autotuned_index.h:
+
+/usr/include/opencv4/opencv2/flann/random.h:
 
 /usr/include/c++/11/array:
 
@@ -1965,6 +1961,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/backward/binders.h:
 
+/usr/include/opencv4/opencv2/core/fast_math.hpp:
+
 /usr/include/locale.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:
@@ -1979,11 +1977,11 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/asm-generic/posix_types.h:
 
-/usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp:
-
 /usr/include/c++/11/bits/stl_function.h:
 
 /usr/include/c++/11/bits/memoryfwd.h:
+
+/usr/include/opencv4/opencv2/core/saturate.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:
 
@@ -1995,15 +1993,19 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/iostream:
 
+/usr/include/opencv4/opencv2/objdetect.hpp:
+
 /usr/include/c++/11/bits/node_handle.h:
 
 /opt/ros/humble/src/gtest_vendor/include/gtest/internal/gtest-internal.h:
 
 /usr/include/c++/11/algorithm:
 
-/usr/local/include/opencv4/opencv2/core/saturate.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/opencv4/opencv2/dnn.hpp:
+
+/usr/include/opencv4/opencv2/core/hal/interface.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
@@ -2013,8 +2015,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:
 
-/usr/local/include/opencv4/opencv2/imgproc.hpp:
-
 /usr/include/c++/11/bits/string_view.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
@@ -2022,8 +2022,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rclcpp/rclcpp/create_generic_subscription.hpp:
 
 /usr/include/c++/11/shared_mutex:
-
-/usr/local/include/opencv4/opencv2/flann/dist.h:
 
 /opt/ros/humble/include/message_filters/message_filters/connection.h:
 
@@ -2043,6 +2041,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
+/usr/include/opencv4/opencv2/stitching/warpers.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
@@ -2052,8 +2052,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/c++/11/unordered_set:
 
 /usr/include/c++/11/bits/stringfwd.h:
-
-/usr/local/include/opencv4/opencv2/ml.hpp:
 
 /opt/ros/humble/include/rmw/rmw/subscription_content_filter_options.h:
 
@@ -2073,8 +2071,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/qos_overriding_options.hpp:
 
-/usr/local/include/opencv4/opencv2/objdetect/face.hpp:
-
 /opt/ros/humble/include/rmw/rmw/incompatible_qos_events_statuses.h:
 
 /usr/include/strings.h:
@@ -2087,13 +2083,17 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
+/usr/include/opencv4/opencv2/core/ovx.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/local/include/opencv4/opencv2/flann/composite_index.h:
+/usr/include/opencv4/opencv2/core/operations.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/opencv4/opencv2/imgproc.hpp:
 
 /usr/include/c++/11/bits/unordered_map.h:
 
@@ -2109,15 +2109,11 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rcl/rcl/types.h:
 
-/usr/local/include/opencv4/opencv2/core/affine.hpp:
-
 /usr/include/c++/11/bits/std_function.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/local/include/opencv4/opencv2/flann/logger.h:
 
 /usr/include/c++/11/bits/allocator.h:
 
@@ -2149,8 +2145,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rcpputils/rcpputils/join.hpp:
 
-/usr/local/include/opencv4/opencv2/highgui.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/regex.h:
@@ -2158,8 +2152,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /opt/ros/humble/include/rcpputils/rcpputils/time.hpp:
-
-/usr/local/include/opencv4/opencv2/opencv.hpp:
 
 /opt/ros/humble/include/image_transport/image_transport/exception.hpp:
 
@@ -2183,6 +2175,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
 
+/usr/include/opencv4/opencv2/flann/allocator.h:
+
 /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
@@ -2193,6 +2187,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
 
+/usr/include/opencv4/opencv2/dnn/layer.hpp:
+
 /opt/ros/humble/src/gtest_vendor/include/gtest/gtest-printers.h:
 
 /opt/ros/humble/include/image_transport/image_transport/subscriber_filter.hpp:
@@ -2202,8 +2198,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rmw/rmw/qos_string_conversions.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigcontext.h:
-
-/usr/local/include/opencv4/opencv2/flann/autotuned_index.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
 
@@ -2227,11 +2221,11 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
 
+/usr/include/opencv4/opencv2/flann/composite_index.h:
+
 /usr/include/c++/11/bits/basic_ios.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
-
-/usr/local/include/opencv4/opencv2/stitching/warpers.hpp:
 
 /usr/include/c++/11/cxxabi.h:
 
@@ -2267,8 +2261,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/set:
 
-/usr/local/include/opencv4/opencv2/core/hal/interface.h:
-
 /usr/include/c++/11/bits/stl_multiset.h:
 
 /opt/ros/humble/include/rosidl_typesupport_interface/rosidl_typesupport_interface/macros.h:
@@ -2297,6 +2289,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/src/gtest_vendor/include/gtest/internal/gtest-death-test-internal.h:
 
+/usr/include/opencv4/opencv2/stitching.hpp:
+
 /opt/ros/humble/src/gtest_vendor/include/gtest/gtest-matchers.h:
 
 /opt/ros/humble/include/rcutils/rcutils/time.h:
@@ -2306,6 +2300,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /usr/include/c++/11/bits/locale_facets.h:
 
 /opt/ros/humble/src/gtest_vendor/include/gtest/gtest-param-test.h:
+
+/usr/include/opencv4/opencv2/flann/ground_truth.h:
 
 /usr/include/c++/11/bits/stream_iterator.h:
 
@@ -2343,7 +2339,7 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /usr/include/c++/11/ratio:
 
-/usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp:
+/usr/include/opencv4/opencv2/calib3d.hpp:
 
 /usr/include/c++/11/bits/parse_numbers.h:
 
@@ -2366,8 +2362,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_topics_interface_traits.hpp:
 
 /opt/ros/humble/include/rcl/rcl/guard_condition.h:
-
-/usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
 
@@ -2401,6 +2395,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rmw/rmw/localhost.h:
 
+/usr/include/opencv4/opencv2/flann/timer.h:
+
 /opt/ros/humble/include/rcl/rcl/log_level.h:
 
 /opt/ros/humble/include/rcl/rcl/macros.h:
@@ -2408,8 +2404,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rmw/rmw/types.h:
 
 /opt/ros/humble/include/rcutils/rcutils/error_handling.h:
-
-/usr/local/include/opencv4/opencv2/core/base.hpp:
 
 /opt/ros/humble/include/rcutils/rcutils/snprintf.h:
 
@@ -2451,8 +2445,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_changed.h:
 
-/usr/local/include/opencv4/opencv2/objdetect/aruco_board.hpp:
-
 /usr/include/c++/11/bits/codecvt.h:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/liveliness_lost.h:
@@ -2460,8 +2452,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rmw/rmw/events_statuses/message_lost.h:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/offered_deadline_missed.h:
-
-/usr/local/include/opencv4/opencv2/core/matx.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:
 
@@ -2489,13 +2479,13 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rcl/rcl/client.h:
 
-/usr/local/include/opencv4/opencv2/flann/any.h:
-
 /opt/ros/humble/include/rcl/rcl/context.h:
 
 /opt/ros/humble/include/rmw/rmw/event_callback_type.h:
 
 /opt/ros/humble/include/rcl/rcl/node.h:
+
+/usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
 
 /opt/ros/humble/include/rcl/rcl/node_options.h:
 
@@ -2546,8 +2536,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rcl/rcl/event_callback.h:
 
 /opt/ros/humble/include/tracetools/tracetools/tracetools.h:
-
-/usr/local/include/opencv4/opencv2/video.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_descriptor__builder.hpp:
 
@@ -2625,8 +2613,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__struct.hpp:
 
-/usr/local/include/opencv4/opencv2/stitching.hpp:
-
 /opt/ros/humble/include/rcutils/rcutils/logging.h:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h:
@@ -2640,8 +2626,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp:
-
-/usr/local/include/opencv4/opencv2/flann/result_set.h:
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_content_filter_options.hpp:
 
@@ -2662,8 +2646,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rmw/rmw/network_flow_endpoint.h:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/debug_lights__traits.hpp:
-
-/usr/local/include/opencv4/opencv2/dnn/utils/inference_engine.hpp:
 
 /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_type_support_struct.h:
 
@@ -2701,8 +2683,6 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/intra_process_manager.hpp:
 
-/usr/local/include/opencv4/opencv2/flann/index_testing.h:
-
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/buffers/buffer_implementation_base.hpp:
@@ -2711,11 +2691,11 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 
 /opt/ros/humble/include/rclcpp/rclcpp/rate.hpp:
 
-/usr/local/include/opencv4/opencv2/core/utility.hpp:
-
 /opt/ros/humble/include/rclcpp/rclcpp/clock.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/subscription_intra_process_buffer.hpp:
+
+/usr/include/opencv4/opencv2/video.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/experimental/create_intra_process_buffer.hpp:
 
@@ -2740,6 +2720,8 @@ CMakeFiles/test_node_startup.dir/test/test_node_startup.cpp.o: /home/mechax/zyb/
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__builder.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/topic_statistics_state.hpp:
+
+/usr/include/opencv4/opencv2/core/bufferpool.hpp:
 
 /opt/ros/humble/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_value__struct.hpp:
 

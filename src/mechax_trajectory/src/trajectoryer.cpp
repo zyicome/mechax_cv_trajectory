@@ -40,7 +40,7 @@ inline float z_0(float vz0, float z0, float randa,float alpha,float beta, float 
     float z = 0.0;
     if(vz0 <= 0)
     {
-        z = -(sinhf(alpha) * alpha_angle - (acos(beta) - acos(beta) * beta_angle * sinhf(alpha) + tan(beta) * coshf(alpha) * alpha_angle)) / (randa * (coshf(alpha) - tan(beta) * sinhf(alpha)));
+        z = -(sinhf(alpha) * alpha_angle - ((1 / cos(beta)) * (1 / acos(beta)) * beta_angle * sinhf(alpha) + tan(beta) * coshf(alpha) * alpha_angle)) / (randa * (coshf(alpha) - tan(beta) * sinhf(alpha)));
     }
     else if(vz0 > 0 && alpha <= beta)
     {
@@ -48,8 +48,9 @@ inline float z_0(float vz0, float z0, float randa,float alpha,float beta, float 
     }
     else if(vz0 > 0 && alpha > beta)
     {
-        z = (1 / randa) * (tan(beta) * beta_angle - tanhf(alpha - beta) * (alpha_angle - beta_angle));
+        z = (1 / randa) * ((tan(beta) * beta_angle) - tanhf(alpha - beta) * (alpha_angle - beta_angle));
     }
+    return z;
 }
 
 
@@ -87,7 +88,7 @@ void  Trajectoryer::parameters_init()
     }
     else
     {
-        v0 = 28; // m/s
+        v0 = 25; // m/s
     }
     //****************************************************
     // 用来计算空气阻力系数
@@ -99,8 +100,8 @@ void  Trajectoryer::parameters_init()
     float m_big = 44.5 / 1000; // g->kg
     float s_small = M_PI * pow(d_small / 2, 2);
     float s_big = M_PI * pow(d_big / 2, 2);
-    float randa_small =  (c * p * s_small * v0 ) / 2 / m_small;
-    float randa_big = (c * p * s_big *  v0) / 2 / m_big;
+    float randa_small =  (c * p * s_small) / 2 / m_small;
+    float randa_big = (c * p * s_big) / 2 / m_big;
     if(is_hero)
     {
         randa = randa_big;
@@ -127,15 +128,22 @@ int Trajectoryer::no_resistance_model(const float &object_x,const float &object_
 {
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
     float alpha = 0.0;
-    if(!is_solvable(object_x, object_y, object_z, v0, alpha))
+    float l = sqrtf(pow(object_x,2) + pow(object_y,2) + pow(object_z,2));
+    /*if(!is_solvable(object_x, object_y, object_z, v0, alpha))
     {
         return 0;
-    }
+    }*/
+    alpha = asinf((object_z + g*distance*distance / (v0*v0)) / l);
     float process_angle = atanf(object_z / distance);
     float angle_high = (alpha + process_angle) / 2;
     float angle_low = (M_PI + process_angle - alpha) / 2;
     angle_pitch = (fabs(angle_high - now_pitch) > fabs(angle_low - now_pitch)) ? angle_low : angle_high;
     fly_t = distance / (v0 * cos(angle_pitch));
+    /*std::cout << "noangle_pitch: " << angle_pitch << std::endl; 
+    std::cout << "nofly_t: " << fly_t << std::endl;
+    std::cout << "nol: " << l << std::endl;
+    std::cout << "nop: " << process_angle << std::endl;
+    std::cout << "noa: " << alpha << std::endl;*/
     return 1;
 }
 
@@ -236,12 +244,12 @@ int Trajectoryer::two_resistance_model(const float &object_x,const float &object
     float t = 0.0;
     float z1;
     float z2;
-    float vt = sqrt(g / randa);
-    for(int i = 0; i < 10; i++)
+    float vt = sqrtf(g / randa);
+    for(int i = 0; i < 20; i++)
     {
         vx0 = v0 * cos(angle_pitch);
         vz0 = v0 * sin(angle_pitch);
-        t = (exp(randa * distance) - 1) / (randa * vx0);
+        t = (exp(randa * distance) - 1) / (randa * v0 * cos(angle_pitch));
         alpha = sqrt(g * randa) * t;
         beta = atan(vz0 * sqrt(randa / g));
         alpha_angle = alpha * tan(angle_pitch);
@@ -254,7 +262,18 @@ int Trajectoryer::two_resistance_model(const float &object_x,const float &object
         z2 = z_0(vz0, object_z, randa, alpha, beta, alpha_angle, beta_angle);
         diedai_angle = angle_pitch - z1 / z2;
         angle_pitch = diedai_angle;
-        if(i == 9)
+        /*std::cout << "第" << i << "轮" << " angle_pitch: " << angle_pitch << std::endl;
+        std::cout << "第" << i << "轮" << " t: " << t << std::endl;
+        std::cout << "第" << i << "轮" << " z: " << z1 / z2 << std::endl;
+        std::cout << "第" << i << "轮" << " distance: " << distance << std::endl;
+        std::cout << "第" << i << "轮" << " diedai: " << diedai_angle << std::endl;
+        std::cout << "第" << i << "轮" << " vz0: " << vz0 << std::endl;
+        std::cout << "第" << i << "轮" << " vx0: " << vx0 << std::endl;
+        std::cout << "第" << i << "轮" << " z1: " << z1 << std::endl;
+        std::cout << "第" << i << "轮" << " z2: " << z2 << std::endl;
+        std::cout << "第" << i << "轮" << " alpha: " << alpha << std::endl;
+        std::cout << "第" << i << "轮" << " beta: " << beta << std::endl;*/
+        if(i == 19)
         {
             vx0 = v0 * cos(angle_pitch);
             vz0 = v0 * sin(angle_pitch);
@@ -500,6 +519,7 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             result.pitch = 0.0;
             result.yaw = 0.0;
             result_pub_->publish(result);
+            return;
         }
         // RCLCPP_INFO(get_logger(), "need_pitch: %f", angle_pitch);
         // RCLCPP_INFO(get_logger(), "need_yaw: %f", angle_yaw);

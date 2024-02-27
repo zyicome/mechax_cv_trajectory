@@ -1,9 +1,9 @@
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib/armor_detector/armor_detector_node
-/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/include/armor_detector/armor.hpp
-/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/include/armor_detector/number_classifier.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/include/armor_detector/detector.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/include/armor_detector/pnp_solver.hpp
+/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/include/armor_detector/number_classifier.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/include/armor_detector/detector_node.hpp
+/home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/include/armor_detector/armor.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/environment/library_path.sh
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/share/armor_detector/environment/library_path.dsv
 /home/mechax/zyb/mechax_cv_trajectory/install/armor_detector/lib/libarmor_detector.so

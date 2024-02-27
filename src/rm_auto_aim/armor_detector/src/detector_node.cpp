@@ -274,6 +274,8 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
     if(needpose_img.x != 0 && needpose_img.y != 0)
     {
       cv::circle(img, needpose_img, 5, cv::Scalar(0, 0, 255), 2);
+      std::cout << "needpose_img_x: " << needpose_img.x << std::endl;
+      std::cout << "needpose_img_y: " << needpose_img.y << std::endl;
     }
     // Draw latency
     std::stringstream latency_ss;

@@ -89,6 +89,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake"
   "/opt/ros/humble/share/ament_cmake/cmake/ament_cmake_export_dependencies-extras.cmake"
   "/opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_add_executable.cmake"
+  "/opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_add_gmock.cmake"
   "/opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_add_gtest.cmake"
   "/opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_add_library.cmake"
   "/opt/ros/humble/share/ament_cmake_auto/cmake/ament_auto_find_build_dependencies.cmake"

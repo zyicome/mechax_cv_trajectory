@@ -1,7 +1,7 @@
 /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/rm_serial_driver/rm_serial_driver_node
-/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver/crc.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver/rm_serial_driver.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver/packet.hpp
+/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver/crc.hpp
 /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/library_path.sh
 /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/library_path.dsv
 /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/librm_serial_driver.so
