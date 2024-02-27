@@ -1,5 +1,0 @@
-[ 13%] Built target gtest_main
-[ 26%] Built target armor_detector_node
-Consolidate compiler generated dependencies of target armor_detector
-[ 40%] Built target gtest
-[ 46%] Building CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o
