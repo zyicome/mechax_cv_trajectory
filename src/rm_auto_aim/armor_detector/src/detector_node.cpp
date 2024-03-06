@@ -103,8 +103,11 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     "/image_raw", rclcpp::SensorDataQoS(),
     std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
 
-  needpose_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>("/tracker/needpose", 10,
+  needpose_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>("/tracker/needpose", 1,
     std::bind(&ArmorDetectorNode::needposeCallback, this, std::placeholders::_1));
+
+  armorpose_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>("/tracker/armorpose", 1,
+    std::bind(&ArmorDetectorNode::armorposeCallback, this, std::placeholders::_1));
 }
 
 void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg)
@@ -133,11 +136,11 @@ void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstShared
         armor_msg.pose.position.z = tvec.at<double>(2);
         
         //
-        armorpose_mat.at<double>(0,0) = armor_msg.pose.position.x;
+        /*armorpose_mat.at<double>(0,0) = armor_msg.pose.position.x;
       armorpose_mat.at<double>(1,0) = armor_msg.pose.position.y;
-      armorpose_mat.at<double>(2,0) = armor_msg.pose.position.z;
+      armorpose_mat.at<double>(2,0) = armor_msg.pose.position.z;*/
 
-      armorpose = cv::Point3f(armor_msg.pose.position.x,armor_msg.pose.position.y,armor_msg.pose.position.z);
+      //armorpose = cv::Point3f(armor_msg.pose.position.x,armor_msg.pose.position.y,armor_msg.pose.position.z);
 
         // rvec to 3x3 rotation matrix
         cv::Mat rotation_matrix;
@@ -201,12 +204,13 @@ void ArmorDetectorNode::needposeCallback(const geometry_msgs::msg::PointStamped:
   std::cout << "needpose_img.y : " << needpose_img.y << std::endl;*/
 }
 
-void ArmorDetectorNode::needarmorpose()
+void ArmorDetectorNode::armorposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr armorpose_ptr)
 {
-  /*cv::Mat needpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  needpose_mat.at<double>(0,0) = armors_msg_.pose.position.x;
-  needpose_mat.at<double>(1,0) = armors_msg_.pose.position.y;
-  needpose_mat.at<double>(2,0) = armors_msg_.pose.position.z;*/
+  armorpose = cv::Point3f(armorpose_ptr->point.x,armorpose_ptr->point.y,armorpose_ptr->point.z);
+  cv::Mat armorpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
+  armorpose_mat.at<double>(0,0) = armorpose_ptr->point.x;
+  armorpose_mat.at<double>(1,0) = armorpose_ptr->point.y;
+  armorpose_mat.at<double>(2,0) = armorpose_ptr->point.z;
   if(armorpose_mat.at<double>(0,0)==0 && armorpose_mat.at<double>(1,0)==0 && armorpose_mat.at<double>(2,0)==0)
   {
     return;
@@ -227,9 +231,10 @@ void ArmorDetectorNode::needarmorpose()
 
 void ArmorDetectorNode::is_need_change()
 {
-  if(armorpose_img.x !=0 && needpose_img.x !=0)
+  if(armorpose.x !=0 && armorpose.y !=0 && needpose.x !=0 && needpose.y !=0)
   {
-    if(fabs(armorpose_img.x - needpose_img.x) > 0.001 && fabs(armorpose_img.x - needpose_img.x) < 20)
+    // 二维图像检测法：不精确
+    /*if(fabs(armorpose_img.x - needpose_img.x) > 0.001 && fabs(armorpose_img.x - needpose_img.x) < 20)
     {
         float needchangeyaw = acos(fabs(needpose.x* armorpose.x + armorpose.z * needpose.z) / (sqrtf(pow(needpose.x,2) + pow(needpose.z,2)) * sqrtf(pow(armorpose.x,2) + pow(armorpose.z,2))));
         //std::cout << "needchangeyaw: " << needchangeyaw << std::endl;
@@ -243,6 +248,25 @@ void ArmorDetectorNode::is_need_change()
         }
         changeyaw_pub->publish(msg);
     }
+  }*/
+
+  // 三维距离测算
+  // 得到装甲板位置到预测击打位置的距离
+  float distance = fabs(sqrtf(powf(armorpose.x,2) - powf(needpose.x,2)) + sqrtf(powf(armorpose.y,2) - powf(needpose.y,2)));
+  if(distance > 0.2)
+  {
+    float needchangeyaw = acos(fabs(needpose.x* armorpose.x + armorpose.z * needpose.z) / (sqrtf(pow(needpose.x,2) + pow(needpose.z,2)) * sqrtf(pow(armorpose.x,2) + pow(armorpose.z,2))));
+    //std::cout << "needchangeyaw: " << needchangeyaw << std::endl;
+    std_msgs::msg::Float64 msg;
+    if(armorpose_img.x > needpose_img.x)
+    {
+      msg.data = -needchangeyaw;
+    }
+    else{
+      msg.data = needchangeyaw;
+    }
+    changeyaw_pub->publish(msg);
+  }
   }
 }
 
@@ -333,7 +357,6 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
     // Draw camera center
     cv::circle(img, cam_center_, 5, cv::Scalar(255, 0, 0), 2);
     // Draw need armor center
-    needarmorpose();
     if(armorpose_img.x != 0 && armorpose_img.y != 0)
     {
       cv::circle(img, armorpose_img, 5, cv::Scalar(0, 0, 255), 2);

@@ -190,7 +190,8 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   armor_marker_.color.a = 1.0;
   armor_marker_.color.r = 1.0;
   marker_pub_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("/tracker/marker", 10);
-  needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>("/tracker/needpose", 10);
+  needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>("/tracker/needpose", 1);
+  armorpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>("/tracker/armorpose", 1);
 }
 
 void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::SharedPtr armors_msg)

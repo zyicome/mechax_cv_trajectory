@@ -74,10 +74,10 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
         "/trajectory/result", 10);
     
     needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-        "/trajectory/needpose", 10);
+        "/trajectory/needpose", 1);
 
     armorpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-        "/trajectory/armorpose", 10);    
+        "/trajectory/armorpose", 1);    
 
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
    //timer_ = this->create_wall_timer(5s, std::bind(&Trajectoryer::test,this));

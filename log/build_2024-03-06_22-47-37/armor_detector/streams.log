@@ -1,0 +1,35 @@
+[0.115s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16
+[0.159s] [ 13%] Built target gtest
+[0.161s] [ 26%] Built target gtest_main
+[0.166s] [ 40%] Built target armor_detector_node
+[0.169s] [ 46%] [32mBuilding CXX object CMakeFiles/armor_detector.dir/src/detector_node.cpp.o[0m
+[2.672s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorDetectorNode::is_need_change()[m[K’:
+[2.672s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:274:58:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[2.672s]   274 | std::unique_ptr<Detector> ArmorDetectorNode::initDetector[01;31m[K([m[K)
+[2.672s]       |                                                          [01;31m[K^[m[K
+[2.672s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:316:51:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[2.673s]   316 | std::vector<Armor> ArmorDetectorNode::detectArmors[01;31m[K([m[K
+[2.673s]       |                                                   [01;31m[K^[m[K
+[2.673s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:380:46:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[2.673s]   380 | void ArmorDetectorNode::createDebugPublishers[01;31m[K([m[K)
+[2.673s]       |                                              [01;31m[K^[m[K
+[2.673s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:392:47:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[2.673s]   392 | void ArmorDetectorNode::destroyDebugPublishers[01;31m[K([m[K)
+[2.673s]       |                                               [01;31m[K^[m[K
+[2.673s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:402:39:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+[2.673s]   402 | void ArmorDetectorNode::publishMarkers[01;31m[K([m[K)
+[2.673s]       |                                       [01;31m[K^[m[K
+[2.682s] In file included from [01m[K/opt/ros/humble/include/class_loader/class_loader/class_loader.hpp:56[m[K,
+[2.682s]                  from [01m[K/opt/ros/humble/include/rclcpp_components/rclcpp_components/register_node_macro.hpp:18[m[K,
+[2.682s]                  from [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:412[m[K:
+[2.682s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:[m[K At global scope:
+[2.682s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:417:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[2.682s]   417 | [01;31m[KRCLCPP_COMPONENTS_REGISTER_NODE[m[K(rm_auto_aim::ArmorDetectorNode)
+[2.682s]       | [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.682s] [01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_detector/src/detector_node.cpp:30:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[2.683s]    30 | [01;36m[K{[m[K
+[2.683s]       | [01;36m[K^[m[K
+[6.618s] gmake[2]: *** [CMakeFiles/armor_detector.dir/build.make:90: CMakeFiles/armor_detector.dir/src/detector_node.cpp.o] Error 1
+[6.618s] gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/armor_detector.dir/all] Error 2
+[6.618s] gmake: *** [Makefile:146: all] Error 2
+[6.620s] Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_detector' returned '2': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_detector -- -j16 -l16

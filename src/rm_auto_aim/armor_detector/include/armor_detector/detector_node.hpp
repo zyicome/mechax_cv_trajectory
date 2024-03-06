@@ -40,8 +40,7 @@ public:
 private:
   void imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg);
   void needposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose_ptr);
-
-  void needarmorpose();
+  void armorposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr armorpose_ptr);
 
   void is_need_change();
 
@@ -81,6 +80,9 @@ private:
   // Needpose subscription
   rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr needpose_sub_;
 
+  // Armorpose subscription
+  rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr armorpose_sub_;
+
   // Debug information
   bool debug_;
   std::shared_ptr<rclcpp::ParameterEventHandler> debug_param_sub_;
@@ -94,7 +96,6 @@ private:
   cv::Mat camera_matrix_ = cv::Mat::zeros(3, 3, CV_64FC1);
   cv::Point2f needpose_img = cv::Point2f(0, 0);
   cv::Point2f armorpose_img = cv::Point2f(0, 0);
-  cv::Mat armorpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
   
   cv::Point3f needpose = cv::Point3f(0,0,0);
   cv::Point3f armorpose = cv::Point3f(0,0,0);
