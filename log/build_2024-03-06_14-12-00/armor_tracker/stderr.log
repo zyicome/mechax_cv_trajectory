@@ -1,0 +1,8 @@
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:[m[K In member function ‘[01m[Kvoid rm_auto_aim::ArmorTrackerNode::armorposeCallback(geometry_msgs::msg::PointStamped_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/armor_tracker/src/tracker_node.cpp:326:53:[m[K [01;31m[Kerror: [m[K‘[01m[Karmorpose_target_frame_[m[K’ was not declared in this scope; did you mean ‘[01m[Kneedpose_target_frame_[m[K’?
+  326 |     armorps.point = tf2_buffer_->transform(armorps, [01;31m[Karmorpose_target_frame_[m[K).point;
+      |                                                     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+      |                                                     [32m[Kneedpose_target_frame_[m[K
+gmake[2]: *** [CMakeFiles/armor_tracker.dir/build.make:104: CMakeFiles/armor_tracker.dir/src/tracker_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/armor_tracker.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

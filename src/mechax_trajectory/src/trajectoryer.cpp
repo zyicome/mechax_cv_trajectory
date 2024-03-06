@@ -76,6 +76,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
     needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
         "/trajectory/needpose", 10);
 
+    armorpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
+        "/trajectory/armorpose", 10);    
+
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
    //timer_ = this->create_wall_timer(5s, std::bind(&Trajectoryer::test,this));
 }
@@ -464,7 +467,7 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     angle_yaw = atan2(object_y, object_x);
-    get_need_pose(object_x,object_y,object_z);
+    get_need_pose(object_x,object_y,object_z,now_pitch);
     return 1;
 }
 
@@ -584,7 +587,7 @@ void Trajectoryer::changeyaw_callback(const std_msgs::msg::Float64 msg)
     needchangeyaw = msg.data;
 }
 
-void Trajectoryer::get_need_pose(const float &object_x,const float &object_y,const float &object_z)
+void Trajectoryer::get_need_pose(const float &object_x,const float &object_y,const float &object_z,const float &now_pitch)
 {
     // 创建坐标变换消息和发布
     geometry_msgs::msg::TransformStamped t;
@@ -596,18 +599,25 @@ void Trajectoryer::get_need_pose(const float &object_x,const float &object_y,con
     t.transform.rotation = tf2::toMsg(q);
     tf_broadcaster_->sendTransform(t);
 
+    // 根据当前枪管位置判断当前弹丸可能击打的位置
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
     float need_z = object_z;
-    geometry_msgs::msg::PointStamped pose;
-    pose.header.stamp = this->now();
-    pose.header.frame_id = "horizom_gimbal_link";
-    pose.point.x = distance;
-    pose.point.y = 0.0;
-    pose.point.z = need_z;
-    needpose_pub_->publish(pose);
-    /*std::cout << "pose.x : " << pose.point.x << std::endl;
-  std::cout << "pose.y : " << pose.point.y << std::endl;
-  std::cout << "pose.z : " << pose.point.z << std::endl;*/
+    geometry_msgs::msg::PointStamped may_pose;
+    may_pose.header.stamp = this->now();
+    may_pose.header.frame_id = "horizom_gimbal_link";
+    may_pose.point.x = distance;
+    may_pose.point.y = 0.0;
+    may_pose.point.z = need_z;
+    needpose_pub_->publish(may_pose);
+
+    // 根据计算的装甲板速度预测接下去装甲板可能的位置
+    geometry_msgs::msg::PointStamped armor_pose;
+    armor_pose.header.stamp = this->now();
+    armor_pose.header.frame_id = "odom";
+    armor_pose.point .x = object_x;
+    armor_pose.point .y = object_y;
+    armor_pose.point .z = object_z;
+    
 }
 
 int main(int argc, char *argv[])

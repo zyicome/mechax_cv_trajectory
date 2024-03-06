@@ -63,7 +63,7 @@ public:
 
     void changeyaw_callback(const std_msgs::msg::Float64 msg);
 
-    void get_need_pose(const float &object_x,const float &object_y,const float &object_z);
+    void get_need_pose(const float &object_x,const float &object_y,const float &object_z,const float &now_pitch);
 
     // parameters
     //------------------
@@ -113,6 +113,7 @@ public:
     rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr maker_pub_;
     rclcpp::Publisher<auto_aim_interfaces::msg::SendSerial>::SharedPtr result_pub_;
     rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr needpose_pub_;
+    rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr armorpose_pub_;
     //------------------
     //timer
     //------------------

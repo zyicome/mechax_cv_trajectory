@@ -138,6 +138,7 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   // subscriber and filter
   armors_sub_.subscribe(this, "/detector/armors", rmw_qos_profile_sensor_data);
   needpose_sub_.subscribe(this, "/trajectory/needpose");
+  armorpose_sub_.subscribe(this, "/trajectory/armorpose");
   target_frame_ = this->declare_parameter("target_frame", "odom");
   needpose_target_frame_ = "camera_optical_frame";
   tf2_filter_ = std::make_shared<tf2_filter>(
@@ -146,9 +147,13 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   needpose_tf2_filter_ = std::make_shared<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped>>(
     needpose_sub_, *tf2_buffer_, needpose_target_frame_, 10,this->get_node_logging_interface(),
     this->get_node_clock_interface(), std::chrono::duration<int>(1));
+  armorpose_tf2_filter_ = std::make_shared<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped>>(
+    armorpose_sub_, *tf2_buffer_, needpose_target_frame_, 10,this->get_node_logging_interface(),
+    this->get_node_clock_interface(), std::chrono::duration<int>(1));
   // Register a callback with tf2_ros::MessageFilter to be called when transforms are available
   tf2_filter_->registerCallback(&ArmorTrackerNode::armorsCallback, this);
   needpose_tf2_filter_->registerCallback(&ArmorTrackerNode::needposeCallback, this);
+  armorpose_tf2_filter_->registerCallback(&ArmorTrackerNode::armorposeCallback, this);
 
   // Measurement publisher (for debug usage)
   info_pub_ = this->create_publisher<auto_aim_interfaces::msg::TrackerInfo>("/tracker/info", 10);
@@ -303,6 +308,27 @@ void ArmorTrackerNode::needposeCallback(const geometry_msgs::msg::PointStamped::
     return;
   }
   needpose_pub_->publish(ps);
+}
+
+void ArmorTrackerNode::armorposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr armorpose_ptr)
+{
+  if(tf2_buffer_->canTransform("odom", "camera_optical_frame", tf2::TimePointZero)){
+      //std::cout << "Frames can be transformed" << std::endl;
+  }else{
+      std::cout << "Frames cannot be transformed" << std::endl;
+      return;
+  }
+
+  geometry_msgs::msg::PointStamped armorps;
+  armorps.header = armorpose_ptr->header;
+  armorps.point = armorpose_ptr->point;
+  try {
+    armorps.point = tf2_buffer_->transform(armorps, needpose_target_frame_).point;
+  } catch (const tf2::ExtrapolationException & ex) {
+    RCLCPP_ERROR(get_logger(), "Error while transforming %s", ex.what());
+    return;
+  }
+  armorpose_pub_->publish(armorps);
 }
 
 void ArmorTrackerNode::publishMarkers(const auto_aim_interfaces::msg::Target & target_msg)
