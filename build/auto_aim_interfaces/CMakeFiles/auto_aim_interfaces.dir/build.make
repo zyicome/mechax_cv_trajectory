@@ -76,6 +76,7 @@ CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_aut
 CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/TrackerInfo.msg
 CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/SendSerial.msg
 CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/ReceiveSerial.msg
+CMakeFiles/auto_aim_interfaces: /home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Bias.msg
 CMakeFiles/auto_aim_interfaces: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 CMakeFiles/auto_aim_interfaces: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 CMakeFiles/auto_aim_interfaces: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl

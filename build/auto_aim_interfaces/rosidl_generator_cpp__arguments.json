@@ -12,7 +12,8 @@
     "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugArmors.idl",
     "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/TrackerInfo.idl",
     "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/SendSerial.idl",
-    "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/ReceiveSerial.idl"
+    "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/ReceiveSerial.idl",
+    "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Bias.idl"
   ],
   "ros_interface_dependencies": [
     "std_msgs:/opt/ros/humble/share/std_msgs/msg/Bool.idl",
@@ -103,6 +104,7 @@
     "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces/msg/TrackerInfo.idl",
     "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces/msg/SendSerial.idl",
     "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces/msg/ReceiveSerial.idl",
+    "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces/msg/Bias.idl",
     "/opt/ros/humble/share/std_msgs/msg/Bool.idl",
     "/opt/ros/humble/share/std_msgs/msg/Byte.idl",
     "/opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl",

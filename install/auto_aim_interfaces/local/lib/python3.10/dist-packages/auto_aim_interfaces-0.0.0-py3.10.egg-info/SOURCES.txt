@@ -7,6 +7,7 @@ auto_aim_interfaces.egg-info/top_level.txt
 auto_aim_interfaces/msg/__init__.py
 auto_aim_interfaces/msg/_armor.py
 auto_aim_interfaces/msg/_armors.py
+auto_aim_interfaces/msg/_bias.py
 auto_aim_interfaces/msg/_debug_armor.py
 auto_aim_interfaces/msg/_debug_armors.py
 auto_aim_interfaces/msg/_debug_light.py

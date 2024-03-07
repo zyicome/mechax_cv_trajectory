@@ -64,8 +64,8 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
     angle_sub_ = this->create_subscription<auto_aim_interfaces::msg::ReceiveSerial>(
         "/angle/init", 10, std::bind(&Trajectoryer::angle_callback, this, std::placeholders::_1));
 
-    changeyaw_sub_ = this->create_subscription<std_msgs::msg::Float64>(
-        "/trajectory/changeyaw", 10, std::bind(&Trajectoryer::changeyaw_callback, this, std::placeholders::_1));
+    changeyaw_sub_ = this->create_subscription<auto_aim_interfaces::msg::Bias>(
+        "/trajectory/changeyaw", 1, std::bind(&Trajectoryer::changeyaw_callback, this, std::placeholders::_1));
     
     maker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>(
         "/aiming_point", 10);
@@ -582,9 +582,10 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
     // RCLCPP_INFO(get_logger(), "now_yaw: %f", now_yaw);
 }
 
-void Trajectoryer::changeyaw_callback(const std_msgs::msg::Float64 msg)
+void Trajectoryer::changeyaw_callback(const auto_aim_interfaces::msg::Bias msg)
 {
-    needchangeyaw = msg.data;
+    needchangeyaw = msg.needchangeyaw;
+    is_can_hit = msg.is_can_hit;
 }
 
 void Trajectoryer::get_need_pose(const float &object_x,const float &object_y,const float &object_z,const float &now_pitch)

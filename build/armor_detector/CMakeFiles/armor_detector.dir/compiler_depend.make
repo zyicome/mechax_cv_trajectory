@@ -1409,6 +1409,10 @@ CMakeFiles/armor_detector.dir/src/detector_node.cpp.o: /home/mechax/zyb/mechax_c
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__builder.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armors__traits.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__traits.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/bias.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__struct.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__builder.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__traits.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/float64.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__struct.hpp \
   /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__builder.hpp \
@@ -2206,6 +2210,12 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /usr/include/c++/11/fstream:
 
 /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float64__traits.hpp:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__builder.hpp:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__struct.hpp:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/bias.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/armor__traits.hpp:
 
@@ -3324,6 +3334,8 @@ CMakeFiles/armor_detector.dir/src/pnp_solver.cpp.o: /home/mechax/zyb/mechax_cv_t
 /opt/ros/humble/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__traits.hpp:
 
 /opt/ros/humble/include/rmw/rmw/time.h:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__traits.hpp:
 
 /usr/include/c++/11/complex:
 

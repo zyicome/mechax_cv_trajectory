@@ -2,6 +2,8 @@ msg/Armor.idl
 msg/Armor.msg
 msg/Armors.idl
 msg/Armors.msg
+msg/Bias.idl
+msg/Bias.msg
 msg/DebugArmor.idl
 msg/DebugArmor.msg
 msg/DebugArmors.idl

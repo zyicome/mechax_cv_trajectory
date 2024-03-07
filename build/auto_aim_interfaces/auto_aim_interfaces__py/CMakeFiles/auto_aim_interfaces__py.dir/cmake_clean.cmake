@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/auto_aim_interfaces/msg/_armor_s.c"
   "../rosidl_generator_py/auto_aim_interfaces/msg/_armors.py"
   "../rosidl_generator_py/auto_aim_interfaces/msg/_armors_s.c"
+  "../rosidl_generator_py/auto_aim_interfaces/msg/_bias.py"
+  "../rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c"
   "../rosidl_generator_py/auto_aim_interfaces/msg/_debug_armor.py"
   "../rosidl_generator_py/auto_aim_interfaces/msg/_debug_armor_s.c"
   "../rosidl_generator_py/auto_aim_interfaces/msg/_debug_armors.py"

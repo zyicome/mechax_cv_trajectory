@@ -700,6 +700,10 @@ CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o: /home/mechax/zyb/mechax
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/target__struct.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/target__builder.hpp \
   /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/target__traits.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/bias.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__struct.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__builder.hpp \
+  /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__traits.hpp \
   /opt/ros/humble/include/tf2_ros/tf2_ros/transform_broadcaster.h \
   /opt/ros/humble/include/tf2_ros/tf2_ros/visibility_control.h \
   /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
@@ -930,6 +934,12 @@ CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o: /home/mechax/zyb/mechax
 /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp:
 
 /opt/ros/humble/include/tf2_ros/tf2_ros/visibility_control.h:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__builder.hpp:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__struct.hpp:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/bias.hpp:
 
 /home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/target__traits.hpp:
 
@@ -1242,6 +1252,8 @@ CMakeFiles/mechax_trajectory.dir/src/trajectoryer.cpp.o: /home/mechax/zyb/mechax
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/c++/11/bits/stl_algo.h:
+
+/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/include/auto_aim_interfaces/auto_aim_interfaces/msg/detail/bias__traits.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 

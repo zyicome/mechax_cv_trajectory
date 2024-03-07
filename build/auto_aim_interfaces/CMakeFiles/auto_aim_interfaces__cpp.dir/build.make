@@ -106,6 +106,10 @@ CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/ms
 CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/receive_serial__builder.hpp
 CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/receive_serial__struct.hpp
 CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/receive_serial__traits.hpp
+CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/bias.hpp
+CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__builder.hpp
+CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__struct.hpp
+CMakeFiles/auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__traits.hpp
 
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -132,6 +136,7 @@ rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: rosidl_adapter/auto_aim_
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: rosidl_adapter/auto_aim_interfaces/msg/TrackerInfo.idl
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: rosidl_adapter/auto_aim_interfaces/msg/SendSerial.idl
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: rosidl_adapter/auto_aim_interfaces/msg/ReceiveSerial.idl
+rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: rosidl_adapter/auto_aim_interfaces/msg/Bias.idl
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -313,9 +318,22 @@ rosidl_generator_cpp/auto_aim_interfaces/msg/detail/receive_serial__struct.hpp: 
 rosidl_generator_cpp/auto_aim_interfaces/msg/detail/receive_serial__traits.hpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/auto_aim_interfaces/msg/detail/receive_serial__traits.hpp
 
+rosidl_generator_cpp/auto_aim_interfaces/msg/bias.hpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/auto_aim_interfaces/msg/bias.hpp
+
+rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__builder.hpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__builder.hpp
+
+rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__struct.hpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__struct.hpp
+
+rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__traits.hpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__traits.hpp
+
 auto_aim_interfaces__cpp: CMakeFiles/auto_aim_interfaces__cpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armor.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/armors.hpp
+auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/bias.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/debug_armor.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/debug_armors.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/debug_light.hpp
@@ -326,6 +344,9 @@ auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/ar
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armors__builder.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armors__struct.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/armors__traits.hpp
+auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__builder.hpp
+auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__struct.hpp
+auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/bias__traits.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/debug_armor__builder.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/debug_armor__struct.hpp
 auto_aim_interfaces__cpp: rosidl_generator_cpp/auto_aim_interfaces/msg/detail/debug_armor__traits.hpp

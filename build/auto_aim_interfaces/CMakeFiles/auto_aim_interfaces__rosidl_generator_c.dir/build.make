@@ -92,6 +92,7 @@ rosidl_generator_c/auto_aim_interfaces/msg/armor.h: rosidl_adapter/auto_aim_inte
 rosidl_generator_c/auto_aim_interfaces/msg/armor.h: rosidl_adapter/auto_aim_interfaces/msg/TrackerInfo.idl
 rosidl_generator_c/auto_aim_interfaces/msg/armor.h: rosidl_adapter/auto_aim_interfaces/msg/SendSerial.idl
 rosidl_generator_c/auto_aim_interfaces/msg/armor.h: rosidl_adapter/auto_aim_interfaces/msg/ReceiveSerial.idl
+rosidl_generator_c/auto_aim_interfaces/msg/armor.h: rosidl_adapter/auto_aim_interfaces/msg/Bias.idl
 rosidl_generator_c/auto_aim_interfaces/msg/armor.h: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_c/auto_aim_interfaces/msg/armor.h: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_c/auto_aim_interfaces/msg/armor.h: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -273,6 +274,18 @@ rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__struct.h: rosi
 rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__type_support.h: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__type_support.h
 
+rosidl_generator_c/auto_aim_interfaces/msg/bias.h: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/bias.h
+
+rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.h: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.h
+
+rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__struct.h: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__struct.h
+
+rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__type_support.h: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__type_support.h
+
 rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c
 
@@ -302,6 +315,9 @@ rosidl_generator_c/auto_aim_interfaces/msg/detail/send_serial__functions.c: rosi
 
 rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c
+
+rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c
 
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c.o: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/flags.make
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c.o: rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c
@@ -443,6 +459,20 @@ CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_a
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c -o CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c.s
 
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/flags.make
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o: rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o -MF CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o.d -o CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o -c /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c
+
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c > CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.i
+
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c -o CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.s
+
 # Object files for target auto_aim_interfaces__rosidl_generator_c
 auto_aim_interfaces__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/armor__functions.c.o" \
@@ -454,7 +484,8 @@ auto_aim_interfaces__rosidl_generator_c_OBJECTS = \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armors__functions.c.o" \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/tracker_info__functions.c.o" \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/send_serial__functions.c.o" \
-"CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c.o"
+"CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c.o" \
+"CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o"
 
 # External object files for target auto_aim_interfaces__rosidl_generator_c
 auto_aim_interfaces__rosidl_generator_c_EXTERNAL_OBJECTS =
@@ -469,6 +500,7 @@ libauto_aim_interfaces__rosidl_generator_c.so: CMakeFiles/auto_aim_interfaces__r
 libauto_aim_interfaces__rosidl_generator_c.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/tracker_info__functions.c.o
 libauto_aim_interfaces__rosidl_generator_c.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/send_serial__functions.c.o
 libauto_aim_interfaces__rosidl_generator_c.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.c.o
+libauto_aim_interfaces__rosidl_generator_c.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c.o
 libauto_aim_interfaces__rosidl_generator_c.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/build.make
 libauto_aim_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so
 libauto_aim_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so
@@ -476,7 +508,7 @@ libauto_aim_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/libbuiltin_in
 libauto_aim_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libauto_aim_interfaces__rosidl_generator_c.so: /opt/ros/humble/lib/librcutils.so
 libauto_aim_interfaces__rosidl_generator_c.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C shared library libauto_aim_interfaces__rosidl_generator_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C shared library libauto_aim_interfaces__rosidl_generator_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -489,6 +521,7 @@ CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/clean:
 
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/armor.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/armors.h
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/bias.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/debug_armor.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/debug_armors.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/debug_light.h
@@ -501,6 +534,10 @@ CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/armors__functions.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/armors__struct.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/armors__type_support.h
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.c
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.h
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__struct.h
+CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__type_support.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armor__functions.c
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armor__functions.h
 CMakeFiles/auto_aim_interfaces__rosidl_generator_c.dir/depend: rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_armor__struct.h

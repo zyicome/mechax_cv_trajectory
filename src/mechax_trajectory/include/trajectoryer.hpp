@@ -6,6 +6,7 @@
 #include "auto_aim_interfaces/msg/receive_serial.hpp"
 #include "auto_aim_interfaces/msg/send_serial.hpp"
 #include "auto_aim_interfaces/msg/target.hpp"
+#include "auto_aim_interfaces/msg/bias.hpp"
 #include <tf2_ros/transform_broadcaster.h>
 
 #include <geometry_msgs/msg/transform_stamped.hpp>
@@ -61,7 +62,7 @@ public:
 
     void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg);
 
-    void changeyaw_callback(const std_msgs::msg::Float64 msg);
+    void changeyaw_callback(const auto_aim_interfaces::msg::Bias msg);
 
     void get_need_pose(const float &object_x,const float &object_y,const float &object_z,const float &now_pitch);
 
@@ -101,12 +102,13 @@ public:
     bool is_hero;
     //------------------
     float needchangeyaw;
+    bool is_can_hit;
     //------------------
     // Subsciption
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr target_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr angle_sub_;
-    rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr changeyaw_sub_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Bias>::SharedPtr changeyaw_sub_;
     //------------------
     // Publisher
     //------------------

@@ -8,3 +8,4 @@
 /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/TrackerInfo.idl
 /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/SendSerial.idl
 /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/ReceiveSerial.idl
+/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Bias.idl

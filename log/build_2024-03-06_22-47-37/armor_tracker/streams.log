@@ -1,6 +1,0 @@
-[0.089s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/armor_tracker -- -j16 -l16
-[0.127s] [35m[1mConsolidate compiler generated dependencies of target armor_tracker[0m
-[0.139s] [ 33%] Built target armor_tracker_node
-[0.152s] [ 50%] [32mBuilding CXX object CMakeFiles/armor_tracker.dir/src/tracker_node.cpp.o[0m
-[10.443s] [ 66%] [32m[1mLinking CXX shared library libarmor_tracker.so[0m
-[11.152s] [100%] Built target armor_tracker

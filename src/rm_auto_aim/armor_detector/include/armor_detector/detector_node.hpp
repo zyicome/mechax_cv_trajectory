@@ -24,6 +24,7 @@
 #include "armor_detector/number_classifier.hpp"
 #include "armor_detector/pnp_solver.hpp"
 #include "auto_aim_interfaces/msg/armors.hpp"
+#include "auto_aim_interfaces/msg/bias.hpp"
 
 #include <geometry_msgs/msg/point_stamped.hpp>
 
@@ -65,7 +66,7 @@ private:
   visualization_msgs::msg::MarkerArray marker_array_;
   rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_pub_;
 
-  rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr changeyaw_pub;
+  rclcpp::Publisher<auto_aim_interfaces::msg::Bias>::SharedPtr changeyaw_pub;
 
   // Camera info part
   rclcpp::Subscription<sensor_msgs::msg::CameraInfo>::SharedPtr cam_info_sub_;

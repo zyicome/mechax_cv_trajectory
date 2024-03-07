@@ -1,5 +1,6 @@
 from auto_aim_interfaces.msg._armor import Armor  # noqa: F401
 from auto_aim_interfaces.msg._armors import Armors  # noqa: F401
+from auto_aim_interfaces.msg._bias import Bias  # noqa: F401
 from auto_aim_interfaces.msg._debug_armor import DebugArmor  # noqa: F401
 from auto_aim_interfaces.msg._debug_armors import DebugArmors  # noqa: F401
 from auto_aim_interfaces.msg._debug_light import DebugLight  # noqa: F401

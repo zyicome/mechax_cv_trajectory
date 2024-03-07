@@ -65,7 +65,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
   marker_pub_ =
     this->create_publisher<visualization_msgs::msg::MarkerArray>("/detector/marker", 10);
 
-  changeyaw_pub = this->create_publisher<std_msgs::msg::Float64>("/trajectory/changeyaw", 10);
+  changeyaw_pub = this->create_publisher<auto_aim_interfaces::msg::Bias>("/trajectory/changeyaw", 1);
 
   // Debug Publishers
   debug_ = this->declare_parameter("debug", false);
@@ -253,17 +253,25 @@ void ArmorDetectorNode::is_need_change()
   // 三维距离测算
   // 得到装甲板位置到预测击打位置的距离
   float distance = fabs(sqrtf(powf(armorpose.x,2) - powf(needpose.x,2)) + sqrtf(powf(armorpose.y,2) - powf(needpose.y,2)));
-  if(distance > 0.2)
+  if(distance < 0.2)
   {
     float needchangeyaw = acos(fabs(needpose.x* armorpose.x + armorpose.z * needpose.z) / (sqrtf(pow(needpose.x,2) + pow(needpose.z,2)) * sqrtf(pow(armorpose.x,2) + pow(armorpose.z,2))));
     //std::cout << "needchangeyaw: " << needchangeyaw << std::endl;
-    std_msgs::msg::Float64 msg;
+    auto_aim_interfaces::msg::Bias msg;
     if(armorpose_img.x > needpose_img.x)
     {
-      msg.data = -needchangeyaw;
+      msg.needchangeyaw = -needchangeyaw;
     }
     else{
-      msg.data = needchangeyaw;
+      msg.needchangeyaw = needchangeyaw;
+    }
+    if(distance < 0.05)
+    {
+      msg.is_can_hit = true;
+    }
+    else
+    {
+      msg.is_can_hit = false;
     }
     changeyaw_pub->publish(msg);
   }

@@ -280,8 +280,13 @@ CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator
   rosidl_generator_c/auto_aim_interfaces/msg/detail/send_serial__functions.h \
   rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__type_support.h \
   rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__struct.h \
-  rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.h
+  rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.h \
+  rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__type_support.h \
+  rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__struct.h \
+  rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.h
 
+
+rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__struct.h:
 
 rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.h:
 
@@ -479,6 +484,8 @@ rosidl_generator_c/auto_aim_interfaces/msg/detail/debug_lights__struct.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
+rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/stdlib.h:
@@ -524,6 +531,8 @@ rosidl_generator_c/auto_aim_interfaces/msg/detail/target__type_support.h:
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
 /usr/include/python3.10/namespaceobject.h:
+
+rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__type_support.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 

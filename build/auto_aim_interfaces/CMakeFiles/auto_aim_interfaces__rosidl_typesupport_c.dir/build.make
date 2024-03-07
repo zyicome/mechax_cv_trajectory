@@ -85,6 +85,7 @@ rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: rosidl_ada
 rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: rosidl_adapter/auto_aim_interfaces/msg/TrackerInfo.idl
 rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: rosidl_adapter/auto_aim_interfaces/msg/SendSerial.idl
 rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: rosidl_adapter/auto_aim_interfaces/msg/ReceiveSerial.idl
+rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: rosidl_adapter/auto_aim_interfaces/msg/Bias.idl
 rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -175,6 +176,9 @@ rosidl_typesupport_c/auto_aim_interfaces/msg/send_serial__type_support.cpp: rosi
 
 rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp: rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp
+
+rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp: rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp
 
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp.o: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/flags.make
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp.o: rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp
@@ -316,6 +320,20 @@ CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/au
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp -o CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp.s
 
+CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/flags.make
+CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o: rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp
+CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o -MF CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o.d -o CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o -c /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp
+
+CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp > CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.i
+
+CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp -o CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.s
+
 # Object files for target auto_aim_interfaces__rosidl_typesupport_c
 auto_aim_interfaces__rosidl_typesupport_c_OBJECTS = \
 "CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp.o" \
@@ -327,7 +345,8 @@ auto_aim_interfaces__rosidl_typesupport_c_OBJECTS = \
 "CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/debug_armors__type_support.cpp.o" \
 "CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/tracker_info__type_support.cpp.o" \
 "CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/send_serial__type_support.cpp.o" \
-"CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp.o"
+"CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp.o" \
+"CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o"
 
 # External object files for target auto_aim_interfaces__rosidl_typesupport_c
 auto_aim_interfaces__rosidl_typesupport_c_EXTERNAL_OBJECTS =
@@ -342,6 +361,7 @@ libauto_aim_interfaces__rosidl_typesupport_c.so: CMakeFiles/auto_aim_interfaces_
 libauto_aim_interfaces__rosidl_typesupport_c.so: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/tracker_info__type_support.cpp.o
 libauto_aim_interfaces__rosidl_typesupport_c.so: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/send_serial__type_support.cpp.o
 libauto_aim_interfaces__rosidl_typesupport_c.so: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/receive_serial__type_support.cpp.o
+libauto_aim_interfaces__rosidl_typesupport_c.so: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp.o
 libauto_aim_interfaces__rosidl_typesupport_c.so: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/build.make
 libauto_aim_interfaces__rosidl_typesupport_c.so: libauto_aim_interfaces__rosidl_generator_c.so
 libauto_aim_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_c.so
@@ -354,7 +374,7 @@ libauto_aim_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/libbuiltin_
 libauto_aim_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libauto_aim_interfaces__rosidl_typesupport_c.so: /opt/ros/humble/lib/librcutils.so
 libauto_aim_interfaces__rosidl_typesupport_c.so: CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX shared library libauto_aim_interfaces__rosidl_typesupport_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library libauto_aim_interfaces__rosidl_typesupport_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -367,6 +387,7 @@ CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/clean:
 
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/auto_aim_interfaces/msg/armor__type_support.cpp
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/auto_aim_interfaces/msg/armors__type_support.cpp
+CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/auto_aim_interfaces/msg/bias__type_support.cpp
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/auto_aim_interfaces/msg/debug_armor__type_support.cpp
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/auto_aim_interfaces/msg/debug_armors__type_support.cpp
 CMakeFiles/auto_aim_interfaces__rosidl_typesupport_c.dir/depend: rosidl_typesupport_c/auto_aim_interfaces/msg/debug_light__type_support.cpp

@@ -79,6 +79,7 @@ auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_tracker_info.py
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_send_serial.py
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial.py
+auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_bias.py
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/__init__.py
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_armor_s.c
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_armors_s.c
@@ -90,6 +91,7 @@ auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_tracker_info_s.c
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_send_serial_s.c
 auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c
+auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c
 
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/lib/rosidl_generator_py/rosidl_generator_py
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_py/__init__.py
@@ -114,6 +116,7 @@ rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesup
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/auto_aim_interfaces/msg/TrackerInfo.idl
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/auto_aim_interfaces/msg/SendSerial.idl
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/auto_aim_interfaces/msg/ReceiveSerial.idl
+rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/auto_aim_interfaces/msg/Bias.idl
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Bool.idl
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/Byte.idl
 rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/std_msgs/msg/ByteMultiArray.idl
@@ -214,6 +217,9 @@ rosidl_generator_py/auto_aim_interfaces/msg/_send_serial.py: rosidl_generator_py
 rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial.py: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial.py
 
+rosidl_generator_py/auto_aim_interfaces/msg/_bias.py: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/auto_aim_interfaces/msg/_bias.py
+
 rosidl_generator_py/auto_aim_interfaces/msg/__init__.py: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/auto_aim_interfaces/msg/__init__.py
 
@@ -247,6 +253,9 @@ rosidl_generator_py/auto_aim_interfaces/msg/_send_serial_s.c: rosidl_generator_p
 rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c
 
+rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c
+
 auto_aim_interfaces__py: auto_aim_interfaces__py/CMakeFiles/auto_aim_interfaces__py
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_c.c
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/_auto_aim_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
@@ -256,6 +265,8 @@ auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_armor.py
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_armor_s.c
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_armors.py
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_armors_s.c
+auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_bias.py
+auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_debug_armor.py
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_debug_armor_s.c
 auto_aim_interfaces__py: rosidl_generator_py/auto_aim_interfaces/msg/_debug_armors.py

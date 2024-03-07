@@ -396,6 +396,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_aim_interfaces/msg" TYPE FILE FILES "/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces/msg/Bias.idl")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_aim_interfaces/msg" TYPE FILE FILES "/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Armor.msg")
 endif()
 
@@ -433,6 +437,10 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_aim_interfaces/msg" TYPE FILE FILES "/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/ReceiveSerial.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_aim_interfaces/msg" TYPE FILE FILES "/home/mechax/zyb/mechax_cv_trajectory/src/rm_auto_aim/auto_aim_interfaces/msg/Bias.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

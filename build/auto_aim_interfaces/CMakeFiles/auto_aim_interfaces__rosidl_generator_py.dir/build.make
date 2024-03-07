@@ -209,6 +209,20 @@ CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c -o CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c.s
 
+CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/flags.make
+CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o: rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c
+CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o -MF CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o.d -o CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o -c /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c
+
+CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c > CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.i
+
+CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c -o CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.s
+
 # Object files for target auto_aim_interfaces__rosidl_generator_py
 auto_aim_interfaces__rosidl_generator_py_OBJECTS = \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_armor_s.c.o" \
@@ -220,7 +234,8 @@ auto_aim_interfaces__rosidl_generator_py_OBJECTS = \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_debug_armors_s.c.o" \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_tracker_info_s.c.o" \
 "CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_send_serial_s.c.o" \
-"CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c.o"
+"CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c.o" \
+"CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o"
 
 # External object files for target auto_aim_interfaces__rosidl_generator_py
 auto_aim_interfaces__rosidl_generator_py_EXTERNAL_OBJECTS =
@@ -235,6 +250,7 @@ rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_tracker_info_s.c.o
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_send_serial_s.c.o
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_receive_serial_s.c.o
+rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/rosidl_generator_py/auto_aim_interfaces/msg/_bias_s.c.o
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/build.make
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: libauto_aim_interfaces__rosidl_typesupport_c.so
@@ -252,7 +268,7 @@ rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: /opt/ros/humble/lib/librcutils.so
 rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so: CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C shared library rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C shared library rosidl_generator_py/auto_aim_interfaces/libauto_aim_interfaces__rosidl_generator_py.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/auto_aim_interfaces__rosidl_generator_py.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

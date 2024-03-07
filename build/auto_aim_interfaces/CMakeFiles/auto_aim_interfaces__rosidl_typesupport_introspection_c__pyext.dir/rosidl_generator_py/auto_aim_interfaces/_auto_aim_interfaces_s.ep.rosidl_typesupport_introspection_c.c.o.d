@@ -239,4 +239,7 @@ CMakeFiles/auto_aim_interfaces__rosidl_typesupport_introspection_c__pyext.dir/ro
  /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/send_serial__functions.h \
  /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__type_support.h \
  /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__struct.h \
- /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.h
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/receive_serial__functions.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__type_support.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__struct.h \
+ /home/mechax/zyb/mechax_cv_trajectory/build/auto_aim_interfaces/rosidl_generator_c/auto_aim_interfaces/msg/detail/bias__functions.h
