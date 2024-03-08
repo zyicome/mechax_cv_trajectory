@@ -600,6 +600,16 @@ void Trajectoryer::get_need_pose(const float &object_x,const float &object_y,con
     t.transform.rotation = tf2::toMsg(q);
     tf_broadcaster_->sendTransform(t);
 
+    // 创建坐标变换消息和发布
+    geometry_msgs::msg::TransformStamped t_p;
+    t.header.stamp = this->now();
+    t.header.frame_id = "horizom_gimbal_link";
+    t.child_frame_id = "prediction_gimbal_link";
+    tf2::Quaternion q_p;
+    q.setRPY(0, angle_pitch, 0);
+    t.transform.rotation = tf2::toMsg(q_p);
+    tf_broadcaster_->sendTransform(t_p);
+
     // 根据当前枪管位置判断当前弹丸可能击打的位置
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
     float need_z = object_z;

@@ -1,0 +1,25 @@
+-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/mechax/zyb/mechax_cv_trajectory/build/rm_gimbal_description
+-- Install configuration: ""
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/urdf
+-- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/urdf/rm_gimbal.urdf.xacro
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/ament_index/resource_index/package_run_dependencies/rm_gimbal_description
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/ament_index/resource_index/parent_prefix_path/rm_gimbal_description
+-- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/environment/ament_prefix_path.sh
+-- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/environment/ament_prefix_path.dsv
+-- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/environment/path.sh
+-- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/environment/path.dsv
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.bash
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.sh
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.zsh
+-- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.dsv
+-- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.dsv
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/ament_index/resource_index/packages/rm_gimbal_description
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/cmake/rm_gimbal_descriptionConfig.cmake
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/cmake/rm_gimbal_descriptionConfig-version.cmake
+-- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_gimbal_description/share/rm_gimbal_description/package.xml

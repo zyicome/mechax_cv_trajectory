@@ -62,6 +62,7 @@ private:
   // Subscriber with tf2 message_filter
   std::string target_frame_;
   std::string needpose_target_frame_;
+  std::string armorpose_target_frame_;
   std::shared_ptr<tf2_ros::Buffer> tf2_buffer_;
   std::shared_ptr<tf2_ros::TransformListener> tf2_listener_;
   message_filters::Subscriber<auto_aim_interfaces::msg::Armors> armors_sub_;

@@ -1,0 +1,73 @@
+[0.066s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver -- -j16 -l16
+[0.083s] -- Found ament_cmake_auto: 1.3.8 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.222s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.223s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.228s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.239s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.255s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.310s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.311s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.427s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.872s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.873s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.093s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.099s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.099s] -- Configured cppcheck include dirs: /home/mechax/zyb/mechax_cv_trajectory/src/rm_serial_driver/include
+[1.099s] -- Configured cppcheck exclude dirs and/or files: 
+[1.099s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.099s] -- Configured cpplint exclude dirs and/or files: 
+[1.099s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.100s] -- Added test 'lint_cmake' to check CMake code style
+[1.100s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.100s] -- Added test 'xmllint' to check XML markup files
+[1.101s] -- Added test 'clang_format' to check C / C++ code style
+[1.102s] -- Configuring done
+[1.139s] -- Generating done
+[1.140s] -- Build files have been written to: /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver
+[1.173s] [35m[1mConsolidate compiler generated dependencies of target rm_serial_driver_node[0m
+[1.173s] [35m[1mConsolidate compiler generated dependencies of target rm_serial_driver[0m
+[1.195s] [ 20%] [32mBuilding CXX object CMakeFiles/rm_serial_driver_node.dir/rclcpp_components/node_main_rm_serial_driver_node.cpp.o[0m
+[1.201s] [ 60%] [32mBuilding CXX object CMakeFiles/rm_serial_driver.dir/src/crc.cpp.o[0m
+[1.201s] [ 60%] [32mBuilding CXX object CMakeFiles/rm_serial_driver.dir/src/rm_serial_driver.cpp.o[0m
+[4.064s] [ 80%] [32m[1mLinking CXX executable rm_serial_driver_node[0m
+[4.217s] [ 80%] Built target rm_serial_driver_node
+[10.453s] [100%] [32m[1mLinking CXX shared library librm_serial_driver.so[0m
+[10.962s] [100%] Built target rm_serial_driver
+[10.970s] Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver' returned '0': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver -- -j16 -l16
+[10.989s] Invoking command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver
+[10.994s] -- Install configuration: ""
+[10.994s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/rm_serial_driver/rm_serial_driver_node
+[10.994s] -- Set runtime path of "/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/rm_serial_driver/rm_serial_driver_node" to ""
+[10.994s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include
+[10.994s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver
+[10.994s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver/crc.hpp
+[10.994s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver/rm_serial_driver.hpp
+[10.994s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/include/rm_serial_driver/packet.hpp
+[10.995s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/library_path.sh
+[10.995s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/library_path.dsv
+[10.995s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/librm_serial_driver.so
+[11.000s] -- Set runtime path of "/home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/lib/librm_serial_driver.so" to ""
+[11.000s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/config
+[11.000s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/config/serial_driver.yaml
+[11.000s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/launch
+[11.000s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/launch/serial_driver.launch.py
+[11.000s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/ament_index/resource_index/package_run_dependencies/rm_serial_driver
+[11.001s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/ament_index/resource_index/parent_prefix_path/rm_serial_driver
+[11.001s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/ament_prefix_path.sh
+[11.001s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/ament_prefix_path.dsv
+[11.001s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/path.sh
+[11.001s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/environment/path.dsv
+[11.001s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/local_setup.bash
+[11.001s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/local_setup.sh
+[11.001s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/local_setup.zsh
+[11.001s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/local_setup.dsv
+[11.001s] -- Installing: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.dsv
+[11.002s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/ament_index/resource_index/packages/rm_serial_driver
+[11.002s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/ament_index/resource_index/rclcpp_components/rm_serial_driver
+[11.002s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[11.003s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[11.003s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[11.003s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/cmake/rm_serial_driverConfig.cmake
+[11.003s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/cmake/rm_serial_driverConfig-version.cmake
+[11.003s] -- Up-to-date: /home/mechax/zyb/mechax_cv_trajectory/install/rm_serial_driver/share/rm_serial_driver/package.xml
+[11.003s] Invoked command in '/home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver' returned '0': AMENT_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces:/home/mechax/ws_livox/install/livox_ros2_driver:/home/mechax/ws_livox/install/livox_sdk_vendor:/home/mechax/ws_livox/install/livox_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/mechax/zyb/mechax_cv_trajectory/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/mechax/zyb/mechax_cv_trajectory/build/rm_serial_driver
