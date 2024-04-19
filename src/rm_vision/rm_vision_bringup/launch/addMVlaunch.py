@@ -1,0 +1,128 @@
+import os
+import sys
+from ament_index_python.packages import get_package_share_directory
+sys.path.append(os.path.join(get_package_share_directory('rm_vision_bringup'), 'launch'))
+
+
+def generate_launch_description():
+
+    from common import node_params, launch_params, robot_state_publisher, tracker_node
+    from launch_ros.descriptions import ComposableNode
+    from launch_ros.actions import ComposableNodeContainer, Node
+    from launch.actions import TimerAction, Shutdown
+    from launch import LaunchDescription
+    
+    def get_camera_node(package, executable):
+        return Node(
+            package=package,
+            executable=executable,
+            name='camera_node',
+            parameters=[node_params],
+        )
+
+    #def get_camera_detector_container(camera_node):
+        return ComposableNodeContainer(
+            name='camera_detector_container',
+            namespace='',
+            package='rclcpp_components',
+            executable='component_container',
+            composable_node_descriptions=[
+                camera_node,
+                ComposableNode(
+                    package='armor_detector',
+                    plugin='rm_auto_aim::ArmorDetectorNode',
+                    name='armor_detector',
+                    parameters=[node_params],
+                    extra_arguments=[{'use_intra_process_comms': True}]
+                )
+            ],
+            output='both',
+            emulate_tty=True,
+            ros_arguments=['--ros-args', '--log-level',
+                           'armor_detector:='+launch_params['detector_log_level']],
+            on_exit=Shutdown(),
+        )
+
+    hik_camera_node = get_camera_node('hik_camera', 'hik_camera_node')
+    mv_camera_node = get_camera_node('mindvision_camera', 'mindvision_camera_node')
+
+    if (launch_params['camera'] == 'hik'):
+        cam_detector = hik_camera_node
+    elif (launch_params['camera'] == 'mv'):
+        cam_detector = mv_camera_node
+        
+    detector_node = Node(
+        package='armor_detector',
+        executable='armor_detector_node',
+        emulate_tty=True,
+        output='both',
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'armor_detector:='+launch_params['detector_log_level']],
+    )
+
+    delay_detector_node = TimerAction(
+        period=2.0,
+        actions=[detector_node],
+    )
+
+    trajectory_node = Node(
+        package='mechax_trajectory',
+        executable='mechax_trajectory',
+        name='mechax_trajectory',
+        output='both',
+        emulate_tty=True,
+        on_exit=Shutdown(),
+    )
+    
+    delay_tracker_node = TimerAction(
+        period=2.0,
+        actions=[tracker_node],
+    )
+
+    # delay_trajectory_node = TimerAction(
+    #     period=2.5,
+    #     actions=[trajectory_node],
+    # )
+
+    assist_detector_node = Node(
+        package='front_assist_armor_detector',
+        executable='front_assist_armor_detector_node',
+        name='assist_armor_detector',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'assist_armor_detector:='+launch_params['assist_detector_log_level']],
+    )
+
+    assist_tracker_node = Node(
+        package='front_assist_armor_tracker',
+        executable='front_assist_armor_tracker_node',
+        name='assist_armor_tracker',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'assist_armor_tracker:='+launch_params['assist_tracker_log_level']],
+    )
+
+    delay_assist_detector_node = TimerAction(
+        period=2.5,
+        actions=[assist_detector_node],
+    )
+
+    delay_assist_tracker_node = TimerAction(
+        period=2.5,
+        actions=[assist_tracker_node],
+    )
+
+    return LaunchDescription([
+        robot_state_publisher,
+        cam_detector,
+        delay_detector_node,
+        delay_tracker_node,
+        trajectory_node,
+        delay_assist_detector_node,
+        delay_assist_tracker_node
+    ])
