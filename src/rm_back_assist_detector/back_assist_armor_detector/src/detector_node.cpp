@@ -30,7 +30,7 @@
 namespace rm_back_assist_armor_detector
 {
 ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
-: Node("armor_front_assist_detector", options)
+: Node("armor_back_assist_detector", options)
 {
   RCLCPP_INFO(this->get_logger(), "Starting BackAssistDetectorNode!");
 
@@ -255,9 +255,9 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
 void ArmorDetectorNode::createDebugPublishers()
 {
   lights_data_pub_ =
-    this->create_publisher<auto_aim_interfaces::msg::DebugLights>("/bcakassist/detector/debug_lights", 10);
+    this->create_publisher<auto_aim_interfaces::msg::DebugLights>("/backassist/detector/debug_lights", 10);
   armors_data_pub_ =
-    this->create_publisher<auto_aim_interfaces::msg::DebugArmors>("/bcakassist/detector/debug_armors", 10);
+    this->create_publisher<auto_aim_interfaces::msg::DebugArmors>("/backassist/detector/debug_armors", 10);
 
   binary_img_pub_ = image_transport::create_publisher(this, "/backassist/detector/binary_img");
   number_img_pub_ = image_transport::create_publisher(this, "/backassist/detector/number_img");

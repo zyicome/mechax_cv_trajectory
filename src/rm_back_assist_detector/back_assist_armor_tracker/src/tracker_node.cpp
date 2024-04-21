@@ -8,7 +8,7 @@
 namespace rm_back_assist_armor_detector
 {
 ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
-: Node("armor_front_assist_tracker", options)
+: Node("armor_back_assist_tracker", options)
 {
   RCLCPP_INFO(this->get_logger(), "Starting BackAssistTrackerNode!");
 
@@ -136,7 +136,7 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   tf2_buffer_->setCreateTimerInterface(timer_interface);
   tf2_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf2_buffer_);
   // subscriber and filter
-  armors_sub_.subscribe(this, "/bcak_assist/detector/armors", rmw_qos_profile_sensor_data);
+  armors_sub_.subscribe(this, "/back_assist/detector/armors", rmw_qos_profile_sensor_data);
   target_frame_ = this->declare_parameter("target_frame", "bigodom");
   tf2_filter_ = std::make_shared<tf2_filter>(
     armors_sub_, *tf2_buffer_, target_frame_, 100, this->get_node_logging_interface(),
@@ -149,7 +149,7 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
 
   // Publisher
   target_pub_ = this->create_publisher<auto_aim_interfaces::msg::Target>(
-    "/bcak_assist/tracker/target", rclcpp::SensorDataQoS());
+    "/back_assist/tracker/target", rclcpp::SensorDataQoS());
 }
 
 void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::SharedPtr armors_msg)

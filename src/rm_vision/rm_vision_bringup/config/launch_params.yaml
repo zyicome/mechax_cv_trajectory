@@ -7,6 +7,8 @@ odom2camera:
 detector_log_level: INFO
 tracker_log_level: INFO
 serial_log_level: INFO
-assist_detector_log_level: INFO
-assist_tracker_log_level: INFO
+front_assist_detector_log_level: INFO
+front_assist_tracker_log_level: INFO
+back_assist_detector_log_level: INFO
+back_assist_tracker_log_level: INFO
 

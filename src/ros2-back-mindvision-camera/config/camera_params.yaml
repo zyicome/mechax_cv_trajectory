@@ -1,0 +1,6 @@
+/back_mv_camera:
+  ros__parameters:
+    camera_name: back_camera
+
+    exposure_time: 6000
+    analog_gain: 64

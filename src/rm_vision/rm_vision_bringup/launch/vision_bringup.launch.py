@@ -105,7 +105,7 @@ def generate_launch_description():
         emulate_tty=True,
         parameters=[node_params],
         arguments=['--ros-args', '--log-level',
-                   'assist_armor_detector:='+launch_params['assist_detector_log_level']],
+                   'assist_armor_detector:='+launch_params['front_assist_detector_log_level']],
     )
 
     assist_tracker_node = Node(
@@ -116,7 +116,7 @@ def generate_launch_description():
         emulate_tty=True,
         parameters=[node_params],
         arguments=['--ros-args', '--log-level',
-                   'assist_armor_tracker:='+launch_params['assist_tracker_log_level']],
+                   'assist_armor_tracker:='+launch_params['front_assist_tracker_log_level']],
     )
 
     delay_assist_detector_node = TimerAction(
