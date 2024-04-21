@@ -7,7 +7,7 @@
 /serial_driver:
   ros__parameters:
     timestamp_offset: 0.007
-    device_name: /dev/ttyUSB0
+    device_name: /dev/ttyACM0
     baud_rate: 115200
     flow_control: none
     parity: none
@@ -41,7 +41,7 @@
 
 /armor_tracker:
   ros__parameters:
-    target_frame: odom
+    target_frame: leftodom
     max_armor_distance: 10.0
 
     ekf:
@@ -61,7 +61,7 @@
 
 /armor_front_assist_tracker:
   ros__parameters:
-    target_frame: odom
+    target_frame: bigodom
     max_armor_distance: 10.0
 
     ekf:

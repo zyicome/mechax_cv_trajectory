@@ -3,42 +3,109 @@
 <robot name="rm_gimbal"
   xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <link name="odom" />
+  <link name="leftodom" />
 
-  <link name="gimbal_link" />
+  <link name="left_gimbal_link" />
 
-  <joint name="gimbal_joint" type="fixed">
-    <parent link="odom" />
-    <child link="gimbal_link" />
+  <joint name="left_gimbal_joint" type="fixed">
+    <origin xyz="0.0 0 0" rpy="0 0 0" />
+    <parent link="leftodom" />
+    <child link="left_gimbal_link" />
   </joint>
 
-  <link name="camera_link" />
+  <link name="rightodom" />
 
-  <joint name="camera_joint" type="fixed">
+  <link name="right_gimbal_link" />
+
+  <joint name="right_gimbal_joint" type="fixed">
+    <origin xyz="0.0 0 0" rpy="0 0 0" />
+    <parent link="rightodom" />
+    <child link="right_gimbal_link" />
+  </joint>
+
+  <link name="bigodom" />
+
+  <joint name="bigodom_leftodom_joint" type="fixed">
+    <origin xyz="0.10 0 0" rpy="0 0 0" />
+    <parent link="leftodom" />
+    <child link="bigodom" />
+  </joint>
+
+  <joint name="bigodom_rightodom_link" type="fixed">
+    <origin xyz="0.10 0 0" rpy="0 0 0" />
+    <parent link="bigodom" />
+    <child link="rightodom" />
+  </joint>
+
+  <link name="big_gimbal_link" />
+
+  <joint name="big_gimbal_joint" type="fixed">
+    <origin xyz="0.0 0 0" rpy="0 0 0" />
+    <parent link="bigodom" />
+    <child link="big_gimbal_link" />
+  </joint>
+
+  <link name="front_camera_link"/>
+
+  <joint name="front_camera_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="big_gimbal_link" />
+    <child link="front_camera_link" />
+  </joint>
+
+  <link name="front_camera_optical_frame" />
+
+  <joint name="front_camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
+    <parent link="front_camera_link" />
+    <child link="front_camera_optical_frame" />
+  </joint>
+
+  <link name="back_camera_link" />
+
+  <joint name="back_camera_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="big_gimbal_link" />
+    <child link="back_camera_link" />
+  </joint>
+
+  <link name="back_camera_optical_frame" />
+
+  <joint name="back_camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
+    <parent link="back_camera_link" />
+    <child link="back_camera_optical_frame" />
+  </joint>
+
+  <link name="left_camera_link" />
+
+  <joint name="left_camera_joint" type="fixed">
     <origin xyz="0.050 0.000 0.040" rpy="0 ${pi/140} -${pi/160}" />
-    <parent link="gimbal_link" />
-    <child link="camera_link" />
+    <parent link="left_gimbal_link" />
+    <child link="left_camera_link" />
     <axis xyz="0 0 0" />
   </joint>
 
-  <link name="camera_optical_frame" />
+  <link name="left_camera_optical_frame" />
 
-  <joint name="camera_optical_joint" type="fixed">
+  <joint name="left_camera_optical_joint" type="fixed">
     <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}" />
-    <parent link="camera_link" />
-    <child link="camera_optical_frame" />
+    <parent link="left_camera_link" />
+    <child link="left_camera_optical_frame" />
   </joint>
 
   <link name="horizom_gimbal_link" />
 
-  <joint name="horizom_gimbal_joint" type="floating">
-    <parent link = "gimbal_link" />
+  <joint name="horizom_gimbal_joint" type="fixed">
+    <origin xyz="0.0 0 0" rpy="0 0 0" />
+    <parent link = "left_gimbal_link" />
     <child link = "horizom_gimbal_link" />
   </joint>
 
   <link name="prediction_gimbal_link" />
 
-  <joint name="prediction_gimbal_joint" type="floating">
+  <joint name="prediction_gimbal_joint" type="fixed">
+    <origin xyz="0.0 0 0" rpy="0 0 0" />
     <parent link = "horizom_gimbal_link" />
     <child link = "prediction_gimbal_link" />
   </joint>
@@ -59,14 +126,5 @@
     <parent link="prediction_camera_link" />
     <child link="prediction_camera_optical_frame" />
   </joint>
-
-  <link name="bigodom" />
-
-  <joint name="bigodom_joint" type="fixed">
-    <origin xyz="-0.10 0 0" rpy="0 0 0" />
-    <parent link="odom" />
-    <child link="bigodom" />
-  </joint>
-
 
 </robot>

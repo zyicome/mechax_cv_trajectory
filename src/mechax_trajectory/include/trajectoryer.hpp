@@ -7,6 +7,7 @@
 #include "auto_aim_interfaces/msg/send_serial.hpp"
 #include "auto_aim_interfaces/msg/target.hpp"
 #include "auto_aim_interfaces/msg/bias.hpp"
+#include "auto_aim_interfaces/msg/inter.hpp"
 #include <tf2_ros/transform_broadcaster.h>
 
 #include <geometry_msgs/msg/transform_stamped.hpp>
@@ -44,13 +45,13 @@ public:
 
     void parameters_init();
 
-    int no_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0);
+    int no_resistance_model(float &angle_pitch,const float &object_x,const float &object_y,const float &object_z,const float &v0);
 
-    int single_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
+    int single_resistance_model(float &angle_pitch,const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
 
-    int single_resistance_model_two(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
+    int single_resistance_model_two(float &angle_pitch,const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
 
-    int two_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
+    int two_resistance_model(float &angle_pitch, const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa);
 
     bool is_solvable(const float &object_x,const float &object_y,const float &object_z,const float &v0,float &alpha);
 
@@ -59,6 +60,12 @@ public:
     void test();
 
     void target_callback(const auto_aim_interfaces::msg::Target msg);
+
+    void right_result_callback(const auto_aim_interfaces::msg::Inter msg);
+
+    void front_assist_target_callback(const auto_aim_interfaces::msg::Target msg);
+
+    void back_assist_target_callback(const auto_aim_interfaces::msg::Target msg);
 
     void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg);
 
@@ -76,11 +83,15 @@ public:
 
     void get_bigyaw(const geometry_msgs::msg::PointStamped smallpose);
 
+    void assist_get_yaw_bigyaw(float &left_angle_pitch, float &left_angle_yaw,float &right_angle_pitch,float &right_angle_yaw,float &angle_bigyaw,const geometry_msgs::msg::PointStamped &pose);
+
     // parameters
     //------------------
     float v0; // m/s
-    float angle_pitch;
-    float angle_yaw;
+    float left_angle_pitch;
+    float left_angle_yaw;
+    float right_angle_pitch;
+    float right_angle_yaw;
     float angle_bigyaw;
     float fly_t; // m
     float bias_t;
@@ -107,20 +118,29 @@ public:
     float r_1;
     float r_2;
     float dz;
-    bool is_tracking;
+    bool is_left_tracking;
+    bool is_right_tracking;
+    bool is_assist_tracking;
     float distance;
     string id;
     //------------------
+    float assist_x;
+    float assist_y;
+    float assist_z;
     //------------------
     float randa;
     bool is_hero;
     //------------------
     float needchangeyaw;
-    bool is_can_hit;
+    bool is_left_can_hit;
+    bool is_right_can_hit;
     //------------------
     // Subsciption
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr target_sub_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr front_assist_target_sub_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr back_assist_target_sub_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Inter>::SharedPtr right_camera_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr angle_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::Bias>::SharedPtr changeyaw_sub_;
     //------------------

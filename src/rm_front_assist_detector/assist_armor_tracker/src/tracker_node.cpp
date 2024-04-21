@@ -5,12 +5,12 @@
 #include <memory>
 #include <vector>
 
-namespace rm_auto_aim
+namespace rm_front_assist_armor_detector
 {
 ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
-: Node("armor_tracker", options)
+: Node("armor_front_assist_tracker", options)
 {
-  RCLCPP_INFO(this->get_logger(), "Starting TrackerNode!");
+  RCLCPP_INFO(this->get_logger(), "Starting FrontAssistTrackerNode!");
 
   // Maximum allowable armor distance in the XOY plane
   max_armor_distance_ = this->declare_parameter("max_armor_distance", 10.0);
@@ -136,69 +136,20 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   tf2_buffer_->setCreateTimerInterface(timer_interface);
   tf2_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf2_buffer_);
   // subscriber and filter
-  armors_sub_.subscribe(this, "/detector/armors", rmw_qos_profile_sensor_data);
-  needpose_sub_.subscribe(this, "/trajectory/needpose", rmw_qos_profile_sensor_data);
-  armorpose_sub_.subscribe(this, "/trajectory/armorpose", rmw_qos_profile_sensor_data);
-  target_frame_ = this->declare_parameter("target_frame", "leftodom");
-  needpose_target_frame_ = "prediction_camera_optical_frame";
-  armorpose_target_frame_ = "prediction_camera_optical_frame";
+  armors_sub_.subscribe(this, "/front_assist/detector/armors", rmw_qos_profile_sensor_data);
+  target_frame_ = this->declare_parameter("target_frame", "bigodom");
   tf2_filter_ = std::make_shared<tf2_filter>(
     armors_sub_, *tf2_buffer_, target_frame_, 100, this->get_node_logging_interface(),
     this->get_node_clock_interface(), std::chrono::duration<int>(1));
-
-  needpose_tf2_filter_ = std::make_shared<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped>>(
-    needpose_sub_, *tf2_buffer_, needpose_target_frame_, 100, this->get_node_logging_interface(),
-    this->get_node_clock_interface(), std::chrono::duration<int>(1));
-
-  armorpose_tf2_filter_ = std::make_shared<tf2_ros::MessageFilter<geometry_msgs::msg::PointStamped>>(
-    armorpose_sub_, *tf2_buffer_, armorpose_target_frame_, 100, this->get_node_logging_interface(),
-    this->get_node_clock_interface(), std::chrono::duration<int>(1));
   // Register a callback with tf2_ros::MessageFilter to be called when transforms are available
   tf2_filter_->registerCallback(&ArmorTrackerNode::armorsCallback, this);
-  needpose_tf2_filter_->registerCallback(&ArmorTrackerNode::needposeCallback, this);
-  armorpose_tf2_filter_->registerCallback(&ArmorTrackerNode::armorposeCallback, this);
 
   // Measurement publisher (for debug usage)
-  info_pub_ = this->create_publisher<auto_aim_interfaces::msg::TrackerInfo>("/tracker/info", 10);
+  info_pub_ = this->create_publisher<auto_aim_interfaces::msg::TrackerInfo>("/front_assist/tracker/info", 10);
 
   // Publisher
   target_pub_ = this->create_publisher<auto_aim_interfaces::msg::Target>(
-    "/tracker/target", rclcpp::SensorDataQoS());
-
-    needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-    "/tracker/needpose", 100);
-
-    armorpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-    "/tracker/armorpose", 100);
-
-  // Visualization Marker Publisher
-  // See http://wiki.ros.org/rviz/DisplayTypes/Marker
-  position_marker_.ns = "position";
-  position_marker_.type = visualization_msgs::msg::Marker::SPHERE;
-  position_marker_.scale.x = position_marker_.scale.y = position_marker_.scale.z = 0.1;
-  position_marker_.color.a = 1.0;
-  position_marker_.color.g = 1.0;
-  linear_v_marker_.type = visualization_msgs::msg::Marker::ARROW;
-  linear_v_marker_.ns = "linear_v";
-  linear_v_marker_.scale.x = 0.03;
-  linear_v_marker_.scale.y = 0.05;
-  linear_v_marker_.color.a = 1.0;
-  linear_v_marker_.color.r = 1.0;
-  linear_v_marker_.color.g = 1.0;
-  angular_v_marker_.type = visualization_msgs::msg::Marker::ARROW;
-  angular_v_marker_.ns = "angular_v";
-  angular_v_marker_.scale.x = 0.03;
-  angular_v_marker_.scale.y = 0.05;
-  angular_v_marker_.color.a = 1.0;
-  angular_v_marker_.color.b = 1.0;
-  angular_v_marker_.color.g = 1.0;
-  armor_marker_.ns = "armors";
-  armor_marker_.type = visualization_msgs::msg::Marker::CUBE;
-  armor_marker_.scale.x = 0.03;
-  armor_marker_.scale.z = 0.125;
-  armor_marker_.color.a = 1.0;
-  armor_marker_.color.r = 1.0;
-  marker_pub_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("/tracker/marker", 10);
+    "/front_assist/tracker/target", rclcpp::SensorDataQoS());
 }
 
 void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::SharedPtr armors_msg)
@@ -293,134 +244,14 @@ void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::Sh
   last_time_ = time;
 
   target_pub_->publish(target_msg);
-
-  publishMarkers(target_msg);
-}
-
-void ArmorTrackerNode::needposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose)
-{
-  if(tf2_buffer_->canTransform("horizom_gimbal_link", "prediction_camera_optical_frame", tf2::TimePointZero)){
-      //std::cout << "Frames can be transformed" << std::endl;
-  }else{
-      std::cout << "needposeFrames cannot be transformed" << std::endl;
-      return;
-  }
-
-  geometry_msgs::msg::PointStamped ps;
-  ps.header = needpose->header;
-  ps.point = needpose->point;
-  try {
-    ps.point = tf2_buffer_->transform(ps, needpose_target_frame_).point;
-  } catch (const tf2::ExtrapolationException & ex) {
-    RCLCPP_ERROR(get_logger(), "needposeError while transforming %s", ex.what());
-    return;
-  }
-  needpose_pub_->publish(ps);
-}
-
-void ArmorTrackerNode::armorposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr armorpose)
-{
-  if(tf2_buffer_->canTransform("horizom_gimbal_link", "left_camera_optical_frame", tf2::TimePointZero)){
-      //std::cout << "Frames can be transformed" << std::endl;
-  }else{
-      std::cout << "armorposeFrames cannot be transformed" << std::endl;
-      return;
-  }
-
-  geometry_msgs::msg::PointStamped armorps;
-  armorps.header = armorpose->header;
-  armorps.point = armorpose->point;
-  try {
-    armorps.point = tf2_buffer_->transform(armorps, armorpose_target_frame_).point;
-  } catch (const tf2::ExtrapolationException & ex) {
-    RCLCPP_ERROR(get_logger(), "needposeError while transforming %s", ex.what());
-    return;
-  }
-  armorpose_pub_->publish(armorps);
-}
-
-void ArmorTrackerNode::publishMarkers(const auto_aim_interfaces::msg::Target & target_msg)
-{
-  position_marker_.header = target_msg.header;
-  linear_v_marker_.header = target_msg.header;
-  angular_v_marker_.header = target_msg.header;
-  armor_marker_.header = target_msg.header;
-
-  visualization_msgs::msg::MarkerArray marker_array;
-  if (target_msg.tracking) {
-    double yaw = target_msg.yaw, r1 = target_msg.radius_1, r2 = target_msg.radius_2;
-    double xc = target_msg.position.x, yc = target_msg.position.y, za = target_msg.position.z;
-    double vx = target_msg.velocity.x, vy = target_msg.velocity.y, vz = target_msg.velocity.z;
-    double dz = target_msg.dz;
-
-    position_marker_.action = visualization_msgs::msg::Marker::ADD;
-    position_marker_.pose.position.x = xc;
-    position_marker_.pose.position.y = yc;
-    position_marker_.pose.position.z = za + dz / 2;
-
-    linear_v_marker_.action = visualization_msgs::msg::Marker::ADD;
-    linear_v_marker_.points.clear();
-    linear_v_marker_.points.emplace_back(position_marker_.pose.position);
-    geometry_msgs::msg::Point arrow_end = position_marker_.pose.position;
-    arrow_end.x += vx;
-    arrow_end.y += vy;
-    arrow_end.z += vz;
-    linear_v_marker_.points.emplace_back(arrow_end);
-
-    angular_v_marker_.action = visualization_msgs::msg::Marker::ADD;
-    angular_v_marker_.points.clear();
-    angular_v_marker_.points.emplace_back(position_marker_.pose.position);
-    arrow_end = position_marker_.pose.position;
-    arrow_end.z += target_msg.v_yaw / M_PI;
-    angular_v_marker_.points.emplace_back(arrow_end);
-
-    armor_marker_.action = visualization_msgs::msg::Marker::ADD;
-    armor_marker_.scale.y = tracker_->tracked_armor.type == "small" ? 0.135 : 0.23;
-    bool is_current_pair = true;
-    size_t a_n = target_msg.armors_num;
-    geometry_msgs::msg::Point p_a;
-    double r = 0;
-    for (size_t i = 0; i < a_n; i++) {
-      double tmp_yaw = yaw + i * (2 * M_PI / a_n);
-      // Only 4 armors has 2 radius and height
-      if (a_n == 4) {
-        r = is_current_pair ? r1 : r2;
-        p_a.z = za + (is_current_pair ? 0 : dz);
-        is_current_pair = !is_current_pair;
-      } else {
-        r = r1;
-        p_a.z = za;
-      }
-      p_a.x = xc - r * cos(tmp_yaw);
-      p_a.y = yc - r * sin(tmp_yaw);
-
-      armor_marker_.id = i;
-      armor_marker_.pose.position = p_a;
-      tf2::Quaternion q;
-      q.setRPY(0, target_msg.id == "outpost" ? -0.26 : 0.26, tmp_yaw);
-      armor_marker_.pose.orientation = tf2::toMsg(q);
-      marker_array.markers.emplace_back(armor_marker_);
-    }
-  } else {
-    position_marker_.action = visualization_msgs::msg::Marker::DELETE;
-    linear_v_marker_.action = visualization_msgs::msg::Marker::DELETE;
-    angular_v_marker_.action = visualization_msgs::msg::Marker::DELETE;
-
-    armor_marker_.action = visualization_msgs::msg::Marker::DELETE;
-    marker_array.markers.emplace_back(armor_marker_);
-  }
-
-  marker_array.markers.emplace_back(position_marker_);
-  marker_array.markers.emplace_back(linear_v_marker_);
-  marker_array.markers.emplace_back(angular_v_marker_);
-  marker_pub_->publish(marker_array);
 }
 
 }  // namespace rm_auto_aim
 
+// Compare this snippet from src/rm_assist_detector/assist_armor_tracker/src/tracker_node.cpp:
 #include "rclcpp_components/register_node_macro.hpp"
 
 // Register the component with class_loader.
 // This acts as a sort of entry point, allowing the component to be discoverable when its library
 // is being loaded into a running process.
-RCLCPP_COMPONENTS_REGISTER_NODE(rm_auto_aim::ArmorTrackerNode)
+RCLCPP_COMPONENTS_REGISTER_NODE(rm_front_assist_armor_detector::ArmorTrackerNode)

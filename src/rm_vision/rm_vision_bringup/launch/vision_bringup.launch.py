@@ -11,29 +11,23 @@ def generate_launch_description():
     from launch_ros.actions import ComposableNodeContainer, Node
     from launch.actions import TimerAction, Shutdown
     from launch import LaunchDescription
-
-    def get_camera_node(package, plugin):
-        return ComposableNode(
-            package=package,    # 软件包
-            plugin=plugin,      # 插件，相当于调用其中的哪个类
-            name='camera_node', # 节点名称
-            parameters=[node_params], # 参数列表，保存在config中
-            #启用了节点间的进程内通信，这意味着节点之间可以更高效地进行通信
-            extra_arguments=[{'use_intra_process_comms': True}]
+    
+    def get_camera_node(package, executable):
+        return Node(
+            package=package,
+            executable=executable,
+            name='camera_node',
+            parameters=[node_params],
         )
 
-    def get_camera_detector_container(camera_node):
+    #def get_camera_detector_container(camera_node):
         return ComposableNodeContainer(
-            # 用于容纳和管理多个ROS节点的容器类，
-            # 它允许将多个节点组合在一起并一起运行。
-            # 创建了一个容器，包含相机节点和目标检测节点。
             name='camera_detector_container',
             namespace='',
             package='rclcpp_components',
             executable='component_container',
             composable_node_descriptions=[
                 camera_node,
-                # 配置目标检测节点
                 ComposableNode(
                     package='armor_detector',
                     plugin='rm_auto_aim::ArmorDetectorNode',
@@ -42,25 +36,44 @@ def generate_launch_description():
                     extra_arguments=[{'use_intra_process_comms': True}]
                 )
             ],
-            # 配置节点的输出方式，可以是 "screen"、"log" 或 "both"。
-            # 在这里，节点的输出被设置为 "both"，表示输出
-            # 会同时显示在屏幕和日志中
             output='both',
-            # 设置是否模拟终端。如果设置为 True，节点将模拟终端，以便在终端上显示输出
             emulate_tty=True,
-            # 用于传递额外的ROS参数给容器和容器中的节点，在这里设置节点的日志级别
             ros_arguments=['--ros-args', '--log-level',
-                           'armor_detector:='+launch_params['detector_log_level']], # 将不同的日志级别应用于不同的节点
+                           'armor_detector:='+launch_params['detector_log_level']],
             on_exit=Shutdown(),
         )
 
-    hik_camera_node = get_camera_node('hik_camera', 'hik_camera::HikCameraNode')
-    mv_camera_node = get_camera_node('mindvision_camera', 'mindvision_camera::MVCameraNode')
+    hik_camera_node = get_camera_node('hik_camera', 'hik_camera_node')
+    mv_camera_node = get_camera_node('mindvision_camera', 'mindvision_camera_node')
 
     if (launch_params['camera'] == 'hik'):
-        cam_detector = get_camera_detector_container(hik_camera_node)
+        cam_detector = hik_camera_node
     elif (launch_params['camera'] == 'mv'):
-        cam_detector = get_camera_detector_container(mv_camera_node)
+        cam_detector = mv_camera_node
+        
+    detector_node = Node(
+        package='armor_detector',
+        executable='armor_detector_node',
+        emulate_tty=True,
+        output='both',
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'armor_detector:='+launch_params['detector_log_level']],
+    )
+
+    delay_detector_node = TimerAction(
+        period=2.0,
+        actions=[detector_node],
+    )
+
+    trajectory_node = Node(
+        package='mechax_trajectory',
+        executable='mechax_trajectory',
+        name='mechax_trajectory',
+        output='both',
+        emulate_tty=True,
+        on_exit=Shutdown(),
+    )
 
     serial_driver_node = Node(
         package='rm_serial_driver',
@@ -73,16 +86,48 @@ def generate_launch_description():
         ros_arguments=['--ros-args', '--log-level',
                        'serial_driver:='+launch_params['serial_log_level']],
     )
-
-    trajectory_node = Node(
-        package='mechax_trajectory',
-        executable='mechax_trajectory',
-        name='mechax_trajectory',
-        output='both',
-        emulate_tty=True,
-        on_exit=Shutdown(),
+    
+    delay_tracker_node = TimerAction(
+        period=2.0,
+        actions=[tracker_node],
     )
 
+    # delay_trajectory_node = TimerAction(
+    #     period=2.5,
+    #     actions=[trajectory_node],
+    # )
+
+    assist_detector_node = Node(
+        package='front_assist_armor_detector',
+        executable='front_assist_armor_detector_node',
+        name='assist_armor_detector',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'assist_armor_detector:='+launch_params['assist_detector_log_level']],
+    )
+
+    assist_tracker_node = Node(
+        package='front_assist_armor_tracker',
+        executable='front_assist_armor_tracker_node',
+        name='assist_armor_tracker',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'assist_armor_tracker:='+launch_params['assist_tracker_log_level']],
+    )
+
+    delay_assist_detector_node = TimerAction(
+        period=2.5,
+        actions=[assist_detector_node],
+    )
+
+    delay_assist_tracker_node = TimerAction(
+        period=2.5,
+        actions=[assist_tracker_node],
+    )
     # delay_serial_node 会以1.5秒的周期触发执行串口驱动节点，
     # 而 delay_tracker_node 会以2.0秒的周期触发执行追踪节点。
     delay_serial_node = TimerAction(
@@ -90,20 +135,13 @@ def generate_launch_description():
         actions=[serial_driver_node],
     )
 
-    delay_tracker_node = TimerAction(
-        period=2.0,
-        actions=[tracker_node],
-    )
-
-    delay_trajectory_node = TimerAction(
-        period=2.0,
-        actions=[trajectory_node],
-    )
-
     return LaunchDescription([
-        robot_state_publisher, # 可视化
-        cam_detector,          # 相机+detector
-        delay_serial_node,     # 串口通信
-        delay_tracker_node,    # tracker
-        delay_trajectory_node, # 轨迹规划,弹道解算
+        robot_state_publisher,
+        cam_detector,
+        delay_detector_node,
+        delay_tracker_node,
+        trajectory_node,
+        delay_assist_detector_node,
+        delay_assist_tracker_node,
+        delay_serial_node
     ])

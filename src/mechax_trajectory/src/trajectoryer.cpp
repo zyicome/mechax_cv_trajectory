@@ -82,6 +82,15 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
         "/trajectory/armorpose", 10);
 
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
+
+    front_assist_target_sub_ = this->create_subscription<auto_aim_interfaces::msg::Target>(
+        "/front_assist/tracker/target", rclcpp::SensorDataQoS(), std::bind(&Trajectoryer::front_assist_target_callback, this, std::placeholders::_1));
+
+    back_assist_target_sub_ = this->create_subscription<auto_aim_interfaces::msg::Target>(
+        "/back_assist/tracker/target", rclcpp::SensorDataQoS(), std::bind(&Trajectoryer::back_assist_target_callback, this, std::placeholders::_1));
+
+    right_camera_sub_ = this->create_subscription<auto_aim_interfaces::msg::Inter>(
+        "/right_camera/result", rclcpp::SensorDataQoS(), std::bind(&Trajectoryer::right_result_callback, this, std::placeholders::_1));
    //timer_ = this->create_wall_timer(5s, std::bind(&Trajectoryer::test,this));
 }
 
@@ -129,16 +138,23 @@ void  Trajectoryer::parameters_init()
     z_bias = 0.0; // m
     //****************************************************
     needchangeyaw = 0.0;
+    is_left_tracking = 0;
+    is_right_tracking = 0;
+    is_assist_tracking = 0;
+    is_left_can_hit = 0;
+    is_right_can_hit = 0;
     angle_bigyaw = 0.0;
-    angle_pitch = 0.0;
-    angle_yaw = 0.0;
+    left_angle_pitch = 0.0;
+    left_angle_yaw = 0.0;
+    right_angle_pitch = 0.0;
+    right_angle_yaw = 0.0;
 }
 
 //@param: object_x, object_y, object_z, v0
 // 无空气阻力模型，最简单的模型，只考虑重力加速度，用来判断是否能够击打到目标
 //@result: angle_pitch, fly_t，不能直接使用，用来作为初始化数据, 需要用空气阻力模型进行修正
 //@return: 1:可以击打 0:无法击打到目标
-int Trajectoryer::no_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0)
+int Trajectoryer::no_resistance_model(float &angle_pitch,const float &object_x,const float &object_y,const float &object_z,const float &v0)
 {
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
     float alpha = 0.0;
@@ -161,10 +177,10 @@ int Trajectoryer::no_resistance_model(const float &object_x,const float &object_
 // 单空气阻力模型，运用牛顿迭代法，迭代10次，精度为0.001
 //@result: angle_pitch, fly_t (成员变量，刷新得到)
 //@return: 1:计算成功 0:无法迭代到结果精度或者迭代次数过多
-int Trajectoryer::single_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
+int Trajectoryer::single_resistance_model(float &angle_pitch,const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
 {
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
-    if(!no_resistance_model(object_x, object_y, object_z, v0))
+    if(!no_resistance_model(angle_pitch,object_x, object_y, object_z, v0))
     {
         return 0;
     }
@@ -201,10 +217,10 @@ int Trajectoryer::single_resistance_model(const float &object_x,const float &obj
 // 单空气阻力模型
 //@result: angle_pitch, fly_t  (成员变量，刷新得到)
 //@return: 1:计算成功 0:计算失败
-int Trajectoryer::single_resistance_model_two(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
+int Trajectoryer::single_resistance_model_two(float &angle_pitch,const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
 {
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
-    if(!no_resistance_model(object_x, object_y, object_z, v0))
+    if(!no_resistance_model(angle_pitch,object_x, object_y, object_z, v0))
     {
         return 0;
     }
@@ -236,10 +252,10 @@ int Trajectoryer::single_resistance_model_two(const float &object_x,const float 
 //双空气阻力模型
 //@result: angle_pitch, fly_t  (成员变量，刷新得到)
 //@return: 1:计算成功 0:计算失败
-int Trajectoryer::two_resistance_model(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
+int Trajectoryer::two_resistance_model(float &angle_pitch,const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
 {
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
-    if(!no_resistance_model(object_x, object_y, object_z, v0))
+    if(!no_resistance_model(angle_pitch,object_x, object_y, object_z, v0))
     {
         return 0;
     }
@@ -450,56 +466,27 @@ int Trajectoryer::solve_trajectory()
     {
         return 0;
     }*/
-    if(two_resistance_model(object_x, object_y, object_z, v0, randa) == 0)
+    if(two_resistance_model(left_angle_pitch,object_x, object_y, object_z, v0, randa) == 0)
     {
         return 0;
     }
-    angle_yaw = atan2(object_y, object_x);
+    left_angle_yaw = atan2(object_y, object_x);
     this->distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
     pose.header.stamp = this->now();
-    pose.header.frame_id = "odom";
+    pose.header.frame_id = "leftodom";
     pose.point.x = object_x;
     pose.point.y = object_y;
     pose.point.z = object_z;
 
-     armorpose.header.stamp = this->now();
-    armorpose.header.frame_id = "odom";
-    armorpose.point.x = object_x - vx * need_t;
-    armorpose.point.y = object_y - vy * need_t;
-    armorpose.point.z = object_z - vz * need_t;
-
-    needpose.header.stamp = this->now();
-    needpose.header.frame_id = "horizom_gimbal_link";
-    needpose.point.x = distance;
-    needpose.point.y = 0.0;
-    needpose.point.z = object_z;
-
-    geometry_msgs::msg::TransformStamped t;
-    t.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
-    t.header.frame_id = "gimbal_link";
-    t.child_frame_id = "horizom_gimbal_link";
-    tf2::Quaternion q;
-    q.setRPY(0, -now_pitch, 0);
-    t.transform.rotation = tf2::toMsg(q);
-    tf_broadcaster_->sendTransform(t);
-
-    // 创建坐标变换消息和发布
-    geometry_msgs::msg::TransformStamped t_p;
-    t_p.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
-    t_p.header.frame_id = "horizom_gimbal_link";
-    t_p.child_frame_id = "prediction_gimbal_link";
-    tf2::Quaternion q_p;
-    q_p.setRPY(0, -angle_pitch, 0);
-    t_p.transform.rotation = tf2::toMsg(q_p);
-    tf_broadcaster_->sendTransform(t_p);
-
-    /*get_needpose(needpose);
-    get_armorpose(pose);*/
-    needpose_pub_->publish(needpose);
-    armorpose_pub_->publish(armorpose);
-
-    get_bigyaw(pose);
-    return 1;
+    if(is_right_tracking == true)
+    {
+        return 1;   
+    }
+    else
+    {
+        get_bigyaw(pose);
+        return 1;
+    }
 }
 
 
@@ -512,9 +499,9 @@ void Trajectoryer::test()
     v0 = 16;
     now_pitch = 20 / 57.3f;
     now_yaw = 10 / 57.3f;
-    no_resistance_model(object_x, object_y, object_z, v0);
-    single_resistance_model(object_x, object_y, object_z, v0, randa);
-    single_resistance_model_two(object_x, object_y, object_z, v0, randa);
+    no_resistance_model(left_angle_pitch,object_x, object_y, object_z, v0);
+    single_resistance_model(left_angle_pitch,object_x, object_y, object_z, v0, randa);
+    single_resistance_model_two(left_angle_pitch,object_x, object_y, object_z, v0, randa);
     armor_num = 4;
     yaw = 10 / 53.7f;
     v_yaw = 0.2;
@@ -547,7 +534,7 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
     needpose.header.stamp = msg.header.stamp;
     needpose.header.frame_id = "horizom_gimbal_link";*/
 
-    is_tracking = msg.tracking;
+    is_left_tracking = msg.tracking;
     id = msg.id;
     armor_num = msg.armors_num;
     yaw = msg.yaw;
@@ -561,78 +548,249 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
     r_1 = msg.radius_1;
     r_2 = msg.radius_2;
     dz = msg.dz;
-    if(is_tracking)
+    if(is_left_tracking)
     {
         auto_aim_interfaces::msg::SendSerial result;
-        result.header.frame_id = "odom";
-        result.header.stamp = this->now();
         if(solve_trajectory() == 0)
         {
-            result.is_tracking = false;
-            result.is_can_hit = false;
-            result.pitch = 0.0;
-            result.yaw = 0.0;
-            result.bigyaw = 0.0;
-            result.distance = 0.0;
+            if(is_right_tracking == true)
+            {
+                result.header.frame_id = "rightodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = false;
+                result.is_right_tracking = is_right_tracking;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = false;
+                result.is_right_can_hit = is_right_can_hit;
+                result.left_pitch = 0.0;
+                result.left_yaw = 0.0;
+                result.right_pitch = right_angle_pitch * 57.3f;
+                result.right_yaw = right_angle_yaw * 57.3f;
+                result.bigyaw = angle_bigyaw * 57.3f;
+            }
+            else
+            {
+                result.header.frame_id = "not";
+                result.header.stamp = this->now();
+                result.is_left_tracking = false;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = false;
+                result.is_right_can_hit = false;
+                result.left_pitch = 0.0;
+                result.left_yaw = 0.0;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result.bigyaw = 0.0;
+            }
             result_pub_->publish(result);
             return;
         }
-        // RCLCPP_INFO(get_logger(), "need_pitch: %f", angle_pitch);
-        // RCLCPP_INFO(get_logger(), "need_yaw: %f", angle_yaw);
-        //if(is_shoot)
-        //{
-            //--------------------------------------------
-            //弧度制转角度制
-            float send_pitch = angle_pitch * 57.3f;
+            float send_pitch = left_angle_pitch * 57.3f;
             float send_yaw = 0.0;
             float send_bigyaw = angle_bigyaw * 57.3f;
             if((needchangeyaw) < 5 && (needchangeyaw) > -5 && distance > 1.5)
             {
-                send_yaw = (angle_yaw) * 57.3f + needchangeyaw;
+                send_yaw = (left_angle_yaw) * 57.3f + needchangeyaw;
                 //send_yaw = (angle_yaw) * 57.3f;
             }
             else{
-                send_yaw = (angle_yaw) * 57.3f;
+                send_yaw = (left_angle_yaw) * 57.3f;
             }
             if(distance > 6)
             {
-                is_can_hit = false;
+                is_left_can_hit = false;
             }
-            //std::cout << "needchangeyaw: " << (needchangeyaw) << std::endl;
-            //float send_yaw = (angle_yaw) * 57.3f;
-            //--------------------------------------------
-            result.is_tracking = is_tracking;
-            result.is_can_hit = true;
-            result.pitch = -send_pitch;
-            result.yaw = send_yaw;
-            result.bigyaw = send_bigyaw;
-            result.distance = distance;
+            if(is_right_tracking == true)
+            {
+                result.header.frame_id = "allodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = is_left_tracking;
+                result.is_right_tracking = is_right_tracking;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = is_left_can_hit;
+                result.is_right_can_hit = is_right_can_hit;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = -left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = -right_angle_pitch * 57.3f;
+                result.right_yaw = right_angle_yaw * 57.3f;
+                result_pub_->publish(result);
+            }
+            else
+            {
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = is_left_tracking;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = is_left_can_hit;
+                result.is_right_can_hit = false;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = -left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result_pub_->publish(result);
+            }
             result_pub_->publish(result);
-            //RCLCPP_INFO(get_logger(), "send need angle!");
-            //is_shoot = false;
-        //}
     }
     else
     {
-        auto_aim_interfaces::msg::SendSerial result;
-        result.header.frame_id = "odom";
-        result.header.stamp = this->now();
-        result.is_tracking = is_tracking;
-        result.is_can_hit = false;
-        result.bigyaw = 0.0;
-        result.pitch = 0.0;
-        result.yaw = 0.0;
-        result.distance = 0.0;
-        result_pub_->publish(result);
+        if(is_assist_tracking == false && is_right_tracking == true)
+        {
+            auto_aim_interfaces::msg::SendSerial result;
+            result.header.frame_id = "rightodom";
+            result.header.stamp = this->now();
+            result.is_left_tracking = false;
+            result.is_right_tracking = is_right_tracking;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = is_right_can_hit;
+            result.bigyaw = angle_bigyaw * 57.3f;
+            result.left_pitch = 0.0;
+            result.left_yaw = 0.0;
+            result.right_pitch = -right_angle_pitch * 57.3f;
+            result.right_yaw = right_angle_yaw * 57.3f;
+            result_pub_->publish(result);
+        }
+        else if(is_assist_tracking == false && is_left_tracking == false)
+        {
+            auto_aim_interfaces::msg::SendSerial result;
+            result.header.frame_id = "notodom";
+            result.header.stamp = this->now();
+            result.is_left_tracking = false;
+            result.is_right_tracking = false;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = false;
+            result.bigyaw = 0.0;
+            result.left_pitch = 0.0;
+            result.left_yaw = 0.0;
+            result.right_pitch = 0.0;
+            result.right_yaw = 0.0;
+            result_pub_->publish(result);
+        }
     }
 }
 
+void Trajectoryer::right_result_callback(const auto_aim_interfaces::msg::Inter msg)
+{
+    is_right_tracking = msg.is_right_tracking;
+    is_right_can_hit = msg.is_right_can_hit;
+    if(is_left_tracking == false)
+    {
+        angle_bigyaw = msg.bigyaw;
+    }
+    right_angle_pitch = msg.right_pitch;
+    right_angle_yaw = msg.right_yaw;
+}
+
+void Trajectoryer::front_assist_target_callback(const auto_aim_interfaces::msg::Target msg)
+{
+    if(is_left_tracking == true || is_right_tracking == true)
+    {
+        is_assist_tracking = false;
+        return;
+    }
+    if(is_assist_tracking == true)
+    {
+        return;
+    }
+    is_assist_tracking = msg.tracking;
+    assist_x = msg.position.x;
+    assist_y = msg.position.y;
+    assist_z = msg.position.z;
+
+    geometry_msgs::msg::PointStamped pose;
+    pose.header.stamp = this->now();
+    pose.header.frame_id = "odom";
+    pose.point.x = assist_x;
+    pose.point.y = assist_y;
+    pose.point.z = assist_z;
+    assist_get_yaw_bigyaw(left_angle_pitch,left_angle_yaw,right_angle_pitch,right_angle_yaw,angle_bigyaw,pose);
+
+    if(is_assist_tracking)
+    {
+        auto_aim_interfaces::msg::SendSerial result;
+        result.header.frame_id = "bigodom";
+        result.header.stamp = this->now();
+
+            float left_send_pitch = left_angle_pitch * 57.3f;
+            float left_send_yaw = left_angle_yaw * 57.3f;
+            float right_send_pitch = right_angle_pitch * 57.3f;
+            float right_send_yaw = right_angle_yaw * 57.3f;
+            float send_bigyaw = angle_bigyaw * 57.3f;
+            result.is_left_tracking = false;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = true;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = false;
+            result.bigyaw = send_bigyaw;
+            result.left_pitch = -left_send_pitch;
+            result.left_yaw = left_send_yaw;
+            result.right_pitch = -right_send_pitch;
+            result.right_yaw = right_send_yaw;
+            result_pub_->publish(result);
+    }
+
+    is_assist_tracking = false;
+}
+
+void Trajectoryer::back_assist_target_callback(const auto_aim_interfaces::msg::Target msg)
+{
+    if(is_left_tracking == true || is_right_tracking == true)
+    {
+        is_assist_tracking = false;
+        return;
+    }
+    if(is_assist_tracking == true)
+    {
+        return;
+    }
+    is_assist_tracking = msg.tracking;
+    assist_x = msg.position.x;
+    assist_y = msg.position.y;
+    assist_z = msg.position.z;
+
+    geometry_msgs::msg::PointStamped pose;
+    pose.header.stamp = this->now();
+    pose.header.frame_id = "odom";
+    pose.point.x = assist_x;
+    pose.point.y = assist_y;
+    pose.point.z = assist_z;
+    assist_get_yaw_bigyaw(left_angle_pitch,left_angle_yaw,right_angle_pitch,right_angle_yaw,angle_bigyaw,pose);
+
+    if(is_assist_tracking)
+    {
+        auto_aim_interfaces::msg::SendSerial result;
+        result.header.frame_id = "bigodom";
+        result.header.stamp = this->now();
+
+            float left_send_pitch = left_angle_pitch * 57.3f;
+            float left_send_yaw = left_angle_yaw * 57.3f;
+            float right_send_pitch = right_angle_pitch * 57.3f;
+            float right_send_yaw = right_angle_yaw * 57.3f;
+            float send_bigyaw = angle_bigyaw * 57.3f;
+            result.is_left_tracking = false;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = true;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = false;
+            result.bigyaw = send_bigyaw;
+            result.left_pitch = -left_send_pitch;
+            result.left_yaw = left_send_yaw;
+            result.right_pitch = -right_send_pitch;
+            result.right_yaw = right_send_yaw;
+            result_pub_->publish(result);
+    }
+
+    is_assist_tracking = false;
+}
 
 //接受串口发来的信息，得到当前云台的pitch和yaw角度,以及是否开启自瞄模式
 void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg)
 {
-    now_pitch = msg.pitch / 57.3f;
-    now_yaw = msg.yaw / 57.3f;
+    now_pitch = msg.left_pitch / 57.3f;
+    now_yaw = msg.left_yaw / 57.3f;
     // RCLCPP_INFO(get_logger(), "now_pitch: %f", now_pitch);
     // RCLCPP_INFO(get_logger(), "now_yaw: %f", now_yaw);
     // 创建坐标变换消息和发布
@@ -659,7 +817,7 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
 void Trajectoryer::changeyaw_callback(const auto_aim_interfaces::msg::Bias msg)
 {
     needchangeyaw = msg.needchangeyaw;
-    is_can_hit = msg.is_can_hit;
+    is_left_can_hit = msg.is_can_hit;
 }
 
 void Trajectoryer::get_need_pose(const geometry_msgs::msg::PointStamped pose)
@@ -667,7 +825,7 @@ void Trajectoryer::get_need_pose(const geometry_msgs::msg::PointStamped pose)
     // 创建坐标变换消息和发布
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = this->now();
-    t.header.frame_id = "gimbal_link";
+    t.header.frame_id = "left_gimbal_link";
     t.child_frame_id = "horizom_gimbal_link";
     tf2::Quaternion q;
     q.setRPY(0, -now_pitch, 0);
@@ -680,7 +838,7 @@ void Trajectoryer::get_need_pose(const geometry_msgs::msg::PointStamped pose)
     t_p.header.frame_id = "horizom_gimbal_link";
     t_p.child_frame_id = "prediction_gimbal_link";
     tf2::Quaternion q_p;
-    q_p.setRPY(0, -angle_pitch, 0);
+    q_p.setRPY(0, -left_angle_pitch, 0);
     t_p.transform.rotation = tf2::toMsg(q_p);
     tf_broadcaster_->sendTransform(t_p);
 
@@ -739,7 +897,7 @@ void Trajectoryer::get_needpose(const geometry_msgs::msg::PointStamped needpose)
 
 void Trajectoryer::get_armorpose(const geometry_msgs::msg::PointStamped armorpose)
 {
-    if(tf2_buffer_->canTransform("odom", "camera_optical_frame", tf2::TimePointZero)){
+    if(tf2_buffer_->canTransform("leftodom", "left_camera_optical_frame", tf2::TimePointZero)){
       //std::cout << "Frames can be transformed" << std::endl;
     }else{
       std::cout << "armorposeFrames cannot be transformed" << std::endl;
@@ -750,7 +908,7 @@ void Trajectoryer::get_armorpose(const geometry_msgs::msg::PointStamped armorpos
     armorps.header = armorpose.header;
     armorps.point = armorpose.point;
     try {
-        armorps.point = tf2_buffer_->transform(armorps, "camera_optical_frame").point;
+        armorps.point = tf2_buffer_->transform(armorps, "left_camera_optical_frame").point;
     } catch (const tf2::ExtrapolationException & ex) {
         RCLCPP_ERROR(get_logger(), "armorposeError while transforming %s", ex.what());
         return;
@@ -760,7 +918,7 @@ void Trajectoryer::get_armorpose(const geometry_msgs::msg::PointStamped armorpos
 
 void Trajectoryer::get_bigyaw(const geometry_msgs::msg::PointStamped smallpose)
 {
-    if(tf2_buffer_->canTransform("odom", "bigodom", tf2::TimePointZero)){
+    if(tf2_buffer_->canTransform("leftodom", "bigodom", tf2::TimePointZero)){
       //std::cout << "Frames can be transformed" << std::endl;
     }else{
       std::cout << "bigyawFrames cannot be transformed" << std::endl;
@@ -778,5 +936,57 @@ void Trajectoryer::get_bigyaw(const geometry_msgs::msg::PointStamped smallpose)
     }
     
     angle_bigyaw = atan2(bigps.point.y, bigps.point.x);
+}
+
+void Trajectoryer::assist_get_yaw_bigyaw(float &left_angle_pitch, float &left_angle_yaw,float &right_angle_pitch,float &right_angle_yaw,float &angle_bigyaw,const geometry_msgs::msg::PointStamped &pose)
+{
+    if(tf2_buffer_->canTransform("bigodom", "leftodom", tf2::TimePointZero)){
+      //std::cout << "Frames can be transformed" << std::endl;
+    }else{
+      std::cout << "leftyawFrames cannot be transformed" << std::endl;
+      return;
+    }
+    if(tf2_buffer_->canTransform("bigodom", "rightodom", tf2::TimePointZero)){
+      //std::cout << "Frames can be transformed" << std::endl;
+    }else{
+      std::cout << "rightyawFrames cannot be transformed" << std::endl;
+      return;
+    }
+
+    geometry_msgs::msg::PointStamped leftps;
+    leftps.header.stamp = pose.header.stamp;
+    leftps.header.frame_id = "bigodom";
+    leftps.point = pose.point;
+    try {
+        leftps.point = tf2_buffer_->transform(leftps, "leftodom").point;
+    } catch (const tf2::ExtrapolationException & ex) {
+        RCLCPP_ERROR(get_logger(), "Error while transforming %s", ex.what());
+        return;
+    }
+    
+    if(two_resistance_model(left_angle_pitch,leftps.point.x, leftps.point.y, leftps.point.z, v0, randa) == 0)
+    {
+        is_assist_tracking = false;
+    }
+    left_angle_yaw = atan2(leftps.point.y, leftps.point.x);
+
+    geometry_msgs::msg::PointStamped rightps;
+    rightps.header.stamp = pose.header.stamp;
+    rightps.header.frame_id = "bigodom";
+    rightps.point = pose.point;
+    try {
+        rightps.point = tf2_buffer_->transform(rightps, "rightodom").point;
+    } catch (const tf2::ExtrapolationException & ex) {
+        RCLCPP_ERROR(get_logger(), "Error while transforming %s", ex.what());
+        return;
+    }
+
+    if(two_resistance_model(right_angle_pitch,rightps.point.x, rightps.point.y, rightps.point.z, v0, randa) == 0)
+    {
+        is_assist_tracking = false;
+    }
+    right_angle_yaw = atan2(rightps.point.y, rightps.point.x);
+
+    angle_bigyaw = atan2(pose.point.y, pose.point.x);
 }
 //---------------------------------------------------------------------------

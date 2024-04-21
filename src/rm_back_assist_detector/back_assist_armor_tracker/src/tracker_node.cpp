@@ -5,12 +5,12 @@
 #include <memory>
 #include <vector>
 
-namespace rm_front_assist_armor_detector
+namespace rm_back_assist_armor_detector
 {
 ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
 : Node("armor_front_assist_tracker", options)
 {
-  RCLCPP_INFO(this->get_logger(), "Starting FrontAssistTrackerNode!");
+  RCLCPP_INFO(this->get_logger(), "Starting BackAssistTrackerNode!");
 
   // Maximum allowable armor distance in the XOY plane
   max_armor_distance_ = this->declare_parameter("max_armor_distance", 10.0);
@@ -136,8 +136,8 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   tf2_buffer_->setCreateTimerInterface(timer_interface);
   tf2_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf2_buffer_);
   // subscriber and filter
-  armors_sub_.subscribe(this, "/front_assist/detector/armors", rmw_qos_profile_sensor_data);
-  target_frame_ = this->declare_parameter("target_frame", "odom");
+  armors_sub_.subscribe(this, "/bcak_assist/detector/armors", rmw_qos_profile_sensor_data);
+  target_frame_ = this->declare_parameter("target_frame", "bigodom");
   tf2_filter_ = std::make_shared<tf2_filter>(
     armors_sub_, *tf2_buffer_, target_frame_, 100, this->get_node_logging_interface(),
     this->get_node_clock_interface(), std::chrono::duration<int>(1));
@@ -145,11 +145,11 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   tf2_filter_->registerCallback(&ArmorTrackerNode::armorsCallback, this);
 
   // Measurement publisher (for debug usage)
-  info_pub_ = this->create_publisher<auto_aim_interfaces::msg::TrackerInfo>("/tracker/info", 10);
+  info_pub_ = this->create_publisher<auto_aim_interfaces::msg::TrackerInfo>("/back_assist/tracker/info", 10);
 
   // Publisher
   target_pub_ = this->create_publisher<auto_aim_interfaces::msg::Target>(
-    "/front_assist/tracker/target", rclcpp::SensorDataQoS());
+    "/bcak_assist/tracker/target", rclcpp::SensorDataQoS());
 }
 
 void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::SharedPtr armors_msg)
@@ -254,4 +254,4 @@ void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::Sh
 // Register the component with class_loader.
 // This acts as a sort of entry point, allowing the component to be discoverable when its library
 // is being loaded into a running process.
-RCLCPP_COMPONENTS_REGISTER_NODE(rm_front_assist_armor_detector::ArmorTrackerNode)
+RCLCPP_COMPONENTS_REGISTER_NODE(rm_back_assist_armor_detector::ArmorTrackerNode)

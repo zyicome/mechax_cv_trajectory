@@ -15,20 +15,27 @@ struct ReceivePacket
 {
   uint8_t header = 0x5A; 
   uint8_t detect_color;  // 0-red 1-blue 发1
-  float yaw;               // rad       
-  float pitch;                 // rad
+  float bigyaw;
+  float left_yaw;               // rad       
+  float left_pitch;
+  float right_yaw;
+  float right_pitch;                 // rad
   uint16_t checksum = 0;     // crc16校验位 https://blog.csdn.net/ydyuse/article/details/105395368
 } __attribute__((packed));
 
 struct SendPacket
 {
   uint8_t header = 0xA5;
-  bool is_tracking;
-  bool is_can_hit;
+  bool is_left_tracking;
+  bool is_right_tracking;
+  bool is_assist_tracking;
+  bool is_left_can_hit;
+  bool is_right_can_hit;
   float bigyaw;
-  float yaw;
-  float pitch;
-  float distance;
+  float left_yaw;
+  float left_pitch;
+  float right_yaw;
+  float right_pitch;
   uint16_t checksum;
 } __attribute__((packed));
 

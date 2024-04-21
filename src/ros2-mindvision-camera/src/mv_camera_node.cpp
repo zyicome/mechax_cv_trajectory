@@ -100,7 +100,7 @@ public:
     capture_thread_ = std::thread{[this]() -> void {
       RCLCPP_INFO(this->get_logger(), "Publishing image!");
 
-      image_msg_.header.frame_id = "camera_optical_frame";
+      image_msg_.header.frame_id = "front_camera_optical_frame";
       image_msg_.encoding = "rgb8";
 
       while (rclcpp::ok()) {

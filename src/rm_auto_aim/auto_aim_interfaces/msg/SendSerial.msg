@@ -1,7 +1,11 @@
 std_msgs/Header header
-bool is_tracking
-bool is_can_hit
+bool is_left_tracking
+bool is_right_tracking
+bool is_assist_tracking
+bool is_left_can_hit
+bool is_right_can_hit
 float64 bigyaw
-float64 yaw
-float64 pitch
-float64 distance
+float64 left_yaw
+float64 left_pitch
+float64 right_yaw
+float64 right_pitch

@@ -1,3 +1,6 @@
 std_msgs/Header header
-float64 yaw
-float64 pitch
+float64 bigyaw
+float64 left_yaw
+float64 left_pitch
+float64 right_yaw
+float64 right_pitch

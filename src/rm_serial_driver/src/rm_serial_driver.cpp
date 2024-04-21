@@ -206,30 +206,42 @@ void RMSerialDriver::receiveData()
                       }
 
                       // 创建坐标变换消息和发布
-                      geometry_msgs::msg::TransformStamped t;
+                      geometry_msgs::msg::TransformStamped t_left;
                       timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
-                      t.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
-                      t.header.frame_id = "odom";
-                      t.child_frame_id = "gimbal_link";
-                      tf2::Quaternion q;
-                      q.setRPY(0.0, packet.pitch / 57.3f, packet.yaw / 57.3f);
-                      t.transform.rotation = tf2::toMsg(q);
-                      tf_broadcaster_->sendTransform(t);
+                      t_left.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t_left.header.frame_id = "leftodom";
+                      t_left.child_frame_id = "left_gimbal_link";
+                      tf2::Quaternion q_left;
+                      q_left.setRPY(0.0, packet.left_pitch / 57.3f, packet.left_yaw / 57.3f);
+                      t_left.transform.rotation = tf2::toMsg(q_left);
+                      tf_broadcaster_->sendTransform(t_left);
 
-                      /*// 创建坐标变换消息和发布
-                      geometry_msgs::msg::TransformStamped t_p;
-                      t_p.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
-                      t_p.header.frame_id = "gimbal_link";
-                      t_p.child_frame_id = "horizom_gimbal_link";
-                      tf2::Quaternion q_p;
-                      q_p.setRPY(0, -packet.pitch / 57.3f, 0);
-                      t_p.transform.rotation = tf2::toMsg(q_p);
-                      tf_broadcaster_->sendTransform(t_p);*/
+                      // 创建坐标变换消息和发布
+                      geometry_msgs::msg::TransformStamped t_right;
+                      t_right.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t_right.header.frame_id = "rightodom";
+                      t_right.child_frame_id = "right_gimbal_link";
+                      tf2::Quaternion q_right;
+                      q_right.setRPY(0, packet.right_pitch / 57.3f, packet.right_yaw / 57.3f);
+                      t_right.transform.rotation = tf2::toMsg(q_right);
+                      tf_broadcaster_->sendTransform(t_right);
 
-                      receive_serial_msg_.header.frame_id = "odom";
+                      geometry_msgs::msg::TransformStamped t_big;
+                      t_big.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t_big.header.frame_id = "bigodom";
+                      t_big.child_frame_id = "big_gimbal_link";
+                      tf2::Quaternion q_big;
+                      q_big.setRPY(0,  0, packet.bigyaw / 57.3f);
+                      t_big.transform.rotation = tf2::toMsg(q_big);
+                      tf_broadcaster_->sendTransform(t_big);
+
+                      receive_serial_msg_.header.frame_id = "leftodom";
                       receive_serial_msg_.header.stamp = this->now();
-                      receive_serial_msg_.pitch = packet.pitch;
-                      receive_serial_msg_.yaw = packet.yaw;
+                      receive_serial_msg_.left_pitch = packet.left_pitch;
+                      receive_serial_msg_.left_yaw = packet.left_yaw;
+                      receive_serial_msg_.right_pitch = packet.right_pitch;
+                      receive_serial_msg_.right_yaw = packet.right_yaw;
+                      receive_serial_msg_.bigyaw = packet.bigyaw;
                       serial_pub_->publish(receive_serial_msg_);
                       //std::cout<< "good "<< std::endl;
                       }
@@ -271,18 +283,22 @@ void RMSerialDriver::sendData(const auto_aim_interfaces::msg::SendSerial msg)
 
     SendPacket packet;
     packet.header = 0xA5;
-    packet.is_tracking = msg.is_tracking;
-    packet.is_can_hit = msg.is_can_hit;
+    packet.is_left_tracking = msg.is_left_tracking;
+    packet.is_right_tracking = msg.is_right_tracking;
+    packet.is_assist_tracking = msg.is_assist_tracking;
+    packet.is_left_can_hit = msg.is_left_can_hit;
+    packet.is_right_can_hit = msg.is_right_can_hit;
     packet.bigyaw = msg.bigyaw;
-    packet.yaw = msg.yaw;
-    packet.pitch = msg.pitch;
-    packet.distance = msg.distance;
+    packet.left_yaw = msg.left_yaw;
+    packet.left_pitch = msg.left_pitch;
+    packet.right_yaw = msg.right_yaw;
+    packet.right_pitch = msg.right_pitch;
     
     //crc16::Append_CRC16_Check_Sum(reinterpret_cast<uint8_t *>(&packet), sizeof(packet));
 
-    CRC_check = crc16::Get_CRC16_Check_Sum(reinterpret_cast<uint8_t *>(&packet), sizeof(packet), CRC16_init);
+    CRC_check = crc16::Get_CRC16_Check_Sum(reinterpret_cast<uint8_t *>(&packet), sizeof(packet) - 2, CRC16_init);
 
-    std::cout << "CRC_check: " << CRC_check << std::endl;
+    //std::cout << "CRC_check: " << CRC_check << std::endl;
 
     packet.checksum = CRC_check;
 
