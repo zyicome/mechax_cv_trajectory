@@ -59,7 +59,7 @@ public:
 
     void test();
 
-    void target_callback(const auto_aim_interfaces::msg::Target msg);
+    void left_camera_target_callback(const auto_aim_interfaces::msg::Target msg);
 
     void right_result_callback(const auto_aim_interfaces::msg::Inter msg);
 
@@ -137,7 +137,7 @@ public:
     //------------------
     // Subsciption
     //------------------
-    rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr target_sub_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr left_camera_target_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr front_assist_target_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr back_assist_target_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::Inter>::SharedPtr right_camera_sub_;
@@ -150,6 +150,7 @@ public:
     rclcpp::Publisher<auto_aim_interfaces::msg::SendSerial>::SharedPtr result_pub_;
     rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr needpose_pub_;
     rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr armorpose_pub_;
+    rclcpp::Publisher<auto_aim_interfaces::msg::Inter>::SharedPtr left_camera_pub_;
     //------------------
     //timer
     //------------------

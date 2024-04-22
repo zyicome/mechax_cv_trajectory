@@ -60,8 +60,8 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     tf2_init();
 
-    target_sub_ = this->create_subscription<auto_aim_interfaces::msg::Target>(
-                  "/tracker/target", rclcpp::SensorDataQoS(), std::bind(&Trajectoryer::target_callback, this, std::placeholders::_1));
+    left_camera_target_sub_ = this->create_subscription<auto_aim_interfaces::msg::Target>(
+                  "/left_camera/tracker/target", rclcpp::SensorDataQoS(), std::bind(&Trajectoryer::left_camera_target_callback, this, std::placeholders::_1));
 
     angle_sub_ = this->create_subscription<auto_aim_interfaces::msg::ReceiveSerial>(
         "/angle/init", 10, std::bind(&Trajectoryer::angle_callback, this, std::placeholders::_1));
@@ -80,6 +80,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     armorpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
         "/trajectory/armorpose", 10);
+
+    left_camera_pub_ = this->create_publisher<auto_aim_interfaces::msg::Inter>(
+        "/left_camera/result", 10);
 
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
@@ -523,7 +526,7 @@ void Trajectoryer::test()
 //得到通过追踪到的装甲板相对于云台的信息
 //如果追踪到目标并且开启了自瞄模式，则解算弹道，得到需要的pitch和yaw角度
 //通过SendSerial信息类型的result发布给serial_driver
-void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
+void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::Target msg)
 {
     /*pose.header.stamp = msg.header.stamp;
     pose.header.frame_id = "odom";

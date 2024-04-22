@@ -27,19 +27,19 @@
 #include "armor_detector/armor.hpp"
 #include "armor_detector/detector_node.hpp"
 
-namespace rm_back_assist_armor_detector
+namespace rm_front_assist_armor_detector
 {
 ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
-: Node("armor_back_assist_detector", options)
+: Node("armor_front_assist_detector", options)
 {
-  RCLCPP_INFO(this->get_logger(), "Starting BackAssistDetectorNode!");
+  RCLCPP_INFO(this->get_logger(), "Starting FrontAssistDetectorNode!");
 
   // Detector
   detector_ = initDetector();
 
   // Armors Publisher
   armors_pub_ = this->create_publisher<auto_aim_interfaces::msg::Armors>(
-    "/back_assist/detector/armors", rclcpp::SensorDataQoS());
+    "/front_assist/detector/armors", rclcpp::SensorDataQoS());
 
   // Visualization Marker Publisher
   // See http://wiki.ros.org/rviz/DisplayTypes/Marker
@@ -101,7 +101,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
 
   img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
     // "/camera/image_color", rclcpp::SensorDataQoS(),
-    "/image_back", rclcpp::SensorDataQoS(),
+    "/image_front", rclcpp::SensorDataQoS(),
     std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
 }
 
@@ -186,7 +186,7 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
   auto detector = std::make_unique<Detector>(binary_thres, detect_color, l_params, a_params);
 
   // Init classifier
-  auto pkg_path = ament_index_cpp::get_package_share_directory("back_armor_detector");
+  auto pkg_path = ament_index_cpp::get_package_share_directory("front_armor_detector");
   auto model_path = pkg_path + "/model/mlp.onnx";
   auto label_path = pkg_path + "/model/label.txt";
   double threshold = this->declare_parameter("classifier_threshold", 0.7);
@@ -255,13 +255,13 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
 void ArmorDetectorNode::createDebugPublishers()
 {
   lights_data_pub_ =
-    this->create_publisher<auto_aim_interfaces::msg::DebugLights>("/backassist/detector/debug_lights", 10);
+    this->create_publisher<auto_aim_interfaces::msg::DebugLights>("/frontassist/detector/debug_lights", 10);
   armors_data_pub_ =
-    this->create_publisher<auto_aim_interfaces::msg::DebugArmors>("/backassist/detector/debug_armors", 10);
+    this->create_publisher<auto_aim_interfaces::msg::DebugArmors>("/frontassist/detector/debug_armors", 10);
 
-  binary_img_pub_ = image_transport::create_publisher(this, "/backassist/detector/binary_img");
-  number_img_pub_ = image_transport::create_publisher(this, "/backassist/detector/number_img");
-  result_img_pub_ = image_transport::create_publisher(this, "/backassist/detector/result_img");
+  binary_img_pub_ = image_transport::create_publisher(this, "/frontassist/detector/binary_img");
+  number_img_pub_ = image_transport::create_publisher(this, "/frontassist/detector/number_img");
+  result_img_pub_ = image_transport::create_publisher(this, "/frontassist/detector/result_img");
 }
 
 void ArmorDetectorNode::destroyDebugPublishers()
@@ -277,4 +277,4 @@ void ArmorDetectorNode::destroyDebugPublishers()
 }  // namespace rm_auto_aim
 
 #include "rclcpp_components/register_node_macro.hpp"
-RCLCPP_COMPONENTS_REGISTER_NODE(rm_back_assist_armor_detector::ArmorDetectorNode)
+RCLCPP_COMPONENTS_REGISTER_NODE(rm_front_assist_armor_detector::ArmorDetectorNode)

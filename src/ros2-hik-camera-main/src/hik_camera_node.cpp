@@ -44,7 +44,7 @@ public:
 
     bool use_sensor_data_qos = this->declare_parameter("use_sensor_data_qos", true);
     auto qos = use_sensor_data_qos ? rmw_qos_profile_sensor_data : rmw_qos_profile_default;
-    camera_pub_ = image_transport::create_camera_publisher(this, "image_raw", qos);
+    camera_pub_ = image_transport::create_camera_publisher(this, "image_left", qos);
 
     declareParameters();
 
