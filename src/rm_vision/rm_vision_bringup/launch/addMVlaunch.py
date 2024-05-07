@@ -52,13 +52,14 @@ def generate_launch_description():
         cam_detector = mv_camera_node
         
     detector_node = Node(
-        package='armor_detector',
-        executable='armor_detector_node',
+        package='left_armor_detector',
+        executable='left_armor_detector_node',
+        name='left_armor_detector',
         emulate_tty=True,
         output='both',
         parameters=[node_params],
         arguments=['--ros-args', '--log-level',
-                   'armor_detector:='+launch_params['detector_log_level']],
+                   'left_armor_detector:='+launch_params['detector_log_level']],
     )
 
     delay_detector_node = TimerAction(

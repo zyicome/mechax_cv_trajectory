@@ -8,7 +8,7 @@
 namespace rm_left_auto_aim
 {
 ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
-: Node("armor_tracker", options)
+: Node("left_armor_tracker", options)
 {
   RCLCPP_INFO(this->get_logger(), "Starting LeftTrackerNode!");
 
@@ -137,8 +137,8 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   tf2_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf2_buffer_);
   // subscriber and filter
   armors_sub_.subscribe(this, "/left_camera/detector/armors", rmw_qos_profile_sensor_data);
-  needpose_sub_.subscribe(this, "/trajectory/needpose", rmw_qos_profile_sensor_data);
-  armorpose_sub_.subscribe(this, "/trajectory/armorpose", rmw_qos_profile_sensor_data);
+  needpose_sub_.subscribe(this, "/left_camera/trajectory/needpose", rmw_qos_profile_sensor_data);
+  armorpose_sub_.subscribe(this, "/left_camera/trajectory/armorpose", rmw_qos_profile_sensor_data);
   target_frame_ = this->declare_parameter("target_frame", "leftodom");
   needpose_target_frame_ = "prediction_camera_optical_frame";
   armorpose_target_frame_ = "prediction_camera_optical_frame";

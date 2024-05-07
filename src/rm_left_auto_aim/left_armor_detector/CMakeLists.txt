@@ -33,7 +33,7 @@ target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
 rclcpp_components_register_node(${PROJECT_NAME}
   PLUGIN rm_left_auto_aim::ArmorDetectorNode
-  EXECUTABLE armor_detector_node
+  EXECUTABLE ${PROJECT_NAME}_node
 )
 
 #############

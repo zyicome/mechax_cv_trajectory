@@ -67,7 +67,7 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
         "/angle/init", 10, std::bind(&Trajectoryer::angle_callback, this, std::placeholders::_1));
 
     changeyaw_sub_ = this->create_subscription<auto_aim_interfaces::msg::Bias>(
-        "/trajectory/changeyaw", 10, std::bind(&Trajectoryer::changeyaw_callback, this, std::placeholders::_1));
+        "/left_camera/trajectory/changeyaw", 10, std::bind(&Trajectoryer::changeyaw_callback, this, std::placeholders::_1));
     
     maker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>(
         "/aiming_point", 10);
@@ -76,10 +76,10 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
         "/trajectory/result", 10);
     
     needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-        "/trajectory/needpose", 10);
+        "/left_camera/trajectory/needpose", 10);
 
     armorpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-        "/trajectory/armorpose", 10);
+        "/left_camera/trajectory/armorpose", 10);
 
     left_camera_pub_ = this->create_publisher<auto_aim_interfaces::msg::Inter>(
         "/left_camera/result", 10);

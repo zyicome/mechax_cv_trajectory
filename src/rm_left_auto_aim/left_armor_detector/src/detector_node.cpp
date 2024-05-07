@@ -29,7 +29,7 @@
 namespace rm_left_auto_aim
 {
 ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
-: Node("armor_detector", options)
+: Node("left_armor_detector", options)
 {
   RCLCPP_INFO(this->get_logger(), "Starting LeftDetectorNode!");
 
@@ -65,10 +65,11 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
   marker_pub_ =
     this->create_publisher<visualization_msgs::msg::MarkerArray>("/left_camera/detector/marker", 10);
 
-  changeyaw_pub = this->create_publisher<auto_aim_interfaces::msg::Bias>("/trajectory/changeyaw", 10);
+  changeyaw_pub = this->create_publisher<auto_aim_interfaces::msg::Bias>("/left_camera/trajectory/changeyaw", 10);
 
   // Debug Publishers
-  debug_ = this->declare_parameter("debug", false);
+  debug_ = this->declare_parameter("debug", true);
+  std::cout << "debug_" << debug_<<std::endl;
   if (debug_) {
     createDebugPublishers();
   }
@@ -81,7 +82,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
       debug_ ? createDebugPublishers() : destroyDebugPublishers();
     });
 
-  cam_info_sub_ = this->create_subscription<sensor_msgs::msg::CameraInfo>(
+  /*cam_info_sub_ = this->create_subscription<sensor_msgs::msg::CameraInfo>(
     // "/camera/camera_info", rclcpp::SensorDataQoS(),
     "/camera_info", rclcpp::SensorDataQoS(),
     [this](sensor_msgs::msg::CameraInfo::ConstSharedPtr camera_info) {
@@ -96,7 +97,19 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     camera_matrix_.at<double>(1,2) = camera_info->k[5];
     camera_matrix_.at<double>(2,2) = 1.0;
       cam_info_sub_.reset();
-    });
+    });*/
+
+    camera_matrix_.at<double>(0,2) = 0.0;
+    camera_matrix_.at<double>(1,1) = 0.0;
+    camera_matrix_.at<double>(1,2) = 0.0;
+    camera_matrix_.at<double>(2,2) = 1.0;
+    distortion_coefficients_.at<double>(0,0) = 0.0;
+    distortion_coefficients_.at<double>(0,1) = 0.0;
+    distortion_coefficients_.at<double>(0,2) = 0.0;
+    distortion_coefficients_.at<double>(0,3) = 0.0;
+    distortion_coefficients_.at<double>(0,4) = 1.0;
+    cam_center_ = cv::Point2f(1280 / 2, 1024 / 2);
+    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_, distortion_coefficients_);
 
   img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
     // "/camera/image_color", rclcpp::SensorDataQoS(),

@@ -44,7 +44,7 @@ public:
     }
 
     // 相机初始化。初始化成功后，才能调用任何其他相机相关的操作接口
-    i_status = CameraInit(&t_camera_enum_list[1], -1, -1, &h_camera_);
+    i_status = CameraInit(&t_camera_enum_list[0], -1, -1, &h_camera_);
 
     // 初始化失败
     RCLCPP_INFO(this->get_logger(), "Init state = %d", i_status);

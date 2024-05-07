@@ -17,8 +17,7 @@
 
   <link name="right_gimbal_link" />
 
-  <joint name="right_gimbal_joint" type="fixed">
-    <origin xyz="0.0 0 0" rpy="0 0 0" />
+  <joint name="right_gimbal_joint" type="floating">
     <parent link="rightodom" />
     <child link="right_gimbal_link" />
   </joint>
@@ -26,21 +25,20 @@
   <link name="bigodom" />
 
   <joint name="bigodom_leftodom_joint" type="fixed">
-    <origin xyz="0.10 0 0" rpy="0 0 0" />
+    <origin xyz="0.00 -0.10 0" rpy="0 0 0" />
     <parent link="leftodom" />
     <child link="bigodom" />
   </joint>
 
   <joint name="bigodom_rightodom_link" type="fixed">
-    <origin xyz="0.10 0 0" rpy="0 0 0" />
+    <origin xyz="0.0 -0.10 0" rpy="0 0 0" />
     <parent link="bigodom" />
     <child link="rightodom" />
   </joint>
 
   <link name="big_gimbal_link" />
 
-  <joint name="big_gimbal_joint" type="fixed">
-    <origin xyz="0.0 0 0" rpy="0 0 0" />
+  <joint name="big_gimbal_joint" type="floating">
     <parent link="bigodom" />
     <child link="big_gimbal_link" />
   </joint>
@@ -64,7 +62,7 @@
   <link name="back_camera_link" />
 
   <joint name="back_camera_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
     <parent link="big_gimbal_link" />
     <child link="back_camera_link" />
   </joint>
@@ -121,8 +119,7 @@
 
   <link name="prediction_gimbal_link" />
 
-  <joint name="prediction_gimbal_joint" type="fixed">
-    <origin xyz="0.0 0 0" rpy="0 0 0" />
+  <joint name="prediction_gimbal_joint" type="floating">
     <parent link = "horizom_gimbal_link" />
     <child link = "prediction_gimbal_link" />
   </joint>

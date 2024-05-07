@@ -52,8 +52,8 @@ def generate_launch_description():
         cam_detector = mv_camera_node
         
     detector_node = Node(
-        package='armor_detector',
-        executable='armor_detector_node',
+        package='left_armor_detector',
+        executable='left_armor_detector_node',
         emulate_tty=True,
         output='both',
         parameters=[node_params],
@@ -97,10 +97,10 @@ def generate_launch_description():
     #     actions=[trajectory_node],
     # )
 
-    assist_detector_node = Node(
+    front_assist_detector_node = Node(
         package='front_assist_armor_detector',
         executable='front_assist_armor_detector_node',
-        name='assist_armor_detector',
+        name='front_assist_armor_detector',
         output='both',
         emulate_tty=True,
         parameters=[node_params],
@@ -108,10 +108,10 @@ def generate_launch_description():
                    'assist_armor_detector:='+launch_params['front_assist_detector_log_level']],
     )
 
-    assist_tracker_node = Node(
+    front_assist_tracker_node = Node(
         package='front_assist_armor_tracker',
         executable='front_assist_armor_tracker_node',
-        name='assist_armor_tracker',
+        name='front_assist_armor_tracker',
         output='both',
         emulate_tty=True,
         parameters=[node_params],
@@ -119,15 +119,48 @@ def generate_launch_description():
                    'assist_armor_tracker:='+launch_params['front_assist_tracker_log_level']],
     )
 
-    delay_assist_detector_node = TimerAction(
+    delay_front_assist_detector_node = TimerAction(
         period=2.5,
-        actions=[assist_detector_node],
+        actions=[front_assist_detector_node],
     )
 
-    delay_assist_tracker_node = TimerAction(
+    delay_front_assist_tracker_node = TimerAction(
         period=2.5,
-        actions=[assist_tracker_node],
+        actions=[front_assist_tracker_node],
     )
+
+    back_assist_detector_node = Node(
+        package='back_assist_armor_detector',
+        executable='back_assist_armor_detector_node',
+        name='back_assist_armor_detector',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'back_assist_armor_detector:='+launch_params['back_assist_detector_log_level']],
+    )
+
+    back_assist_tracker_node = Node(
+        package='back_assist_armor_tracker',
+        executable='back_assist_armor_tracker_node',
+        name='back_assist_armor_tracker',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'back_assist_armor_tracker:='+launch_params['back_assist_tracker_log_level']],
+    )
+
+    delay_back_assist_detector_node = TimerAction(
+        period=2.5,
+        actions=[back_assist_detector_node],
+    )
+
+    delay_back_assist_tracker_node = TimerAction(
+        period=2.5,
+        actions=[back_assist_tracker_node],
+    )
+
     # delay_serial_node 会以1.5秒的周期触发执行串口驱动节点，
     # 而 delay_tracker_node 会以2.0秒的周期触发执行追踪节点。
     delay_serial_node = TimerAction(
@@ -141,7 +174,9 @@ def generate_launch_description():
         delay_detector_node,
         delay_tracker_node,
         trajectory_node,
-        delay_assist_detector_node,
-        delay_assist_tracker_node,
+        delay_front_assist_detector_node,
+        delay_front_assist_tracker_node,
+        delay_back_assist_detector_node,
+        delay_back_assist_tracker_node,
         delay_serial_node
     ])

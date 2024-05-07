@@ -96,6 +96,8 @@ private:
   image_transport::Publisher result_img_pub_;
 
   cv::Mat camera_matrix_ = cv::Mat::zeros(3, 3, CV_64FC1);
+  cv::Mat distortion_coefficients_ = cv::Mat::zeros(1, 5, CV_64FC1);
+
   cv::Point2f needpose_img = cv::Point2f(0, 0);
   cv::Point2f armorpose_img = cv::Point2f(0, 0);
   cv::Point2f prediction_armorpose_img = cv::Point2f(0, 0);

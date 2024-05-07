@@ -82,7 +82,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
       debug_ ? createDebugPublishers() : destroyDebugPublishers();
     });
 
-  cam_info_sub_ = this->create_subscription<sensor_msgs::msg::CameraInfo>(
+  /*cam_info_sub_ = this->create_subscription<sensor_msgs::msg::CameraInfo>(
     // "/camera/camera_info", rclcpp::SensorDataQoS(),
     "/camera_info", rclcpp::SensorDataQoS(),
     [this](sensor_msgs::msg::CameraInfo::ConstSharedPtr camera_info) {
@@ -97,7 +97,19 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     camera_matrix_.at<double>(1,2) = camera_info->k[5];
     camera_matrix_.at<double>(2,2) = 1.0;
       cam_info_sub_.reset();
-    });
+    });*/
+
+    camera_matrix_.at<double>(0,2) = 0.0;
+    camera_matrix_.at<double>(1,1) = 0.0;
+    camera_matrix_.at<double>(1,2) = 0.0;
+    camera_matrix_.at<double>(2,2) = 1.0;
+    distortion_coefficients_.at<double>(0,0) = 0.0;
+    distortion_coefficients_.at<double>(0,1) = 0.0;
+    distortion_coefficients_.at<double>(0,2) = 0.0;
+    distortion_coefficients_.at<double>(0,3) = 0.0;
+    distortion_coefficients_.at<double>(0,4) = 1.0;
+    cam_center_ = cv::Point2f(1280 / 2, 1024 / 2);
+    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_, distortion_coefficients_);
 
   img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
     // "/camera/image_color", rclcpp::SensorDataQoS(),
@@ -186,7 +198,7 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
   auto detector = std::make_unique<Detector>(binary_thres, detect_color, l_params, a_params);
 
   // Init classifier
-  auto pkg_path = ament_index_cpp::get_package_share_directory("front_armor_detector");
+  auto pkg_path = ament_index_cpp::get_package_share_directory("front_assist_armor_detector");
   auto model_path = pkg_path + "/model/mlp.onnx";
   auto label_path = pkg_path + "/model/label.txt";
   double threshold = this->declare_parameter("classifier_threshold", 0.7);

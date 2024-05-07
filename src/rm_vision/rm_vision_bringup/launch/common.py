@@ -26,10 +26,11 @@ node_params = os.path.join(
     get_package_share_directory('rm_vision_bringup'), 'config', 'node_params.yaml')
 
 tracker_node = Node(
-    package='armor_tracker',
-    executable='armor_tracker_node',
+    package='left_armor_tracker',
+    executable='left_armor_tracker_node',
+    name='left_armor_tracker',
     output='both',
     emulate_tty=True,
     parameters=[node_params],
-    ros_arguments=['--log-level', 'armor_tracker:='+launch_params['tracker_log_level']],
+    ros_arguments=['--log-level', 'left_armor_tracker:='+launch_params['tracker_log_level']],
 )
