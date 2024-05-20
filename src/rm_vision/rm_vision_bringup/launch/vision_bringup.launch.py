@@ -62,7 +62,7 @@ def generate_launch_description():
     )
 
     delay_detector_node = TimerAction(
-        period=2.0,
+        period=1.5,
         actions=[detector_node],
     )
 
@@ -88,7 +88,7 @@ def generate_launch_description():
     )
     
     delay_tracker_node = TimerAction(
-        period=2.0,
+        period=1.5,
         actions=[tracker_node],
     )
 
@@ -96,6 +96,38 @@ def generate_launch_description():
     #     period=2.5,
     #     actions=[trajectory_node],
     # )
+
+    right_detector_node = Node(
+        package='right_armor_detector',
+        executable='right_armor_detector_node',
+        name='right_armor_detector',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'right_armor_detector:='+launch_params['detector_log_level']],
+    )
+
+    right_tracker_node = Node(
+        package='right_armor_tracker',
+        executable='right_armor_tracker_node',
+        name='right_armor_tracker',
+        output='both',
+        emulate_tty=True,
+        parameters=[node_params],
+        arguments=['--ros-args', '--log-level',
+                   'right_armor_tracker:='+launch_params['tracker_log_level']],
+    )
+
+    delay_right_detector_node = TimerAction(
+        period=1.5,
+        actions=[right_detector_node],
+    )
+
+    delay_right_tracker_node = TimerAction(
+        period=1.5,
+        actions=[right_tracker_node],
+    )
 
     front_assist_detector_node = Node(
         package='front_assist_armor_detector',
@@ -120,12 +152,12 @@ def generate_launch_description():
     )
 
     delay_front_assist_detector_node = TimerAction(
-        period=2.5,
+        period=1.5,
         actions=[front_assist_detector_node],
     )
 
     delay_front_assist_tracker_node = TimerAction(
-        period=2.5,
+        period=1.5,
         actions=[front_assist_tracker_node],
     )
 
@@ -152,12 +184,12 @@ def generate_launch_description():
     )
 
     delay_back_assist_detector_node = TimerAction(
-        period=2.5,
+        period=1.5,
         actions=[back_assist_detector_node],
     )
 
     delay_back_assist_tracker_node = TimerAction(
-        period=2.5,
+        period=1.5,
         actions=[back_assist_tracker_node],
     )
 
@@ -168,15 +200,31 @@ def generate_launch_description():
         actions=[serial_driver_node],
     )
 
+    outpost_node = Node(
+        package='outpost',
+        executable='outpost',
+        name='outpost',
+        output='both',
+        emulate_tty=True,
+    )
+
+    delay_outpost_node = TimerAction(
+        period=1.5,
+        actions=[outpost_node],
+    )
+
     return LaunchDescription([
         robot_state_publisher,
         cam_detector,
         delay_detector_node,
-        delay_tracker_node,
+        #delay_tracker_node,
         trajectory_node,
-        delay_front_assist_detector_node,
-        delay_front_assist_tracker_node,
-        delay_back_assist_detector_node,
-        delay_back_assist_tracker_node,
-        delay_serial_node
+        #delay_right_detector_node,
+        #delay_right_tracker_node,
+        #delay_front_assist_detector_node,
+        #delay_front_assist_tracker_node,
+        #delay_back_assist_detector_node,
+        #delay_back_assist_tracker_node,
+        delay_serial_node,
+        delay_outpost_node,
     ])

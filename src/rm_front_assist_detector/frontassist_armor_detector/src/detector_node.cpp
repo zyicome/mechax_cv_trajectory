@@ -99,6 +99,8 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
       cam_info_sub_.reset();
     });*/
 
+    std::array<double,9> camera_matrix_data = { 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0 };
+    std::vector<double> distortion_coefficients_data = { 0.0, 0.0, 0.0, 0.0, 1.0 };
     camera_matrix_.at<double>(0,2) = 0.0;
     camera_matrix_.at<double>(1,1) = 0.0;
     camera_matrix_.at<double>(1,2) = 0.0;
@@ -109,7 +111,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     distortion_coefficients_.at<double>(0,3) = 0.0;
     distortion_coefficients_.at<double>(0,4) = 1.0;
     cam_center_ = cv::Point2f(1280 / 2, 1024 / 2);
-    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_, distortion_coefficients_);
+    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_data, distortion_coefficients_data);
 
   img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
     // "/camera/image_color", rclcpp::SensorDataQoS(),

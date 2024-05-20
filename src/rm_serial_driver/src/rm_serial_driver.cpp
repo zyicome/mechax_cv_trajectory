@@ -17,6 +17,8 @@
 #include <string>
 #include <vector>
 
+#include <chrono>
+
 #include "rm_serial_driver/crc.hpp"
 #include "rm_serial_driver/packet.hpp"
 #include "rm_serial_driver/rm_serial_driver.hpp"
@@ -34,7 +36,9 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
 
   // TF broadcaster
   timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.0);
-  tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
+  left_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
+  right_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
+  big_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
   // Create Publisher
   latency_pub_ = this->create_publisher<std_msgs::msg::Float64>("/latency", 10);
@@ -167,6 +171,9 @@ void RMSerialDriver::receiveData()
   uint16_t CRC16_init = 0xFFFF;
   uint16_t CRC_check = 0x0000;
 
+  auto start = std::chrono::high_resolution_clock::now();
+  auto end = std::chrono::high_resolution_clock::now();
+
   while (rclcpp::ok()) {
       try {
           // 这一行从串行端口接收一个字节的数据，将其存储在 header 向量中
@@ -206,25 +213,25 @@ void RMSerialDriver::receiveData()
                       }
 
                       // 创建坐标变换消息和发布
+                      geometry_msgs::msg::TransformStamped t_right;
+                      t_right.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t_right.header.frame_id = "rightodom";
+                      t_right.child_frame_id = "right_gimbal_link";
+                      tf2::Quaternion q_right;
+                      q_right.setRPY(0, -packet.right_pitch / 57.3f, packet.right_yaw / 57.3f);
+                      t_right.transform.rotation = tf2::toMsg(q_right);
+                      right_tf_broadcaster_->sendTransform(t_right);
+
+                      // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t_left;
                       timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
                       t_left.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
                       t_left.header.frame_id = "leftodom";
                       t_left.child_frame_id = "left_gimbal_link";
                       tf2::Quaternion q_left;
-                      q_left.setRPY(0.0, packet.left_pitch / 57.3f, packet.left_yaw / 57.3f);
+                      q_left.setRPY(0.0, -packet.left_pitch / 57.3f, packet.left_yaw / 57.3f);
                       t_left.transform.rotation = tf2::toMsg(q_left);
-                      tf_broadcaster_->sendTransform(t_left);
-
-                      // 创建坐标变换消息和发布
-                      geometry_msgs::msg::TransformStamped t_right;
-                      t_right.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
-                      t_right.header.frame_id = "rightodom";
-                      t_right.child_frame_id = "right_gimbal_link";
-                      tf2::Quaternion q_right;
-                      q_right.setRPY(0, packet.right_pitch / 57.3f, packet.right_yaw / 57.3f);
-                      t_right.transform.rotation = tf2::toMsg(q_right);
-                      tf_broadcaster_->sendTransform(t_right);
+                      left_tf_broadcaster_->sendTransform(t_left);
 
                       geometry_msgs::msg::TransformStamped t_big;
                       t_big.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
@@ -233,7 +240,7 @@ void RMSerialDriver::receiveData()
                       tf2::Quaternion q_big;
                       q_big.setRPY(0,  0, packet.bigyaw / 57.3f);
                       t_big.transform.rotation = tf2::toMsg(q_big);
-                      tf_broadcaster_->sendTransform(t_big);
+                      big_tf_broadcaster_->sendTransform(t_big);
 
                       receive_serial_msg_.header.frame_id = "leftodom";
                       receive_serial_msg_.header.stamp = this->now();
@@ -243,6 +250,16 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.right_yaw = packet.right_yaw;
                       receive_serial_msg_.bigyaw = packet.bigyaw;
                       serial_pub_->publish(receive_serial_msg_);
+
+                      end = std::chrono::high_resolution_clock::now();
+
+                      std::chrono::duration<double> diff = end - start;
+
+                      // 输出时间差（以秒为单位）
+                      //std::cout << "Time difference: " << diff.count() << " s\n";   
+
+                      start = std::chrono::high_resolution_clock::now();
+
                       //std::cout<< "good "<< std::endl;
                       }
                       else
@@ -443,7 +460,7 @@ void RMSerialDriver::reopenPort()
 void RMSerialDriver::setParam(const rclcpp::Parameter & param)
 {
   if (!detector_param_client_->service_is_ready()) {
-    RCLCPP_WARN(get_logger(), "Service not ready, skipping parameter set");
+    //RCLCPP_WARN(get_logger(), "Service not ready, skipping parameter set");
     return;
   }
 

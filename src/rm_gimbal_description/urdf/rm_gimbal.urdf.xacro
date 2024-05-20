@@ -7,8 +7,7 @@
 
   <link name="left_gimbal_link" />
 
-  <joint name="left_gimbal_joint" type="fixed">
-    <origin xyz="0.0 0 0" rpy="0 0 0" />
+  <joint name="left_gimbal_joint" type="floating">
     <parent link="leftodom" />
     <child link="left_gimbal_link" />
   </joint>
@@ -78,10 +77,9 @@
   <link name="left_camera_link" />
 
   <joint name="left_camera_joint" type="fixed">
-    <origin xyz="0.050 0.000 0.040" rpy="0 ${pi/140} -${pi/160}" />
+    <origin xyz="0.110 0.045 0.030" rpy="0 0.0 0" />
     <parent link="left_gimbal_link" />
     <child link="left_camera_link" />
-    <axis xyz="0 0 0" />
   </joint>
 
   <link name="left_camera_optical_frame" />
@@ -98,7 +96,6 @@
     <origin xyz="0.050 0.000 0.040" rpy="0 ${pi/140} -${pi/180}" />
     <parent link="right_gimbal_link" />
     <child link="right_camera_link" />
-    <axis xyz="0 0 0" />
   </joint>
 
   <link name="right_camera_optical_frame" />

@@ -4,6 +4,7 @@
 
 
 #include "trajectoryer.hpp"
+#include <opencv2/imgproc.hpp>
 
 //两个内联函数，用于牛顿迭代法，第一个为f(x)，第二个为f'(x)
 inline float ft0(float t0,float randa,float tan,float z0,float v0)
@@ -94,6 +95,12 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     right_camera_sub_ = this->create_subscription<auto_aim_interfaces::msg::Inter>(
         "/right_camera/result", rclcpp::SensorDataQoS(), std::bind(&Trajectoryer::right_result_callback, this, std::placeholders::_1));
+
+    outpost_points_sub_ = this->create_subscription<auto_aim_interfaces::msg::Points>(
+        "/outpost/points", 10, std::bind(&Trajectoryer::outpostPointsCallback, this, std::placeholders::_1));
+
+    outpost_point_sub_ = this->create_subscription<auto_aim_interfaces::msg::Point>(
+        "/outpost/point", 10, std::bind(&Trajectoryer::outpostPointCallback, this, std::placeholders::_1));
    //timer_ = this->create_wall_timer(5s, std::bind(&Trajectoryer::test,this));
 }
 
@@ -134,7 +141,7 @@ void  Trajectoryer::parameters_init()
     }
     //****************************************************
     //****************************************************
-    bias_t = 0.00;  // s
+    bias_t = 0.002;  // s
     fly_t = 0.5; // s
     //摄像头相对于云台的偏置,一般改z_bias即可
     y_bias = 0.0; // m
@@ -151,6 +158,15 @@ void  Trajectoryer::parameters_init()
     left_angle_yaw = 0.0;
     right_angle_pitch = 0.0;
     right_angle_yaw = 0.0;
+
+    start_time = std::chrono::steady_clock::now();
+    end_time = std::chrono::steady_clock::now();
+    next_time = std::chrono::steady_clock::now();
+    update_time = std::chrono::steady_clock::now();
+    is_matched = false;
+    is_start = false;
+    outpost_bias_t = 0.01;
+    outpost_radius = 276.5 / 1000; //m
 }
 
 //@param: object_x, object_y, object_z, v0
@@ -540,6 +556,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
     is_left_tracking = msg.tracking;
     id = msg.id;
     armor_num = msg.armors_num;
+    //armor_num = 3;
     yaw = msg.yaw;
     v_yaw = msg.v_yaw;
     vx = msg.velocity.x;
@@ -551,11 +568,20 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
     r_1 = msg.radius_1;
     r_2 = msg.radius_2;
     dz = msg.dz;
+    start = msg.time;
     if(is_left_tracking)
     {
         auto_aim_interfaces::msg::SendSerial result;
         if(solve_trajectory() == 0)
         {
+            auto time_point = std::chrono::high_resolution_clock::now();
+            auto epoch = time_point.time_since_epoch();
+            double time = std::chrono::duration<double>(epoch).count();
+            end = time;
+
+            // 输出时间差（以秒为单位）
+            std::cout << "mechax_trajectory Time difference: " << end - start << " s\n";   
+
             if(is_right_tracking == true)
             {
                 result.header.frame_id = "rightodom";
@@ -564,7 +590,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_right_tracking = is_right_tracking;
                 result.is_assist_tracking = false;
                 result.is_left_can_hit = false;
-                result.is_right_can_hit = is_right_can_hit;
+                result.is_right_can_hit = true;
                 result.left_pitch = 0.0;
                 result.left_yaw = 0.0;
                 result.right_pitch = right_angle_pitch * 57.3f;
@@ -611,13 +637,13 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_left_tracking = is_left_tracking;
                 result.is_right_tracking = is_right_tracking;
                 result.is_assist_tracking = false;
-                result.is_left_can_hit = is_left_can_hit;
+                result.is_left_can_hit = true;
                 result.is_right_can_hit = is_right_can_hit;
                 result.bigyaw = angle_bigyaw * 57.3f;
-                result.left_pitch = -left_angle_pitch * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
                 result.left_yaw = left_angle_yaw * 57.3f;
-                result.right_pitch = -right_angle_pitch * 57.3f;
-                result.right_yaw = right_angle_yaw * 57.3f;
+                result.right_pitch = -right_angle_pitch;
+                result.right_yaw = right_angle_yaw;
                 result_pub_->publish(result);
             }
             else
@@ -627,10 +653,10 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_left_tracking = is_left_tracking;
                 result.is_right_tracking = false;
                 result.is_assist_tracking = false;
-                result.is_left_can_hit = is_left_can_hit;
+                result.is_left_can_hit = true;
                 result.is_right_can_hit = false;
                 result.bigyaw = angle_bigyaw * 57.3f;
-                result.left_pitch = -left_angle_pitch * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
                 result.left_yaw = left_angle_yaw * 57.3f;
                 result.right_pitch = 0.0;
                 result.right_yaw = 0.0;
@@ -648,12 +674,12 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
             result.is_left_tracking = false;
             result.is_right_tracking = is_right_tracking;
             result.is_left_can_hit = false;
-            result.is_right_can_hit = is_right_can_hit;
+            result.is_right_can_hit = true;
             result.bigyaw = angle_bigyaw * 57.3f;
             result.left_pitch = 0.0;
             result.left_yaw = 0.0;
-            result.right_pitch = -right_angle_pitch * 57.3f;
-            result.right_yaw = right_angle_yaw * 57.3f;
+            result.right_pitch = -right_angle_pitch;
+            result.right_yaw = right_angle_yaw;
             result_pub_->publish(result);
         }
         else if(is_assist_tracking == false && is_left_tracking == false)
@@ -993,3 +1019,487 @@ void Trajectoryer::assist_get_yaw_bigyaw(float &left_angle_pitch, float &left_an
     angle_bigyaw = atan2(pose.point.y, pose.point.x);
 }
 //---------------------------------------------------------------------------
+
+void Trajectoryer::outpostPointsCallback(const auto_aim_interfaces::msg::Points msg)
+{
+    for(int i =0;i<msg.points.size();i++)
+    {
+        Mypoint mypoint;
+        mypoint.x = msg.points[i].x;
+        mypoint.y = msg.points[i].y;
+        mypoint.z = msg.points[i].z;
+        mypoint.yaw = msg.points[i].yaw;
+        mypoint.timetolast = msg.points[i].timetolast;
+        armor_points.push_back(mypoint);
+    }
+    is_matched = true;
+}
+
+void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point msg)
+{
+    auto_aim_interfaces::msg::SendSerial result;
+    geometry_msgs::msg::PointStamped pose;
+    cv::Point3d now_point = cv::Point3d(msg.x,msg.y,msg.z);
+    end_time = std::chrono::steady_clock::now();
+    auto time = std::chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    if(time.count() > 2000)
+    {
+        is_matched = false;
+        is_start = false;
+        stay_x = msg.x;
+        stay_y = msg.y;
+        stay_z = msg.z;
+        if(msg.x == 0 && msg.y == 0 && msg.z == 0)
+        {
+        result.header.frame_id = "not";
+        result.header.stamp = this->now();
+        result.is_left_tracking = false;
+        result.is_right_tracking = false;
+        result.is_assist_tracking = false;
+        result.is_left_can_hit = false;
+        result.is_right_can_hit = false;
+        result.bigyaw = 0.0;
+        result.left_pitch = 0.0;
+        result.left_yaw = 0.0;
+        result.right_pitch = 0.0;
+        result.right_yaw = 0.0;
+        result_pub_->publish(result);
+        return;
+        }
+    }
+    if(msg.x != 0 && msg.y != 0 && msg.z != 0)
+    {
+        start_time = std::chrono::steady_clock::now();
+    }
+    if(is_matched == false)
+    {
+        two_resistance_model(left_angle_pitch,stay_x ,stay_y ,stay_z ,v0,randa);
+        left_angle_yaw =  atan2(stay_y , stay_x );
+        pose.header.stamp = this->now();
+        pose.header.frame_id = "leftodom";
+        pose.point.x = stay_x ;
+        pose.point.y = stay_y ;
+        pose.point.z = stay_z ;
+        get_bigyaw(pose);
+        result.header.frame_id = "leftodom";
+        result.header.stamp = this->now();
+        result.is_left_tracking = true;
+        result.is_right_tracking = false;
+        result.is_assist_tracking = false;
+        result.is_left_can_hit = false;
+        result.is_right_can_hit = false;
+        result.bigyaw = angle_bigyaw * 57.3f;
+        result.left_pitch = left_angle_pitch * 57.3f;
+        result.left_yaw = left_angle_yaw * 57.3f;
+        result.right_pitch = 0.0;
+        result.right_yaw = 0.0;
+        result_pub_->publish(result);
+        return;
+    }
+    else if(is_matched)
+    {
+        if(is_start == false)
+        {
+            cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
+            two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+            left_angle_yaw =  atan2(start_point.y, start_point.x);
+            pose.header.stamp = this->now();
+            pose.header.frame_id = "leftodom";
+            pose.point.x = start_point.x;
+            pose.point.y = start_point.y;
+            pose.point.z = start_point.z;
+            get_bigyaw(pose);
+            result.header.frame_id = "leftodom";
+            result.header.stamp = this->now();
+            result.is_left_tracking = true;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = false;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = false;
+            result.bigyaw = angle_bigyaw * 57.3f;
+            result.left_pitch = left_angle_pitch * 57.3f;
+            result.left_yaw = left_angle_yaw * 57.3f;
+            result.right_pitch = 0.0;
+            result.right_yaw = 0.0;
+            result_pub_->publish(result);
+            if(get_distance(start_point,now_point) < 0.05)
+            {
+                is_start = true;
+            }
+        }
+        else if(is_start == true)
+        {
+            time = std::chrono::duration_cast<chrono::milliseconds>(end_time - next_time);
+            if(time.count() > 833 - fly_t * 1000 + 0.45 * 1000)
+            {
+                point_number = 1;
+                next_time = std::chrono::steady_clock::now();
+                cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
+                two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+                left_angle_yaw =  atan2(start_point.y, start_point.x);
+                pose.header.stamp = this->now();
+                pose.header.frame_id = "leftodom";
+                pose.point.x = start_point.x;
+                pose.point.y = start_point.y;
+                pose.point.z = start_point.z;
+                get_bigyaw(pose);
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = true;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = true;
+                result.is_right_can_hit = false;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result_pub_->publish(result);
+                return;
+            }
+            if(time.count() > 833 - fly_t * 1000 + 0.45 * 1000 - outpost_bias_t * 1000)
+            {
+                point_number = 1;
+                cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
+                two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+                left_angle_yaw =  atan2(start_point.y, start_point.x);
+                pose.header.stamp = this->now();
+                pose.header.frame_id = "leftodom";
+                pose.point.x = start_point.x;
+                pose.point.y = start_point.y;
+                pose.point.z = start_point.z;
+                get_bigyaw(pose);
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = true;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = false;
+                result.is_right_can_hit = false;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result_pub_->publish(result);
+                return;
+            }
+            cv::Point3d hit_point = cv::Point3d(armor_points[point_number].x,armor_points[point_number].y,armor_points[point_number].z);
+            two_resistance_model(left_angle_pitch,hit_point.x,hit_point.y,hit_point.z,v0,randa);
+            left_angle_yaw =  atan2(hit_point.y, hit_point.x);
+            pose.header.stamp = this->now();
+            pose.header.frame_id = "leftodom";
+            pose.point.x = hit_point.x;
+            pose.point.y = hit_point.y;
+            pose.point.z = hit_point.z;
+            get_bigyaw(pose);
+            if(abs(now_yaw - left_angle_yaw) > (3 / 57.3f))
+            {
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+            result.is_left_tracking = true;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = false;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = false;
+            result.bigyaw = angle_bigyaw * 57.3f;
+            result.left_pitch = left_angle_pitch * 57.3f;
+            result.left_yaw = left_angle_yaw * 57.3f;
+            result.right_pitch = 0.0;
+            result.right_yaw = 0.0;
+            result_pub_->publish(result);
+            }
+            else
+            {
+                result.header.frame_id = "leftodom";
+            result.header.stamp = this->now();
+            result.is_left_tracking = true;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = false;
+            result.is_left_can_hit = true;
+            result.is_right_can_hit = false;
+            result.bigyaw = angle_bigyaw * 57.3f;
+            result.left_pitch = left_angle_pitch * 57.3f;
+            result.left_yaw = left_angle_yaw * 57.3f;
+            result.right_pitch = 0.0;
+            result.right_yaw = 0.0;
+            result_pub_->publish(result);
+            }
+            auto updatetime = std::chrono::duration_cast<chrono::milliseconds>(end_time - update_time);
+            if(point_number >= armor_points.size())
+            {
+                cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
+                two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+                left_angle_yaw =  atan2(start_point.y, start_point.x);
+                pose.header.stamp = this->now();
+                pose.header.frame_id = "leftodom";
+                pose.point.x = start_point.x;
+                pose.point.y = start_point.y;
+                pose.point.z = start_point.z;
+                get_bigyaw(pose);
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = true;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = false;
+                result.is_right_can_hit = false;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result_pub_->publish(result);
+            }
+            if(updatetime.count() >= armor_points[point_number + 1].timetolast)
+            {
+                update_time = std::chrono::steady_clock::now();
+                point_number++;
+            }
+        }
+    }
+}
+
+double Trajectoryer::get_distance(cv::Point3d point_one,cv::Point3d point_two)
+{
+    double distance = sqrtf(pow(point_one.x - point_two.x,2)+pow(point_one.y - point_two.y,2)+pow(point_one.z - point_two.z,2));
+    return distance;
+}
+
+void Trajectoryer::fittingToCircle(std::vector<Mypoint> &armor_points,Circle circle)
+{
+    std::vector<cv::Point2d> circle_points;
+    cv::Point2d circle_point;
+    double z_sum = 0;
+    double z = 0;
+    for(int i = 0;i<armor_points.size();i++)
+    {
+        circle_point.x = armor_points[i].x;
+        circle_point.y = armor_points[i].y;
+        z_sum += armor_points[i].z;
+    }
+    z = z_sum / armor_points.size();
+    circle.armor_points = armor_points;
+    cv::minEnclosingCircle(circle_points,circle.circle_center, circle.radius);
+}
+
+void Trajectoryer::usingcircle_outpostPointsCallback(const auto_aim_interfaces::msg::Points msg)
+{
+    for(int i =0;i<msg.points.size();i++)
+    {
+        Mypoint mypoint;
+        mypoint.x = msg.points[i].x;
+        mypoint.y = msg.points[i].y;
+        mypoint.z = msg.points[i].z;
+        mypoint.yaw = msg.points[i].yaw;
+        mypoint.timetolast = msg.points[i].timetolast;
+        armor_points.push_back(mypoint);
+    }
+    fittingToCircle(armor_points,circle);
+    if(abs(circle.radius - outpost_radius) < 0.02)
+    {
+        is_matched = true;
+    }
+}
+
+void Trajectoryer::usingcircle_outpostPointCallback(const auto_aim_interfaces::msg::Point msg)
+{
+    auto_aim_interfaces::msg::SendSerial result;
+    geometry_msgs::msg::PointStamped pose;
+    cv::Point3d now_point = cv::Point3d(msg.x,msg.y,circle.z);
+    end_time = std::chrono::steady_clock::now();
+    auto time = std::chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
+    if(time.count() > 2000)
+    {
+        is_matched = false;
+        is_start = false;
+        stay_x = msg.x;
+        stay_y = msg.y;
+        stay_z = msg.z;
+        if(msg.x == 0 && msg.y == 0 && msg.z == 0)
+        {
+        result.header.frame_id = "not";
+        result.header.stamp = this->now();
+        result.is_left_tracking = false;
+        result.is_right_tracking = false;
+        result.is_assist_tracking = false;
+        result.is_left_can_hit = false;
+        result.is_right_can_hit = false;
+        result.bigyaw = 0.0;
+        result.left_pitch = 0.0;
+        result.left_yaw = 0.0;
+        result.right_pitch = 0.0;
+        result.right_yaw = 0.0;
+        result_pub_->publish(result);
+        return;
+        }
+    }
+    if(msg.x != 0 && msg.y != 0 && msg.z != 0)
+    {
+        start_time = std::chrono::steady_clock::now();
+    }
+    if(is_matched == false)
+    {
+        two_resistance_model(left_angle_pitch,stay_x ,stay_y ,stay_z ,v0,randa);
+        left_angle_yaw =  atan2(stay_y , stay_x );
+        pose.header.stamp = this->now();
+        pose.header.frame_id = "leftodom";
+        pose.point.x = stay_x ;
+        pose.point.y = stay_y ;
+        pose.point.z = stay_z ;
+        get_bigyaw(pose);
+        result.header.frame_id = "leftodom";
+        result.header.stamp = this->now();
+        result.is_left_tracking = true;
+        result.is_right_tracking = false;
+        result.is_assist_tracking = false;
+        result.is_left_can_hit = false;
+        result.is_right_can_hit = false;
+        result.bigyaw = angle_bigyaw * 57.3f;
+        result.left_pitch = left_angle_pitch * 57.3f;
+        result.left_yaw = left_angle_yaw * 57.3f;
+        result.right_pitch = 0.0;
+        result.right_yaw = 0.0;
+        result_pub_->publish(result);
+        return;
+    }
+    else if(is_matched)
+    {
+        if(is_start == false)
+        {
+            cv::Point3d start_point = cv::Point3d(circle.armor_points[0].x,circle.armor_points[0].y,circle.z);
+            two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+            left_angle_yaw =  atan2(start_point.y, start_point.x);
+            pose.header.stamp = this->now();
+            pose.header.frame_id = "leftodom";
+            pose.point.x = start_point.x;
+            pose.point.y = start_point.y;
+            pose.point.z = start_point.z;
+            get_bigyaw(pose);
+            result.header.frame_id = "leftodom";
+            result.header.stamp = this->now();
+            result.is_left_tracking = true;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = false;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = false;
+            result.bigyaw = angle_bigyaw * 57.3f;
+            result.left_pitch = left_angle_pitch * 57.3f;
+            result.left_yaw = left_angle_yaw * 57.3f;
+            result.right_pitch = 0.0;
+            result.right_yaw = 0.0;
+            result_pub_->publish(result);
+            if(get_distance(start_point,now_point) < 0.05)
+            {
+                is_start = true;
+                update_time = std::chrono::steady_clock::now();
+            }
+        }
+        else if(is_start == true)
+        {
+            time = std::chrono::duration_cast<chrono::milliseconds>(end_time - next_time);
+            auto updatetime = std::chrono::duration_cast<chrono::milliseconds>(end_time - update_time);
+            if(time.count() > 833 - fly_t * 1000 + 0.45 * 1000)
+            {
+                point_number = 1;
+                next_time = std::chrono::steady_clock::now();
+                update_time = std::chrono::steady_clock::now();
+                cv::Point3d start_point = cv::Point3d(circle.armor_points[0].x,circle.armor_points[0].y,circle.z);
+                two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+                left_angle_yaw =  atan2(start_point.y, start_point.x);
+                pose.header.stamp = this->now();
+                pose.header.frame_id = "leftodom";
+                pose.point.x = start_point.x;
+                pose.point.y = start_point.y;
+                pose.point.z = start_point.z;
+                get_bigyaw(pose);
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = true;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = true;
+                result.is_right_can_hit = false;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result_pub_->publish(result);
+                return;
+            }
+            if(time.count() > 833 - fly_t * 1000 + 0.45 * 1000 - outpost_bias_t * 1000)
+            {
+                point_number = 1;
+                cv::Point3d start_point = cv::Point3d(circle.armor_points[0].x,circle.armor_points[0].y,circle.z);
+                two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+                left_angle_yaw =  atan2(start_point.y, start_point.x);
+                pose.header.stamp = this->now();
+                pose.header.frame_id = "leftodom";
+                pose.point.x = start_point.x;
+                pose.point.y = start_point.y;
+                pose.point.z = start_point.z;
+                get_bigyaw(pose);
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = true;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = false;
+                result.is_right_can_hit = false;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result_pub_->publish(result);
+                return;
+            }
+            double update_time = updatetime.count(); //ms
+            //根据已知圆和装甲板运动速度，根据每帧装甲板之间的一个差距时间来计算装甲板在圆上位置并进行击打
+            cv::Point3d hit_point = cv::Point3d(armor_points[point_number].x,armor_points[point_number].y,armor_points[point_number].z);
+            two_resistance_model(left_angle_pitch,hit_point.x,hit_point.y,hit_point.z,v0,randa);
+            left_angle_yaw =  atan2(hit_point.y, hit_point.x);
+            pose.header.stamp = this->now();
+            pose.header.frame_id = "leftodom";
+            pose.point.x = hit_point.x;
+            pose.point.y = hit_point.y;
+            pose.point.z = hit_point.z;
+            get_bigyaw(pose);
+            if(abs(now_yaw - left_angle_yaw) > (3 / 57.3f))
+            {
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+            result.is_left_tracking = true;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = false;
+            result.is_left_can_hit = false;
+            result.is_right_can_hit = false;
+            result.bigyaw = angle_bigyaw * 57.3f;
+            result.left_pitch = left_angle_pitch * 57.3f;
+            result.left_yaw = left_angle_yaw * 57.3f;
+            result.right_pitch = 0.0;
+            result.right_yaw = 0.0;
+            result_pub_->publish(result);
+            }
+            else
+            {
+                result.header.frame_id = "leftodom";
+            result.header.stamp = this->now();
+            result.is_left_tracking = true;
+            result.is_right_tracking = false;
+            result.is_assist_tracking = false;
+            result.is_left_can_hit = true;
+            result.is_right_can_hit = false;
+            result.bigyaw = angle_bigyaw * 57.3f;
+            result.left_pitch = left_angle_pitch * 57.3f;
+            result.left_yaw = left_angle_yaw * 57.3f;
+            result.right_pitch = 0.0;
+            result.right_yaw = 0.0;
+            result_pub_->publish(result);
+            }
+            
+        }
+    }
+}

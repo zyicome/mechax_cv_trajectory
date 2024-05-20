@@ -8,6 +8,8 @@
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <sensor_msgs/msg/image.hpp>
 
+#include <chrono>
+
 namespace hik_camera
 {
 class HikCameraNode : public rclcpp::Node
@@ -74,6 +76,10 @@ public:
       image_msg_.header.frame_id = "left_camera_optical_frame";
       image_msg_.encoding = "rgb8";
 
+      auto start = std::chrono::high_resolution_clock::now();
+      auto end = std::chrono::high_resolution_clock::now();
+      int fps = 0;
+
       while (rclcpp::ok()) {
         nRet = MV_CC_GetImageBuffer(camera_handle_, &out_frame, 1000);
         if (MV_OK == nRet) {
@@ -93,6 +99,19 @@ public:
 
           camera_info_msg_.header = image_msg_.header;
           camera_pub_.publish(image_msg_, camera_info_msg_);
+
+          end = std::chrono::high_resolution_clock::now();
+
+          std::chrono::duration<double> diff = end - start;
+
+          if(diff.count() >= 1)
+          {
+            std::cout << "fps: " << fps<< std::endl;
+            start = std::chrono::high_resolution_clock::now();
+            fps = 0;
+          }
+
+          fps++;
 
           MV_CC_FreeImageBuffer(camera_handle_, &out_frame);
           fail_conut_ = 0;
@@ -145,9 +164,9 @@ private:
     MV_CC_GetFloatValue(camera_handle_, "Gain", &f_value);
     param_desc.integer_range[0].from_value = f_value.fMin;
     param_desc.integer_range[0].to_value = f_value.fMax;
-    double gain = this->declare_parameter("gain", f_value.fCurValue, param_desc);
-    MV_CC_SetFloatValue(camera_handle_, "Gain", gain);
-    RCLCPP_INFO(this->get_logger(), "Gain: %f", gain);
+    //double gain = this->declare_parameter("gain", f_value.fCurValue, param_desc);
+    MV_CC_SetFloatValue(camera_handle_, "Gain", 16.0);
+    RCLCPP_INFO(this->get_logger(), "Gain: %f", 16.0);
   }
 
   rcl_interfaces::msg::SetParametersResult parametersCallback(

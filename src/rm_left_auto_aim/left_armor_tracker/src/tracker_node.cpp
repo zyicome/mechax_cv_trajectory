@@ -4,6 +4,7 @@
 // STD
 #include <memory>
 #include <vector>
+#include <chrono>
 
 namespace rm_left_auto_aim
 {
@@ -232,6 +233,7 @@ void ArmorTrackerNode::armorsCallback(const auto_aim_interfaces::msg::Armors::Sh
   auto_aim_interfaces::msg::Target target_msg;
   rclcpp::Time time = armors_msg->header.stamp;
   target_msg.header.stamp = time;
+  target_msg.time = armors_msg->time;
   target_msg.header.frame_id = target_frame_;
 
   // Update tracker

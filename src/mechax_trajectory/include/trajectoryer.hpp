@@ -8,6 +8,8 @@
 #include "auto_aim_interfaces/msg/target.hpp"
 #include "auto_aim_interfaces/msg/bias.hpp"
 #include "auto_aim_interfaces/msg/inter.hpp"
+#include "auto_aim_interfaces/msg/points.hpp"
+#include "auto_aim_interfaces/msg/point.hpp"
 #include <tf2_ros/transform_broadcaster.h>
 
 #include <geometry_msgs/msg/transform_stamped.hpp>
@@ -22,6 +24,12 @@
 
 #include <std_msgs/msg/float64.hpp>
 
+#include <geometry_msgs/msg/quaternion.hpp>
+
+#include <opencv2/opencv.hpp>
+
+#include <chrono>
+
 using namespace std;
 
 #define g 9.8
@@ -35,6 +43,23 @@ struct result
     float z;
     float yaw;
     float pitch;
+};
+
+struct Mypoint
+{
+  double x;
+  double y;
+  double z;
+  double yaw;
+  double timetolast;
+};
+
+struct Circle
+{
+    float radius;
+    double z;
+    cv::Point2f circle_center;
+    std::vector<Mypoint> armor_points;
 };
 
 class Trajectoryer : public::rclcpp::Node
@@ -73,6 +98,16 @@ public:
 
     void needposeCallback(const geometry_msgs::msg::PointStamped needpose_ptr);
 
+    void outpostPointsCallback(const auto_aim_interfaces::msg::Points msg);
+
+    void outpostPointCallback(const auto_aim_interfaces::msg::Point msg);
+
+    void usingcircle_outpostPointsCallback(const auto_aim_interfaces::msg::Points msg);
+
+    void usingcircle_outpostPointCallback(const auto_aim_interfaces::msg::Point msg);
+
+    void fittingToCircle(std::vector<Mypoint> &armor_points,Circle circle);
+
     void tf2_init();
 
     void get_need_pose(const geometry_msgs::msg::PointStamped pose);
@@ -82,6 +117,8 @@ public:
     void get_armorpose(const geometry_msgs::msg::PointStamped armorpose);
 
     void get_bigyaw(const geometry_msgs::msg::PointStamped smallpose);
+    
+    double get_distance(cv::Point3d point_one,cv::Point3d point_two);
 
     void assist_get_yaw_bigyaw(float &left_angle_pitch, float &left_angle_yaw,float &right_angle_pitch,float &right_angle_yaw,float &angle_bigyaw,const geometry_msgs::msg::PointStamped &pose);
 
@@ -127,6 +164,9 @@ public:
     float assist_x;
     float assist_y;
     float assist_z;
+    float stay_x;
+    float stay_y;
+    float stay_z;
     //------------------
     float randa;
     bool is_hero;
@@ -135,6 +175,20 @@ public:
     bool is_left_can_hit;
     bool is_right_can_hit;
     //------------------
+    bool is_matched;
+    bool is_start;
+    float outpost_bias_t;
+    std::vector<Mypoint> armor_points;
+    int point_number;
+    Circle circle;
+    float outpost_radius;
+    //------------------
+    double start;
+    double end;
+    std::chrono::steady_clock::time_point start_time;
+    std::chrono::steady_clock::time_point update_time;
+    std::chrono::steady_clock::time_point end_time;
+    std::chrono::steady_clock::time_point next_time;
     // Subsciption
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr left_camera_target_sub_;
@@ -143,6 +197,8 @@ public:
     rclcpp::Subscription<auto_aim_interfaces::msg::Inter>::SharedPtr right_camera_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr angle_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::Bias>::SharedPtr changeyaw_sub_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Points>::SharedPtr outpost_points_sub_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Point>::SharedPtr outpost_point_sub_;
     //------------------
     // Publisher
     //------------------

@@ -26,6 +26,8 @@
 #include "armor_detector/armor.hpp"
 #include "armor_detector/detector_node.hpp"
 
+#include <chrono>
+
 namespace rm_left_auto_aim
 {
 ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
@@ -99,17 +101,20 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
       cam_info_sub_.reset();
     });*/
 
-    camera_matrix_.at<double>(0,2) = 0.0;
-    camera_matrix_.at<double>(1,1) = 0.0;
-    camera_matrix_.at<double>(1,2) = 0.0;
+    std::array<double,9> camera_matrix_data = {1760.81949, 0.0, 645.42614, 0.0, 1755.71066, 605.24265, 0.0, 0.0, 1.0};
+    std::vector<double> distortion_coefficients_data = {-0.089674, -0.010603, 0.003439, -0.007395, 0.0};
+    camera_matrix_.at<double>(0,0) = 1760.81949;
+    camera_matrix_.at<double>(0,2) = 645.42614;
+    camera_matrix_.at<double>(1,1) = 1755.71066;
+    camera_matrix_.at<double>(1,2) = 605.24265;
     camera_matrix_.at<double>(2,2) = 1.0;
-    distortion_coefficients_.at<double>(0,0) = 0.0;
-    distortion_coefficients_.at<double>(0,1) = 0.0;
-    distortion_coefficients_.at<double>(0,2) = 0.0;
-    distortion_coefficients_.at<double>(0,3) = 0.0;
-    distortion_coefficients_.at<double>(0,4) = 1.0;
-    cam_center_ = cv::Point2f(1280 / 2, 1024 / 2);
-    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_, distortion_coefficients_);
+    distortion_coefficients_.at<double>(0,0) = -0.089674;
+    distortion_coefficients_.at<double>(0,1) = -0.010603;
+    distortion_coefficients_.at<double>(0,2) = 0.003439;
+    distortion_coefficients_.at<double>(0,3) = -0.007395;
+    distortion_coefficients_.at<double>(0,4) = 0.0;
+    cam_center_ = cv::Point2f(1440 / 2, 1080 / 2);
+    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_data, distortion_coefficients_data);
 
   img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
     // "/camera/image_color", rclcpp::SensorDataQoS(),
@@ -186,6 +191,10 @@ void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstShared
     }
 
     // Publishing detected armors
+    auto time_point = std::chrono::high_resolution_clock::now();
+    auto epoch = time_point.time_since_epoch();
+    double time = std::chrono::duration<double>(epoch).count();
+    armors_msg_.time = time;
     armors_pub_->publish(armors_msg_);
 
     // Publishing marker

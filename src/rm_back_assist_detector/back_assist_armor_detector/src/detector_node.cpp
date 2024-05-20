@@ -99,17 +99,20 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
       cam_info_sub_.reset();
     });*/
 
-    camera_matrix_.at<double>(0,2) = 0.0;
-    camera_matrix_.at<double>(1,1) = 0.0;
-    camera_matrix_.at<double>(1,2) = 0.0;
+    std::array<double,9> camera_matrix_data = {1356.39419, 0.0, 336.46099, 0.0, 1354.68018, 195.16731, 0.0, 0.0, 1.0};
+    std::vector<double> distortion_coefficients_data = {-0.116622, 0.645102, 0.001140, 0.005063, 1.0};
+    camera_matrix_.at<double>(0,0) = 1356.39419;
+    camera_matrix_.at<double>(0,2) = 336.46099;
+    camera_matrix_.at<double>(1,1) = 1354.68018;
+    camera_matrix_.at<double>(1,2) = 195.16731;
     camera_matrix_.at<double>(2,2) = 1.0;
-    distortion_coefficients_.at<double>(0,0) = 0.0;
-    distortion_coefficients_.at<double>(0,1) = 0.0;
-    distortion_coefficients_.at<double>(0,2) = 0.0;
-    distortion_coefficients_.at<double>(0,3) = 0.0;
+    distortion_coefficients_.at<double>(0,0) = -0.116622;
+    distortion_coefficients_.at<double>(0,1) = 0.645102;
+    distortion_coefficients_.at<double>(0,2) = 0.001140;
+    distortion_coefficients_.at<double>(0,3) = 0.005063;
     distortion_coefficients_.at<double>(0,4) = 1.0;
     cam_center_ = cv::Point2f(1280 / 2, 1024 / 2);
-    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_, distortion_coefficients_);
+    pnp_solver_ = std::make_unique<PnPSolver>(camera_matrix_data, distortion_coefficients_data);
 
   img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
     // "/camera/image_color", rclcpp::SensorDataQoS(),

@@ -70,7 +70,10 @@ private:
 
   // Broadcast tf from odom to gimbal_link
   double timestamp_offset_ = 0;
-  std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
+  
+  std::unique_ptr<tf2_ros::TransformBroadcaster> left_tf_broadcaster_;
+  std::unique_ptr<tf2_ros::TransformBroadcaster> right_tf_broadcaster_;
+  std::unique_ptr<tf2_ros::TransformBroadcaster> big_tf_broadcaster_;
 
   rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr target_sub_;
   rclcpp::Subscription<auto_aim_interfaces::msg::SendSerial>::SharedPtr result_sub_;
