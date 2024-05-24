@@ -269,7 +269,6 @@ void ArmorDetectorNode::decisionCallback(const std_msgs::msg::Int8 msg)
   {
     detector_->classifier->ignore_classes_.clear();
     detector_->classifier->ignore_classes_.push_back("negative");
-    detector_->classifier->ignore_classes_.push_back("2");
     detector_->classifier->ignore_classes_.push_back("3");
     detector_->classifier->ignore_classes_.push_back("4");
     detector_->classifier->ignore_classes_.push_back("5");
