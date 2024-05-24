@@ -32,10 +32,11 @@ public:
 
   double threshold;
 
+  std::vector<std::string> ignore_classes_;
+
 private:
   cv::dnn::Net net_;
   std::vector<std::string> class_names_;
-  std::vector<std::string> ignore_classes_;
 };
 }  // namespace rm_auto_aim
 

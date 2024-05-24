@@ -15,6 +15,8 @@
 #include <sensor_msgs/msg/image.hpp>
 #include <visualization_msgs/msg/marker_array.hpp>
 
+#include <std_msgs/msg/int8.hpp>
+
 // STD
 #include <memory>
 #include <string>
@@ -43,6 +45,8 @@ private:
   void needposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose_ptr);
 
   void armorposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose_ptr);
+
+  void decisionCallback(const std_msgs::msg::Int8 msg);
 
   void getarmorpose();
 
@@ -84,6 +88,7 @@ private:
   // Needpose subscription
   rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr needpose_sub_;
   rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr armorpose_sub_;
+  rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr decision_sub_;
 
   // Debug information
   bool debug_;
@@ -107,6 +112,8 @@ private:
   cv::Point3f needpose = cv::Point3f(0,0,0);
   cv::Point3f armorpose = cv::Point3f(0,0,0);
   cv::Point3f prediction_armorpose = cv::Point3f(0,0,0);
+
+  int decision;
 };
 
 }  // namespace rm_auto_aim

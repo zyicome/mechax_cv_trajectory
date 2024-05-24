@@ -85,6 +85,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
     left_camera_pub_ = this->create_publisher<auto_aim_interfaces::msg::Inter>(
         "/left_camera/result", 10);
 
+    update_pub_ = this->create_publisher<std_msgs::msg::Int8>(
+        "/left_camera/update", 10);
+
     tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
     front_assist_target_sub_ = this->create_subscription<auto_aim_interfaces::msg::Target>(
@@ -165,7 +168,7 @@ void  Trajectoryer::parameters_init()
     update_time = std::chrono::steady_clock::now();
     is_matched = false;
     is_start = false;
-    outpost_bias_t = 0.01;
+    outpost_bias_t = 0.05;
     outpost_radius = 276.5 / 1000; //m
 }
 
@@ -678,7 +681,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
             result.bigyaw = angle_bigyaw * 57.3f;
             result.left_pitch = 0.0;
             result.left_yaw = 0.0;
-            result.right_pitch = -right_angle_pitch;
+            result.right_pitch = right_angle_pitch;
             result.right_yaw = right_angle_yaw;
             result_pub_->publish(result);
         }
@@ -1022,6 +1025,7 @@ void Trajectoryer::assist_get_yaw_bigyaw(float &left_angle_pitch, float &left_an
 
 void Trajectoryer::outpostPointsCallback(const auto_aim_interfaces::msg::Points msg)
 {
+    armor_points.clear();
     for(int i =0;i<msg.points.size();i++)
     {
         Mypoint mypoint;
@@ -1033,6 +1037,8 @@ void Trajectoryer::outpostPointsCallback(const auto_aim_interfaces::msg::Points 
         armor_points.push_back(mypoint);
     }
     is_matched = true;
+    is_start = false;
+    stay_start_time = std::chrono::steady_clock::now();
 }
 
 void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point msg)
@@ -1042,9 +1048,12 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
     cv::Point3d now_point = cv::Point3d(msg.x,msg.y,msg.z);
     end_time = std::chrono::steady_clock::now();
     auto time = std::chrono::duration_cast<chrono::milliseconds>(end_time - start_time);
-    if(time.count() > 2000)
+    if(time.count() > 5000)
     {
         is_matched = false;
+        std_msgs::msg::Int8 update_msg;
+        update_msg.data = 1;
+        update_pub_->publish(update_msg);
         is_start = false;
         stay_x = msg.x;
         stay_y = msg.y;
@@ -1071,6 +1080,12 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
     {
         start_time = std::chrono::steady_clock::now();
     }
+    if(stay_x == 0&& stay_y == 0&&stay_z == 0)
+    {
+        stay_x = msg.x;
+        stay_y = msg.y;
+        stay_z = msg.z;
+    }
     if(is_matched == false)
     {
         two_resistance_model(left_angle_pitch,stay_x ,stay_y ,stay_z ,v0,randa);
@@ -1081,6 +1096,7 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
         pose.point.y = stay_y ;
         pose.point.z = stay_z ;
         get_bigyaw(pose);
+        outpost_fly_time = fly_t;
         result.header.frame_id = "leftodom";
         result.header.stamp = this->now();
         result.is_left_tracking = true;
@@ -1100,6 +1116,14 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
     {
         if(is_start == false)
         {
+            auto staystarttime = std::chrono::duration_cast<chrono::milliseconds>(end_time - stay_start_time);
+            if(staystarttime.count() > 5000)
+            {
+                std_msgs::msg::Int8 update_msg;
+                update_msg.data = 1;
+                update_pub_->publish(update_msg);
+                is_matched = false;
+            }
             cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
             two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
             left_angle_yaw =  atan2(start_point.y, start_point.x);
@@ -1122,15 +1146,17 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
             result.right_pitch = 0.0;
             result.right_yaw = 0.0;
             result_pub_->publish(result);
-            if(get_distance(start_point,now_point) < 0.05)
+            if(get_distance(start_point,now_point) < 0.02)
             {
                 is_start = true;
             }
+            return;
         }
         else if(is_start == true)
         {
             time = std::chrono::duration_cast<chrono::milliseconds>(end_time - next_time);
-            if(time.count() > 833 - fly_t * 1000 + 0.45 * 1000)
+            //std::cout << "tiem: " <<833 - outpost_fly_time * 1000 <<std::endl;
+            if(time.count() > 833)
             {
                 point_number = 1;
                 next_time = std::chrono::steady_clock::now();
@@ -1158,9 +1184,35 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
                 result_pub_->publish(result);
                 return;
             }
-            if(time.count() > 833 - fly_t * 1000 + 0.45 * 1000 - outpost_bias_t * 1000)
+            if(time.count() > 833 - outpost_bias_t * 1000  )
             {
                 point_number = 1;
+                cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
+                two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
+                left_angle_yaw =  atan2(start_point.y, start_point.x);
+                pose.header.stamp = this->now();
+                pose.header.frame_id = "leftodom";
+                pose.point.x = start_point.x;
+                pose.point.y = start_point.y;
+                pose.point.z = start_point.z;
+                get_bigyaw(pose);
+                result.header.frame_id = "leftodom";
+                result.header.stamp = this->now();
+                result.is_left_tracking = true;
+                result.is_right_tracking = false;
+                result.is_assist_tracking = false;
+                result.is_left_can_hit = false;
+                result.is_right_can_hit = false;
+                result.bigyaw = angle_bigyaw * 57.3f;
+                result.left_pitch = left_angle_pitch * 57.3f;
+                result.left_yaw = left_angle_yaw * 57.3f;
+                result.right_pitch = 0.0;
+                result.right_yaw = 0.0;
+                result_pub_->publish(result);
+                return;
+            }
+            if(point_number>= armor_points.size())
+            {
                 cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
                 two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
                 left_angle_yaw =  atan2(start_point.y, start_point.x);
@@ -1194,7 +1246,7 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
             pose.point.y = hit_point.y;
             pose.point.z = hit_point.z;
             get_bigyaw(pose);
-            if(abs(now_yaw - left_angle_yaw) > (3 / 57.3f))
+            if(abs(now_yaw - left_angle_yaw) > (2 / 57.3f))
             {
                 result.header.frame_id = "leftodom";
                 result.header.stamp = this->now();
@@ -1209,6 +1261,7 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
             result.right_pitch = 0.0;
             result.right_yaw = 0.0;
             result_pub_->publish(result);
+            //return;
             }
             else
             {
@@ -1225,33 +1278,9 @@ void Trajectoryer::outpostPointCallback(const auto_aim_interfaces::msg::Point ms
             result.right_pitch = 0.0;
             result.right_yaw = 0.0;
             result_pub_->publish(result);
+            //return;
             }
             auto updatetime = std::chrono::duration_cast<chrono::milliseconds>(end_time - update_time);
-            if(point_number >= armor_points.size())
-            {
-                cv::Point3d start_point = cv::Point3d(armor_points[0].x,armor_points[0].y,armor_points[0].z);
-                two_resistance_model(left_angle_pitch,start_point.x,start_point.y,start_point.z,v0,randa);
-                left_angle_yaw =  atan2(start_point.y, start_point.x);
-                pose.header.stamp = this->now();
-                pose.header.frame_id = "leftodom";
-                pose.point.x = start_point.x;
-                pose.point.y = start_point.y;
-                pose.point.z = start_point.z;
-                get_bigyaw(pose);
-                result.header.frame_id = "leftodom";
-                result.header.stamp = this->now();
-                result.is_left_tracking = true;
-                result.is_right_tracking = false;
-                result.is_assist_tracking = false;
-                result.is_left_can_hit = false;
-                result.is_right_can_hit = false;
-                result.bigyaw = angle_bigyaw * 57.3f;
-                result.left_pitch = left_angle_pitch * 57.3f;
-                result.left_yaw = left_angle_yaw * 57.3f;
-                result.right_pitch = 0.0;
-                result.right_yaw = 0.0;
-                result_pub_->publish(result);
-            }
             if(updatetime.count() >= armor_points[point_number + 1].timetolast)
             {
                 update_time = std::chrono::steady_clock::now();
@@ -1269,19 +1298,53 @@ double Trajectoryer::get_distance(cv::Point3d point_one,cv::Point3d point_two)
 
 void Trajectoryer::fittingToCircle(std::vector<Mypoint> &armor_points,Circle circle)
 {
-    std::vector<cv::Point2d> circle_points;
-    cv::Point2d circle_point;
+    std::vector<cv::Point2f> circle_points;
     double z_sum = 0;
     double z = 0;
     for(int i = 0;i<armor_points.size();i++)
     {
+        cv::Point2d circle_point;
         circle_point.x = armor_points[i].x;
         circle_point.y = armor_points[i].y;
+        circle_points.push_back(circle_point);
         z_sum += armor_points[i].z;
     }
     z = z_sum / armor_points.size();
     circle.armor_points = armor_points;
+    //std::cout << "circle_points.size()" << circle_points.size() <<std::endl;
     cv::minEnclosingCircle(circle_points,circle.circle_center, circle.radius);
+    std::cout << "circle_center.x" << circle.circle_center.x<<std::endl;
+    std::cout << "circle_center.y" << circle.circle_center.y<<std::endl;
+    std::cout << "circle.radius" <<circle.radius<<std::endl;
+    circle_points.clear();
+}
+
+void Trajectoryer::get_circle_xy(double &time, cv::Point3d &start_point,cv::Point3d &hit_point)
+{
+    float w = 0.8 * 3.1415;
+    float pi = 3.1415;
+    float a_x = start_point.x - circle.circle_center.x;
+    float a_y = start_point.y - circle.circle_center.y;
+    float start_angle;
+    if(a_x >= 0 && a_y >= 0)
+    {
+         start_angle = atan2(a_y,a_x);
+    }
+    else if(a_x < 0 && a_y > 0)
+    {
+        start_angle = atan2(a_y,a_x) + pi / 4;
+    }
+    else if(a_x < 0 && a_y < 0)
+    {
+         start_angle = atan2(a_y,a_x) + pi / 2;
+    }
+    else if(a_x < 0 && a_y > 0)
+    {
+         start_angle = atan2(a_y,a_x) + pi /4 *3;
+    }
+    hit_point.x = circle.circle_center.x - cos(w * time + start_angle);
+    hit_point.y = circle.circle_center.y- sin(w * time + start_angle);
+    hit_point.z = circle.z;
 }
 
 void Trajectoryer::usingcircle_outpostPointsCallback(const auto_aim_interfaces::msg::Points msg)
@@ -1338,6 +1401,12 @@ void Trajectoryer::usingcircle_outpostPointCallback(const auto_aim_interfaces::m
     if(msg.x != 0 && msg.y != 0 && msg.z != 0)
     {
         start_time = std::chrono::steady_clock::now();
+    }
+    if(stay_x == 0&& stay_y == 0&&stay_z == 0)
+    {
+        stay_x = msg.x;
+        stay_y = msg.y;
+        stay_z = msg.z;
     }
     if(is_matched == false)
     {
@@ -1458,7 +1527,9 @@ void Trajectoryer::usingcircle_outpostPointCallback(const auto_aim_interfaces::m
             }
             double update_time = updatetime.count(); //ms
             //根据已知圆和装甲板运动速度，根据每帧装甲板之间的一个差距时间来计算装甲板在圆上位置并进行击打
-            cv::Point3d hit_point = cv::Point3d(armor_points[point_number].x,armor_points[point_number].y,armor_points[point_number].z);
+            cv::Point3d hit_point;
+            cv::Point3d start_point = cv::Point3d(circle.armor_points[0].x,circle.armor_points[0].y,circle.z);
+            get_circle_xy(update_time,start_point,hit_point);
             two_resistance_model(left_angle_pitch,hit_point.x,hit_point.y,hit_point.z,v0,randa);
             left_angle_yaw =  atan2(hit_point.y, hit_point.x);
             pose.header.stamp = this->now();

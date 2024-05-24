@@ -24,6 +24,7 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 
 #include <std_msgs/msg/float64.hpp>
+#include <std_msgs/msg/int8.hpp>
 
 #include <geometry_msgs/msg/quaternion.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
@@ -56,6 +57,12 @@ public:
 
     double get_distance(cv::Point3d point_one,cv::Point3d point_two);
 
+    double get_distance_2f(cv::Point2f point_one,cv::Point2f point_two);
+
+    void updateCallback(const std_msgs::msg::Int8 msg);
+
+    bool fittingToCircle_needtoupdate(std::vector<Mypoint> &new_armor_points,std::vector<Mypoint> &save_armor_points);
+
     //------------------
     std::vector<Mypoint> armor_points;
     std::vector<Mypoint> save_armor_points;
@@ -69,6 +76,7 @@ public:
     // Subsciption
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Armors>::SharedPtr left_armors_sub_;
+    rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr update_sub_;
     //------------------
     // Publisher
     //------------------

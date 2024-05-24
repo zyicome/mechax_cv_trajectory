@@ -13,6 +13,9 @@ Outpost::Outpost() : Node("outpost")
 
     left_armors_sub_ = this->create_subscription<auto_aim_interfaces::msg::Armors>(
                   "/left_camera/detector/armors", rclcpp::SensorDataQoS(), std::bind(&Outpost::left_armors_callback, this, std::placeholders::_1));
+
+                 update_sub_ = this->create_subscription<std_msgs::msg::Int8>(
+                  "/left_camera/update", rclcpp::SensorDataQoS(), std::bind(&Outpost::updateCallback, this, std::placeholders::_1));
     
     outpost_points_pub_ = this->create_publisher<auto_aim_interfaces::msg::Points>(
         "/outpost/points", 10);
@@ -90,13 +93,16 @@ void Outpost::left_armors_callback(const auto_aim_interfaces::msg::Armors msg)
     if(armor_points.size() !=0)
     {
      //std::cout << "not" <<std::endl;
-        if(abs(yaw - lastyaw) > (60 / 57.3f) && lastyaw != 0) //需更好的判断什么时候装甲板消失
+     cv::Point3d last_armor_point = cv::Point3d(armor_points[armor_points.size()-1].x,armor_points[armor_points.size()-1].y,armor_points[armor_points.size()-1].z);
+     cv::Point3d now_armor_point = cv::Point3d(ps.point.x,ps.point.y,ps.point.z);
+        //if(abs(yaw - lastyaw) > (60 / 57.3f) && lastyaw != 0) //需更好的判断什么时候装甲板消失
+        if(get_distance(last_armor_point,now_armor_point) > 0.3)
         {
             //std::cout << "armor jumping" <<std::endl;
-            if(armor_points.size()>10)
+            if(armor_points.size()>20)
             {
-            if(save_armor_points.size()< armor_points.size() && save_armor_points.size() < 50)
-            {
+            if(save_armor_points.size()< armor_points.size() && save_armor_points.size() < 20)
+              {
               //需误差修正
               //std::cout << "publish" <<std::endl;
                 save_armor_points = armor_points;
@@ -112,8 +118,24 @@ void Outpost::left_armors_callback(const auto_aim_interfaces::msg::Armors msg)
                     points.points.push_back(point);
                   }
                   outpost_points_pub_->publish(points);
-                  armor_points.clear();
               }
+            if(fittingToCircle_needtoupdate(armor_points,save_armor_points))
+            {
+                save_armor_points = armor_points;
+                auto_aim_interfaces::msg::Points points;
+                for(int i =0;i<armor_points.size();i++)
+                {
+                  auto_aim_interfaces::msg::Point point;
+                  point.x = armor_points[i].x;
+                  point.y = armor_points[i].y;
+                    point.z = armor_points[i].z;
+                    point.yaw = armor_points[i].yaw;
+                    point.timetolast = armor_points[i].timetolast;
+                    points.points.push_back(point);
+                  }
+                  outpost_points_pub_->publish(points);
+            }
+            armor_points.clear();
             }
             else
             {
@@ -127,7 +149,7 @@ void Outpost::left_armors_callback(const auto_aim_interfaces::msg::Armors msg)
         if(armor_points.size() != 0)
         {
           cv::Point3d saved_armor_point = cv::Point3d(armor_points[armor_points.size()-1].x,armor_points[armor_points.size()-1].y,armor_points[armor_points.size()-1].z);
-          if(get_distance(armor_point,saved_armor_point) > 0.01 && get_distance(armor_point,saved_armor_point) < 0.2 && armor_point.x <saved_armor_point.x)
+          if(get_distance(armor_point,saved_armor_point) > 0.01 && get_distance(armor_point,saved_armor_point) < 0.2 )
           {
             Mypoint mypoint;
             mypoint.x = armor_point.x;
@@ -158,6 +180,7 @@ void Outpost::left_armors_callback(const auto_aim_interfaces::msg::Armors msg)
     point.y = ps.point.y;
     point.z = ps.point.z;
     point.yaw = yaw;
+    point.timetolast = time.count();
     outpost_point_pub_->publish(point);
 }
 
@@ -176,6 +199,57 @@ double Outpost::get_distance(cv::Point3d point_one,cv::Point3d point_two)
 {
     double distance = sqrt(pow(point_one.x - point_two.x,2)+pow(point_one.y - point_two.y,2)+pow(point_one.z - point_two.z,2));
     return distance;
+}
+
+double Outpost::get_distance_2f(cv::Point2f point_one,cv::Point2f point_two)
+{
+    double distance = sqrt(pow(point_one.x - point_two.x,2)+pow(point_one.y - point_two.y,2));
+    return distance;
+}
+
+void Outpost::updateCallback(const std_msgs::msg::Int8 msg)
+{
+  if(msg.data == 1)
+  {
+    save_armor_points.clear();
+  }
+}
+
+bool Outpost::fittingToCircle_needtoupdate(std::vector<Mypoint> &new_armor_points,std::vector<Mypoint> &save_armor_points)
+{
+    std::vector<cv::Point2f> new_circle_points;
+    std::vector<cv::Point2f> save_circle_points;
+    for(int i = 0;i<new_armor_points.size();i++)
+    {
+        cv::Point2f circle_point;
+        circle_point.x = new_armor_points[i].x;
+        circle_point.y = new_armor_points[i].y;
+        new_circle_points.push_back(circle_point);
+    }
+    for(int i = 0;i<save_armor_points.size();i++)
+    {
+        cv::Point2f circle_point;
+        circle_point.x = save_armor_points[i].x;
+        circle_point.y = save_armor_points[i].y;
+        save_circle_points.push_back(circle_point);
+    }
+    cv::Point2f new_circle_center;
+    cv::Point2f save_circle_center;
+    float new_radius;
+    float save_radius;
+    //std::cout << "circle_points.size()" << circle_points.size() <<std::endl;
+    cv::minEnclosingCircle(new_circle_points,new_circle_center, new_radius);
+    cv::minEnclosingCircle(save_circle_points,save_circle_center, save_radius);
+    std::cout << "get_distance_2f(new_circle_center,save_circle_center): " <<get_distance_2f(new_circle_center,save_circle_center) <<std::endl;
+    if(get_distance_2f(new_circle_center,save_circle_center) > 0.2)
+    {
+      return true;
+    }
+    if(abs(new_radius - 0.2765) < abs(save_radius - 0.2765))
+    {
+      return true;
+    }
+    return false;
 }
 
 int main(int argc, char *argv[])

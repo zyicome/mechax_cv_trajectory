@@ -217,7 +217,7 @@ def generate_launch_description():
         robot_state_publisher,
         cam_detector,
         delay_detector_node,
-        #delay_tracker_node,
+        delay_tracker_node,
         trajectory_node,
         #delay_right_detector_node,
         #delay_right_tracker_node,
@@ -226,5 +226,5 @@ def generate_launch_description():
         #delay_back_assist_detector_node,
         #delay_back_assist_tracker_node,
         delay_serial_node,
-        delay_outpost_node,
+        #delay_outpost_node,
     ])

@@ -8,6 +8,7 @@
 #include <rclcpp/utilities.hpp>
 #include <serial_driver/serial_driver.hpp>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <std_msgs/msg/int8.hpp>
 
 // C++ system
 #include <cstdint>
@@ -35,7 +36,7 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
   getParams();
 
   // TF broadcaster
-  timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.0);
+  timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.005);
   left_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
   right_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
   big_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
@@ -43,6 +44,8 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
   // Create Publisher
   latency_pub_ = this->create_publisher<std_msgs::msg::Float64>("/latency", 10);
   serial_pub_ = this->create_publisher<auto_aim_interfaces::msg::ReceiveSerial>("/angle/init", 10);
+  decision_pub_ = this->create_publisher<std_msgs::msg::Int8>("/serail/decision", 10);
+
 
   // Detect parameter client
   detector_param_client_ = std::make_shared<rclcpp::AsyncParametersClient>(this, "armor_detector");
@@ -250,6 +253,10 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.right_yaw = packet.right_yaw;
                       receive_serial_msg_.bigyaw = packet.bigyaw;
                       serial_pub_->publish(receive_serial_msg_);
+
+                      std_msgs::msg::Int8 decision_msg;
+                      decision_msg.data = packet.target;
+                      decision_pub_->publish(decision_msg);
 
                       end = std::chrono::high_resolution_clock::now();
 

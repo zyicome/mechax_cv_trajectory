@@ -82,6 +82,7 @@ private:
   rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr latency_pub_;
   rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr marker_pub_;
   rclcpp::Publisher<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr serial_pub_;
+  rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr decision_pub_;
 
   std::thread receive_thread_;
 

@@ -5,6 +5,7 @@
 #define RM_SERIAL_DRIVER__PACKET_HPP_
 
 #include <algorithm>
+#include <boost/config/detail/suffix.hpp>
 #include <cstdint>
 #include <vector>
 #include <iostream>
@@ -19,7 +20,8 @@ struct ReceivePacket
   float left_yaw;               // rad       
   float left_pitch;
   float right_yaw;
-  float right_pitch;                 // rad
+  float right_pitch;            // rad
+  uint8_t target;
   uint16_t checksum = 0;     // crc16校验位 https://blog.csdn.net/ydyuse/article/details/105395368
 } __attribute__((packed));
 

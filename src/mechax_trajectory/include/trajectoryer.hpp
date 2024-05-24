@@ -23,6 +23,7 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 
 #include <std_msgs/msg/float64.hpp>
+#include <std_msgs/msg/int8.hpp>
 
 #include <geometry_msgs/msg/quaternion.hpp>
 
@@ -108,6 +109,8 @@ public:
 
     void fittingToCircle(std::vector<Mypoint> &armor_points,Circle circle);
 
+    void get_circle_xy(double &time, cv::Point3d &start_point,cv::Point3d &hit_point);
+    
     void tf2_init();
 
     void get_need_pose(const geometry_msgs::msg::PointStamped pose);
@@ -182,6 +185,7 @@ public:
     int point_number;
     Circle circle;
     float outpost_radius;
+    float outpost_fly_time;
     //------------------
     double start;
     double end;
@@ -189,6 +193,7 @@ public:
     std::chrono::steady_clock::time_point update_time;
     std::chrono::steady_clock::time_point end_time;
     std::chrono::steady_clock::time_point next_time;
+    std::chrono::steady_clock::time_point stay_start_time;
     // Subsciption
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr left_camera_target_sub_;
@@ -207,6 +212,7 @@ public:
     rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr needpose_pub_;
     rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr armorpose_pub_;
     rclcpp::Publisher<auto_aim_interfaces::msg::Inter>::SharedPtr left_camera_pub_;
+    rclcpp::Publisher<std_msgs::msg::Int8>::SharedPtr update_pub_;
     //------------------
     //timer
     //------------------

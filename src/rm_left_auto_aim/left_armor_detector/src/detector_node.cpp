@@ -126,6 +126,11 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
 
   armorpose_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>("/left_camera/tracker/armorpose", 10,
     std::bind(&ArmorDetectorNode::armorposeCallback, this, std::placeholders::_1));
+
+  decision_sub_ = this->create_subscription<std_msgs::msg::Int8>("/serial/decision", 10,
+    std::bind(&ArmorDetectorNode::decisionCallback, this, std::placeholders::_1));
+
+    decision = 0;
 }
 
 void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg)
@@ -248,6 +253,44 @@ void ArmorDetectorNode::armorposeCallback(const geometry_msgs::msg::PointStamped
   std::cout << "needpose_img.y : " << needpose_img.y << std::endl;*/
 }
 
+void ArmorDetectorNode::decisionCallback(const std_msgs::msg::Int8 msg)
+{
+  if(decision == msg.data)
+  {
+    return;
+  }
+  decision = msg.data;
+  if(decision == 0)
+  {
+    detector_->classifier->ignore_classes_.clear();
+    detector_->classifier->ignore_classes_.push_back("negative");
+  }
+  else if(decision == 1)
+  {
+    detector_->classifier->ignore_classes_.clear();
+    detector_->classifier->ignore_classes_.push_back("negative");
+    detector_->classifier->ignore_classes_.push_back("2");
+    detector_->classifier->ignore_classes_.push_back("3");
+    detector_->classifier->ignore_classes_.push_back("4");
+    detector_->classifier->ignore_classes_.push_back("5");
+    detector_->classifier->ignore_classes_.push_back("outpost");
+    detector_->classifier->ignore_classes_.push_back("guard");
+    detector_->classifier->ignore_classes_.push_back("base");
+  }
+  else if(decision == 2)
+  {
+    detector_->classifier->ignore_classes_.clear();
+    detector_->classifier->ignore_classes_.push_back("negative");
+    detector_->classifier->ignore_classes_.push_back("1");
+    detector_->classifier->ignore_classes_.push_back("2");
+    detector_->classifier->ignore_classes_.push_back("3");
+    detector_->classifier->ignore_classes_.push_back("4");
+    detector_->classifier->ignore_classes_.push_back("5");
+    detector_->classifier->ignore_classes_.push_back("guard");
+    detector_->classifier->ignore_classes_.push_back("base");
+  }
+}
+
 void ArmorDetectorNode::getarmorpose()
 {
   /*cv::Mat armorpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
@@ -341,7 +384,7 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
   param_desc.integer_range[0].step = 1;
   param_desc.integer_range[0].from_value = 0;
   param_desc.integer_range[0].to_value = 255;
-  int binary_thres = declare_parameter("binary_thres", 160, param_desc);
+  int binary_thres = declare_parameter("binary_thres", 80, param_desc);
 
   param_desc.description = "0-RED, 1-BLUE";
   param_desc.integer_range[0].from_value = 0;
@@ -354,7 +397,7 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
     .max_angle = declare_parameter("light.max_angle", 40.0)};
 
   Detector::ArmorParams a_params = {
-    .min_light_ratio = declare_parameter("armor.min_light_ratio", 0.7),
+    .min_light_ratio = declare_parameter("armor.min_light_ratio", 0.8),
     .min_small_center_distance = declare_parameter("armor.min_small_center_distance", 0.8),
     .max_small_center_distance = declare_parameter("armor.max_small_center_distance", 3.2),
     .min_large_center_distance = declare_parameter("armor.min_large_center_distance", 3.2),
@@ -367,7 +410,7 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
   auto pkg_path = ament_index_cpp::get_package_share_directory("left_armor_detector");
   auto model_path = pkg_path + "/model/mlp.onnx";
   auto label_path = pkg_path + "/model/label.txt";
-  double threshold = this->declare_parameter("classifier_threshold", 0.7);
+  double threshold = this->declare_parameter("classifier_threshold", 0.8);
   std::vector<std::string> ignore_classes =
     this->declare_parameter("ignore_classes", std::vector<std::string>{"negative"});
   detector->classifier =
