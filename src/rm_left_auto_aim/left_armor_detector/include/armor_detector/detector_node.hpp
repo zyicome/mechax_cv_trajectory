@@ -32,6 +32,10 @@
 
 #include <std_msgs/msg/float64.hpp>
 
+#include <tf2_ros/static_transform_broadcaster.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <geometry_msgs/msg/transform_stamped.h>
+
 namespace rm_left_auto_aim
 {
 
@@ -114,8 +118,15 @@ private:
   cv::Point3f prediction_armorpose = cv::Point3f(0,0,0);
 
   int decision;
-};
 
+  std::shared_ptr<tf2_ros::StaticTransformBroadcaster> tf_publisher_;
+
+  //------------------------------------------------------------------------------
+  std::chrono::steady_clock::time_point start;
+  std::chrono::steady_clock::time_point end;
+  int fps;
+  int now_fps;
+};
 }  // namespace rm_auto_aim
 
 #endif  // ARMOR_DETECTOR__DETECTOR_NODE_HPP_

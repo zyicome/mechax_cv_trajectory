@@ -17,7 +17,15 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #######################
 
 find_package(ament_cmake_auto REQUIRED)
-find_package(OpenCV REQUIRED)
+#set(OpenCV_DIR /home/mechax/git/opencv/install)
+#set(OpenCV_INCLUDE_DIRS /home/mechax/build-opencv/install/include/opencv4)
+#set(OpenCV_INCLUDE_DIRS /home/mechax/git/opencv/include/opencv2)
+#find_package(OpenCV 4.5.4 REQUIRED PATHS /home/mechax/build-opencv/install/cmake)
+find_package(OpenCV REQUIRED PATHS /home/mechax/git/opencv/install/cmake)
+#find_package(InferenceEngine REQUIRED PATHS /home/mechax/git/opencv/install/cmake)
+#set(OpenCV_LIBRARY_DIRS /home/mechax/build-opencv/install/lib)
+#set(OpenCV_LIBS /home/mechax/git/opencv/install/lib)
+message(WARNING "${OpenCV_DIR} ${OpenCV_VERSION}")
 ament_auto_find_build_dependencies()
 
 ###########

@@ -44,7 +44,7 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
   // Create Publisher
   latency_pub_ = this->create_publisher<std_msgs::msg::Float64>("/latency", 10);
   serial_pub_ = this->create_publisher<auto_aim_interfaces::msg::ReceiveSerial>("/angle/init", 10);
-  decision_pub_ = this->create_publisher<std_msgs::msg::Int8>("/serail/decision", 10);
+  decision_pub_ = this->create_publisher<std_msgs::msg::Int8>("/serial/decision", 10);
 
 
   // Detect parameter client
@@ -208,7 +208,7 @@ void RMSerialDriver::receiveData()
                       //std::cout<< "packet.checksum: " << packet.checksum << std::endl;
                       if(CRC_check == packet.checksum)
                       {
-                        packet.detect_color = 0;
+                        packet.detect_color = 1;
                       // 执行您的操作，例如设置参数、发布消息等
                       if (!initial_set_param_ || packet.detect_color != previous_receive_color_) {
                           setParam(rclcpp::Parameter("detect_color", packet.detect_color));
@@ -252,10 +252,13 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.right_pitch = packet.right_pitch;
                       receive_serial_msg_.right_yaw = packet.right_yaw;
                       receive_serial_msg_.bigyaw = packet.bigyaw;
+                      receive_serial_msg_.v = packet.v;
                       serial_pub_->publish(receive_serial_msg_);
 
                       std_msgs::msg::Int8 decision_msg;
+                      //decision_msg.data = 2;
                       decision_msg.data = packet.target;
+                      //std::cout << "packet.target" << (int)packet.target <<std::endl;
                       decision_pub_->publish(decision_msg);
 
                       end = std::chrono::high_resolution_clock::now();

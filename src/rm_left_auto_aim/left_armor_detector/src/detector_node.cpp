@@ -130,11 +130,35 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
   decision_sub_ = this->create_subscription<std_msgs::msg::Int8>("/serial/decision", 10,
     std::bind(&ArmorDetectorNode::decisionCallback, this, std::placeholders::_1));
 
-    decision = 0;
+    decision = -1;
+
+    detector_->classifier->ignore_classes_ = {"negative","guard","base"};
+
+    tf_publisher_ = std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
+
+    //----------------------------------------------------------------------------------
+    start = std::chrono::steady_clock::now();
+    end = std::chrono::steady_clock::now();
+    fps = 0;
+    now_fps = 0;
 }
 
 void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg)
 {
+  end = std::chrono::steady_clock::now();
+
+  std::chrono::duration<double> diff = end - start;
+
+  if(diff.count() >= 1)
+  {
+    std::cout << diff.count() << "s and detector receive fps: " << fps<< std::endl;
+    now_fps = fps;
+    start = std::chrono::steady_clock::now();
+    fps = 0;
+  }
+
+  fps++;
+
   auto armors = detectArmors(img_msg);
 
   if (pnp_solver_ != nullptr) {
@@ -255,26 +279,51 @@ void ArmorDetectorNode::armorposeCallback(const geometry_msgs::msg::PointStamped
 
 void ArmorDetectorNode::decisionCallback(const std_msgs::msg::Int8 msg)
 {
+  //std::cout << "msg.data" << msg.data << std::endl;
   if(decision == msg.data)
   {
     return;
   }
+  geometry_msgs::msg::TransformStamped static_transformStamped;
   decision = msg.data;
   if(decision == 0)
   {
     detector_->classifier->ignore_classes_.clear();
     detector_->classifier->ignore_classes_.push_back("negative");
+    detector_->classifier->ignore_classes_.push_back("guard");
+    detector_->classifier->ignore_classes_.push_back("base");
+    /*static_transformStamped.header.stamp = this->now();
+    static_transformStamped.header.frame_id = "left_gimbal_link";
+    static_transformStamped.child_frame_id = "left_camera_link";
+    static_transformStamped.transform.translation.x = 0.110;
+    static_transformStamped.transform.translation.y = 0.045;
+    static_transformStamped.transform.translation.z = 0.030;
+    tf2::Quaternion quat;
+    quat.setRPY(0.0, 3.1415 / 120.0, 3.1415 / 300);
+    static_transformStamped.transform.rotation.x = quat.x();
+    static_transformStamped.transform.rotation.y = quat.y();
+    static_transformStamped.transform.rotation.z = quat.z();
+    static_transformStamped.transform.rotation.w = quat.w();
+    tf_publisher_->sendTransform(static_transformStamped);*/
   }
   else if(decision == 1)
   {
     detector_->classifier->ignore_classes_.clear();
     detector_->classifier->ignore_classes_.push_back("negative");
-    detector_->classifier->ignore_classes_.push_back("3");
-    detector_->classifier->ignore_classes_.push_back("4");
-    detector_->classifier->ignore_classes_.push_back("5");
-    detector_->classifier->ignore_classes_.push_back("outpost");
-    detector_->classifier->ignore_classes_.push_back("guard");
     detector_->classifier->ignore_classes_.push_back("base");
+    /*static_transformStamped.header.stamp = this->now();
+    static_transformStamped.header.frame_id = "left_gimbal_link";
+    static_transformStamped.child_frame_id = "left_camera_link";
+    static_transformStamped.transform.translation.x = 0.110;
+    static_transformStamped.transform.translation.y = 0.045;
+    static_transformStamped.transform.translation.z = 0.030;
+    tf2::Quaternion quat;
+    quat.setRPY(0.0, 3.1415 / 120, 3.1415 / 300);
+    static_transformStamped.transform.rotation.x = quat.x();
+    static_transformStamped.transform.rotation.y = quat.y();
+    static_transformStamped.transform.rotation.z = quat.z();
+    static_transformStamped.transform.rotation.w = quat.w();
+    tf_publisher_->sendTransform(static_transformStamped);*/
   }
   else if(decision == 2)
   {
@@ -284,9 +333,21 @@ void ArmorDetectorNode::decisionCallback(const std_msgs::msg::Int8 msg)
     detector_->classifier->ignore_classes_.push_back("2");
     detector_->classifier->ignore_classes_.push_back("3");
     detector_->classifier->ignore_classes_.push_back("4");
-    detector_->classifier->ignore_classes_.push_back("5");
     detector_->classifier->ignore_classes_.push_back("guard");
     detector_->classifier->ignore_classes_.push_back("base");
+    /*static_transformStamped.header.stamp = this->now();
+    static_transformStamped.header.frame_id = "left_gimbal_link";
+    static_transformStamped.child_frame_id = "left_camera_link";
+    static_transformStamped.transform.translation.x = 0.105;
+    static_transformStamped.transform.translation.y = 0.00;
+    static_transformStamped.transform.translation.z = 0.030;
+    tf2::Quaternion quat;
+    quat.setRPY(0.0, 0.0, 0);
+    static_transformStamped.transform.rotation.x = quat.x();
+    static_transformStamped.transform.rotation.y = quat.y();
+    static_transformStamped.transform.rotation.z = quat.z();
+    static_transformStamped.transform.rotation.w = quat.w();
+    tf_publisher_->sendTransform(static_transformStamped);*/
   }
 }
 
@@ -427,6 +488,7 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
   // Update params
   detector_->binary_thres = get_parameter("binary_thres").as_int();
   detector_->detect_color = get_parameter("detect_color").as_int();
+  detector_->detect_color = 1;
   detector_->classifier->threshold = get_parameter("classifier_threshold").as_double();
 
   auto armors = detector_->detect(img);

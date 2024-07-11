@@ -13,11 +13,14 @@ def generate_launch_description():
     from launch import LaunchDescription
     
     def get_camera_node(package, executable):
-        return Node(
+        return ComposableNode(
             package=package,
-            executable=executable,
+            plugin=executable,
             name='camera_node',
             parameters=[node_params],
+            #emulate_tty=True,
+            #output='both',
+            extra_arguments=[{'use_intra_process_comms': True}],
         )
 
     #def get_camera_detector_container(camera_node):
@@ -43,22 +46,20 @@ def generate_launch_description():
             on_exit=Shutdown(),
         )
 
-    hik_camera_node = get_camera_node('hik_camera', 'hik_camera_node')
-    mv_camera_node = get_camera_node('mindvision_camera', 'mindvision_camera_node')
+    hik_camera_node = get_camera_node('hik_camera', 'hik_camera::HikCameraNode')
+    mv_camera_node = get_camera_node('mindvision_camera', 'mindvision_camera::MindvisionCameraNode')
 
     if (launch_params['camera'] == 'hik'):
         cam_detector = hik_camera_node
     elif (launch_params['camera'] == 'mv'):
         cam_detector = mv_camera_node
         
-    detector_node = Node(
+    detector_node = ComposableNode(
         package='left_armor_detector',
-        executable='left_armor_detector_node',
-        emulate_tty=True,
-        output='both',
+        plugin='rm_left_auto_aim::ArmorDetectorNode',
+        name='left_armor_detector',
         parameters=[node_params],
-        arguments=['--ros-args', '--log-level',
-                   'armor_detector:='+launch_params['detector_log_level']],
+        extra_arguments=[{'use_intra_process_comms': True}],
     )
 
     delay_detector_node = TimerAction(
@@ -213,10 +214,26 @@ def generate_launch_description():
         actions=[outpost_node],
     )
 
+    """Generate launch description with multiple components."""
+    container = ComposableNodeContainer(
+            name='image_container',
+            namespace='',
+            package='rclcpp_components',
+            executable='component_container_mt',
+            composable_node_descriptions=[
+                cam_detector,
+                detector_node,
+                #openvino_detector_node,
+            ],
+            output='both',
+    )
+    print(container)
+
     return LaunchDescription([
         robot_state_publisher,
-        cam_detector,
-        delay_detector_node,
+        #cam_detector,
+        #delay_detector_node,
+        container,
         delay_tracker_node,
         trajectory_node,
         #delay_right_detector_node,

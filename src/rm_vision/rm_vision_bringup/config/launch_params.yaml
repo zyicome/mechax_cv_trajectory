@@ -1,8 +1,8 @@
 camera: hik
 
 odom2camera:
-  xyz: "\"0.000 0.000  0.000\""
-  rpy: "\"0.0  0.0  0.0\""
+  xyz: "\"0.0481 0.00 0.047\""
+  rpy: "\"0.0  ${pi / 360}  ${pi/360}\""
 
 detector_log_level: INFO
 tracker_log_level: INFO

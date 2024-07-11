@@ -22,6 +22,7 @@ struct ReceivePacket
   float right_yaw;
   float right_pitch;            // rad
   uint8_t target;
+  float v;
   uint16_t checksum = 0;     // crc16校验位 https://blog.csdn.net/ydyuse/article/details/105395368
 } __attribute__((packed));
 

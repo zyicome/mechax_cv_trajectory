@@ -187,6 +187,7 @@ public:
     float outpost_radius;
     float outpost_fly_time;
     //------------------
+    bool is_assisting;
     double start;
     double end;
     std::chrono::steady_clock::time_point start_time;
@@ -194,6 +195,7 @@ public:
     std::chrono::steady_clock::time_point end_time;
     std::chrono::steady_clock::time_point next_time;
     std::chrono::steady_clock::time_point stay_start_time;
+    std::chrono::steady_clock::time_point assist_time;
     // Subsciption
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr left_camera_target_sub_;

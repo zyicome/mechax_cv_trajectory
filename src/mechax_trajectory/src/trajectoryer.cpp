@@ -120,7 +120,7 @@ void  Trajectoryer::parameters_init()
     }
     else
     {
-        v0 = 27; // m/s
+        v0 = 24; // m/s
     }
     //****************************************************
     // 用来计算空气阻力系数
@@ -144,11 +144,11 @@ void  Trajectoryer::parameters_init()
     }
     //****************************************************
     //****************************************************
-    bias_t = 0.002;  // s
+    bias_t = 0.00;  // s
     fly_t = 0.5; // s
     //摄像头相对于云台的偏置,一般改z_bias即可
     y_bias = 0.0; // m
-    z_bias = 0.0; // m
+    z_bias = -0.04; // m
     //****************************************************
     needchangeyaw = 0.0;
     is_left_tracking = 0;
@@ -166,10 +166,12 @@ void  Trajectoryer::parameters_init()
     end_time = std::chrono::steady_clock::now();
     next_time = std::chrono::steady_clock::now();
     update_time = std::chrono::steady_clock::now();
+    assist_time = std::chrono::steady_clock::now();
     is_matched = false;
     is_start = false;
     outpost_bias_t = 0.05;
     outpost_radius = 276.5 / 1000; //m
+    is_assisting = false;
 }
 
 //@param: object_x, object_y, object_z, v0
@@ -408,7 +410,7 @@ int Trajectoryer::solve_trajectory()
         for (i = 0; i<3; i++) {
         result position_result;
         float tmp_yaw = tar_yaw + i * 2.0 * M_PI/3.0;  // 2/3PI
-        float r =  (r_1 + r_2)/2;   //理论上r1=r2 这里取个平均值                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+        float r =  r_2;  //理论上r1=r2 这里取个平均值                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
         position_result.x = ros_x - r*cos(tmp_yaw);
         position_result.y = ros_y - r*sin(tmp_yaw);
         position_result.z = ros_z;
@@ -583,7 +585,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
             end = time;
 
             // 输出时间差（以秒为单位）
-            std::cout << "mechax_trajectory Time difference: " << end - start << " s\n";   
+            //std::cout << "mechax_trajectory Time difference: " << end - start << " s\n";   
 
             if(is_right_tracking == true)
             {
@@ -592,7 +594,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_left_tracking = false;
                 result.is_right_tracking = is_right_tracking;
                 result.is_assist_tracking = false;
-                result.is_left_can_hit = false;
+                result.is_left_can_hit = true;
                 result.is_right_can_hit = true;
                 result.left_pitch = 0.0;
                 result.left_yaw = 0.0;
@@ -607,7 +609,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_left_tracking = false;
                 result.is_right_tracking = false;
                 result.is_assist_tracking = false;
-                result.is_left_can_hit = false;
+                result.is_left_can_hit = true;
                 result.is_right_can_hit = false;
                 result.left_pitch = 0.0;
                 result.left_yaw = 0.0;
@@ -623,7 +625,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
             float send_bigyaw = angle_bigyaw * 57.3f;
             if((needchangeyaw) < 5 && (needchangeyaw) > -5 && distance > 1.5)
             {
-                send_yaw = (left_angle_yaw) * 57.3f + needchangeyaw;
+                send_yaw = (left_angle_yaw) * 57.3f;
                 //send_yaw = (angle_yaw) * 57.3f;
             }
             else{
@@ -651,16 +653,22 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
             }
             else
             {
+                is_left_can_hit = true;
+                if(abs(left_angle_yaw * 57.3f - now_yaw * 57.3f) > 5)
+                {
+                    is_left_can_hit = false;
+                }
                 result.header.frame_id = "leftodom";
                 result.header.stamp = this->now();
                 result.is_left_tracking = is_left_tracking;
                 result.is_right_tracking = false;
                 result.is_assist_tracking = false;
-                result.is_left_can_hit = true;
+                result.is_left_can_hit = is_left_can_hit;
                 result.is_right_can_hit = false;
                 result.bigyaw = angle_bigyaw * 57.3f;
                 result.left_pitch = left_angle_pitch * 57.3f;
                 result.left_yaw = left_angle_yaw * 57.3f;
+                //result.left_yaw = -69;
                 result.right_pitch = 0.0;
                 result.right_yaw = 0.0;
                 result_pub_->publish(result);
@@ -757,9 +765,9 @@ void Trajectoryer::front_assist_target_callback(const auto_aim_interfaces::msg::
             result.is_left_can_hit = false;
             result.is_right_can_hit = false;
             result.bigyaw = send_bigyaw;
-            result.left_pitch = -left_send_pitch;
+            result.left_pitch = left_send_pitch;
             result.left_yaw = left_send_yaw;
-            result.right_pitch = -right_send_pitch;
+            result.right_pitch = right_send_pitch;
             result.right_yaw = right_send_yaw;
             result_pub_->publish(result);
     }
@@ -778,6 +786,35 @@ void Trajectoryer::back_assist_target_callback(const auto_aim_interfaces::msg::T
     {
         return;
     }
+    if(msg.position.x == 0 && msg.position.y == 0 && msg.position.z == 0 && is_assisting == true)
+    {
+        auto time = std::chrono::duration_cast<chrono::milliseconds>(end_time - assist_time);
+        if(time.count() >= 2000)
+        {
+            is_assisting == false;
+            return;
+        }
+        auto_aim_interfaces::msg::SendSerial result;
+        result.header.frame_id = "bigodom";
+        result.header.stamp = this->now();
+
+        float left_send_pitch = left_angle_pitch * 57.3f;
+        float left_send_yaw = left_angle_yaw * 57.3f;
+        float right_send_pitch = right_angle_pitch * 57.3f;
+        float right_send_yaw = right_angle_yaw * 57.3f;
+        float send_bigyaw = angle_bigyaw * 57.3f;
+         result.is_left_tracking = false;
+        result.is_right_tracking = false;
+        result.is_assist_tracking = true;
+        result.is_left_can_hit = false;
+        result.is_right_can_hit = false;
+        result.bigyaw = send_bigyaw;
+        result.left_pitch = left_send_pitch;
+        result.left_yaw = left_send_yaw;
+        result.right_pitch = right_send_pitch;
+        result.right_yaw = right_send_yaw;
+        result_pub_->publish(result);
+    }
     is_assist_tracking = msg.tracking;
     assist_x = msg.position.x;
     assist_y = msg.position.y;
@@ -793,6 +830,7 @@ void Trajectoryer::back_assist_target_callback(const auto_aim_interfaces::msg::T
 
     if(is_assist_tracking)
     {
+
         auto_aim_interfaces::msg::SendSerial result;
         result.header.frame_id = "bigodom";
         result.header.stamp = this->now();
@@ -808,11 +846,13 @@ void Trajectoryer::back_assist_target_callback(const auto_aim_interfaces::msg::T
             result.is_left_can_hit = false;
             result.is_right_can_hit = false;
             result.bigyaw = send_bigyaw;
-            result.left_pitch = -left_send_pitch;
+            result.left_pitch = left_send_pitch;
             result.left_yaw = left_send_yaw;
-            result.right_pitch = -right_send_pitch;
+            result.right_pitch = right_send_pitch;
             result.right_yaw = right_send_yaw;
             result_pub_->publish(result);
+            assist_time = std::chrono::steady_clock::now();
+            is_assisting = true;
     }
 
     is_assist_tracking = false;
@@ -823,6 +863,10 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
 {
     now_pitch = msg.left_pitch / 57.3f;
     now_yaw = msg.left_yaw / 57.3f;
+    if(msg.v > 20)
+    {
+    v0 = msg.v;
+    }
     // RCLCPP_INFO(get_logger(), "now_pitch: %f", now_pitch);
     // RCLCPP_INFO(get_logger(), "now_yaw: %f", now_yaw);
     // 创建坐标变换消息和发布

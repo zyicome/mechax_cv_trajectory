@@ -30,6 +30,7 @@ NumberClassifier::NumberClassifier(
 : threshold(thre), ignore_classes_(ignore_classes)
 {
   net_ = cv::dnn::readNetFromONNX(model_path);
+  //net_.setPreferableBackend(cv::dnn::Backend::DNN_BACKEND_INFERENCE_ENGINE);
 
   std::ifstream label_file(label_path);
   std::string line;
