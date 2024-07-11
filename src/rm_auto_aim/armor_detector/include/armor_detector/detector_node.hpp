@@ -89,10 +89,10 @@ private:
   cv::Point2f armorpose_img = cv::Point2f(0, 0);
 
   //------------------------------------------------------------------------------
-  std::chrono::steady_clock::time_point start;
-  std::chrono::steady_clock::time_point end;
-  int fps;
-  int now_fps;
+  std::chrono::steady_clock::time_point detector_start;
+  std::chrono::steady_clock::time_point detector_end;
+  int detector_fps;
+  int detector_now_fps;
 };
 
 }  // namespace rm_auto_aim

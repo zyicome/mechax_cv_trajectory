@@ -101,27 +101,27 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
 
     //----------------------------------------------------------------------------------
-    start = std::chrono::steady_clock::now();
-    end = std::chrono::steady_clock::now();
-    fps = 0;
-    now_fps = 0;
+    detector_start = std::chrono::steady_clock::now();
+    detector_end = std::chrono::steady_clock::now();
+    detector_fps = 0;
+    detector_now_fps = 0;
 }
 
 void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg)
 {
-  end = std::chrono::steady_clock::now();
+  detector_end = std::chrono::steady_clock::now();
 
-  std::chrono::duration<double> diff = end - start;
+  std::chrono::duration<double> diff = detector_end - detector_start;
 
   if(diff.count() >= 1)
   {
-    std::cout << diff.count() << "s and detector receive fps: " << fps<< std::endl;
-    now_fps = fps;
-    start = std::chrono::steady_clock::now();
-    fps = 0;
+    std::cout << diff.count() << "s and detector receive fps: " << detector_fps<< std::endl;
+    detector_now_fps = detector_fps;
+    detector_start = std::chrono::steady_clock::now();
+    detector_fps = 0;
   }
 
-  fps++;
+  detector_fps++;
 
   auto armors = detectArmors(img_msg);
 
@@ -278,9 +278,9 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
     cv::putText(
       img, latency_s, cv::Point(10, 30), cv::FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(0, 255, 0), 2);
     // Draw fps
-    std::string fps_s = std::to_string(now_fps);
+    std::string detector_fps_s = std::to_string(detector_now_fps);
     cv::putText(
-      img, fps_s, cv::Point(10, 80), cv::FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(0, 0, 255), 2);
+      img, detector_fps_s, cv::Point(10, 80), cv::FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(0, 0, 255), 2);
     
     result_img_pub_.publish(cv_bridge::CvImage(img_msg->header, "rgb8", img).toImageMsg());
   }
