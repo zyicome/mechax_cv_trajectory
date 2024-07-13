@@ -521,12 +521,31 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             send_yaw = (angle_yaw) * 57.3f;
             //float send_yaw = (angle_yaw) * 57.3f;
             //--------------------------------------------
+            float max_yaw_diff = 3; //现在的yaw与计算的需求yaw的最大容忍差值，可根据需求更改
+            if(abs(send_yaw - now_yaw * 57.3f) > max_yaw_diff)
+            {
+                is_can_hit = false;
+            }
+            else
+            {
+                is_can_hit = true;
+            }
+            //--------------------------------------------
             result.is_tracking = is_tracking;
-            result.is_can_hit = true;
+            result.is_can_hit = is_can_hit;
             result.pitch = send_pitch;
             result.yaw = send_yaw;
             result.distance = distance;
             result_pub_->publish(result);
+
+            latency_count++;
+            all_latency = all_latency + (this->now() - msg.header.stamp).seconds();
+            if(latency_count >= 100)
+            {
+                std::cout << "all_latency: " << all_latency << "s" << " and average latency: " << all_latency / latency_count << "s" << std::endl;
+                latency_count = 0;
+                all_latency = 0;
+            }
             //RCLCPP_INFO(get_logger(), "send need angle!");
             //is_shoot = false;
         //}

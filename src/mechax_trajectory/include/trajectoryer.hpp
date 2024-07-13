@@ -94,6 +94,8 @@ public:
     bool is_can_hit;
     string id;
     //------------------
+    int latency_count;
+    float all_latency;
     //------------------
     float randa;
     bool is_hero;

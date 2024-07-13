@@ -87,6 +87,12 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
   result_sub_ = this->create_subscription<auto_aim_interfaces::msg::SendSerial>(
     "/trajectory/result", 10,
     std::bind(&RMSerialDriver::sendData, this, std::placeholders::_1));
+
+  //----------------------------------------------------------------------------------
+    serial_start = std::chrono::steady_clock::now();
+    serial_end = std::chrono::steady_clock::now();
+    total_count = 0;
+    total_time = 0;
 }
 
 RMSerialDriver::~RMSerialDriver()
@@ -179,12 +185,6 @@ void RMSerialDriver::receiveData()
               if (header[0] == 0xAA) {
                   // 如果检测到结束标识符（0xAAA），则停止接收数据并处理
                   receiving_data = false;
-                  // for(int i = 0; i < static_cast<int>(data_buffer.size()); i++)
-                  // {
-                  //     //int a = int(data_buffer[i])；
-                  //     std::cout << "data_buffer[" << i << "]:" << data_buffer[i] << std::endl;
-                  //     //std::cout << "data_buffer[" << i << "]:" << std::hex <<std::uppercase <<a <<std::endl;
-                  // }
                   // 处理接收到的数据
                   if (data_buffer.size() == sizeof(ReceivePacket) + 1) {
                       ReceivePacket packet = fromVector(data_buffer);
@@ -217,6 +217,17 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.yaw = packet.yaw;
                       receive_serial_msg_.v0 = packet.v0;
                       serial_pub_->publish(receive_serial_msg_);
+
+                      total_count++;
+                      if(total_count >= 100)
+                      {
+                        serial_end = std::chrono::steady_clock::now();
+                        std::chrono::duration<double> diff = serial_end - serial_start;
+                        total_time = diff.count();
+                        std::cout << total_time << "s and average serial time: " << total_time / total_count << std::endl;
+                        total_count = 0;
+                        serial_start = std::chrono::steady_clock::now();
+                      }
                       }
                       else
                       {
