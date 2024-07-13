@@ -1,0 +1,8 @@
+build/
+install/
+Camera/
+log/
+.cache/
+.git/
+.vscode/
+
