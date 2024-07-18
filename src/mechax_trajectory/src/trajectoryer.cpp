@@ -108,7 +108,7 @@ void  Trajectoryer::parameters_init()
     }
     //****************************************************
     //****************************************************
-    bias_t = 0.15;  // s
+    bias_t = 0.03;  // s
     fly_t = 0.5; // s
     //摄像头相对于云台的偏置,一般改z_bias即可
     y_bias = 0.0; // m
@@ -321,15 +321,6 @@ int Trajectoryer::solve_trajectory()
 //----------------------------------------------
 //----------------------------------------------
 //进行选板，选择最适合击打的装甲板
-    float xiangdui_yaw = 0.0;
-    if(ros_y < 0)
-    {
-        xiangdui_yaw = atan2(ros_y, ros_x);
-    }
-    else
-    {
-        xiangdui_yaw = atan2(ros_y, ros_x) + M_PI;
-    }
     if(armor_num == 2)
     {
         for (i = 0; i<2; i++) {
@@ -343,8 +334,8 @@ int Trajectoryer::solve_trajectory()
         results.push_back(position_result);
         }
 
-        float yaw_diff_min = fabs(results.at(0).yaw - xiangdui_yaw);
-        float temp_yaw_diff = fabs(results.at(1).yaw - xiangdui_yaw);
+        float yaw_diff_min = fabs(results.at(0).yaw - now_yaw);
+        float temp_yaw_diff = fabs(results.at(1).yaw - now_yaw);
         if(temp_yaw_diff < yaw_diff_min)
         {
             yaw_diff_min = temp_yaw_diff;
@@ -369,10 +360,10 @@ int Trajectoryer::solve_trajectory()
             // 2       1
 
             //     0
-        float yaw_diff_min = cos(results.at(0).yaw - xiangdui_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(i = 1; i<3;i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - xiangdui_yaw);
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
                 yaw_diff_min = temp_yaw_diff;
@@ -397,10 +388,10 @@ int Trajectoryer::solve_trajectory()
         use_1 = !use_1;
         }
 
-        float yaw_diff_min = cos(results.at(0).yaw - xiangdui_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(int i = 1; i<4; i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - xiangdui_yaw);
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
                 yaw_diff_min = temp_yaw_diff;
@@ -543,12 +534,10 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             if(latency_count >= 100)
             {
                 std::cout << "all_latency: " << all_latency << "s" << " and average latency: " << all_latency / latency_count << "s" << std::endl;
+                bias_t = all_latency / latency_count + 0.002;
                 latency_count = 0;
                 all_latency = 0;
             }
-            //RCLCPP_INFO(get_logger(), "send need angle!");
-            //is_shoot = false;
-        //}
     }
     else
     {

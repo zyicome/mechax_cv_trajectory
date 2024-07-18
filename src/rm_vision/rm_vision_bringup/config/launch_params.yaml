@@ -1,4 +1,4 @@
-camera: mv
+camera: hik
 
 odom2camera:
   xyz: "\"0.000 0.000  0.000\""

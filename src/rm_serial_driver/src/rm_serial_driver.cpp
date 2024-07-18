@@ -33,7 +33,8 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
   getParams();
 
   // TF broadcaster
-  timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.0);
+  timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.007);
+  timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
   tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
   // Create Publisher
@@ -202,12 +203,11 @@ void RMSerialDriver::receiveData()
 
                       // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t;
-                      timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
-                      t.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t.header.stamp = this->now() - rclcpp::Duration::from_seconds(timestamp_offset_);
                       t.header.frame_id = "odom";
                       t.child_frame_id = "gimbal_link";
                       tf2::Quaternion q;
-                      q.setRPY(packet.roll / 57.3f, -packet.pitch / 57.3f, packet.yaw / 57.3f);
+                      q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
                       t.transform.rotation = tf2::toMsg(q);
                       tf_broadcaster_->sendTransform(t);
 
@@ -225,7 +225,9 @@ void RMSerialDriver::receiveData()
                         std::chrono::duration<double> diff = serial_end - serial_start;
                         total_time = diff.count();
                         std::cout << total_time << "s and average serial time: " << total_time / total_count << std::endl;
+                        timestamp_offset_ = total_time / total_count;
                         total_count = 0;
+                        total_time = 0.0;
                         serial_start = std::chrono::steady_clock::now();
                       }
                       }

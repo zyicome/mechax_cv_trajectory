@@ -7,7 +7,7 @@
 
   <link name="gimbal_link" />
 
-  <joint name="gimbal_joint" type="fixed">
+  <joint name="gimbal_joint" type="floating">
     <parent link="odom" />
     <child link="gimbal_link" />
   </joint>

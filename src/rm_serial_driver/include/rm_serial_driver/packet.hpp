@@ -14,6 +14,7 @@ namespace rm_serial_driver
 struct ReceivePacket
 {
   uint8_t header = 0x5A; 
+  uint8_t is_rune; //是否是能量机关击打模式
   uint8_t detect_color;  // 0-red 1-blue 发1
   float roll;                // rad 
   float yaw;               // rad       
