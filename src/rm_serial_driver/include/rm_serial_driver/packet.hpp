@@ -13,12 +13,14 @@ namespace rm_serial_driver
 {
 struct ReceivePacket
 {
-  uint8_t header = 0x5A; 
+  uint8_t header = 0x5A;
+  uint8_t is_rune;
   uint8_t detect_color;  // 0-red 1-blue 发1
   float roll;                // rad 
   float yaw;               // rad       
   float pitch;                 // rad
   float v0;
+  float motor_speed;
   uint16_t checksum = 0;     // crc16校验位 https://blog.csdn.net/ydyuse/article/details/105395368
 } __attribute__((packed));
 

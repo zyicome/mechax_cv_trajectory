@@ -69,7 +69,6 @@ public:
     float angle_yaw;
     float distance;
     float fly_t; // m
-    float bias_t;
     float y_bias;
     float z_bias;
     //------------------
@@ -97,9 +96,14 @@ public:
     int latency_count;
     float all_latency;
     //------------------
+    float motor_speed;
+    float motor_bias_time;
+    float serial_bias_time;
+    float latency_bias_time;
+    auto_aim_interfaces::msg::Bias bias_time_msg;
+    //------------------
     float randa;
     bool is_hero;
-    //------------------
     //------------------
     // Subsciption
     //------------------
@@ -109,6 +113,7 @@ public:
     // Publisher
     //------------------
     rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr maker_pub_;
+    rclcpp::Publisher<auto_aim_interfaces::msg::Bias>::SharedPtr bias_time_pub_;
     rclcpp::Publisher<auto_aim_interfaces::msg::SendSerial>::SharedPtr result_pub_;
     //------------------
     //timer

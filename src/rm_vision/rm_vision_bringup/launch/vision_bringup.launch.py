@@ -86,7 +86,6 @@ def generate_launch_description():
             composable_node_descriptions=[
                 cam_detector,
                 detector_node,
-                #openvino_detector_node,
             ],
             output='both',
     )

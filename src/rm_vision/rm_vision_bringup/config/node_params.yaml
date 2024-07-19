@@ -1,13 +1,13 @@
 /camera_node:
   ros__parameters:
     camera_info_url: package://rm_vision_bringup/config/camera_info.yaml
-    exposure_time: 1500
-    gain: 64
+    exposure_time: 3200
+    gain: 64.0
 
 /serial_driver:
   ros__parameters:
-    timestamp_offset: 0.007
-    device_name: /dev/ttyUSB0
+    timestamp_offset: 0.002
+    device_name: /dev/ttyACM0
     baud_rate: 115200
     flow_control: none
     parity: none

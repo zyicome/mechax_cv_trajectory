@@ -33,7 +33,8 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
   getParams();
 
   // TF broadcaster
-  timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.0);
+  timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.002);
+  timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
   tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
 
   // Create Publisher
@@ -181,12 +182,12 @@ void RMSerialDriver::receiveData()
           if (receiving_data) {
               // 如果正在接收数据，将数据添加到缓冲区
               data_buffer.push_back(header[0]);
-              // std::cout << "header[0]" << static_cast<int>(header[0]) << std::endl;
-              if (header[0] == 0xAA) {
-                  // 如果检测到结束标识符（0xAAA），则停止接收数据并处理
-                  receiving_data = false;
                   // 处理接收到的数据
                   if (data_buffer.size() == sizeof(ReceivePacket) + 1) {
+                    receiving_data = false;
+                    if (header[0] == 0xAA)
+                    {
+                      receiving_data = false;
                       ReceivePacket packet = fromVector(data_buffer);
 
                       CRC_check = crc16::Get_CRC16_Check_Sum(reinterpret_cast<const uint8_t *>(&packet), sizeof(packet)-2,CRC16_init);
@@ -202,12 +203,12 @@ void RMSerialDriver::receiveData()
 
                       // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t;
-                      timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
-                      t.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      //timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
+                      t.header.stamp = this->now() - rclcpp::Duration::from_seconds(timestamp_offset_);
                       t.header.frame_id = "odom";
                       t.child_frame_id = "gimbal_link";
                       tf2::Quaternion q;
-                      q.setRPY(packet.roll / 57.3f, -packet.pitch / 57.3f, packet.yaw / 57.3f);
+                      q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
                       t.transform.rotation = tf2::toMsg(q);
                       tf_broadcaster_->sendTransform(t);
 
@@ -216,6 +217,8 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.pitch = packet.pitch;
                       receive_serial_msg_.yaw = packet.yaw;
                       receive_serial_msg_.v0 = packet.v0;
+                      receive_serial_msg_.motor_speed = packet.motor_speed;
+                      receive_serial_msg_.serial_time = timestamp_offset_;
                       serial_pub_->publish(receive_serial_msg_);
 
                       total_count++;
@@ -225,20 +228,22 @@ void RMSerialDriver::receiveData()
                         std::chrono::duration<double> diff = serial_end - serial_start;
                         total_time = diff.count();
                         std::cout << total_time << "s and average serial time: " << total_time / total_count << std::endl;
+                        timestamp_offset_ = total_time / total_count;
+                        total_time = 0.0;
                         total_count = 0;
                         serial_start = std::chrono::steady_clock::now();
                       }
-                      }
+                    }
                       else
                       {
 
                       }
-                  }
-
-                  // 清空数据缓冲区
+                    }
+                    // 清空数据缓冲区
                   data_buffer.clear();
+                  }
               }
-          } else if (header[0] == 0x5A) {
+           else if (header[0] == 0x5A) {
               // 如果检测到开始标识符（0x5A），开始接收数据
               receiving_data = true;
               data_buffer.push_back(header[0]);

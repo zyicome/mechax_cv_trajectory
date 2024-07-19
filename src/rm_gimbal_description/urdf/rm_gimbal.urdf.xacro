@@ -7,7 +7,7 @@
 
   <link name="gimbal_link" />
 
-  <joint name="gimbal_joint" type="fixed">
+  <joint name="gimbal_joint" type="floating">
     <parent link="odom" />
     <child link="gimbal_link" />
   </joint>
@@ -15,10 +15,9 @@
   <link name="camera_link" />
 
   <joint name="camera_joint" type="fixed">
-    <origin xyz="0.080 0.000 0.04" rpy="0 0.0 ${pi/32}" />
+    <origin xyz="0.070 0.000 0.04" rpy="0 -${pi/180} -${pi/180}" />
     <parent link="gimbal_link" />
     <child link="camera_link" />
-    <axis xyz="0 0 0" />
   </joint>
 
   <link name="camera_optical_frame" />

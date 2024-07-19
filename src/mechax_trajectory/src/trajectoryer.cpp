@@ -69,6 +69,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     result_pub_ = this->create_publisher<auto_aim_interfaces::msg::SendSerial>(
         "/trajectory/result", 10);
+
+    bias_time_pub_ = this->create_publisher<auto_aim_interfaces::msg::Bias>(
+        "/bias/time", 10);
 }
 
 //用于参数初始化，主要需要修改的参数为
@@ -108,15 +111,19 @@ void  Trajectoryer::parameters_init()
     }
     //****************************************************
     //****************************************************
-    bias_t = 0.15;  // s
     fly_t = 0.5; // s
     //摄像头相对于云台的偏置,一般改z_bias即可
     y_bias = 0.0; // m
-    z_bias = 0.0; // m
+    z_bias = -0.01; // m
     //****************************************************
     is_can_hit = false;
     distance = 0.0;
-}
+    //****************************************************
+    motor_speed = 10 / 57.3f; //rad/s
+    motor_bias_time = 0.0;
+    serial_bias_time = 0.002;
+    latency_bias_time = 0.003;
+    }
 
 //@param: object_x, object_y, object_z, v0
 // 无空气阻力模型，最简单的模型，只考虑重力加速度，用来判断是否能够击打到目标
@@ -189,7 +196,7 @@ int Trajectoryer::single_resistance_model(const float &object_x,const float &obj
 // 根据传入的相对于枪管坐标系下敌方的坐标xyz，在结合子弹速度和空气阻力系数，计算出需要的pitch角度和飞行时间
 // 单空气阻力模型
 //@result: angle_pitch, fly_t  (成员变量，刷新得到)
-//@return: 1:计算成功 0:计算失败
+//@return: 1:计算成功 0:计算失败d
 int Trajectoryer::single_resistance_model_two(const float &object_x,const float &object_y,const float &object_z,const float &v0,const float &randa)
 {
     float distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
@@ -308,7 +315,8 @@ int Trajectoryer::solve_trajectory()
 //----------------------------------------------
 //进行预测，预测出击打目标的位置
     vector<result> results;
-    float need_t = fly_t + bias_t;
+    float need_t = fly_t + latency_bias_time + motor_bias_time + serial_bias_time;
+    //std::cout << "need_t: " <<need_t<<std::endl;
     float yaw_delay = need_t * v_yaw;
     float tar_yaw = yaw + yaw_delay;
     int use_1 = 1;
@@ -321,15 +329,6 @@ int Trajectoryer::solve_trajectory()
 //----------------------------------------------
 //----------------------------------------------
 //进行选板，选择最适合击打的装甲板
-    float xiangdui_yaw = 0.0;
-    if(ros_y < 0)
-    {
-        xiangdui_yaw = atan2(ros_y, ros_x);
-    }
-    else
-    {
-        xiangdui_yaw = atan2(ros_y, ros_x) + M_PI;
-    }
     if(armor_num == 2)
     {
         for (i = 0; i<2; i++) {
@@ -343,8 +342,8 @@ int Trajectoryer::solve_trajectory()
         results.push_back(position_result);
         }
 
-        float yaw_diff_min = fabs(results.at(0).yaw - xiangdui_yaw);
-        float temp_yaw_diff = fabs(results.at(1).yaw - xiangdui_yaw);
+        float yaw_diff_min = fabs(results.at(0).yaw - now_yaw);
+        float temp_yaw_diff = fabs(results.at(1).yaw - now_yaw);
         if(temp_yaw_diff < yaw_diff_min)
         {
             yaw_diff_min = temp_yaw_diff;
@@ -369,10 +368,10 @@ int Trajectoryer::solve_trajectory()
             // 2       1
 
             //     0
-        float yaw_diff_min = cos(results.at(0).yaw - xiangdui_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(i = 1; i<3;i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - xiangdui_yaw);
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
                 yaw_diff_min = temp_yaw_diff;
@@ -397,10 +396,10 @@ int Trajectoryer::solve_trajectory()
         use_1 = !use_1;
         }
 
-        float yaw_diff_min = cos(results.at(0).yaw - xiangdui_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(int i = 1; i<4; i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - xiangdui_yaw);
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
                 yaw_diff_min = temp_yaw_diff;
@@ -444,6 +443,21 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     angle_yaw = atan2(object_y, object_x);
+    if(abs(angle_yaw - now_yaw) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / motor_speed < 1)
+    {
+        motor_bias_time = abs(angle_yaw - now_yaw) / motor_speed;
+    }
+    else
+    {
+        motor_bias_time = 0.001;
+    } 
+    //std::cout << "abs(angle_yaw - now_yaw)/ motor_speed: " << abs(angle_yaw - now_yaw) / motor_speed<<std::endl;
+    bias_time_msg.need_t = need_t;
+    bias_time_msg.fly_t = fly_t;
+    bias_time_msg.serial_bias_time = serial_bias_time;
+    bias_time_msg.latency_bias_time = latency_bias_time;
+    bias_time_msg.motor_bias_time =motor_bias_time;
+    bias_time_pub_->publish(bias_time_msg);
     this->distance = sqrtf(pow(object_x, 2) + pow(object_y, 2) + pow(object_z, 2));
     return 1; 
 }
@@ -516,15 +530,16 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             result.header.frame_id = "odom";
             //--------------------------------------------
             //弧度制转角度制
-            float send_pitch = angle_pitch * 57.3f;
+            float send_pitch = -angle_pitch * 57.3f;
             float send_yaw = 0.0;
             send_yaw = (angle_yaw) * 57.3f;
             //float send_yaw = (angle_yaw) * 57.3f;
             //--------------------------------------------
-            float max_yaw_diff = 3; //现在的yaw与计算的需求yaw的最大容忍差值，可根据需求更改
+            float max_yaw_diff = 0.2; //现在的yaw与计算的需求yaw的最大容忍差值，可根据需求更改
             if(abs(send_yaw - now_yaw * 57.3f) > max_yaw_diff)
             {
                 is_can_hit = false;
+                std::cout << "Can not hit target!!!" << std::endl;
             }
             else
             {
@@ -533,22 +548,29 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             //--------------------------------------------
             result.is_tracking = is_tracking;
             result.is_can_hit = is_can_hit;
-            result.pitch = send_pitch;
-            result.yaw = send_yaw;
-            result.distance = distance;
+            if(send_pitch < 1000)
+            {
+                result.pitch = send_pitch;
+            }
+            if(send_yaw < 1000)
+            {
+                result.yaw = send_yaw;
+            }
+            if(distance < 1000)
+            {
+                result.distance = distance;
+            }
             result_pub_->publish(result);
 
             latency_count++;
             all_latency = all_latency + (this->now() - msg.header.stamp).seconds();
-            if(latency_count >= 100)
+            if(latency_count >= 20)
             {
                 std::cout << "all_latency: " << all_latency << "s" << " and average latency: " << all_latency / latency_count << "s" << std::endl;
+                latency_bias_time = all_latency / latency_count;
                 latency_count = 0;
                 all_latency = 0;
             }
-            //RCLCPP_INFO(get_logger(), "send need angle!");
-            //is_shoot = false;
-        //}
     }
     else
     {
@@ -569,7 +591,38 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
 void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg)
 {
     now_pitch = msg.pitch / 57.3f;
-    now_yaw = msg.yaw / 57.3f;
+    now_yaw = msg.yaw;
+    if(now_yaw > 180)
+    {
+        now_yaw = now_yaw - ((int)now_yaw / 360) * 360;
+        if(now_yaw > 180)
+        {
+            now_yaw = now_yaw - 360;
+        }
+    }
+    else if(now_yaw < -180)
+    {
+        now_yaw = now_yaw - ((int)now_yaw / 360) * 360;
+        if(now_yaw < -180)
+        {
+            now_yaw = now_yaw + 360;
+        }
+    }
+    //std::cout << "now_yaw: " << now_yaw <<std::endl;
+    now_yaw = now_yaw / 57.3f;
+    if(msg.motor_speed != 0 && msg.motor_speed > 100)
+    {
+        motor_speed = msg.motor_speed;
+    }
+    else
+    {
+        motor_speed = 55 / 57.3f;
+    }
+    if(msg.serial_time != 0.0)
+    {
+        serial_bias_time = msg.serial_time;
+    }
+    //std::cout << "motor_speed: " << motor_speed << std::endl;
     if(msg.v0 > 20)
     {
         v0 = msg.v0;
