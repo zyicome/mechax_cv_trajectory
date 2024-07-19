@@ -209,6 +209,7 @@ void RMSerialDriver::receiveData()
                       t.child_frame_id = "gimbal_link";
                       tf2::Quaternion q;
                       q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
+                      q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
                       t.transform.rotation = tf2::toMsg(q);
                       tf_broadcaster_->sendTransform(t);
 
@@ -231,6 +232,7 @@ void RMSerialDriver::receiveData()
                         timestamp_offset_ = total_time / total_count;
                         total_time = 0.0;
                         total_count = 0;
+                        total_time = 0.0;
                         serial_start = std::chrono::steady_clock::now();
                       }
                     }

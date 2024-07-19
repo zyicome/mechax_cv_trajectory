@@ -344,6 +344,8 @@ int Trajectoryer::solve_trajectory()
 
         float yaw_diff_min = fabs(results.at(0).yaw - now_yaw);
         float temp_yaw_diff = fabs(results.at(1).yaw - now_yaw);
+        float yaw_diff_min = fabs(results.at(0).yaw - now_yaw);
+        float temp_yaw_diff = fabs(results.at(1).yaw - now_yaw);
         if(temp_yaw_diff < yaw_diff_min)
         {
             yaw_diff_min = temp_yaw_diff;
@@ -369,8 +371,10 @@ int Trajectoryer::solve_trajectory()
 
             //     0
         float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(i = 1; i<3;i++)
         {
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
@@ -397,8 +401,10 @@ int Trajectoryer::solve_trajectory()
         }
 
         float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(int i = 1; i<4; i++)
         {
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
@@ -568,6 +574,7 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             {
                 std::cout << "all_latency: " << all_latency << "s" << " and average latency: " << all_latency / latency_count << "s" << std::endl;
                 latency_bias_time = all_latency / latency_count;
+                bias_t = all_latency / latency_count + 0.002;
                 latency_count = 0;
                 all_latency = 0;
             }
