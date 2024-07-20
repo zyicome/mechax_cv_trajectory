@@ -619,7 +619,7 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
     }
     //std::cout << "now_yaw: " << now_yaw <<std::endl;
     now_yaw = now_yaw / 57.3f;
-    if(msg.motor_speed != 0 && msg.motor_speed > 100)
+    if(msg.motor_speed != 0)
     {
         motor_speed = msg.motor_speed;
     }
