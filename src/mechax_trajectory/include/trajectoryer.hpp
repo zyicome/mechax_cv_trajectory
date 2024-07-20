@@ -23,7 +23,7 @@
 
 using namespace std;
 
-#define g 9.8
+const float g  = 9.8;
 #define ARMOR_NUM_BALANCE 2;
 #define ARMOR_NUM_OUTPOST 3;
 

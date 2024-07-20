@@ -344,8 +344,6 @@ int Trajectoryer::solve_trajectory()
 
         float yaw_diff_min = fabs(results.at(0).yaw - now_yaw);
         float temp_yaw_diff = fabs(results.at(1).yaw - now_yaw);
-        float yaw_diff_min = fabs(results.at(0).yaw - now_yaw);
-        float temp_yaw_diff = fabs(results.at(1).yaw - now_yaw);
         if(temp_yaw_diff < yaw_diff_min)
         {
             yaw_diff_min = temp_yaw_diff;
@@ -371,10 +369,8 @@ int Trajectoryer::solve_trajectory()
 
             //     0
         float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
-        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(i = 1; i<3;i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
@@ -401,10 +397,8 @@ int Trajectoryer::solve_trajectory()
         }
 
         float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
-        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(int i = 1; i<4; i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
@@ -425,9 +419,18 @@ int Trajectoryer::solve_trajectory()
     visualization_msgs::msg::Marker aiming_point_;
     if (abs(object_x) > 0.01) {
         aiming_point_.header.stamp = this->now();
+        aiming_point_.type = visualization_msgs::msg::Marker::SPHERE;
+        aiming_point_.action = visualization_msgs::msg::Marker::ADD;
         aiming_point_.pose.position.x = object_x;
         aiming_point_.pose.position.y = object_y;
         aiming_point_.pose.position.z = object_z;
+        aiming_point_.scale.x = 1;
+        aiming_point_.scale.y = 0.1;
+        aiming_point_.scale.z = 0.1;
+        aiming_point_.color.a = 1.0;
+        aiming_point_.color.r = 0.0;
+        aiming_point_.color.g = 1.0;
+        aiming_point_.color.b = 0.0;
         maker_pub_->publish(aiming_point_);
     }
 //---------------------------------------------
@@ -574,7 +577,6 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             {
                 std::cout << "all_latency: " << all_latency << "s" << " and average latency: " << all_latency / latency_count << "s" << std::endl;
                 latency_bias_time = all_latency / latency_count;
-                bias_t = all_latency / latency_count + 0.002;
                 latency_count = 0;
                 all_latency = 0;
             }
