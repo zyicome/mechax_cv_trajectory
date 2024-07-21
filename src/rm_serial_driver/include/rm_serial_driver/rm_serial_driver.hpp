@@ -87,6 +87,12 @@ private:
   std::thread receive_thread_;
 
   int closecount=0;
+
+  //------------------------------------------------------------------------------
+  std::chrono::steady_clock::time_point serial_start;
+  std::chrono::steady_clock::time_point serial_end;
+  int total_count;
+  float total_time;
 };
 }  // namespace rm_serial_driver
 

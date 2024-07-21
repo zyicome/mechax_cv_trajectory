@@ -76,7 +76,7 @@
   <link name="left_camera_link" />
 
   <joint name="left_camera_joint" type="fixed">
-    <origin xyz="0.0481 0.00 0.047" rpy="0 ${pi/360} ${pi/360}" />
+    <origin xyz="0.0481 0.00 0.047" rpy="0 ${pi/360} ${pi/180}" />
     <parent link="left_gimbal_link" />
     <child link="left_camera_link" />
   </joint>

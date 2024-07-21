@@ -144,7 +144,7 @@ void  Trajectoryer::parameters_init()
     }
     //****************************************************
     //****************************************************
-    bias_t = 0.00;  // s
+    bias_t = 0.030;  // s
     fly_t = 0.5; // s
     //摄像头相对于云台的偏置,一般改z_bias即可
     y_bias = 0.0; // m
@@ -394,8 +394,8 @@ int Trajectoryer::solve_trajectory()
         results.push_back(position_result);
         }
 
-        float yaw_diff_min = fabs(results.at(0).yaw - xiangdui_yaw);
-        float temp_yaw_diff = fabs(results.at(1).yaw - xiangdui_yaw);
+        float yaw_diff_min = fabs(results.at(0).yaw - now_yaw);
+        float temp_yaw_diff = fabs(results.at(1).yaw - now_yaw);
         if(temp_yaw_diff < yaw_diff_min)
         {
             yaw_diff_min = temp_yaw_diff;
@@ -420,10 +420,10 @@ int Trajectoryer::solve_trajectory()
             // 2       1
 
             //     0
-        float yaw_diff_min = cos(results.at(0).yaw - xiangdui_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(i = 1; i<3;i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - xiangdui_yaw);
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
                 yaw_diff_min = temp_yaw_diff;
@@ -448,10 +448,10 @@ int Trajectoryer::solve_trajectory()
         use_1 = !use_1;
         }
 
-        float yaw_diff_min = cos(results.at(0).yaw - xiangdui_yaw);
+        float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(int i = 1; i<4; i++)
         {
-            float temp_yaw_diff = cos(results.at(i).yaw - xiangdui_yaw);
+            float temp_yaw_diff = cos(results.at(i).yaw - now_yaw);
             if(temp_yaw_diff > yaw_diff_min)
             {
                 yaw_diff_min = temp_yaw_diff;
@@ -654,9 +654,10 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
             else
             {
                 is_left_can_hit = true;
-                if(abs(left_angle_yaw * 57.3f - now_yaw * 57.3f) > 5)
+                if(abs(left_angle_yaw * 57.3f - now_yaw * 57.3f) > 2)
                 {
                     is_left_can_hit = false;
+                    std::cout << "Can not hit target!!!" << " s\n";   
                 }
                 result.header.frame_id = "leftodom";
                 result.header.stamp = this->now();
@@ -673,7 +674,15 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.right_yaw = 0.0;
                 result_pub_->publish(result);
             }
-            result_pub_->publish(result);
+            latency_count++;
+            all_latency = all_latency + (this->now() - msg.header.stamp).seconds();
+            if(latency_count >= 100)
+            {
+                std::cout << "all_latency: " << all_latency << "s" << " and average latency: " << all_latency / latency_count << "s" << std::endl;
+                bias_t = all_latency / latency_count + 0.009;
+                latency_count = 0;
+                all_latency = 0;
+            }
     }
     else
     {

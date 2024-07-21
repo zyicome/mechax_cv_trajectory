@@ -37,6 +37,7 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
 
   // TF broadcaster
   timestamp_offset_ = this->declare_parameter("timestamp_offset", 0.005);
+  timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
   left_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
   right_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
   big_tf_broadcaster_ = std::make_unique<tf2_ros::TransformBroadcaster>(*this);
@@ -93,6 +94,12 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
   result_sub_ = this->create_subscription<auto_aim_interfaces::msg::SendSerial>(
     "/trajectory/result", 10,
     std::bind(&RMSerialDriver::sendData, this, std::placeholders::_1));
+
+    //----------------------------------------------------------------------------------
+    serial_start = std::chrono::steady_clock::now();
+    serial_end = std::chrono::steady_clock::now();
+    total_count = 0;
+    total_time = 0;
 }
 
 RMSerialDriver::~RMSerialDriver()
@@ -208,7 +215,7 @@ void RMSerialDriver::receiveData()
                       //std::cout<< "packet.checksum: " << packet.checksum << std::endl;
                       if(CRC_check == packet.checksum)
                       {
-                        packet.detect_color = 1;
+                        packet.detect_color = 0;
                       // 执行您的操作，例如设置参数、发布消息等
                       if (!initial_set_param_ || packet.detect_color != previous_receive_color_) {
                           setParam(rclcpp::Parameter("detect_color", packet.detect_color));
@@ -217,7 +224,7 @@ void RMSerialDriver::receiveData()
 
                       // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t_right;
-                      t_right.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t_right.header.stamp = this->now() - rclcpp::Duration::from_seconds(timestamp_offset_);
                       t_right.header.frame_id = "rightodom";
                       t_right.child_frame_id = "right_gimbal_link";
                       tf2::Quaternion q_right;
@@ -227,8 +234,7 @@ void RMSerialDriver::receiveData()
 
                       // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t_left;
-                      timestamp_offset_ = this->get_parameter("timestamp_offset").as_double();
-                      t_left.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t_left.header.stamp = this->now() - rclcpp::Duration::from_seconds(timestamp_offset_);
                       t_left.header.frame_id = "leftodom";
                       t_left.child_frame_id = "left_gimbal_link";
                       tf2::Quaternion q_left;
@@ -237,7 +243,7 @@ void RMSerialDriver::receiveData()
                       left_tf_broadcaster_->sendTransform(t_left);
 
                       geometry_msgs::msg::TransformStamped t_big;
-                      t_big.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
+                      t_big.header.stamp = this->now() - rclcpp::Duration::from_seconds(timestamp_offset_);
                       t_big.header.frame_id = "bigodom";
                       t_big.child_frame_id = "big_gimbal_link";
                       tf2::Quaternion q_big;
@@ -269,6 +275,19 @@ void RMSerialDriver::receiveData()
                       //std::cout << "Time difference: " << diff.count() << " s\n";   
 
                       start = std::chrono::high_resolution_clock::now();
+
+                      total_count++;
+                      if(total_count >= 100)
+                      {
+                        serial_end = std::chrono::steady_clock::now();
+                        std::chrono::duration<double> diff = serial_end - serial_start;
+                        total_time = diff.count();
+                        std::cout << total_time << "s and average serial time: " << total_time / total_count << std::endl;
+                        timestamp_offset_ = total_time / total_count;
+                        total_time = 0.0;
+                        total_count = 0;
+                        serial_start = std::chrono::steady_clock::now();
+                      }
 
                       //std::cout<< "good "<< std::endl;
                       }

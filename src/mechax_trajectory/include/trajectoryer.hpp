@@ -178,6 +178,10 @@ public:
     bool is_left_can_hit;
     bool is_right_can_hit;
     //------------------
+    int latency_count;
+    float all_latency;
+    //------------------
+    //------------------
     bool is_matched;
     bool is_start;
     float outpost_bias_t;
