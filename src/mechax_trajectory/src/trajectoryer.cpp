@@ -67,20 +67,12 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
     angle_sub_ = this->create_subscription<auto_aim_interfaces::msg::ReceiveSerial>(
         "/angle/init", 10, std::bind(&Trajectoryer::angle_callback, this, std::placeholders::_1));
 
-    changeyaw_sub_ = this->create_subscription<auto_aim_interfaces::msg::Bias>(
-        "/left_camera/trajectory/changeyaw", 10, std::bind(&Trajectoryer::changeyaw_callback, this, std::placeholders::_1));
     
     maker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>(
         "/aiming_point", 10);
 
     result_pub_ = this->create_publisher<auto_aim_interfaces::msg::SendSerial>(
         "/trajectory/result", 10);
-    
-    needpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-        "/left_camera/trajectory/needpose", 10);
-
-    armorpose_pub_ = this->create_publisher<geometry_msgs::msg::PointStamped>(
-        "/left_camera/trajectory/armorpose", 10);
 
     left_camera_pub_ = this->create_publisher<auto_aim_interfaces::msg::Inter>(
         "/left_camera/result", 10);
@@ -104,6 +96,9 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     outpost_point_sub_ = this->create_subscription<auto_aim_interfaces::msg::Point>(
         "/outpost/point", 10, std::bind(&Trajectoryer::outpostPointCallback, this, std::placeholders::_1));
+
+        bias_time_pub_ = this->create_publisher<auto_aim_interfaces::msg::Bias>(
+        "/bias/time", 10);
    //timer_ = this->create_wall_timer(5s, std::bind(&Trajectoryer::test,this));
 }
 
@@ -144,13 +139,11 @@ void  Trajectoryer::parameters_init()
     }
     //****************************************************
     //****************************************************
-    bias_t = 0.030;  // s
     fly_t = 0.5; // s
     //摄像头相对于云台的偏置,一般改z_bias即可
     y_bias = 0.0; // m
     z_bias = -0.04; // m
     //****************************************************
-    needchangeyaw = 0.0;
     is_left_tracking = 0;
     is_right_tracking = 0;
     is_assist_tracking = 0;
@@ -172,6 +165,11 @@ void  Trajectoryer::parameters_init()
     outpost_bias_t = 0.05;
     outpost_radius = 276.5 / 1000; //m
     is_assisting = false;
+    //****************************************************
+    motor_speed = 10 / 57.3f; //rad/s
+    motor_bias_time = 0.0;
+    serial_bias_time = 0.002;
+    latency_bias_time = 0.003;
 }
 
 //@param: object_x, object_y, object_z, v0
@@ -359,7 +357,7 @@ int Trajectoryer::solve_trajectory()
 //----------------------------------------------
 //进行预测，预测出击打目标的位置
     vector<result> results;
-    float need_t = fly_t + bias_t;
+    float need_t = fly_t + latency_bias_time + motor_bias_time + serial_bias_time;
     float yaw_delay = need_t * v_yaw;
     float tar_yaw = yaw + yaw_delay;
     int use_1 = 1;
@@ -471,9 +469,18 @@ int Trajectoryer::solve_trajectory()
     visualization_msgs::msg::Marker aiming_point_;
     if (abs(object_x) > 0.01) {
         aiming_point_.header.stamp = this->now();
+        aiming_point_.type = visualization_msgs::msg::Marker::SPHERE;
+        aiming_point_.action = visualization_msgs::msg::Marker::ADD;
         aiming_point_.pose.position.x = object_x;
         aiming_point_.pose.position.y = object_y;
         aiming_point_.pose.position.z = object_z;
+        aiming_point_.scale.x = 1;
+        aiming_point_.scale.y = 0.1;
+        aiming_point_.scale.z = 0.1;
+        aiming_point_.color.a = 1.0;
+        aiming_point_.color.r = 0.0;
+        aiming_point_.color.g = 1.0;
+        aiming_point_.color.b = 0.0;
         maker_pub_->publish(aiming_point_);
     }
 //---------------------------------------------
@@ -495,22 +502,28 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     left_angle_yaw = atan2(object_y, object_x);
+    if(abs(left_angle_yaw - now_yaw) <= 2 && motor_speed != 0 && abs(left_angle_yaw - now_yaw) / motor_speed < 1)
+    {
+        motor_bias_time = abs(left_angle_yaw - now_yaw) / motor_speed;
+    }
+    else
+    {
+        motor_bias_time = 0.001;
+    } 
+    bias_time_msg.need_t = need_t;
+    bias_time_msg.fly_t = fly_t;
+    bias_time_msg.serial_bias_time = serial_bias_time;
+    bias_time_msg.latency_bias_time = latency_bias_time;
+    bias_time_msg.motor_bias_time = motor_bias_time;
+    bias_time_pub_->publish(bias_time_msg);
     this->distance = sqrtf(pow(object_x, 2) + pow(object_y, 2));
+
     pose.header.stamp = this->now();
     pose.header.frame_id = "leftodom";
     pose.point.x = object_x;
     pose.point.y = object_y;
     pose.point.z = object_z;
-
-    if(is_right_tracking == true)
-    {
-        return 1;   
-    }
-    else
-    {
-        get_bigyaw(pose);
-        return 1;
-    }
+    get_bigyaw(pose);
 }
 
 
@@ -586,24 +599,6 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
 
             // 输出时间差（以秒为单位）
             //std::cout << "mechax_trajectory Time difference: " << end - start << " s\n";   
-
-            if(is_right_tracking == true)
-            {
-                result.header.frame_id = "rightodom";
-                result.header.stamp = this->now();
-                result.is_left_tracking = false;
-                result.is_right_tracking = is_right_tracking;
-                result.is_assist_tracking = false;
-                result.is_left_can_hit = true;
-                result.is_right_can_hit = true;
-                result.left_pitch = 0.0;
-                result.left_yaw = 0.0;
-                result.right_pitch = right_angle_pitch * 57.3f;
-                result.right_yaw = right_angle_yaw * 57.3f;
-                result.bigyaw = angle_bigyaw * 57.3f;
-            }
-            else
-            {
                 result.header.frame_id = "not";
                 result.header.stamp = this->now();
                 result.is_left_tracking = false;
@@ -616,43 +611,13 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.right_pitch = 0.0;
                 result.right_yaw = 0.0;
                 result.bigyaw = 0.0;
-            }
-            result_pub_->publish(result);
-            return;
+                result_pub_->publish(result);
+                return;
         }
             float send_pitch = left_angle_pitch * 57.3f;
             float send_yaw = 0.0;
             float send_bigyaw = angle_bigyaw * 57.3f;
-            if((needchangeyaw) < 5 && (needchangeyaw) > -5 && distance > 1.5)
-            {
                 send_yaw = (left_angle_yaw) * 57.3f;
-                //send_yaw = (angle_yaw) * 57.3f;
-            }
-            else{
-                send_yaw = (left_angle_yaw) * 57.3f;
-            }
-            if(distance > 6)
-            {
-                is_left_can_hit = false;
-            }
-            if(is_right_tracking == true)
-            {
-                result.header.frame_id = "allodom";
-                result.header.stamp = this->now();
-                result.is_left_tracking = is_left_tracking;
-                result.is_right_tracking = is_right_tracking;
-                result.is_assist_tracking = false;
-                result.is_left_can_hit = true;
-                result.is_right_can_hit = is_right_can_hit;
-                result.bigyaw = angle_bigyaw * 57.3f;
-                result.left_pitch = left_angle_pitch * 57.3f;
-                result.left_yaw = left_angle_yaw * 57.3f;
-                result.right_pitch = -right_angle_pitch;
-                result.right_yaw = right_angle_yaw;
-                result_pub_->publish(result);
-            }
-            else
-            {
                 is_left_can_hit = true;
                 if(abs(left_angle_yaw * 57.3f - now_yaw * 57.3f) > 2)
                 {
@@ -667,19 +632,24 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_left_can_hit = is_left_can_hit;
                 result.is_right_can_hit = false;
                 result.bigyaw = angle_bigyaw * 57.3f;
-                result.left_pitch = left_angle_pitch * 57.3f;
-                result.left_yaw = left_angle_yaw * 57.3f;
+                if(send_pitch < 1000)
+                {
+                    result.left_pitch = send_pitch;
+                }
+                if(send_yaw < 1000)
+                {
+                    result.left_yaw = send_yaw;
+                }
                 //result.left_yaw = -69;
                 result.right_pitch = 0.0;
                 result.right_yaw = 0.0;
                 result_pub_->publish(result);
-            }
             latency_count++;
             all_latency = all_latency + (this->now() - msg.header.stamp).seconds();
-            if(latency_count >= 100)
+            if(latency_count >= 20)
             {
                 std::cout << "all_latency: " << all_latency << "s" << " and average latency: " << all_latency / latency_count << "s" << std::endl;
-                bias_t = all_latency / latency_count + 0.009;
+                latency_bias_time = all_latency / latency_count;
                 latency_count = 0;
                 all_latency = 0;
             }
@@ -871,64 +841,42 @@ void Trajectoryer::back_assist_target_callback(const auto_aim_interfaces::msg::T
 void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg)
 {
     now_pitch = msg.left_pitch / 57.3f;
-    now_yaw = msg.left_yaw / 57.3f;
+    now_yaw = msg.left_yaw;
+    if(now_yaw > 180)
+    {
+        now_yaw = now_yaw - ((int)now_yaw / 360) * 360;
+        if(now_yaw > 180)
+        {
+            now_yaw = now_yaw - 360;
+        }
+    }
+    else if(now_yaw < -180)
+    {
+        now_yaw = now_yaw - ((int)now_yaw / 360) * 360;
+        if(now_yaw < -180)
+        {
+            now_yaw = now_yaw + 360;
+        }
+    }
+    //std::cout << "now_yaw: " << now_yaw <<std::endl;
+    now_yaw = now_yaw / 57.3f;
+    if(msg.motor_speed != 0)
+    {
+        motor_speed = msg.motor_speed;
+    }
+    else
+    {
+        motor_speed = 55 / 57.3f;
+    }
+    if(msg.serial_time != 0.0)
+    {
+        serial_bias_time = msg.serial_time;
+    }
+    //std::cout << "motor_speed: " << motor_speed << std::endl;
     if(msg.v > 20)
     {
     v0 = msg.v;
     }
-    // RCLCPP_INFO(get_logger(), "now_pitch: %f", now_pitch);
-    // RCLCPP_INFO(get_logger(), "now_yaw: %f", now_yaw);
-    // 创建坐标变换消息和发布
-    /*geometry_msgs::msg::TransformStamped t;
-    t.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
-    t.header.frame_id = "gimbal_link";
-    t.child_frame_id = "horizom_gimbal_link";
-    tf2::Quaternion q;
-    q.setRPY(0, -now_pitch, 0);
-    t.transform.rotation = tf2::toMsg(q);
-    tf_broadcaster_->sendTransform(t);
-
-    // 创建坐标变换消息和发布
-    geometry_msgs::msg::TransformStamped t_p;
-    t_p.header.stamp = this->now() + rclcpp::Duration::from_seconds(timestamp_offset_);
-    t_p.header.frame_id = "horizom_gimbal_link";
-    t_p.child_frame_id = "prediction_gimbal_link";
-    tf2::Quaternion q_p;
-    q_p.setRPY(0, -angle_pitch, 0);
-    t_p.transform.rotation = tf2::toMsg(q_p);
-    tf_broadcaster_->sendTransform(t_p);*/
-}
-
-void Trajectoryer::changeyaw_callback(const auto_aim_interfaces::msg::Bias msg)
-{
-    needchangeyaw = msg.needchangeyaw;
-    is_left_can_hit = msg.is_can_hit;
-}
-
-void Trajectoryer::get_need_pose(const geometry_msgs::msg::PointStamped pose)
-{
-    // 创建坐标变换消息和发布
-    geometry_msgs::msg::TransformStamped t;
-    t.header.stamp = this->now();
-    t.header.frame_id = "left_gimbal_link";
-    t.child_frame_id = "horizom_gimbal_link";
-    tf2::Quaternion q;
-    q.setRPY(0, -now_pitch, 0);
-    t.transform.rotation = tf2::toMsg(q);
-    tf_broadcaster_->sendTransform(t);
-
-    // 创建坐标变换消息和发布
-    geometry_msgs::msg::TransformStamped t_p;
-    t_p.header.stamp = this->now();
-    t_p.header.frame_id = "horizom_gimbal_link";
-    t_p.child_frame_id = "prediction_gimbal_link";
-    tf2::Quaternion q_p;
-    q_p.setRPY(0, -left_angle_pitch, 0);
-    t_p.transform.rotation = tf2::toMsg(q_p);
-    tf_broadcaster_->sendTransform(t_p);
-
-
-    get_needpose(pose);
 }
 
 int main(int argc, char *argv[])
@@ -957,48 +905,6 @@ void Trajectoryer::tf2_init()
   armorpose_target_frame_ = "prediction_camera_optical_frame";
 
    timestamp_offset_ = 0.00;
-}
-
-void Trajectoryer::get_needpose(const geometry_msgs::msg::PointStamped needpose)
-{
-  if(tf2_buffer_->canTransform("horizom_gimbal_link", "prediction_camera_optical_frame", tf2::TimePointZero)){
-      //std::cout << "Frames can be transformed" << std::endl;
-  }else{
-      std::cout << "needposeFrames cannot be transformed" << std::endl;
-      return;
-  }
-
-  geometry_msgs::msg::PointStamped ps;
-  ps.header = needpose.header;
-  ps.point = needpose.point;
-  try {
-    ps.point = tf2_buffer_->transform(ps, needpose_target_frame_).point;
-  } catch (const tf2::ExtrapolationException & ex) {
-    RCLCPP_ERROR(get_logger(), "needposeError while transforming %s", ex.what());
-    return;
-  }
-  needpose_pub_->publish(ps);
-}
-
-void Trajectoryer::get_armorpose(const geometry_msgs::msg::PointStamped armorpose)
-{
-    if(tf2_buffer_->canTransform("leftodom", "left_camera_optical_frame", tf2::TimePointZero)){
-      //std::cout << "Frames can be transformed" << std::endl;
-    }else{
-      std::cout << "armorposeFrames cannot be transformed" << std::endl;
-      return;
-    }
-
-    geometry_msgs::msg::PointStamped armorps;
-    armorps.header = armorpose.header;
-    armorps.point = armorpose.point;
-    try {
-        armorps.point = tf2_buffer_->transform(armorps, "left_camera_optical_frame").point;
-    } catch (const tf2::ExtrapolationException & ex) {
-        RCLCPP_ERROR(get_logger(), "armorposeError while transforming %s", ex.what());
-        return;
-    }
-    armorpose_pub_->publish(armorps);
 }
 
 void Trajectoryer::get_bigyaw(const geometry_msgs::msg::PointStamped smallpose)

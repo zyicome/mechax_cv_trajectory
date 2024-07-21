@@ -46,15 +46,8 @@ public:
 
 private:
   void imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg);
-  void needposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose_ptr);
-
-  void armorposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose_ptr);
 
   void decisionCallback(const std_msgs::msg::Int8 msg);
-
-  void getarmorpose();
-
-  void is_need_change();
 
   std::unique_ptr<Detector> initDetector();
   std::vector<Armor> detectArmors(const sensor_msgs::msg::Image::ConstSharedPtr & img_msg);
@@ -77,8 +70,6 @@ private:
   visualization_msgs::msg::MarkerArray marker_array_;
   rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_pub_;
 
-  rclcpp::Publisher<auto_aim_interfaces::msg::Bias>::SharedPtr changeyaw_pub;
-
   // Camera info part
   rclcpp::Subscription<sensor_msgs::msg::CameraInfo>::SharedPtr cam_info_sub_;
   cv::Point2f cam_center_;
@@ -90,8 +81,6 @@ private:
   rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr img_sub_;
 
   // Needpose subscription
-  rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr needpose_sub_;
-  rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr armorpose_sub_;
   rclcpp::Subscription<std_msgs::msg::Int8>::SharedPtr decision_sub_;
 
   // Debug information

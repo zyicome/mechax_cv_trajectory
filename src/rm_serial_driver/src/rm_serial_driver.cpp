@@ -181,9 +181,6 @@ void RMSerialDriver::receiveData()
   uint16_t CRC16_init = 0xFFFF;
   uint16_t CRC_check = 0x0000;
 
-  auto start = std::chrono::high_resolution_clock::now();
-  auto end = std::chrono::high_resolution_clock::now();
-
   while (rclcpp::ok()) {
       try {
           // 这一行从串行端口接收一个字节的数据，将其存储在 header 向量中
@@ -194,7 +191,6 @@ void RMSerialDriver::receiveData()
               // 如果正在接收数据，将数据添加到缓冲区
               data_buffer.push_back(header[0]);
               // std::cout << "header[0]" << static_cast<int>(header[0]) << std::endl;
-              if (header[0] == 0xAA) {
                   // 如果检测到结束标识符（0xAAA），则停止接收数据并处理
                   receiving_data = false;
                   // for(int i = 0; i < static_cast<int>(data_buffer.size()); i++)
@@ -207,6 +203,8 @@ void RMSerialDriver::receiveData()
                   //std::cout<< "sizes: " << data_buffer.size() << std::endl;
                   //std::cout<< "size: " << sizeof(ReceivePacket) + 1 << std::endl;
                   if (data_buffer.size() == sizeof(ReceivePacket) + 1){
+                    receiving_data = false;
+                    if (header[0] == 0xAA) {
                       packet = fromVector(data_buffer);
 
                       CRC_check = crc16::Get_CRC16_Check_Sum(reinterpret_cast<const uint8_t *>(&packet), sizeof(packet)-2,CRC16_init);
@@ -215,7 +213,7 @@ void RMSerialDriver::receiveData()
                       //std::cout<< "packet.checksum: " << packet.checksum << std::endl;
                       if(CRC_check == packet.checksum)
                       {
-                        packet.detect_color = 0;
+                        packet.detect_color = 1;
                       // 执行您的操作，例如设置参数、发布消息等
                       if (!initial_set_param_ || packet.detect_color != previous_receive_color_) {
                           setParam(rclcpp::Parameter("detect_color", packet.detect_color));
@@ -259,6 +257,8 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.right_yaw = packet.right_yaw;
                       receive_serial_msg_.bigyaw = packet.bigyaw;
                       receive_serial_msg_.v = packet.v;
+                      receive_serial_msg_.motor_speed = packet.motor_speed;
+                      receive_serial_msg_.serial_time = timestamp_offset_;
                       serial_pub_->publish(receive_serial_msg_);
 
                       std_msgs::msg::Int8 decision_msg;
@@ -266,15 +266,6 @@ void RMSerialDriver::receiveData()
                       decision_msg.data = packet.target;
                       //std::cout << "packet.target" << (int)packet.target <<std::endl;
                       decision_pub_->publish(decision_msg);
-
-                      end = std::chrono::high_resolution_clock::now();
-
-                      std::chrono::duration<double> diff = end - start;
-
-                      // 输出时间差（以秒为单位）
-                      //std::cout << "Time difference: " << diff.count() << " s\n";   
-
-                      start = std::chrono::high_resolution_clock::now();
 
                       total_count++;
                       if(total_count >= 100)
@@ -295,14 +286,11 @@ void RMSerialDriver::receiveData()
                       {
                         //std::cout<< "bad "<< std::endl;
                       }
+                    }
+                    data_buffer.clear();
                   }
-                  //}
-                  // 清空数据缓冲区
-                  data_buffer.clear();
-                  //header.clear();
-                 // std::cout<< "bad1 "<< std::endl;
               }
-          } else if (header[0] == 0x5A) {
+              else if (header[0] == 0x5A) {
               // 如果检测到开始标识符（0x5A），开始接收数据
               receiving_data = true;
               data_buffer.push_back(header[0]);

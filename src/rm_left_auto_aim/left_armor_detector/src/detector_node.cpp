@@ -67,8 +67,6 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
   marker_pub_ =
     this->create_publisher<visualization_msgs::msg::MarkerArray>("/left_camera/detector/marker", 10);
 
-  changeyaw_pub = this->create_publisher<auto_aim_interfaces::msg::Bias>("/left_camera/trajectory/changeyaw", 10);
-
   // Debug Publishers
   debug_ = this->declare_parameter("debug", true);
   std::cout << "debug_" << debug_<<std::endl;
@@ -120,12 +118,6 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     // "/camera/image_color", rclcpp::SensorDataQoS(),
     "/image_left", rclcpp::SensorDataQoS(),
     std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
-
-  needpose_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>("/left_camera/tracker/needpose", 10,
-    std::bind(&ArmorDetectorNode::needposeCallback, this, std::placeholders::_1));
-
-  armorpose_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>("/left_camera/tracker/armorpose", 10,
-    std::bind(&ArmorDetectorNode::armorposeCallback, this, std::placeholders::_1));
 
   decision_sub_ = this->create_subscription<std_msgs::msg::Int8>("/serial/decision", 10,
     std::bind(&ArmorDetectorNode::decisionCallback, this, std::placeholders::_1));
@@ -231,52 +223,6 @@ void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstShared
   }
 }
 
-void ArmorDetectorNode::needposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr needpose_ptr)
-{
-  needpose = cv::Point3f(needpose_ptr->point.x,needpose_ptr->point.y,needpose_ptr->point.z);
-  cv::Mat needpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  needpose_mat.at<double>(0,0) = needpose_ptr->point.x;
-  needpose_mat.at<double>(1,0) = needpose_ptr->point.y;
-  needpose_mat.at<double>(2,0) = needpose_ptr->point.z;
-  cv::Mat pose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  pose_mat = camera_matrix_ * needpose_mat;
-  //std::cout << "camera_matrix: " << camera_matrix_<<std::endl;
-  pose_mat.at<double>(0,0) = pose_mat.at<double>(0,0) / fabs(pose_mat.at<double>(2,0));
-  pose_mat.at<double>(1,0) = pose_mat.at<double>(1,0) / fabs(pose_mat.at<double>(2,0));
-  pose_mat.at<double>(2,0) = 1.0;
-  needpose_img = cv::Point2f(pose_mat.at<double>(0,0), pose_mat.at<double>(1,0));
-  /*std::cout << "needpose_ptr->pose.position.x : " << needpose_ptr->point.x << std::endl;
-  std::cout << "needpose_ptr->pose.position.y : " << needpose_ptr->point.y << std::endl;
-  std::cout << "needpose_ptr->pose.position.z : " << needpose_ptr->point.z << std::endl;
-  std::cout << "needpose_img.x : " << needpose_img.x << std::endl;
-  std::cout << "needpose_img.y : " << needpose_img.y << std::endl;*/
-}
-
-void ArmorDetectorNode::armorposeCallback(const geometry_msgs::msg::PointStamped::SharedPtr armorpose_ptr)
-{
-  cv::Mat prediction_armorpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  prediction_armorpose_mat.at<double>(0,0) = armorpose_ptr->point.x;
-  prediction_armorpose_mat.at<double>(1,0) = armorpose_ptr->point.y;
-  prediction_armorpose_mat.at<double>(2,0) = armorpose_ptr->point.z;
-  prediction_armorpose = cv::Point3f(prediction_armorpose_mat.at<double>(0,0),prediction_armorpose_mat.at<double>(1,0),prediction_armorpose_mat.at<double>(2,0));
-  if(prediction_armorpose_mat.at<double>(0,0)==0 && prediction_armorpose_mat.at<double>(1,0)==0 && prediction_armorpose_mat.at<double>(2,0)==0)
-  {
-    return;
-  }
-  cv::Mat pose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  pose_mat = camera_matrix_ * prediction_armorpose_mat;
-  //std::cout << "camera_matrix: " << camera_matrix_<<std::endl;
-  pose_mat.at<double>(0,0) = pose_mat.at<double>(0,0) / fabs(pose_mat.at<double>(2,0));
-  pose_mat.at<double>(1,0) = pose_mat.at<double>(1,0) / fabs(pose_mat.at<double>(2,0));
-  pose_mat.at<double>(2,0) = 1.0;
-  prediction_armorpose_img = cv::Point2f(pose_mat.at<double>(0,0), pose_mat.at<double>(1,0));
-  /*std::cout << "armor_msg_->pose.position.x : " << armorpose_mat.at<double>(0,0) << std::endl;
-  std::cout << "armor_msg_->pose.position.y : " << armorpose_mat.at<double>(1,0) << std::endl;
-  std::cout << "armor_msg_->pose.position.z : " << armorpose_mat.at<double>(2,0) << std::endl;
-  std::cout << "needpose_img.x : " << needpose_img.x << std::endl;
-  std::cout << "needpose_img.y : " << needpose_img.y << std::endl;*/
-}
-
 void ArmorDetectorNode::decisionCallback(const std_msgs::msg::Int8 msg)
 {
   //std::cout << "msg.data" << msg.data << std::endl;
@@ -348,90 +294,6 @@ void ArmorDetectorNode::decisionCallback(const std_msgs::msg::Int8 msg)
     static_transformStamped.transform.rotation.z = quat.z();
     static_transformStamped.transform.rotation.w = quat.w();
     tf_publisher_->sendTransform(static_transformStamped);*/
-  }
-}
-
-void ArmorDetectorNode::getarmorpose()
-{
-  /*cv::Mat armorpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  armorpose_mat.at<double>(0,0) = armorpose_ptr->point.x;
-  armorpose_mat.at<double>(1,0) = armorpose_ptr->point.y;
-  armorpose_mat.at<double>(2,0) = armorpose_ptr->point.z;*/
-  armorpose = cv::Point3f(armorpose_mat.at<double>(0,0),armorpose_mat.at<double>(1,0),armorpose_mat.at<double>(2,0));
-  if(armorpose_mat.at<double>(0,0)==0 && armorpose_mat.at<double>(1,0)==0 && armorpose_mat.at<double>(2,0)==0)
-  {
-    return;
-  }
-  cv::Mat arpose_mat = cv::Mat::zeros(3,1,CV_64FC1);
-  arpose_mat = camera_matrix_ * armorpose_mat;
-  //std::cout << "camera_matrix: " << camera_matrix_<<std::endl;
-  arpose_mat.at<double>(0,0) = arpose_mat.at<double>(0,0) / fabs(arpose_mat.at<double>(2,0));
-  arpose_mat.at<double>(1,0) = arpose_mat.at<double>(1,0) / fabs(arpose_mat.at<double>(2,0));
-  arpose_mat.at<double>(2,0) = 1.0;
-  armorpose_img = cv::Point2f(arpose_mat.at<double>(0,0), arpose_mat.at<double>(1,0));
-  /*std::cout << "armor_msg_->pose.position.x : " << armorpose_mat.at<double>(0,0) << std::endl;
-  std::cout << "armor_msg_->pose.position.y : " << armorpose_mat.at<double>(1,0) << std::endl;
-  std::cout << "armor_msg_->pose.position.z : " << armorpose_mat.at<double>(2,0) << std::endl;
-  std::cout << "needpose_img.x : " << needpose_img.x << std::endl;
-  std::cout << "needpose_img.y : " << needpose_img.y << std::endl;*/
-}
-
-void ArmorDetectorNode::is_need_change()
-{
-  if(armorpose.x !=0 && armorpose.y !=0 && needpose.x !=0 && needpose.y !=0)
-  {
-    /*if(fabs(armorpose_img.x - needpose_img.x) > 0.001 && fabs(armorpose_img.x - needpose_img.x) < 20)
-    {
-        float needchangeyaw = acos(fabs(needpose.x* armorpose.x + armorpose.z * needpose.z) / (sqrtf(pow(needpose.x,2) + pow(needpose.z,2)) * sqrtf(pow(armorpose.x,2) + pow(armorpose.z,2))));
-        //std::cout << "needchangeyaw: " << needchangeyaw << std::endl;
-        std_msgs::msg::Float64 msg;
-        if(armorpose_img.x > needpose_img.x)
-        {
-          msg.data = -needchangeyaw;
-        }
-        else{
-          msg.data = needchangeyaw;
-        }
-        if(distance < 0.10)
-      {
-       msg.is_can_hit = true;
-      }
-      else
-      {
-        msg.is_can_hit = false;
-        }
-        changeyaw_pub->publish(msg);
-    }*/
-
-    // 三维距离测算
-  // 得到装甲板位置到预测击打位置的距离
-  float distance = fabs(powf((armorpose.x - needpose.x),2) + powf((armorpose.y - needpose.y),2) + powf((armorpose.z - needpose.z),2));
-  //float distance = fabs(powf((armorpose.x - needpose.x),2) + powf((armorpose.z - needpose.z),2));
-  std::cout << "distance: " << distance << std::endl;
-  if(distance < 0.15)
-  {
-    float needchangeyaw = acos(fabs(needpose.x* armorpose.x + armorpose.z * needpose.z) / (sqrtf(pow(needpose.x,2) + pow(needpose.z,2)) * sqrtf(pow(armorpose.x,2) + pow(armorpose.z,2)))) * 57.3f;
-    //std::cout << "needchangeyaw: " << needchangeyaw << std::endl;
-    auto_aim_interfaces::msg::Bias msg;
-    if(armorpose_img.x > needpose_img.x)
-    {
-      msg.needchangeyaw = -needchangeyaw;
-    }
-    else{
-      msg.needchangeyaw = needchangeyaw;
-    }
-    if(distance < 0.10)
-    {
-      msg.is_can_hit = true;
-    }
-    else
-    {
-      msg.is_can_hit = false;
-    }
-    changeyaw_pub->publish(msg);
-    //std::cout << "needchangeyaw: " << needchangeyaw << std::endl;
-  }
-
   }
 }
 
@@ -522,21 +384,6 @@ std::vector<Armor> ArmorDetectorNode::detectArmors(
     detector_->drawResults(img);
     // Draw camera center
     cv::circle(img, cam_center_, 5, cv::Scalar(255, 0, 0), 2);
-    // Draw need armor center
-    getarmorpose();
-    if(armorpose_img.x != 0 && armorpose_img.y != 0)
-    {
-      cv::circle(img, armorpose_img, 5, cv::Scalar(0, 0, 255), 2);
-    }
-    if(prediction_armorpose_img.x != 0 && prediction_armorpose_img.y != 0)
-    {
-      cv::circle(img, prediction_armorpose_img, 5, cv::Scalar(255, 255, 255), 2);
-    }
-    if(needpose_img.x != 0 && needpose_img.y != 0)
-    {
-      is_need_change();
-      cv::circle(img, needpose_img, 5, cv::Scalar(0, 255, 0), 2);
-    }
     // Draw latency
     std::stringstream latency_ss;
     latency_ss << "Latency: " << std::fixed << std::setprecision(2) << latency << "ms";

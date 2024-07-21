@@ -5,3 +5,5 @@ float64 left_pitch
 float64 right_yaw
 float64 right_pitch
 float64 v
+float64 motor_speed
+float64 serial_time
