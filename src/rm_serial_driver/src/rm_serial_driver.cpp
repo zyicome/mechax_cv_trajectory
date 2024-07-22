@@ -191,8 +191,7 @@ void RMSerialDriver::receiveData()
               // 如果正在接收数据，将数据添加到缓冲区
               data_buffer.push_back(header[0]);
               // std::cout << "header[0]" << static_cast<int>(header[0]) << std::endl;
-                  // 如果检测到结束标识符（0xAAA），则停止接收数据并处理
-                  receiving_data = false;
+                  // 如果检测到结束标识符（0xAAA），则停止接收数据并处
                   // for(int i = 0; i < static_cast<int>(data_buffer.size()); i++)
                   // {
                   //     //int a = int(data_buffer[i])；

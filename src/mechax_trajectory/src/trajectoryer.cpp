@@ -357,7 +357,15 @@ int Trajectoryer::solve_trajectory()
 //----------------------------------------------
 //进行预测，预测出击打目标的位置
     vector<result> results;
-    float need_t = fly_t + latency_bias_time + motor_bias_time + serial_bias_time;
+    float need_t = fly_t + serial_bias_time + motor_bias_time + latency_bias_time;
+    if(std::isnan(need_t))
+    {
+        need_t = 0.27;
+    }
+    if(std::isnan(fly_t))
+    {
+        fly_t = 0.14;
+    }
     float yaw_delay = need_t * v_yaw;
     float tar_yaw = yaw + yaw_delay;
     int use_1 = 1;
@@ -502,14 +510,11 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     left_angle_yaw = atan2(object_y, object_x);
-    if(abs(left_angle_yaw - now_yaw) <= 2 && motor_speed != 0 && abs(left_angle_yaw - now_yaw) / motor_speed < 1)
+    if(abs(left_angle_yaw * 57.3f - now_yaw * 57.3f) <= 0.6 && motor_speed != 0 && abs(left_angle_yaw - now_yaw) / abs(motor_speed) < 1)
     {
-        motor_bias_time = abs(left_angle_yaw - now_yaw) / motor_speed;
-    }
-    else
-    {
-        motor_bias_time = 0.001;
+        motor_bias_time = abs(left_angle_yaw - now_yaw) / abs(motor_speed);
     } 
+    bias_time_msg.header.stamp = this->now();
     bias_time_msg.need_t = need_t;
     bias_time_msg.fly_t = fly_t;
     bias_time_msg.serial_bias_time = serial_bias_time;
@@ -604,7 +609,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_left_tracking = false;
                 result.is_right_tracking = false;
                 result.is_assist_tracking = false;
-                result.is_left_can_hit = true;
+                result.is_left_can_hit = false;
                 result.is_right_can_hit = false;
                 result.left_pitch = 0.0;
                 result.left_yaw = 0.0;
@@ -619,7 +624,7 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
             float send_bigyaw = angle_bigyaw * 57.3f;
                 send_yaw = (left_angle_yaw) * 57.3f;
                 is_left_can_hit = true;
-                if(abs(left_angle_yaw * 57.3f - now_yaw * 57.3f) > 2)
+                if(abs(left_angle_yaw * 57.3f - now_yaw * 57.3f) > 0.4)
                 {
                     is_left_can_hit = false;
                     std::cout << "Can not hit target!!!" << " s\n";   
@@ -631,16 +636,28 @@ void Trajectoryer::left_camera_target_callback(const auto_aim_interfaces::msg::T
                 result.is_assist_tracking = false;
                 result.is_left_can_hit = is_left_can_hit;
                 result.is_right_can_hit = false;
-                result.bigyaw = angle_bigyaw * 57.3f;
-                if(send_pitch < 1000)
+                if(std::isnan(send_yaw) || std::isnan(send_pitch) || std::isnan(send_bigyaw)) 
                 {
-                    result.left_pitch = send_pitch;
+                    result.header.frame_id = "not";
+                    result.header.stamp = this->now();
+                    result.is_left_tracking = false;
+                    result.is_right_tracking = false;
+                    result.is_assist_tracking = false;
+                    result.is_left_can_hit = false;
+                    result.is_right_can_hit = false;
+                    result.left_pitch = 0.0;
+                    result.left_yaw = 0.0;
+                    result.right_pitch = 0.0;
+                    result.right_yaw = 0.0;
+                    result.bigyaw = 0.0;
+                    result_pub_->publish(result);
                 }
-                if(send_yaw < 1000)
+                else
                 {
+                    result.bigyaw = send_bigyaw;
+                    result.left_pitch = send_pitch;
                     result.left_yaw = send_yaw;
                 }
-                //result.left_yaw = -69;
                 result.right_pitch = 0.0;
                 result.right_yaw = 0.0;
                 result_pub_->publish(result);
