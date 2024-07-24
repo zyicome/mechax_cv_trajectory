@@ -316,7 +316,14 @@ int Trajectoryer::solve_trajectory()
 //进行预测，预测出击打目标的位置
     vector<result> results;
     float need_t = fly_t + latency_bias_time + motor_bias_time + serial_bias_time;
-    //std::cout << "need_t: " <<need_t<<std::endl;
+    if(std::isnan(need_t))
+    {
+        need_t = 0.27;
+    }
+    if(std::isnan(fly_t))
+    {
+        fly_t = 0.14;
+    }
     float yaw_delay = need_t * v_yaw;
     float tar_yaw = yaw + yaw_delay;
     int use_1 = 1;
@@ -452,15 +459,11 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     angle_yaw = atan2(object_y, object_x);
-    if(abs(angle_yaw - now_yaw) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / motor_speed < 1)
+    if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 0.4 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 1)
     {
-        motor_bias_time = abs(angle_yaw - now_yaw) / motor_speed;
+        motor_bias_time = abs(angle_yaw - now_yaw) / abs(motor_speed);
     }
-    else
-    {
-        motor_bias_time = 0.001;
-    } 
-    //std::cout << "abs(angle_yaw - now_yaw)/ motor_speed: " << abs(angle_yaw - now_yaw) / motor_speed<<std::endl;
+    bias_time_msg.header.stamp = this->now();
     bias_time_msg.need_t = need_t;
     bias_time_msg.fly_t = fly_t;
     bias_time_msg.serial_bias_time = serial_bias_time;
@@ -544,7 +547,7 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             send_yaw = (angle_yaw) * 57.3f;
             //float send_yaw = (angle_yaw) * 57.3f;
             //--------------------------------------------
-            float max_yaw_diff = 0.2; //现在的yaw与计算的需求yaw的最大容忍差值，可根据需求更改
+            float max_yaw_diff = 0.5; //现在的yaw与计算的需求yaw的最大容忍差值，可根据需求更改
             if(abs(send_yaw - now_yaw * 57.3f) > max_yaw_diff)
             {
                 is_can_hit = false;
@@ -557,16 +560,18 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
             //--------------------------------------------
             result.is_tracking = is_tracking;
             result.is_can_hit = is_can_hit;
-            if(send_pitch < 1000)
+            if(std::isnan(send_pitch) || std::isnan(send_yaw) || std::isnan(distance))
+            {
+                result.is_tracking = false;
+                result.is_can_hit = false;
+                result.pitch = 0.0;
+                result.yaw = 0.0;
+                result.distance = 0.0;
+            }
+            else
             {
                 result.pitch = send_pitch;
-            }
-            if(send_yaw < 1000)
-            {
                 result.yaw = send_yaw;
-            }
-            if(distance < 1000)
-            {
                 result.distance = distance;
             }
             result_pub_->publish(result);
