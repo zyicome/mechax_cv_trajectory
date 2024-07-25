@@ -9,7 +9,8 @@ VideoSave::VideoSave() : Node("video_save")
     count1 = 0;
     img_sub_ = this->create_subscription<sensor_msgs::msg::CompressedImage>("/detector/result_img/compressed",1,std::bind(&VideoSave::video_callback,this,std::placeholders::_1));
 
-    std::string pkg_path = "/home/qianli/apex/src/Video_save";
+    std::string source_path = __FILE__; //__FILE__是当前文件的路径
+    std::string pkg_path = source_path.substr(0, source_path.find("src") - 1); //获取包的路径
     video_path = pkg_path + "/video_/";
 }
 VideoSave::~VideoSave()

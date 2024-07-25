@@ -4,14 +4,14 @@ camera_name: hik
 camera_matrix:
   rows: 3
   cols: 3
-  data: [1811.81781,    0.     ,  733.113012,
-            0.     , 1797.557349,  519.059043,
+  data: [1848.63998,    0.     ,  702.4237 ,
+            0.     , 1839.0144 ,  543.0052 ,
             0.     ,    0.     ,    1.     ]
 distortion_model: plumb_bob
 distortion_coefficients:
   rows: 1
   cols: 5
-  data: [-0.076780, 0.085237, -0.008969, 0.002792, 0.000000]
+  data: [-0.052695, 0.001059, -0.003657, -0.001164, 0.000000]
 rectification_matrix:
   rows: 3
   cols: 3
@@ -21,6 +21,6 @@ rectification_matrix:
 projection_matrix:
   rows: 3
   cols: 4
-  data: [1774.222384,    0.     ,  736.081359,    0.     ,
-            0.     , 1784.976497,  514.284859,    0.     ,
+  data: [1832.70447,    0.     ,  700.62302,    0.     ,
+            0.     , 1828.87891,  540.75951,    0.     ,
             0.     ,    0.     ,    1.     ,    0.     ]

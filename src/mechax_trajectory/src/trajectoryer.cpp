@@ -114,7 +114,7 @@ void  Trajectoryer::parameters_init()
     fly_t = 0.5; // s
     //摄像头相对于云台的偏置,一般改z_bias即可
     y_bias = 0.0; // m
-    z_bias = -0.01; // m
+    z_bias = 0.00; // m
     //****************************************************
     is_can_hit = false;
     distance = 0.0;
@@ -459,9 +459,13 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     angle_yaw = atan2(object_y, object_x);
-    if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 0.4 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 1)
+    if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 0.5)
     {
         motor_bias_time = abs(angle_yaw - now_yaw) / abs(motor_speed);
+    }
+    else 
+    {
+        motor_bias_time = 0.01;
     }
     bias_time_msg.header.stamp = this->now();
     bias_time_msg.need_t = need_t;

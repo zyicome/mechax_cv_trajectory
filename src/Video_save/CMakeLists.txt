@@ -37,7 +37,6 @@ install(TARGETS
 
 install(DIRECTORY
   launch
-  video_
   DESTINATION share/${PROJECT_NAME}
 )
 
