@@ -8,7 +8,7 @@
 //两个内联函数，用于牛顿迭代法，第一个为f(x)，第二个为f'(x)
 inline float ft0(float t0,float randa,float tan,float z0,float v0)
 {
-    return (g / randa) * ((1/randa) * log(1 - randa * t0) + t0) + tan - z0; 
+    return (g / randa) * ((1/randa) * log(1 - randa * t0) + t0) + tan - z0;
 }
 
 inline float f_t0(float t0,float randa,float tan,float z0,float v0)
@@ -63,7 +63,10 @@ Trajectoryer::Trajectoryer() : Node("trajectory")
 
     angle_sub_ = this->create_subscription<auto_aim_interfaces::msg::ReceiveSerial>(
         "/angle/init", 10, std::bind(&Trajectoryer::angle_callback, this, std::placeholders::_1));
-    
+
+    power_rune_sub_ = this->create_subscription<geometry_msgs::msg::PointStamped>(
+        "/prediction", 10, std::bind(&Trajectoryer::power_rune_callback, this, std::placeholders::_1));
+
     maker_pub_ = this->create_publisher<visualization_msgs::msg::Marker>(
         "/aiming_point", 10);
 
@@ -91,7 +94,7 @@ void  Trajectoryer::parameters_init()
     }
     //****************************************************
     // 用来计算空气阻力系数
-    float c = 0.5; 
+    float c = 0.5;
     float p = 1.204; // kg/m3
     float d_small = 16.8 / 1000; // mm->m
     float d_big = 42.5 / 1000;  // mm->m   
@@ -222,7 +225,7 @@ int Trajectoryer::single_resistance_model_two(const float &object_x,const float 
     float angle_init = atan2(object_z, distance);	//rad弧度，补偿前的角度
     float angle_actual_1 = -atan(tan_angle_1);
     float angle_actual_2 = -atan(tan_angle_2);//rad
-    angle_pitch = (fabs(angle_actual_1 - now_pitch) > fabs(angle_actual_2 - now_pitch)) ? angle_actual_2 : angle_actual_1;//取绝对值小的那个 
+    angle_pitch = (fabs(angle_actual_1 - now_pitch) > fabs(angle_actual_2 - now_pitch)) ? angle_actual_2 : angle_actual_1;//取绝对值小的那个
     fly_t = (float)((exp(k1 * distance) - 1) / (k1 * v0 * cos(angle_pitch)));//更新飞行时间
     return 1;
 }
@@ -342,7 +345,7 @@ int Trajectoryer::solve_trajectory()
         result position_result;
         float tmp_yaw = tar_yaw + i * M_PI;
         float r = r_1;
-        position_result.x = ros_x - r*cos(tmp_yaw); 
+        position_result.x = ros_x - r*cos(tmp_yaw);
         position_result.y = ros_y - r*sin(tmp_yaw);
         position_result.z = ros_z;
         position_result.yaw = tmp_yaw;
@@ -365,7 +368,7 @@ int Trajectoryer::solve_trajectory()
         for (i = 0; i<3; i++) {
         result position_result;
         float tmp_yaw = tar_yaw + i * 2.0 * M_PI/3.0;  // 2/3PI
-        float r =  (r_1 + r_2)/2;   //理论上r1=r2 这里取个平均值                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+        float r =  (r_1 + r_2)/2;   //理论上r1=r2 这里取个平均值
         position_result.x = ros_x - r*cos(tmp_yaw);
         position_result.y = ros_y - r*sin(tmp_yaw);
         position_result.z = ros_z;
@@ -463,7 +466,7 @@ int Trajectoryer::solve_trajectory()
     {
         motor_bias_time = abs(angle_yaw - now_yaw) / abs(motor_speed);
     }
-    else 
+    else
     {
         motor_bias_time = 0.01;
     }
@@ -475,7 +478,7 @@ int Trajectoryer::solve_trajectory()
     bias_time_msg.motor_bias_time =motor_bias_time;
     bias_time_pub_->publish(bias_time_msg);
     this->distance = sqrtf(pow(object_x, 2) + pow(object_y, 2) + pow(object_z, 2));
-    return 1; 
+    return 1;
 }
 
 
@@ -647,6 +650,19 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
     }
 }
 
+void Trajectoryer::power_rune_callback(const geometry_msgs::msg::PointStamped msg) {
+    two_resistance_model(
+            msg.point.x,
+            msg.point.y,
+            msg.point.z,
+            v0, randa
+    );
+
+    auto_aim_interfaces::msg::SendSerial result;
+    result.pitch = 180 - angle_pitch * 57.3f;
+    result.yaw = angle_yaw * 57.3f;
+    result_pub_->publish(result);
+}
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);

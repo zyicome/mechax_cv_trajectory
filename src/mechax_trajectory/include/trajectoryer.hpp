@@ -62,6 +62,8 @@ public:
 
     void angle_callback(const auto_aim_interfaces::msg::ReceiveSerial msg);
 
+    void power_rune_callback(geometry_msgs::msg::PointStamped msg);
+
     // parameters
     //------------------
     float v0; // m/s
@@ -109,6 +111,7 @@ public:
     //------------------
     rclcpp::Subscription<auto_aim_interfaces::msg::Target>::SharedPtr target_sub_;
     rclcpp::Subscription<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr angle_sub_;
+    rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr power_rune_sub_;
     //------------------
     // Publisher
     //------------------
