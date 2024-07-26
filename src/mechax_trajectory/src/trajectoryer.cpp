@@ -531,6 +531,9 @@ void Trajectoryer::target_callback(const auto_aim_interfaces::msg::Target msg)
     r_1 = msg.radius_1;
     r_2 = msg.radius_2;
     dz = msg.dz;
+
+    if (is_rune) return;
+
     if(is_tracking)
     {
         auto_aim_interfaces::msg::SendSerial result;
@@ -648,9 +651,12 @@ void Trajectoryer::angle_callback(const auto_aim_interfaces::msg::ReceiveSerial 
     {
         v0 = msg.v0;
     }
+
+    is_rune = msg.is_rune;
 }
 
 void Trajectoryer::power_rune_callback(const geometry_msgs::msg::PointStamped msg) {
+    if (!is_rune) return;
     two_resistance_model(
             msg.point.x,
             msg.point.y,
@@ -659,8 +665,41 @@ void Trajectoryer::power_rune_callback(const geometry_msgs::msg::PointStamped ms
     );
 
     auto_aim_interfaces::msg::SendSerial result;
-    result.pitch = 180 - angle_pitch * 57.3f;
-    result.yaw = angle_yaw * 57.3f;
+    result.header.frame_id = "odom";
+    //--------------------------------------------
+    //弧度制转角度制
+    float send_pitch = -angle_pitch * 57.3f;
+    float send_yaw = 0.0;
+    send_yaw = (angle_yaw) * 57.3f;
+    //float send_yaw = (angle_yaw) * 57.3f;
+    //--------------------------------------------
+    float max_yaw_diff = 0.5; //现在的yaw与计算的需求yaw的最大容忍差值，可根据需求更改
+    if(abs(send_yaw - now_yaw * 57.3f) > max_yaw_diff)
+    {
+        is_can_hit = false;
+        std::cout << "Can not hit target!!!" << std::endl;
+    }
+    else
+    {
+        is_can_hit = true;
+    }
+    //--------------------------------------------
+    result.is_tracking = true;
+    result.is_can_hit = is_can_hit;
+    if(std::isnan(send_pitch) || std::isnan(send_yaw) || std::isnan(distance))
+    {
+        result.is_tracking = false;
+        result.is_can_hit = false;
+        result.pitch = 0.0;
+        result.yaw = 0.0;
+        result.distance = 0.0;
+    }
+    else
+    {
+        result.pitch = send_pitch;
+        result.yaw = send_yaw;
+        result.distance = distance;
+    }
     result_pub_->publish(result);
 }
 int main(int argc, char *argv[])

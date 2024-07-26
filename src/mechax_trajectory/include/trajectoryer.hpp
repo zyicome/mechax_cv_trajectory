@@ -106,6 +106,7 @@ public:
     //------------------
     float randa;
     bool is_hero;
+    bool is_rune;
     //------------------
     // Subsciption
     //------------------
