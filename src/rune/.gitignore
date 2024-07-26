@@ -1,0 +1,14 @@
+**/logs/
+**/log/
+**/build/
+**/bin/
+**/install/
+**/cmake-build*
+
+**/.idea/
+**/.vscode/
+**/temp/
+**/config/
+
+**/*.mp4
+**/*.MP4
