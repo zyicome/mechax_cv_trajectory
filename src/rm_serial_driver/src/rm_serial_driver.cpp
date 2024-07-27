@@ -220,6 +220,7 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.v0 = packet.v0;
                       receive_serial_msg_.motor_speed = packet.motor_speed;
                       receive_serial_msg_.serial_time = timestamp_offset_;
+                      receive_serial_msg_.is_rune = packet.is_rune;
                       serial_pub_->publish(receive_serial_msg_);
 
                       total_count++;
