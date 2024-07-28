@@ -191,15 +191,20 @@ void RMSerialDriver::receiveData()
                       ReceivePacket packet = fromVector(data_buffer);
 
                       CRC_check = crc16::Get_CRC16_Check_Sum(reinterpret_cast<const uint8_t *>(&packet), sizeof(packet)-2,CRC16_init);
- 
+
                       if(CRC_check == packet.checksum)
                       {
-                        packet.detect_color = 1;
-                      // 执行您的操作，例如设置参数、发布消息等
-                      if (!initial_set_param_ || packet.detect_color != previous_receive_color_) {
+                        if(packet.detect_color == 5 || packet.detect_color == 6)
+                        {
+                          packet.detect_color = 5 ? packet.detect_color = 0 : packet.detect_color = 1;
+                          //packet.detect_color = 0; //自行设置颜色
+                          //std::cout << "detect_color: " << packet.detect_color << std::endl;
+                          // 执行您的操作，例如设置参数、发布消息等
+                          if (!initial_set_param_ || packet.detect_color != previous_receive_color_) {
                           setParam(rclcpp::Parameter("detect_color", packet.detect_color));
                           previous_receive_color_ = packet.detect_color;
-                      }
+                          }
+                        }
 
                       // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t;
@@ -208,7 +213,6 @@ void RMSerialDriver::receiveData()
                       t.header.frame_id = "odom";
                       t.child_frame_id = "gimbal_link";
                       tf2::Quaternion q;
-                      q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
                       q.setRPY(packet.roll / 57.3f, packet.pitch / 57.3f, packet.yaw / 57.3f);
                       t.transform.rotation = tf2::toMsg(q);
                       tf_broadcaster_->sendTransform(t);

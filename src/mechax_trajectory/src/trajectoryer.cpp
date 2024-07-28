@@ -462,7 +462,7 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     angle_yaw = atan2(object_y, object_x);
-    if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 0.5)
+    if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 0.3)
     {
         motor_bias_time = abs(angle_yaw - now_yaw) / abs(motor_speed);
     }
