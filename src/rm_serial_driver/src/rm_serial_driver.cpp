@@ -196,7 +196,7 @@ void RMSerialDriver::receiveData()
                       {
                         if(packet.detect_color == 5 || packet.detect_color == 6)
                         {
-                          packet.detect_color = 5 ? packet.detect_color = 0 : packet.detect_color = 1;
+                          packet.detect_color = (packet.detect_color == 5) ? 0 : 1;
                           //packet.detect_color = 0; //自行设置颜色
                           //std::cout << "detect_color: " << packet.detect_color << std::endl;
                           // 执行您的操作，例如设置参数、发布消息等
