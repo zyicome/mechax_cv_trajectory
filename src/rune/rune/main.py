@@ -14,7 +14,7 @@ from rclpy.qos import qos_profile_sensor_data
 
 from rune.image_progressing import *
 from rune.linear_calculation import *
-from rune.logging import logger
+from rune.rlogging import logger
 from rune.power_rune import Blade
 from rune.power_rune import filter_by_area
 from rune.power_rune import filter_by_hu

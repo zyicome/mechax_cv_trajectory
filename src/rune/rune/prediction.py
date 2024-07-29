@@ -9,7 +9,7 @@ from datetime import datetime
 from rune.configuration import cfg
 from scipy.optimize import curve_fit
 
-from rune.logging import logger
+from rune.rlogging import logger
 
 
 def radian(time: float | np.ndarray, k: float, b: float, a: float, omega: float, phi: float) -> float | np.ndarray:
