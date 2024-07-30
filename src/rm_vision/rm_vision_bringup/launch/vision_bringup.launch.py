@@ -39,6 +39,15 @@ def generate_launch_description():
         extra_arguments=[{'use_intra_process_comms': True}],
     )
 
+    rune_node = Node(
+        package='rune',
+        executable='main',
+        name='rune',
+        output='both',
+        emulate_tty=True,
+        on_exit=Shutdown(),
+    )
+
     serial_driver_node = Node(
         package='rm_serial_driver',
         executable='rm_serial_driver_node',
@@ -77,6 +86,11 @@ def generate_launch_description():
         actions=[trajectory_node],
     )
 
+    delay_rune_node = TimerAction(
+        period=2.0,
+        actions=[rune_node],
+    )
+
     """Generate launch description with multiple components."""
     container = ComposableNodeContainer(
             name='image_container',
@@ -97,4 +111,5 @@ def generate_launch_description():
         delay_serial_node,     # 串口通信
         delay_tracker_node,    # tracker
         delay_trajectory_node, # 轨迹规划,弹道解算
+        rune_node,             # rune
     ])

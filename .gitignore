@@ -6,9 +6,9 @@ log/
 .git/
 .vscode/
 src/Video_save/video_/
-src/rm_vision/rm_vision_bringup/camera_info.yaml
-src/rm_vision/rm_vision_bringup/launch_params.yaml
-src/rm_vision/rm_vision_bringup/node_params.yaml
+src/rm_vision/rm_vision_bringup/config/camera_info.yaml
+src/rm_vision/rm_vision_bringup/config/launch_params.yaml
+src/rm_vision/rm_vision_bringup/config/node_params.yaml
 src/rm_gimbal_description/urdf/rm_gimbal.urdf.xacro
 src/ros2-hik-camera-main/config/camera_info.yaml
 src/ros2-hik-camera-main/config/camera_params.yaml
