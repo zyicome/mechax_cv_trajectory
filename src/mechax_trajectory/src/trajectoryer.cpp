@@ -663,6 +663,7 @@ void Trajectoryer::power_rune_callback(const geometry_msgs::msg::PointStamped ms
             msg.point.z,
             v0, randa
     );
+    angle_yaw = atan2(msg.point.y,msg.point.x);
 
     auto_aim_interfaces::msg::SendSerial result;
     result.header.frame_id = "odom";
