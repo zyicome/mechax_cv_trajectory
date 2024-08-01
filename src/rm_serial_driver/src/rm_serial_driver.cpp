@@ -205,6 +205,11 @@ void RMSerialDriver::receiveData()
                           previous_receive_color_ = packet.detect_color;
                           }
                         }
+                        
+                        if(packet.is_reset == 1)
+                        {
+                          resetTracker();
+                        }
 
                       // 创建坐标变换消息和发布
                       geometry_msgs::msg::TransformStamped t;

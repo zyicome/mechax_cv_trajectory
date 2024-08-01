@@ -73,6 +73,7 @@ void NumberClassifier::extractNumbers(const cv::Mat & src, std::vector<Armor> & 
       number_image(cv::Rect(cv::Point((warp_width - roi_size.width) / 2, 0), roi_size));
 
     // Binarize
+    number_image = numberlcassfy_helper(number_image);
     cv::cvtColor(number_image, number_image, cv::COLOR_RGB2GRAY);
     cv::threshold(number_image, number_image, 0, 255, cv::THRESH_BINARY | cv::THRESH_OTSU);
 
@@ -142,6 +143,30 @@ void NumberClassifier::classify(std::vector<Armor> & armors)
         return mismatch_armor_type;
       }),
     armors.end());
+}
+
+cv::Mat NumberClassifier::numberlcassfy_helper(cv::Mat & number_image)//用于叠加图片，增加亮度，以实现对现场光线的适配度
+{
+  cv::Mat number_img_fusion ;
+  double alpha = 0.5;
+  double beta = get_weights_parameter(number_image);
+  cv::addWeighted(number_image,alpha,number_image,beta,0,number_img_fusion);
+  return number_img_fusion;
+}
+
+double NumberClassifier::get_weights_parameter(cv::Mat & number_image)//此处是为了计算出一个平衡参数，用于作为合并图像的参数
+{
+  //创建掩码
+  cv::Mat hsv_image;
+  cv::Mat brightless_channel;
+  double standard_light = 100;
+  double weight_parameter ;
+  cv::cvtColor(number_image,hsv_image,cv::COLOR_BGR2HSV);
+  cv::extractChannel(hsv_image,brightless_channel,2);
+  cv::Scalar split_image=cv::mean(brightless_channel);
+  double now_brightless = split_image[0];
+  weight_parameter = (standard_light - now_brightless)/now_brightless;
+  return weight_parameter;
 }
 
 }  // namespace rm_auto_aim

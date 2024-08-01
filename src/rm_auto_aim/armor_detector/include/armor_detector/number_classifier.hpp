@@ -28,6 +28,10 @@ public:
 
   void classify(std::vector<Armor> & armors);
 
+  cv::Mat numberlcassfy_helper(cv::Mat & number_image);
+
+  double get_weights_parameter(cv::Mat & number_image);
+
   double threshold;
 
 private:

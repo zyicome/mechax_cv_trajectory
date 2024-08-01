@@ -4,6 +4,7 @@
 
 #include <opencv2/calib3d.hpp>
 #include <vector>
+#include <iostream>
 
 namespace rm_auto_aim
 {
@@ -52,6 +53,7 @@ float PnPSolver::calculateDistanceToCenter(const cv::Point2f & image_point)
 {
   float cx = camera_matrix_.at<double>(0, 2);
   float cy = camera_matrix_.at<double>(1, 2);
+  std::cout << "cx: " << cx << " cy: " << cy << std::endl;
   return cv::norm(image_point - cv::Point2f(cx, cy));
 }
 

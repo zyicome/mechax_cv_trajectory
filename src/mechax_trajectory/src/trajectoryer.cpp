@@ -462,7 +462,7 @@ int Trajectoryer::solve_trajectory()
         return 0;
     }
     angle_yaw = atan2(object_y, object_x);
-    if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 0.3)
+    if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 0.05)
     {
         motor_bias_time = abs(angle_yaw - now_yaw) / abs(motor_speed);
     }
@@ -663,6 +663,7 @@ void Trajectoryer::power_rune_callback(const geometry_msgs::msg::PointStamped ms
             msg.point.z,
             v0, randa
     );
+    angle_yaw = atan2(msg.point.y, msg.point.x);
 
     auto_aim_interfaces::msg::SendSerial result;
     result.header.frame_id = "odom";
