@@ -89,10 +89,10 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
       cam_info_ = std::make_shared<sensor_msgs::msg::CameraInfo>(*camera_info);
       pnp_solver_ = std::make_unique<PnPSolver>(camera_info->k, camera_info->d);
       camera_matrix_.at<double>(0,0) = camera_info->k[0];
-    camera_matrix_.at<double>(0,2) = camera_info->k[2];
-    camera_matrix_.at<double>(1,1) = camera_info->k[4];
-    camera_matrix_.at<double>(1,2) = camera_info->k[5];
-    camera_matrix_.at<double>(2,2) = 1.0;
+      camera_matrix_.at<double>(0,2) = camera_info->k[2];
+      camera_matrix_.at<double>(1,1) = camera_info->k[4];
+      camera_matrix_.at<double>(1,2) = camera_info->k[5];
+      camera_matrix_.at<double>(2,2) = 1.0;
       cam_info_sub_.reset();
     });
 
