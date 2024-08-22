@@ -13,19 +13,24 @@ find_package(cv_bridge REQUIRED)
 find_package(OpenCV 4.5.4 REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
-message(STATUS "OpenCV library status:")
-message(STATUS "    version: ${OpenCV_VERSION}")
-message(STATUS "    libraries: ${OpenCV_LIBS}")
-message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
-message(STATUS "    catkin libraries: ${catkin_LIBRARIES}")
 
 include_directories(${CMAKE_SOURCE_DIR}/include/rm_rune)
 
-add_library(${PROJECT_NAME} SHARED src/rm_rune_node.cpp src/image_processer.cpp)
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV)
+add_library(${PROJECT_NAME} SHARED
+  src/rm_rune_node.cpp
+  src/power_rune.cpp
+  src/image_processer.cpp
+  src/contour_info.cpp
+  src/configuration.cpp
+  src/blade.cpp
+  src/prediction.cpp
+)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros)
 target_link_directories(${PROJECT_NAME} PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
       $<INSTALL_INTERFACE:include>)

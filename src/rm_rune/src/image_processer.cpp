@@ -34,7 +34,3 @@ cv::Mat ImageProcesser::to_binary(cv::Mat image,int binary_threshold)
     return binary_image;
 }
 
-void ImageProcesser::hu_moments_deviation()
-{
-    
-}
