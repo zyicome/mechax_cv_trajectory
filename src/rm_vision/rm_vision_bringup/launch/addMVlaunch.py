@@ -39,6 +39,14 @@ def generate_launch_description():
         extra_arguments=[{'use_intra_process_comms': True}],
     )
 
+    rune_composable_node = ComposableNode(
+        package='rm_rune',
+        plugin='qianli_rm_rune::RuneNode',
+        name='rm_rune',
+        parameters=[node_params],
+        extra_arguments=[{'use_intra_process_comms': True}],
+    ) 
+
     trajectory_node = Node(
         package='mechax_trajectory',
         executable='mechax_trajectory',
@@ -66,7 +74,8 @@ def generate_launch_description():
             executable='component_container_mt',
             composable_node_descriptions=[
                 cam_detector,
-                detector_node,
+                #detector_node,
+                rune_composable_node,
             ],
             output='both',
     )

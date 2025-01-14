@@ -5,7 +5,8 @@
 #include "opencv2/opencv.hpp"
 #include "cv_bridge/cv_bridge.h"
 
-#include "contour_info.hpp"
+// #include "contour_info.hpp"
+#include "detect.hpp"
 #include "configuration.hpp"
 
 /*@ivar contour: 输入的轮廓信息。
@@ -21,5 +22,6 @@ public:
     ContourInfo contour;
     cv::Point2f target;
     cv::Point2f center;
+    cv::Point2f circle_center;
     cv::Point2f vector;
 };
