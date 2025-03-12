@@ -1,5 +1,3 @@
-#pragma once
-
 #include "autobackend.h"
 
 #include <iostream>

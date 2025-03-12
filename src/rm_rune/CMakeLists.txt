@@ -12,17 +12,19 @@ if(NOT ONNXRUNTIME_ROOTDIR)
         set(ONNXRUNTIME_ROOTDIR "C:/Program Files (x86)/onnxruntime")
     else()
         # 非 Windows 系统下设置默认路径
-        set(ONNXRUNTIME_ROOTDIR "/home/qianli/onnxruntime")
+        set(ONNXRUNTIME_ROOTDIR "${CMAKE_SOURCE_DIR}/onnxruntime_x64_1.20.0")
     endif()
 endif()
 
 # 显示当前使用的 ONNXRUNTIME_ROOTDIR 路径
 message(STATUS "Using ONNX Runtime directory: ${ONNXRUNTIME_ROOTDIR}")
 
+# 添加 ONNX Runtime 的 CMake 模块路径
+list(APPEND CMAKE_PREFIX_PATH "${ONNXRUNTIME_ROOTDIR}/lib64/cmake/onnxruntime")
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
-
 
 # 添加包含路径
 include_directories(
@@ -30,6 +32,8 @@ include_directories(
   ${ONNXRUNTIME_ROOTDIR}/include/onnxruntime/core/session
   ${CMAKE_SOURCE_DIR}/include
 )
+
+set(ONNXRUNTIME_LIB_DIR ${ONNXRUNTIME_ROOTDIR}/lib)
 
 # find dependencies
 find_package(Eigen3 REQUIRED)
@@ -45,6 +49,7 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(pluginlib REQUIRED)
+find_package(onnxruntime REQUIRED)
 
 find_package(Ceres REQUIRED)
  
@@ -76,14 +81,12 @@ add_library(${PROJECT_NAME} SHARED
   src/onnx_model_base.cpp
   src/ops.cpp
 )
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs)
-
-link_directories(${ONNXRUNTIME_ROOTDIR}/lib)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs onnxruntime)
 
 target_link_directories(${PROJECT_NAME} PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
       $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} onnxruntime Ceres::ceres)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} Ceres::ceres)
 
 rclcpp_components_register_node(${PROJECT_NAME}
   PLUGIN qianli_rm_rune::RuneNode
@@ -108,6 +111,7 @@ install(TARGETS
 
 install(DIRECTORY
   launch
+  onnxruntime_x64_1.20.0
   DESTINATION share/${PROJECT_NAME}/
 )
 

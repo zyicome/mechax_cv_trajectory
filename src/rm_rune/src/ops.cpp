@@ -1,5 +1,3 @@
-#pragma once
-
 #include <opencv2/opencv.hpp>
 //#include <opencv2/imgcodecs.hpp>
 //#include <opencv2/imgproc.hpp>
@@ -89,7 +87,7 @@ cv::Rect_<float> scale_boxes(const cv::Size& img1_shape, cv::Rect_<float>& box, 
 
 void clip_coords(std::vector<float>& coords, const cv::Size& shape) {
     // Assuming coords are of shape [1, 17, 3]
-    for (int i = 0; i < coords.size(); i += 3) {
+    for (size_t i = 0; i < coords.size(); i += 3) {
         coords[i] = std::min(std::max(coords[i], 0.0f), static_cast<float>(shape.width - 1));  // x
         coords[i + 1] = std::min(std::max(coords[i + 1], 0.0f), static_cast<float>(shape.height - 1));  // y
     }
@@ -111,7 +109,7 @@ std::vector<float> scale_coords(const cv::Size& img1_shape, std::vector<float>& 
 //    scaledCoords.col(0) = (scaledCoords.col(0) - pad.x);
 //    scaledCoords.col(1) = (scaledCoords.col(1) - pad.y);
     // Assuming coords are of shape [1, 17, 3]
-    for (int i = 0; i < scaledCoords.size(); i += 3) {
+    for (size_t i = 0; i < scaledCoords.size(); i += 3) {
         scaledCoords[i] -= pad.x;  // x padding
         scaledCoords[i + 1] -= pad.y;  // y padding
     }
@@ -120,7 +118,7 @@ std::vector<float> scale_coords(const cv::Size& img1_shape, std::vector<float>& 
 //    scaledCoords.col(0) /= gain;
 //    scaledCoords.col(1) /= gain;
     // Assuming coords are of shape [1, 17, 3]
-    for (int i = 0; i < scaledCoords.size(); i += 3) {
+    for (size_t i = 0; i < scaledCoords.size(); i += 3) {
         scaledCoords[i] /= gain;
         scaledCoords[i + 1] /= gain;
     }
