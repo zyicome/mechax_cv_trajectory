@@ -32,8 +32,16 @@ std::vector<Armor> Detector::detect(const cv::Mat & input)
   armors_ = matchLights(lights_);
 
   if (!armors_.empty()) {
-    classifier->extractNumbers(input, armors_);
-    classifier->classify(armors_);
+    if(is_openvino_ == true)
+    {
+      openvino_classifier_->extractNumbers(input, armors_);
+      openvino_classifier_->infer(armors_);
+    }
+    else
+    {
+      classifier->extractNumbers(input, armors_);
+      classifier->classify(armors_);
+    }
   }
 
   return armors_;

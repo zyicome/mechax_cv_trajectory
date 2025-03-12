@@ -16,6 +16,7 @@
 /armor_detector:
   ros__parameters:
     is_debug: true
+    is_openvino: true
 
     detect_color: 1
     binary_thres: 80

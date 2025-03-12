@@ -71,6 +71,8 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     createDebugPublishers();
   }
 
+  is_openvino_ = this->declare_parameter("is_openvino", true);
+
   // Debug param change moniter
   debug_param_sub_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
   debug_cb_handle_ =
@@ -240,6 +242,8 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
 
   auto detector = std::make_unique<Detector>(binary_thres, detect_color, l_params, a_params);
 
+  detector->is_openvino_ = is_openvino_;
+
   // Init classifier
   auto pkg_path = ament_index_cpp::get_package_share_directory("armor_detector");
   auto model_path = pkg_path + "/model/mlp.onnx";
@@ -249,6 +253,9 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
     this->declare_parameter("ignore_classes", std::vector<std::string>{"negative"});
   detector->classifier =
     std::make_unique<NumberClassifier>(model_path, label_path, threshold, ignore_classes);
+  detector->openvino_classifier_ =
+    std::make_shared<OpenvinoNumberClassifier>(model_path, label_path, "CPU");
+  detector->openvino_classifier_->classifierSet(threshold, ignore_classes);
 
   return detector;
 }

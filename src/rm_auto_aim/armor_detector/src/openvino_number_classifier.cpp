@@ -1,6 +1,17 @@
 #include "armor_detector/openvino_number_classifier.hpp"
 
-cv::Mat letterbox(const cv::Mat &input)
+
+namespace rm_auto_aim
+{
+
+double sigmoid(double x) {
+        if(x>0)
+            return 1.0 / (1.0 + exp(-x));
+        else
+            return exp(x) / (1.0 + exp(x));
+    }
+
+cv::Mat letterbox(cv::Mat &input)
 {
     int col = input.cols;
     int row = input.rows;
@@ -10,14 +21,7 @@ cv::Mat letterbox(const cv::Mat &input)
     return result;
 }
 
-double sigmoid(double x) {
-        if(x>0)
-            return 1.0 / (1.0 + exp(-x));
-        else
-            return exp(x) / (1.0 + exp(x));
-    }
-
-OpenvinoNumberClassifier::OpenvinoNumberClassifier(string model_path, string label_path, string device, double threshold, std::vector<std::string> & ignore_classes = {})
+OpenvinoNumberClassifier::OpenvinoNumberClassifier(std::string model_path, std::string label_path, std::string device)
 {
         // -------- Step 1. Initialize OpenVINO Runtime Core -------
         core_ = ov::Core();
@@ -40,6 +44,12 @@ OpenvinoNumberClassifier::OpenvinoNumberClassifier(string model_path, string lab
         while (std::getline(label_file, line)) {
             class_names_.push_back(line);
         }
+}
+
+void OpenvinoNumberClassifier::classifierSet(const double threshold, const std::vector<std::string> & ignore_classes)
+{
+  threshold_ = threshold;
+  ignore_classes_ = ignore_classes;
 }
 
 void OpenvinoNumberClassifier::extractNumbers(const cv::Mat & src, std::vector<Armor> & armors)
@@ -127,7 +137,7 @@ void OpenvinoNumberClassifier::infer(std::vector<Armor> & armors)
     std::remove_if(
       armors.begin(), armors.end(),
       [this](const Armor & armor) {
-        if (armor.confidence < threshold) {
+        if (armor.confidence < threshold_) {
           return true;
         }
 
@@ -148,5 +158,31 @@ void OpenvinoNumberClassifier::infer(std::vector<Armor> & armors)
       }),
     armors.end());
          
+}
+
+cv::Mat OpenvinoNumberClassifier::numberlcassfy_helper(cv::Mat & number_image)//用于叠加图片，增加亮度，以实现对现场光线的适配度
+{
+  cv::Mat number_img_fusion ;
+  double alpha = 0.5;
+  double beta = get_weights_parameter(number_image);
+  cv::addWeighted(number_image,alpha,number_image,beta,0,number_img_fusion);
+  return number_img_fusion;
+}
+
+double OpenvinoNumberClassifier::get_weights_parameter(cv::Mat & number_image)//此处是为了计算出一个平衡参数，用于作为合并图像的参数
+{
+  //创建掩码
+  cv::Mat hsv_image;
+  cv::Mat brightless_channel;
+  double standard_light = 100;
+  double weight_parameter ;
+  cv::cvtColor(number_image,hsv_image,cv::COLOR_BGR2HSV);
+  cv::extractChannel(hsv_image,brightless_channel,2);
+  cv::Scalar split_image=cv::mean(brightless_channel);
+  double now_brightless = split_image[0];
+  weight_parameter = (standard_light - now_brightless)/now_brightless;
+  return weight_parameter;
+}
+
 }
 

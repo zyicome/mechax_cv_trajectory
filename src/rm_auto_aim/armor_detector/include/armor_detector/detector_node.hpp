@@ -92,6 +92,7 @@ private:
   cv::Point2f armorpose_img = cv::Point2f(0, 0);
 
   bool is_rune_;
+  bool is_openvino_;
 
   //------------------------------------------------------------------------------
   std::chrono::steady_clock::time_point detector_start;

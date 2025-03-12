@@ -17,6 +17,7 @@
 #include "armor_detector/number_classifier.hpp"
 #include "auto_aim_interfaces/msg/debug_armors.hpp"
 #include "auto_aim_interfaces/msg/debug_lights.hpp"
+#include "armor_detector/openvino_number_classifier.hpp"
 
 namespace rm_auto_aim
 {
@@ -44,6 +45,8 @@ public:
     double max_angle;
   };
 
+  bool is_openvino_;
+
   Detector(const int & bin_thres, const int & color, const LightParams & l, const ArmorParams & a);
 
   std::vector<Armor> detect(const cv::Mat & input);
@@ -62,6 +65,7 @@ public:
   ArmorParams a;
 
   std::unique_ptr<NumberClassifier> classifier;
+  std::shared_ptr<OpenvinoNumberClassifier> openvino_classifier_;
 
   // Debug msgs
   cv::Mat binary_img;
