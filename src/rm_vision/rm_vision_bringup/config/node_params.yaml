@@ -15,7 +15,7 @@
 
 /armor_detector:
   ros__parameters:
-    debug: true
+    is_debug: true
 
     detect_color: 1
     binary_thres: 80
@@ -28,6 +28,8 @@
 
 /armor_tracker:
   ros__parameters:
+    is_debug: true
+
     target_frame: odom
     max_armor_distance: 10.0
 

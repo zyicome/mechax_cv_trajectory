@@ -66,7 +66,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     this->create_publisher<visualization_msgs::msg::MarkerArray>("/detector/marker", 10);
 
   // Debug Publishers
-  debug_ = this->declare_parameter("debug", false);
+  debug_ = this->declare_parameter("is_debug", false);
   if (debug_) {
     createDebugPublishers();
   }
@@ -74,7 +74,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
   // Debug param change moniter
   debug_param_sub_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
   debug_cb_handle_ =
-    debug_param_sub_->add_parameter_callback("debug", [this](const rclcpp::Parameter & p) {
+    debug_param_sub_->add_parameter_callback("is_debug", [this](const rclcpp::Parameter & p) {
       debug_ = p.as_bool();
       debug_ ? createDebugPublishers() : destroyDebugPublishers();
     });
