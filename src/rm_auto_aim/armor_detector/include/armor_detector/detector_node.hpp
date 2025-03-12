@@ -25,6 +25,7 @@
 #include "armor_detector/pnp_solver.hpp"
 #include "auto_aim_interfaces/msg/armors.hpp"
 #include "auto_aim_interfaces/msg/bias.hpp"
+#include "auto_aim_interfaces/msg/status.hpp"
 
 #include <geometry_msgs/msg/point_stamped.hpp>
 
@@ -39,6 +40,7 @@ public:
   ArmorDetectorNode(const rclcpp::NodeOptions & options);
 
 private:
+  void status_callback(const auto_aim_interfaces::msg::Status::SharedPtr msg);
   void imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg);
 
   std::unique_ptr<Detector> initDetector();
@@ -80,6 +82,7 @@ private:
   std::shared_ptr<rclcpp::ParameterCallbackHandle> debug_cb_handle_;
   rclcpp::Publisher<auto_aim_interfaces::msg::DebugLights>::SharedPtr lights_data_pub_;
   rclcpp::Publisher<auto_aim_interfaces::msg::DebugArmors>::SharedPtr armors_data_pub_;
+  rclcpp::Subscription<auto_aim_interfaces::msg::Status>::SharedPtr status_sub_;
   image_transport::Publisher binary_img_pub_;
   image_transport::Publisher number_img_pub_;
   image_transport::Publisher result_img_pub_;
@@ -87,6 +90,8 @@ private:
   cv::Mat camera_matrix_ = cv::Mat::zeros(3, 3, CV_64FC1);
   cv::Point2f needpose_img = cv::Point2f(0, 0);
   cv::Point2f armorpose_img = cv::Point2f(0, 0);
+
+  bool is_rune_;
 
   //------------------------------------------------------------------------------
   std::chrono::steady_clock::time_point detector_start;

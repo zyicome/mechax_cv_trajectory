@@ -25,6 +25,11 @@ namespace qianli_rm_rune
         // 创建发布者，用于发布3D预测位置（/rune/prediction）
         rune_pose_pub_ = create_publisher<geometry_msgs::msg::PointStamped>("/rune/prediction", 10);
 
+        is_rune_ = false;
+
+        status_sub_ = create_subscription<auto_aim_interfaces::msg::Status>(
+            "/status", rclcpp::SensorDataQoS(), std::bind(&RuneNode::status_callback, this, std::placeholders::_1));
+
         // 创建订阅者，订阅图像原始数据（/image_raw）
         rune_image_sub_ = create_subscription<sensor_msgs::msg::Image>(
             "/image_raw", rclcpp::SensorDataQoS(),
@@ -70,6 +75,25 @@ namespace qianli_rm_rune
                 }
             }
         );
+    }
+
+    void RuneNode::status_callback(const auto_aim_interfaces::msg::Status::SharedPtr msg)
+    {
+        if(msg->is_rune == is_rune_)
+        {
+            return;
+        }
+        is_rune_ = msg->is_rune;
+        if(is_rune_)
+        {
+            rune_image_sub_ = create_subscription<sensor_msgs::msg::Image>(
+                            "/image_raw", rclcpp::SensorDataQoS(),std::bind(&RuneNode::rune_image_callback, this, std::placeholders::_1));
+        }
+        else
+        {
+            rune_image_sub_.reset();
+        }
+
     }
 
     /*

@@ -232,6 +232,10 @@ void RMSerialDriver::receiveData()
                       receive_serial_msg_.is_rune = packet.is_rune;
                       serial_pub_->publish(receive_serial_msg_);
 
+                      auto_aim_interfaces::msg::Status status;
+                      status.is_rune = packet.is_rune;
+                      status_pub_->publish(status);
+
                       total_count++;
                       if(total_count >= 100)
                       {

@@ -50,6 +50,7 @@ find_package(tf2_geometry_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(onnxruntime REQUIRED)
+find_package(auto_aim_interfaces REQUIRED)
 
 find_package(Ceres REQUIRED)
  
@@ -81,7 +82,7 @@ add_library(${PROJECT_NAME} SHARED
   src/onnx_model_base.cpp
   src/ops.cpp
 )
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs onnxruntime)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs onnxruntime auto_aim_interfaces)
 
 target_link_directories(${PROJECT_NAME} PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
