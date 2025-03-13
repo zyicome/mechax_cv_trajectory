@@ -89,6 +89,8 @@ RMSerialDriver::RMSerialDriver(const rclcpp::NodeOptions & options)
     "/trajectory/result", 10,
     std::bind(&RMSerialDriver::sendData, this, std::placeholders::_1));
 
+  status_pub_ = this->create_publisher<auto_aim_interfaces::msg::Status>("/status", 10);
+
   //----------------------------------------------------------------------------------
     serial_start = std::chrono::steady_clock::now();
     serial_end = std::chrono::steady_clock::now();
