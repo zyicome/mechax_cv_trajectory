@@ -254,7 +254,7 @@ std::unique_ptr<Detector> ArmorDetectorNode::initDetector()
   detector->classifier =
     std::make_unique<NumberClassifier>(model_path, label_path, threshold, ignore_classes);
   detector->openvino_classifier_ =
-    std::make_shared<OpenvinoNumberClassifier>(model_path, label_path, "CPU");
+    std::make_shared<OpenvinoNumberClassifier>(model_path, label_path, "GPU");
   detector->openvino_classifier_->classifierSet(threshold, ignore_classes);
 
   return detector;
