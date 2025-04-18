@@ -68,6 +68,7 @@ private:
   // Aimimg point receiving from serial port for visualization
   visualization_msgs::msg::Marker aiming_point_;
   auto_aim_interfaces::msg::ReceiveSerial receive_serial_msg_;
+  auto_aim_interfaces::msg::Status status_msg_;
 
   // Broadcast tf from odom to gimbal_link
   double timestamp_offset_ = 0;

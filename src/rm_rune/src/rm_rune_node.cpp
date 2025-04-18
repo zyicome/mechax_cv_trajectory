@@ -79,11 +79,11 @@ namespace qianli_rm_rune
 
     void RuneNode::status_callback(const auto_aim_interfaces::msg::Status::SharedPtr msg)
     {
-        if(msg->is_rune == is_rune_)
+        if(msg->is_rune_status == is_rune_)
         {
             return;
         }
-        is_rune_ = msg->is_rune;
+        is_rune_ = msg->is_rune_status;
         if(is_rune_)
         {
             rune_image_sub_ = create_subscription<sensor_msgs::msg::Image>(

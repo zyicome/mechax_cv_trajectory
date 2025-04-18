@@ -1,1 +1,1 @@
-bool is_rune
+bool is_rune_status

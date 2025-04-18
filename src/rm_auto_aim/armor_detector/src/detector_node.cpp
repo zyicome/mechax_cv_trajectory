@@ -115,11 +115,11 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
 
 void ArmorDetectorNode::status_callback(const auto_aim_interfaces::msg::Status::SharedPtr msg)
 {
-    if(msg->is_rune == is_rune_)
+    if(msg->is_rune_status == is_rune_)
     {
         return;
     }
-    is_rune_ = msg->is_rune;
+    is_rune_ = msg->is_rune_status;
     if(is_rune_ == true)
     {
         img_sub_.reset();
