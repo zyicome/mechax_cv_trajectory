@@ -363,7 +363,7 @@ void ContourInfo::plot_results(cv::Mat img, std::vector<YoloResults>& results,
                     // 检查坐标有效性
                     if (x_coord % raw_image_shape.width != 0 && y_coord % raw_image_shape.height != 0) {
                         // 将关键点坐标存入 contours
-                        contours.back().push_back(cv::Point(x_coord, y_coord));
+                        contours.back().push_back(cv::Point(x_coord, 1080-y_coord));
 
                         // 绘制关键点
                         cv::Scalar color_k = isPose ? kptColorPalette[i] : cv::Scalar(0, 0, 255); 

@@ -12,7 +12,7 @@ if(NOT ONNXRUNTIME_ROOTDIR)
         set(ONNXRUNTIME_ROOTDIR "C:/Program Files (x86)/onnxruntime")
     else()
         # 非 Windows 系统下设置默认路径
-        set(ONNXRUNTIME_ROOTDIR "/home/zyicome/zyb/storehouse/onnxruntime-linux-x64-1.20.0")
+        set(ONNXRUNTIME_ROOTDIR "/home/fyk/onnxruntime-linux-x64-gpu-1.20.0")
     endif()
 endif()
 
@@ -45,6 +45,7 @@ find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(pluginlib REQUIRED)
+find_package(glog REQUIRED)
 
 find_package(Ceres REQUIRED)
  
@@ -83,7 +84,7 @@ link_directories(${ONNXRUNTIME_ROOTDIR}/lib)
 target_link_directories(${PROJECT_NAME} PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
       $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} onnxruntime Ceres::ceres)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} onnxruntime ceres glog)
 
 rclcpp_components_register_node(${PROJECT_NAME}
   PLUGIN qianli_rm_rune::RuneNode

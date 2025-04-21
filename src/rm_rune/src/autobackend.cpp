@@ -298,13 +298,13 @@ std::vector<YoloResults> AutoBackendOnnx::predict_once(cv::Mat& image, float& co
 
     postprocess_timer.Stop();
     if (verbose) {
-        std::cout << std::fixed << std::setprecision(1);
-        std::cout << "image: " << preprocessed_img.rows << "x" << preprocessed_img.cols << " " << results.size() << " objs, ";
-        std::cout << (preprocess_time + inference_time + postprocess_time) * 1000.0 << "ms" << std::endl;
-        std::cout << "Speed: " << (preprocess_time * 1000.0) << "ms preprocess, ";
-        std::cout << (inference_time * 1000.0) << "ms inference, ";
-        std::cout << (postprocess_time * 1000.0) << "ms postprocess per image ";
-        std::cout << "at shape (1, " << image.channels() << ", " << preprocessed_img.rows << ", " << preprocessed_img.cols << ")" << std::endl;
+        // std::cout << std::fixed << std::setprecision(1);
+        // std::cout << "image: " << preprocessed_img.rows << "x" << preprocessed_img.cols << " " << results.size() << " objs, ";
+        // std::cout << (preprocess_time + inference_time + postprocess_time) * 1000.0 << "ms" << std::endl;
+        // std::cout << "Speed: " << (preprocess_time * 1000.0) << "ms preprocess, ";
+        // std::cout << (inference_time * 1000.0) << "ms inference, ";
+        // std::cout << (postprocess_time * 1000.0) << "ms postprocess per image ";
+        // std::cout << "at shape (1, " << image.channels() << ", " << preprocessed_img.rows << ", " << preprocessed_img.cols << ")" << std::endl;
     }
 
     return results;
