@@ -57,6 +57,8 @@ public:
 
     // 相机矩阵
     cv::Mat camera_matrix_;
+    size_t frame_count_;
+    rclcpp::Time last_time_;
 
     // 配置和处理类
     Configuration cfg_;
@@ -74,6 +76,7 @@ public:
     // // 定时器用于延迟初始化 image_transport
     rclcpp::TimerBase::SharedPtr init_timer_;
 };
+
 
 } // namespace qianli_rm_rune
 
