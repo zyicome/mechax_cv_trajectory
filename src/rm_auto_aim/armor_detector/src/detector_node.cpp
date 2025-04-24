@@ -66,7 +66,7 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     this->create_publisher<visualization_msgs::msg::MarkerArray>("/detector/marker", 10);
 
   // Debug Publishers
-  debug_ = this->declare_parameter("debug", false);
+  debug_ = this->declare_parameter("is_debug", false);
   if (debug_) {
     createDebugPublishers();
   }
@@ -96,6 +96,10 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
       cam_info_sub_.reset();
     });
 
+    is_rune_ = true; // 默认为打符模式，才能刷新接受者接受图片消息, 即开始默认自己不能接受图片消息
+    status_sub_ = this->create_subscription<auto_aim_interfaces::msg::Status>(
+        "/status", rclcpp::SensorDataQoS(), std::bind(&ArmorDetectorNode::status_callback, this, std::placeholders::_1));
+
   img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
     "/image_raw", rclcpp::SensorDataQoS(),
     std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
@@ -105,6 +109,26 @@ ArmorDetectorNode::ArmorDetectorNode(const rclcpp::NodeOptions & options)
     detector_end = std::chrono::steady_clock::now();
     detector_fps = 0;
     detector_now_fps = 0;
+}
+
+void ArmorDetectorNode::status_callback(const auto_aim_interfaces::msg::Status::SharedPtr msg)
+{
+    if(msg->is_rune_status == is_rune_)
+    {
+        return;
+    }
+    is_rune_ = msg->is_rune_status;
+    if(is_rune_ == true)
+    {
+        img_sub_.reset();
+    }
+    else
+    {
+        img_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
+            "/image_raw", rclcpp::SensorDataQoS(), std::bind(&ArmorDetectorNode::imageCallback, this, std::placeholders::_1));
+
+        detector_start = std::chrono::steady_clock::now();
+    }
 }
 
 void ArmorDetectorNode::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr img_msg)

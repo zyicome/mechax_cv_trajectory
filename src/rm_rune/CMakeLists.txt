@@ -12,7 +12,7 @@ if(NOT ONNXRUNTIME_ROOTDIR)
         set(ONNXRUNTIME_ROOTDIR "C:/Program Files (x86)/onnxruntime")
     else()
         # 非 Windows 系统下设置默认路径
-        set(ONNXRUNTIME_ROOTDIR "/home/fyk/onnxruntime-linux-x64-gpu-1.20.0")
+        set(ONNXRUNTIME_ROOTDIR "${CMAKE_SOURCE_DIR}/onnxruntime_x64_1.20.0")
     endif()
 endif()
 
@@ -48,6 +48,7 @@ find_package(pluginlib REQUIRED)
 find_package(glog REQUIRED)
 
 find_package(Ceres REQUIRED)
+find_package(auto_aim_interfaces REQUIRED)
  
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -77,7 +78,7 @@ add_library(${PROJECT_NAME} SHARED
   src/onnx_model_base.cpp
   src/ops.cpp
 )
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs auto_aim_interfaces)
 
 link_directories(${ONNXRUNTIME_ROOTDIR}/lib)
 

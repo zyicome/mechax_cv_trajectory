@@ -48,12 +48,15 @@ namespace qianli_rm_rune
         // 创建发布者，用于发布3D预测位置（/rune/prediction）
         rune_pose_pub_ = create_publisher<geometry_msgs::msg::PointStamped>("/rune/prediction", 10);
 
+        is_rune_ = false;
+
+        status_sub_ = create_subscription<auto_aim_interfaces::msg::Status>(
+            "/status", rclcpp::SensorDataQoS(), std::bind(&RuneNode::status_callback, this, std::placeholders::_1));
+
         // 创建订阅者，订阅图像原始数据（/image_raw）
         rune_image_sub_ = create_subscription<sensor_msgs::msg::Image>(
             "/image_raw", rclcpp::SensorDataQoS(),
             std::bind(&RuneNode::rune_image_callback, this, std::placeholders::_1));
-
-
 
         // 初始化tf2缓存和监听器，用于将预测的3D坐标转换到不同的坐标系
         tf2_buffer_ = std::make_shared<tf2_ros::Buffer>(this->get_clock());
@@ -128,6 +131,24 @@ namespace qianli_rm_rune
         return cv::Point2f(cx + rotated_vBx, cy + rotated_vBy);
     }
 
+    void RuneNode::status_callback(const auto_aim_interfaces::msg::Status::SharedPtr msg)
+    {
+        if(msg->is_rune_status == is_rune_)
+        {
+            return;
+        }
+        is_rune_ = msg->is_rune_status;
+        if(is_rune_)
+        {
+            rune_image_sub_ = create_subscription<sensor_msgs::msg::Image>(
+                            "/image_raw", rclcpp::SensorDataQoS(),std::bind(&RuneNode::rune_image_callback, this, std::placeholders::_1));
+        }
+        else
+        {
+            rune_image_sub_.reset();
+        }
+
+    }
 
     /*
     图像处理的回调函数，处理接收到的图像信息，进行图像处理、预测并发布3D点位信息。

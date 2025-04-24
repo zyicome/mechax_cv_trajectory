@@ -34,6 +34,8 @@
 #include "detect.hpp"
 #include <image_transport/image_transport.hpp> // 新增
 
+#include "auto_aim_interfaces/msg/status.hpp"
+
 namespace qianli_rm_rune
 {
 
@@ -42,8 +44,10 @@ class RuneNode : public rclcpp::Node
 public:
     RuneNode(const rclcpp::NodeOptions & options);
 
+    void status_callback(const auto_aim_interfaces::msg::Status::SharedPtr msg);
     void rune_image_callback(const sensor_msgs::msg::Image::SharedPtr msg);
 
+    bool is_rune_;
 
     // 发布者
     rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr rune_pose_pub_;
@@ -54,6 +58,7 @@ public:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr rune_image_sub_;
     rclcpp::Subscription<sensor_msgs::msg::CameraInfo>::SharedPtr cam_info_sub_;
     std::shared_ptr<sensor_msgs::msg::CameraInfo> cam_info_;
+    rclcpp::Subscription<auto_aim_interfaces::msg::Status>::SharedPtr status_sub_;
 
     // 相机矩阵
     cv::Mat camera_matrix_;
