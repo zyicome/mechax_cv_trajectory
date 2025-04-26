@@ -79,7 +79,9 @@ public:
      * @brief 获取解包后的弧度值，确保角度的连续性。
      * @return 解包后的弧度值向量。
      */
-    vector<double> unwrapped_radians();
+    vector<double> unwrapped_radians(vector<double> radians);
+    vector<double> unwrapped_radians_yaw(vector<double> radians);
+
 
     /**
      * @brief 检查是否满足拟合条件（弧度数量是否超过50）。
@@ -134,6 +136,7 @@ public:
     // 拟合状态和数据记录
     bool has_fitted = false;    ///< 是否已经进行过拟合
     vector<double> radians;     ///< 记录的弧度值
+    vector<double> radians_raw;     // 原始记录的弧度值
     vector<double> times_sec;   ///< 记录的时间（秒）
 
 private:
@@ -154,5 +157,5 @@ private:
      * @param orientation 表示方向的二维向量。
      * @return 返回计算的角度，范围在 [0, 2pi/5) 内。
      */
-    double angle_of(cv::Point2f orientation);
+    double angle_of(double angle_raw);
 };
