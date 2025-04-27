@@ -35,9 +35,12 @@ public:
   explicit ArmorTrackerNode(const rclcpp::NodeOptions & options);
 
 private:
+  void createDebug();
   void armorsCallback(const auto_aim_interfaces::msg::Armors::SharedPtr armors_ptr);
 
   void publishMarkers(const auto_aim_interfaces::msg::Target & target_msg);
+
+  bool is_debug_;
 
   // Maximum allowable armor distance in the XOY plane
   double max_armor_distance_;

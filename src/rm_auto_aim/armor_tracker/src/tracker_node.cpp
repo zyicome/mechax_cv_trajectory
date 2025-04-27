@@ -151,6 +151,15 @@ ArmorTrackerNode::ArmorTrackerNode(const rclcpp::NodeOptions & options)
   target_pub_ = this->create_publisher<auto_aim_interfaces::msg::Target>(
     "/tracker/target", rclcpp::SensorDataQoS());
 
+  is_debug_ = this->declare_parameter("is_debug", false);
+  if(is_debug_)
+  {
+    createDebug();
+  }
+}
+
+void ArmorTrackerNode::createDebug()
+{
   // Visualization Marker Publisher
   // See http://wiki.ros.org/rviz/DisplayTypes/Marker
   position_marker_.ns = "position";

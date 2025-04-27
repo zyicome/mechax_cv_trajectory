@@ -24,6 +24,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ReceiveSerial.msg"
 
   "msg/Bias.msg"
+  "msg/Status.msg"
 
   DEPENDENCIES
     std_msgs

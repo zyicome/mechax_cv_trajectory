@@ -25,6 +25,7 @@
 #include "auto_aim_interfaces/msg/target.hpp"
 #include "auto_aim_interfaces/msg/send_serial.hpp"
 #include "auto_aim_interfaces/msg/receive_serial.hpp"
+#include "auto_aim_interfaces/msg/status.hpp"
 
 namespace rm_serial_driver
 {
@@ -67,6 +68,7 @@ private:
   // Aimimg point receiving from serial port for visualization
   visualization_msgs::msg::Marker aiming_point_;
   auto_aim_interfaces::msg::ReceiveSerial receive_serial_msg_;
+  auto_aim_interfaces::msg::Status status_msg_;
 
   // Broadcast tf from odom to gimbal_link
   double timestamp_offset_ = 0;
@@ -79,6 +81,7 @@ private:
   rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr latency_pub_;
   rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr marker_pub_;
   rclcpp::Publisher<auto_aim_interfaces::msg::ReceiveSerial>::SharedPtr serial_pub_;
+  rclcpp::Publisher<auto_aim_interfaces::msg::Status>::SharedPtr status_pub_;
 
   std::thread receive_thread_;
 

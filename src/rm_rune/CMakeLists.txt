@@ -5,8 +5,6 @@ project(rm_rune)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
-
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -35,6 +33,7 @@ find_package(pluginlib REQUIRED)
 find_package(glog REQUIRED)
 
 find_package(Ceres REQUIRED)
+find_package(auto_aim_interfaces REQUIRED)
  
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -58,7 +57,7 @@ add_library(${PROJECT_NAME} SHARED
   src/detect.cpp
   src/openvino_detect.cpp
 )
-ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs)
+ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs auto_aim_interfaces)
 
 link_directories(${ONNXRUNTIME_ROOTDIR}/lib)
 
