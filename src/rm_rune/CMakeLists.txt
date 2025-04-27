@@ -5,20 +5,6 @@ project(rm_rune)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# 设置默认的 ONNX Runtime 根目录，如果用户没有手动提供
-if(NOT ONNXRUNTIME_ROOTDIR)
-    if(WIN32)
-        # Windows 系统下设置默认的 ONNX Runtime 路径
-        set(ONNXRUNTIME_ROOTDIR "C:/Program Files (x86)/onnxruntime")
-    else()
-        # 非 Windows 系统下设置默认路径
-        set(ONNXRUNTIME_ROOTDIR "${CMAKE_SOURCE_DIR}/onnxruntime_x64_1.20.0")
-    endif()
-endif()
-
-# 显示当前使用的 ONNXRUNTIME_ROOTDIR 路径
-message(STATUS "Using ONNX Runtime directory: ${ONNXRUNTIME_ROOTDIR}")
-
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -26,9 +12,8 @@ endif()
 
 # 添加包含路径
 include_directories(
-  ${ONNXRUNTIME_ROOTDIR}/include
-  ${ONNXRUNTIME_ROOTDIR}/include/onnxruntime/core/session
   ${CMAKE_SOURCE_DIR}/include
+  /usr/include # Openvino头文件
 )
 
 # find dependencies
@@ -66,17 +51,11 @@ include_directories(${CMAKE_SOURCE_DIR}/include/rm_rune)
 add_library(${PROJECT_NAME} SHARED
   src/rm_rune_node.cpp
   src/power_rune.cpp
-  src/image_processer.cpp
-  src/contour_info.cpp
   src/configuration.cpp
   src/blade.cpp
   src/prediction.cpp
-  src/augment.cpp
-  src/autobackend.cpp
-  src/common.cpp
   src/detect.cpp
-  src/onnx_model_base.cpp
-  src/ops.cpp
+  src/openvino_detect.cpp
 )
 ament_target_dependencies(${PROJECT_NAME} rclcpp rclcpp_components sensor_msgs geometry_msgs cv_bridge OpenCV tf2 tf2_ros image_transport tf2_geometry_msgs auto_aim_interfaces)
 
@@ -85,7 +64,7 @@ link_directories(${ONNXRUNTIME_ROOTDIR}/lib)
 target_link_directories(${PROJECT_NAME} PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
       $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} onnxruntime ceres glog)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ceres glog /usr/lib/libopenvino.so)
 
 rclcpp_components_register_node(${PROJECT_NAME}
   PLUGIN qianli_rm_rune::RuneNode
