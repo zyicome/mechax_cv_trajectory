@@ -49,8 +49,8 @@ Blade::Blade(ContourInfo& contour, Configuration& cfg)
 
     cv::Point2f circle_center = cv::Point2f(contour.circle_center);
     
-    center.y = 1080-center.y;
-    circle_center.y = 1080-circle_center.y;
+    center.y = center.y;
+    circle_center.y = circle_center.y;
 
     this->contour = contour;
     this->center = center;//扇叶中心
