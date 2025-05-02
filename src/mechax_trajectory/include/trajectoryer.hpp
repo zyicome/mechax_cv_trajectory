@@ -21,6 +21,11 @@
 
 #include <std_msgs/msg/float64.hpp>
 
+
+#include <ceres/ceres.h>
+#include <Eigen/Dense>
+
+
 using namespace std;
 
 const float g  = 9.8;
@@ -125,3 +130,23 @@ public:
     rclcpp::TimerBase::SharedPtr timer_;
     //------------------
 };
+
+
+class ResistanceFuncLinear {
+    private:
+        const double g { 9.8 }; // g = 9.8
+        const double w, h, v0;
+    
+    public:
+        ResistanceFuncLinear(const double& w, const double& h, const double& v0): w(w), h(h), v0(v0) {}
+    
+        template<typename T>
+        bool operator()(const T* const x, T* residual) const {
+            const double k = 0.022928514188;//空气阻力系数
+            residual[0] = (k * this->v0 * ceres::sin(x[0]) + this->g) * k * this->w
+                    / (k * k * this->v0 * ceres::cos(x[0]))
+                + this->g * ceres::log(1. - (k * this->w) / (this->v0 * ceres::cos(x[0]))) / k / k
+                - this->h;
+            return true;
+        }
+    };

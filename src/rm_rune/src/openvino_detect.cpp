@@ -144,16 +144,28 @@ void Inference::PostProcessing(cv::Mat &frame) {
             const float w = detection_outputs.at<float>(2, i);
             const float h = detection_outputs.at<float>(3, i);
 
+            // const float x1 = detection_outputs.at<float>(8, i);
+            // const float y1 = detection_outputs.at<float>(9, i);
+            // const float x2 = detection_outputs.at<float>(11, i);
+            // const float y2 = detection_outputs.at<float>(12, i);
+            // const float x3 = detection_outputs.at<float>(14, i);
+            // const float y3 = detection_outputs.at<float>(15, i);
+            // const float x4 = detection_outputs.at<float>(17, i);
+            // const float y4 = detection_outputs.at<float>(18, i);
+            // const float x5 = detection_outputs.at<float>(20, i);
+            // const float y5 = detection_outputs.at<float>(21, i); 
+
+
             const float x1 = detection_outputs.at<float>(8, i);
             const float y1 = detection_outputs.at<float>(9, i);
-            const float x2 = detection_outputs.at<float>(11, i);
-            const float y2 = detection_outputs.at<float>(12, i);
-            const float x3 = detection_outputs.at<float>(14, i);
-            const float y3 = detection_outputs.at<float>(15, i);
-            const float x4 = detection_outputs.at<float>(17, i);
-            const float y4 = detection_outputs.at<float>(18, i);
-            const float x5 = detection_outputs.at<float>(20, i);
-            const float y5 = detection_outputs.at<float>(21, i); 
+            const float x2 = detection_outputs.at<float>(10, i);
+            const float y2 = detection_outputs.at<float>(11, i);
+            const float x3 = detection_outputs.at<float>(12, i);
+            const float y3 = detection_outputs.at<float>(13, i);
+            const float x4 = detection_outputs.at<float>(14, i);
+            const float y4 = detection_outputs.at<float>(15, i);
+            const float x5 = detection_outputs.at<float>(16, i);
+            const float y5 = detection_outputs.at<float>(17, i); 
 
             keypoints.push_back(cv::Point2f(x1, y1)); // 记录关键点坐标
             keypoints.push_back(cv::Point2f(x2, y2));

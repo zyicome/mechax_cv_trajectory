@@ -1,0 +1,20 @@
+description: Ultralytics YOLOv8n-pose model trained on ultralytics-main\datasets\data.yaml
+author: Ultralytics
+date: '2025-04-06T16:02:19.792303'
+version: 8.3.6
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: pose
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: RR
+  1: RW
+  2: BR
+  3: BW
+kpt_shape:
+- 5
+- 3

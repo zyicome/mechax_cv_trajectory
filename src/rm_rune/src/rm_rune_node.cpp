@@ -9,8 +9,9 @@ namespace qianli_rm_rune
     frame_count_(0),
     last_time_(this->now()),
     inference(  // ✅ 在初始化列表中构造对象
-        "/home/fyk/fyk/mechax_cv_trajectroy_rune_openvino/src/rm_rune/model/buff480.onnx", // 模型路径
-        cv::Size(480, 480),          // 输入尺寸
+        // "/home/fyk/fyk/mechax_cv_trajectroy_rune_openvino/src/rm_rune/model/buff480.onnx", // 模型路径
+        "/home/fyk/fyk/mechax_cv_trajectory_openvino/src/rm_rune/model/FaterYU_model/buff_quantized.xml", // 模型路径
+        cv::Size(640, 640),          // 输入尺寸
         0.5f,   // 置信度阈值
         0.5f   // NMS阈值
     ) 
