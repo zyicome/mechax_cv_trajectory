@@ -5,6 +5,29 @@
 
 #include "trajectoryer.hpp"
 
+
+inline int computeShootAngle(double w, double h, double v0, double& shoot_angle) {
+    ceres::Problem problem;
+    problem.AddResidualBlock(
+        new ceres::AutoDiffCostFunction<ResistanceFuncLinear, 1, 1>(
+            new ResistanceFuncLinear(w, h, v0)
+        ),
+        nullptr,
+        &shoot_angle
+    );
+    ceres::Solver::Options options;
+    options.max_num_iterations = 25;
+    options.linear_solver_type = ceres::DENSE_QR;
+    options.minimizer_progress_to_stdout = false;
+    ceres::Solver::Summary summary;
+    ceres::Solve(options, &problem, &summary);
+    if (!summary.IsSolutionUsable()) {
+        // 未能解算成功
+        return 0;
+    }
+    return 1;
+}
+
 //两个内联函数，用于牛顿迭代法，第一个为f(x)，第二个为f'(x)
 inline float ft0(float t0,float randa,float tan,float z0,float v0)
 {
@@ -375,9 +398,7 @@ int Trajectoryer::solve_trajectory()
         position_result.yaw = tmp_yaw;
         results.push_back(position_result);
         }
-            // 2       1
 
-            //     0
         float yaw_diff_min = cos(results.at(0).yaw - now_yaw);
         for(i = 1; i<3;i++)
         {
@@ -388,9 +409,6 @@ int Trajectoryer::solve_trajectory()
                 idx = i;
             }
         }
-        //                            i        j
-
-        // new idea  : to choose the       k      position to shoot
     }
     else
     {
@@ -457,10 +475,21 @@ int Trajectoryer::solve_trajectory()
     {
         return 0;
     }*/
+
+
+    //牛顿迭代法
+    /*
     if(two_resistance_model(object_x, object_y, object_z, v0, randa) == 0)
     {
         return 0;
     }
+    */
+
+    //ceres非线性拟合
+    if (computeShootAngle(distance, object_z, v0, (double&)angle_pitch) == 0) {
+        return 0;
+    }
+    angle_pitch = float(angle_pitch);
     angle_yaw = atan2(object_y, object_x);
     if(abs(angle_yaw * 57.3f - now_yaw * 57.3f) <= 2 && motor_speed != 0 && abs(angle_yaw - now_yaw) / abs(motor_speed) < 0.05)
     {

@@ -22,7 +22,6 @@
   <depend>image_transport</depend>
   <depend>onnxruntime</depend>
   <depend>pluginlib</depend>
-  <depend>auto_aim_interfaces</depend>
 
   <export>
     <build_type>ament_cmake</build_type>

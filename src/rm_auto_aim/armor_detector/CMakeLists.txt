@@ -16,7 +16,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 ## Find dependencies ##
 #######################
 
-set(OpenVINO_LIBRARIES "/opt/openvino/runtime/lib/intel64/libopenvino.so")
+set(OpenVINO_LIBRARIES "/opt/openvino/runtime/libopenvino.so")
 set(OpenVINO_INCLUDE_DIRS "/opt/openvino/runtime/include")
 
 find_package(ament_cmake_auto REQUIRED)

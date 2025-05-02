@@ -15,6 +15,8 @@ find_package(geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(orocos_kdl REQUIRED)
+find_package(glog REQUIRED)
+find_package(Ceres REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -25,7 +27,7 @@ ament_target_dependencies(mechax_trajectory rclcpp visualization_msgs auto_aim_i
 target_link_directories(mechax_trajectory PUBLIC
       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
       $<INSTALL_INTERFACE:include>)
-target_link_libraries(mechax_trajectory ${OpenCV_LIBS} ${orocos_kdl_LIBRARIES})
+target_link_libraries(mechax_trajectory ${OpenCV_LIBS} ${orocos_kdl_LIBRARIES} glog ceres)
 
 
 install(TARGETS
